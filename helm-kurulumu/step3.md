@@ -6,6 +6,10 @@ heml dosyası aşağıda komutla **/usr/local/bin/** klasörü altına kopyalay�
 
 `mv linux-amd64/helm /usr/local/bin/helm`{{execute}} 
 
+Aşağıdaki komutla helm kurulumu test edilebilir;
+
+`helm`{{execute}} 
+
 Artık helm uygulaması path'e eklendiğinden dolayı komut satırından rahatlıkla kullanabiliriz. 
 
 ## Tiller Kurulumu
@@ -18,7 +22,7 @@ Tiller kurulumu Kubernetes Cluster'ı üzerinde tiller-deploy pod'unu ayağa kal
 
 `watch kubectl get pods --namespace kube-system`{{execute}}
 
-tiller-deploy pod'unun running durumuna geldiğini gözlemlekten sonra ctrl+c ile konsola geri dönebilirsiniz.
+tiller-deploy pod'unun running durumuna geldiğini gözlemlekten sonra **ctrl+c** ile konsola geri dönebilirsiniz.
 
 Son olarak; aşağıdaki komut çalıştırıldığında hem istemci hem de sunucu sürümünü görebilirsiniz;
 
