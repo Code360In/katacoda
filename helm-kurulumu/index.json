@@ -26,7 +26,7 @@
     }
   },
   "assets": {
-    "host01": [
+    "master": [
       {
         "file": "rbac-config.yaml",
         "target": "~/"
