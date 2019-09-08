@@ -19,19 +19,12 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "env-init.sh"
     },
     "finish": {
       "text": "finish.md"
     }
-  },
-  "assets": {
-    "master": [
-      {
-        "file": "rbac-config.yaml",
-        "target": "~/"
-      }
-    ]
   },
   "environment": {
     "uilayout": "terminal"
