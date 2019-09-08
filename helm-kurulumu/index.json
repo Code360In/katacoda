@@ -1,0 +1,42 @@
+{
+  "title": "Helm Kurulumu",
+  "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi kurulumu",
+  "difficulty": "Beginner",
+  "time": "2 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Tiller Servis Kullanıcısı",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Dosyaların indirilmesi",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3- Helm ve Tiller Kurulumu",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "assets": {
+    "host01": [
+      {
+        "file": "rbac-config.yaml",
+        "target": "~/"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}
