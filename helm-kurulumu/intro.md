@@ -1,7 +1,7 @@
 
 # Helm Paket Yöneticisi
 
-Enterprisecoding Helm paket yöneticisi kurulum senaryosuna hoş geldiniz. Sizin için yapılandırılmış şekilde bir Kubernetes Cluster'ı kuruludur. Sağ bölümde Kubernetes Cluster'ı `master` node'u terminalini bulabilirsiniz. Bu terminal üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz. İlerleyen adımlarda kullanacağınız gerekli araçlar yapılandırılmıştır.
+Enterprisecoding Helm paket yöneticisi kurulum senaryosuna hoş geldiniz.
 
 ## Senaryo
 
