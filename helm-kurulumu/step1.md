@@ -3,9 +3,11 @@
 Sizin için 1 master, 2 worker node olarak yapılandırılmış şekilde bir Kubernetes Cluster'ı kuruludur. Sağ bölümde kurulu olan bu Kubernetes Cluster'ının `master` node'u terminalini bulabilirsiniz. Bu terminal üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz. Senaryo çerçevesinde ihtiytaç duyabileceğiniz araçlar yapılandırılmıştır.
 
 Örneğin aşağıdaki komutla Kubernetes Cluster'ı hakkında bilgi alabilirsiniz;
+
 `kubectl cluster-info`{{execute}}
 
 ya da aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsiniz;
+
 `kubectl get nodes`{{execute}}
 
 # Tiller Servis Kullanıcısı
