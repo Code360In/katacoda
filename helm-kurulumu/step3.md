@@ -1,3 +1,5 @@
+# Helm ve Tiller Kurulumu
+
 Gerekli dosyaları indirip ayıkladıktan sonra artık kurulum adımlarına geçebiliriz.
 
 ## Helm Kurulumu
@@ -8,7 +10,7 @@ heml dosyası aşağıda komutla **/usr/local/bin/** klasörü altına kopyalay�
 
 Aşağıdaki komutla helm kurulumu test edilebilir;
 
-`helm`{{execute}} 
+`helm`{{execute}}
 
 Artık helm uygulaması path'e eklendiğinden dolayı komut satırından rahatlıkla kullanabiliriz. 
 
