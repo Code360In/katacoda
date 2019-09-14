@@ -1,10 +1,9 @@
-# Interactive Katacoda Scenarios
+# Etkileşimli Katacoda Senaryoları
 
-[![](http://shields.katacoda.com/katacoda/fatihboy/count.svg)](https://www.katacoda.com/fatihboy "Get your profile on Katacoda.com")
+[![](http://shields.katacoda.com/katacoda/fatihboy/count.svg)](https://www.katacoda.com/fatihboy "Fatih Boy'un katacoda denaryoları")
 
-Visit https://www.katacoda.com/fatihboy to view the profile and interactive scenarios
+https://www.katacoda.com/fatihboy adresini ziyaret ederek etkileşimli senaryoları deneyimleyebilirsiniz.
 
-### Writing Scenarios
-Visit https://www.katacoda.com/docs to learn more about creating Katacoda scenarios
+## İletişim
 
-For examples, visit https://github.com/katacoda/scenario-example
+Etkileşimli senaryolar ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
