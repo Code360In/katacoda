@@ -5,7 +5,7 @@ Enterprisecoding Helm paket yöneticisi kurulum senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda 1 master 2 worker olmak üzere 3 node'lu bir Kubernetes Cluster'ı üzerinde Helm paket yöneticisini nasıl kurabileceğinizi deneyimleyebilirsiniz.
+Bu senaryoda 1 master 1 worker olmak üzere 2 node'lu bir Kubernetes Cluster'ı üzerinde Helm paket yöneticisini nasıl kurabileceğinizi deneyimleyebilirsiniz.
 
 ## Yardım
 
