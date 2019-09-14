@@ -5,7 +5,7 @@ Kubernetes Metrics Server kurulum senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda 1 master 1 worker olmak üzere 1 node'lu bir Kubernetes Cluster'ı üzerinde Metrics Server nasıl kurabileceğinizi deneyimleyebilirsiniz.
+Bu senaryoda 1 master 1 worker olmak üzere 2 node'lu bir Kubernetes Cluster'ı üzerinde Metrics Server nasıl kurabileceğinizi deneyimleyebilirsiniz.
 
 ## Yardım
 

@@ -6,13 +6,13 @@ Gerekli dosyaları indirip ayıkladıktan sonra artık kurulum adımlarına geç
 
 heml dosyası aşağıda komutla **/usr/local/bin/** klasörü altına kopyalayın;
 
-`mv linux-amd64/helm /usr/local/bin/helm`{{execute}} 
+`mv linux-amd64/helm /usr/local/bin/helm`{{execute}}
 
 Aşağıdaki komutla helm kurulumu test edilebilir;
 
 `helm`{{execute}}
 
-Artık helm uygulaması path'e eklendiğinden dolayı komut satırından rahatlıkla kullanabiliriz. 
+Artık helm uygulaması path'e eklendiğinden dolayı komut satırından rahatlıkla kullanabiliriz.
 
 ## Tiller Kurulumu
 

@@ -18,7 +18,11 @@ ya da aşağıdaki komutla helm paket yöneticisi sürümünü kontrol edebilirs
 
 Helm kurulu bir sistemde aşağıdaki komutu kullanarak kube-system namespace'i altında Metrics Server kurabilirsiniz;
 
-`helm install stable/metrics-server --name metric-server --namespace kube-system`{{execute}}
+`helm install stable/metrics-server --name metrics-server --namespace kube-system`{{execute}}
+
+Aşağıdaki komutla pod'hazır duruma gelene kadar beklenebilir;
+
+`while [[ $(kubectl get pods -l app=helm,name=tiller -n kube-system -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Tiller pod'u bekleniyor.." && sleep 1; done`{{execute}}
 
 Kurulum durumu hakkında güncel bilgi aşağıdaki komutla sorgulanabilir;
 

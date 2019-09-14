@@ -8,6 +8,18 @@
       {
         "title": "Adım 1 - Metrics Server Kurulumu",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Hata Tespiti",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3- DNS Hata Düzeltmesi",
+        "text": "step3.md"
+      },
+      {
+        "title": "Adım 4- TLS Hata Düzeltmesi",
+        "text": "step4.md"
       }
     ],
     "intro": {
