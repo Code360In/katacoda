@@ -28,7 +28,7 @@ Problemi tespit edebilmek için öncelikle pod'umuzun loglarına göz atmalıyı
 
 bir süre bekledikten sonra aşağıdaki hata loglarının oluştuğunu göreceksiniz;
 
-`unable to fully collect metrics:[unable to fully scrape metrics from source kubelet_summary:node01: unable to fetch metrics from Kubelet node01 (172.17.0.40): Get https://172.17.0.40:10250/stats/summary?only_cpu_and_memory=true: x509: cannot validate certificate for 172.17.0.40 because it doesn't contain any IP SANs, unable to fully scrape metrics from source kubelet_summary:master: unable to fetch metrics from Kubelet master (172.17.0.29): Get https://172.17.0.29:10250/stats/summary?only_cpu_and_memory=truee: x509: cannot validate certificate for 172.17.0.40 because it doesn't contain any IP SANs]`
+`unable to fully collect metrics:[unable to fully scrape metrics from source kubelet_summary:node01: unable to fetch metrics from Kubelet node01 (XXX.XXX.XXX.XXX): Get https://XXX.XXX.XXX.XXX:10250/stats/summary?only_cpu_and_memory=true: x509: cannot validate certificate for XXX.XXX.XXX.XXX because it doesn't contain any IP SANs, unable to fully scrape metrics from source kubelet_summary:master: unable to fetch metrics from Kubelet master (YYY.YYY.YYY.YYY): Get https://XXX.XXX.XXX.XXX:10250/stats/summary?only_cpu_and_memory=truee: x509: cannot validate certificate for YYY.YYY.YYY.YYY because it doesn't contain any IP SANs]`
 
 Hata mesajını gözlemledikten sonra **ctrl+c** ile konsola geri dönebilirsiniz.
 
