@@ -22,7 +22,7 @@ Helm kurulu bir sistemde aşağıdaki komutu kullanarak kube-system namespace'i 
 
 Aşağıdaki komutla pod'hazır duruma gelene kadar beklenebilir;
 
-`while [[ $(kubectl get pods -l app=helm,name=tiller -n kube-system -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Tiller pod'u bekleniyor.." && sleep 1; done`{{execute}}
+`while [[ $(kubectl get pods -l app=helm,name=tiller -n kube-system -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Metric Server pod'u bekleniyor.." && sleep 1; done`{{execute}}
 
 Kurulum durumu hakkında güncel bilgi aşağıdaki komutla sorgulanabilir;
 

@@ -6,7 +6,7 @@ Bir önceki adımda tespit ettiğimiz DNS probleminin çözümü olarak Metrics 
 
 `helm delete metrics-server --purge`{{execute}}
 
-Mevcut sürümü kaldırdıktan sonra aşağıdaki komut çalıştırılarak **kubelet-preferred-address-types=InternalIP** parametresi de eklenir;
+Mevcut sürümü kaldırdıktan sonra aşağıdaki komut çalıştırılarak **kubelet-insecure-tls** parametresi de eklenir;
 
 `helm install stable/metrics-server --name metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls"`{{execute}}
 
