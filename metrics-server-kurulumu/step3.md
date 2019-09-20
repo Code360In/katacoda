@@ -30,7 +30,9 @@ bir süre bekledikten sonra aşağıdaki hata loglarının oluştuğunu görecek
 
 `unable to fully collect metrics:[unable to fully scrape metrics from source kubelet_summary:node01: unable to fetch metrics from Kubelet node01 (XXX.XXX.XXX.XXX): Get https://XXX.XXX.XXX.XXX:10250/stats/summary?only_cpu_and_memory=true: x509: cannot validate certificate for XXX.XXX.XXX.XXX because it doesn't contain any IP SANs, unable to fully scrape metrics from source kubelet_summary:master: unable to fetch metrics from Kubelet master (YYY.YYY.YYY.YYY): Get https://YYY.YYY.YYY.YYY:10250/stats/summary?only_cpu_and_memory=true: x509: cannot validate certificate for YYY.YYY.YYY.YYY because it doesn't contain any IP SANs]`
 
-Hata mesajını gözlemledikten sonra **ctrl+c** ile konsola geri dönebilirsiniz.
+Hata mesajını gözlemledikten sonra <kbd>Ctrl</kbd>+<kbd>C</kbd> ile konsola geri dönebilirsiniz. Alternatif olarak aşağıdaki link yardımıyla konsola dönebilirsiniz;
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
 
 Hata mesajına dikkat edildiğinde pod'un dns sorgulaması sonucunda `master` ve `node01` sunucuları için isim çözümlemesi yapabilmiş. Öte yandan tespit edilen Ip adreslerine talep yapıldığında sertifika doğrulama hatası alındığı görülmektedir.
 

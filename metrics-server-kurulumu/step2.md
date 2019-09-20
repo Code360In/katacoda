@@ -20,7 +20,9 @@ bir süre bekledikten sonra aşağıdaki hata loglarının oluştuğunu görecek
 
 `unable to fully collect metrics:[unable to fully scrape metrics from source kubelet_summary:node01: unable to fetch metrics from Kubelet node01 (node01): Get https://node01:10250/stats/summary?only_cpu_and_memory=true: dial tcp: lookup node01 10.96.0.10:53: no such host, unable to fully scrape metrics from source kubelet_summary:master: unable to fetch metrics from Kubelet master (master): Get https://master:10250/stats/summary?only_cpu_and_memory=truee: dial tcp: lookup node01 10.96.0.10:53: no such host]`
 
-Hata mesajını gözlemlekten sonra **ctrl+c** ile konsola geri dönebilirsiniz.
+Hata mesajını gözlemlekten sonra <kbd>Ctrl</kbd>+<kbd>C</kbd> ile konsola geri dönebilirsiniz. Alternatif olarak aşağıdaki link yardımıyla konsola dönebilirsiniz;
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
 
 Hata mesajına dikkat edildiğinde pod'un dns sorgulaması sonucunda `master` ve `node01` sunucuları için isim çözümlemesi yapamadığı görülecektir.
 

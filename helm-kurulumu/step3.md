@@ -24,7 +24,9 @@ Tiller kurulumu Kubernetes Cluster'ı üzerinde tiller-deploy pod'unu ayağa kal
 
 `while [[ $(kubectl get pods -l app=helm,name=tiller -n kube-system -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Tiller pod'u bekleniyor.." && sleep 1; done`{{execute}}
 
-tiller-deploy pod'unun running durumuna geldiğini gözlemlekten sonra **ctrl+c** ile konsola geri dönebilirsiniz.
+tiller-deploy pod'unun running durumuna geldiğini gözlemlekten sonra <kbd>Ctrl</kbd>+<kbd>C</kbd> ile konsola geri dönebilirsiniz. Alternatif olarak aşağıdaki link yardımıyla konsola dönebilirsiniz;
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
 
 Son olarak; aşağıdaki komut çalıştırıldığında hem istemci hem de sunucu sürümünü görebilirsiniz;
 
