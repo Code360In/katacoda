@@ -1,0 +1,27 @@
+{
+  "title": "Kuberetes Kurulumu",
+  "description": "2 Node üzerinde Kubernetes Cluster kurulumu",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Kubernetes Master Kurulumu",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Worker Node Eklenmesi",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster"
+  }
+}
