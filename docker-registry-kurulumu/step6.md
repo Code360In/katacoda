@@ -32,7 +32,8 @@ spec:
         - containerPort: 8080
       imagePullSecrets:
       - name: registry-cred
-EOF`{{execute}}
+EOF
+`{{execute}}
 
 Oluşturulan __ornek.yaml__ dosyası yardımıyla deployment oluşturulur;
 

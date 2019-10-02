@@ -6,7 +6,7 @@ Geldiğimiz noktada Docker Registry'si kullanıcı bilgileri olmadan kullanılab
 
 Kullanıcı bilgileri kullanılarak aşağıdaki komut yardımıyla Docker Registery'ye giriş yapılır;
 
-`docker login $NODE_IP:$NODE_PORT"`{{execute MASTER}}
+`docker login $NODE_IP:$NODE_PORT`{{execute MASTER}}
 
 Kullanıcı adı ve şifre bilgilerinin girilmesi ardından giriş işlemi başarılır olacaktır.
 
