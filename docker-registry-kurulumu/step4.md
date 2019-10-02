@@ -4,7 +4,7 @@
 
 Docker Registery'si için kullanıcı şifresi üretirken htpasswd uygulamasına ihtiyacımız bulunuyor. Bunun için aşağıdaki komutla gerekli kurulum yapılır;
 
-`sudo apt install -y apache2-utils`{{execute MASTER}}
+`apt update && apt install -y apache2-utils`{{execute MASTER}}
 
 Kurulum ardından aşağıdaki komut yardımıyla **repouser** adıyla yeni bir kullanıcı bilgisi ile htpasswd_dosyasi oluşturun;
 
@@ -16,7 +16,7 @@ Dosya içeriği incelendiğinde kullanıcı bilgileri görülecektir;
 
 **htpasswd_dosyasi** dosya içeriği ilk adımda oluşturduğumuz **values.yaml** dosyasına eklenir;
 
-`printf "\nhtpasswd: |-\n       " >> values.yaml && cat htpasswd_dosyasi >> values.yaml`{{execute MASTER}}
+`printf "htpasswd: |-\n       " >> values.yaml && cat htpasswd_dosyasi >> values.yaml`{{execute MASTER}}
 
 Güncel haliyle **values.yaml** dosyasını görüntüleyebilirsiniz;
 

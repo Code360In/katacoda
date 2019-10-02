@@ -6,7 +6,7 @@ Kubernetes Cluster'ı üzerinden Docker Registery'nin oluşturulması ardından 
 
 Aşağıdaki komutu çalıştırarak eklenecek tam ifadeyi görebilirsiniz;
 
-`echo "\"insecure-registries\" : [\"$NODE_IP:$NODE_PORT\"]`{{execute MASTER}}
+`echo "\"insecure-registries\" : [\"$NODE_IP:$NODE_PORT\"]"`{{execute MASTER}}
 
 Bu ifade **/etc/docker/daemon.json** dosyası içerisine eklenmelidir. Örneğin;
 
@@ -22,10 +22,10 @@ Değişiklik ardından `master` node'da Docker servisi yeniden başlatılır;
 
 Benzer şekilde aşağıdaki komut yardımıyla `node01` node'dunda **/etc/docker/daemon.json** dosyasını düzenleyiniz;
 
-`nano /etc/docker/daemon.json`{{execute NODE01}}
+`nano /etc/docker/daemon.json`{{execute node01}}
 
 Değişiklik ardından `node01` node'dunda Docker servisi yeniden başlatılır;
 
-`service docker restart`{{execute NODE01}}
+`service docker restart`{{execute node01}}
 
 **Continue** butonuna basarak kurulum test adımına geçebilirsiniz.
