@@ -12,7 +12,7 @@ Gerekli imaj'ların indirilmesi ardından aşağıdaki komut yardımıyla Kubern
 
 `kubeadm init --pod-network-cidr=10.244.0.0/16`{{execute MASTER}}
 
-Komutun çıktısında yer alan son iki satır bize Kubernetes Cluster'ına yeni bir worker node eklememiz için gerekli olan komutu vermektedir. Bu ilklendirme işleminin bitmesi ardından aşağıdaki komutlar çalıştırılarak `kubectl` ile komut satırından Kubernetes Cluster'ınızı bağlanmak için gerekli hazırlıkları tamamlayabilirsiniz;
+Komutun çıktısında yer alan son iki satır bize Kubernetes Cluster'ına yeni bir worker node eklememiz için gerekli olan komutu vermektedir. Bu ilklendirme işleminin bitmesi ardından aşağıdaki komutlar çalıştırılarak `kubectl` ile komut satırından Kubernetes Cluster'ınıza bağlanmak için gerekli hazırlıkları tamamlayabilirsiniz;
 
 `mkdir -p $HOME/.kube`{{execute MASTER}}
 
