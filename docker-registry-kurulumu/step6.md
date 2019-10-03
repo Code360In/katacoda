@@ -6,7 +6,7 @@ Docker Registery'sinde kullanıcı yetkilendirmesi aktif durumda olduğu için K
 
 Bir önceki adımda test için Docker login işlemi yapıldığında kullanıcı bilgileri home klasörü altındaki **.docker/config.json** dosyasına yazıldı. Aşağıdaki komut çalıştırılarak  **~/.docker/config.json** dosyasını kullanarak Kubernetes için gerekli secret tanımını oluşturulur;
 
-`kubectl create secret generic registry-cred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson`{{execute MASTER}}
+`kubectl create secret generic registry-cred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson`{{execute HOST1}}
 
 Oluşturulan __secret__ yardımıyla gerekli Docker imajlarının çekilmesi için **imagePullSecrets** kullanılır. Aşağıdaki komut yardımıyla önceki adımlarda Docker Registry'sine eklediğimiz __hello-world__ imajının kullanılacağı bir deployment oluşturulabilir;
 
@@ -38,4 +38,4 @@ EOF
 
 Oluşturulan __ornek.yaml__ dosyası yardımıyla deployment oluşturulur;
 
-`kubectl apply -f ornek.yaml`{{execute MASTER}}
+`kubectl apply -f ornek.yaml`{{execute HOST1}}
