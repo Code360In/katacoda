@@ -10,7 +10,8 @@ Bir önceki adımda test için Docker login işlemi yapıldığında kullanıcı
 
 Oluşturulan __secret__ yardımıyla gerekli Docker imajlarının çekilmesi için **imagePullSecrets** kullanılır. Aşağıdaki komut yardımıyla önceki adımlarda Docker Registry'sine eklediğimiz __hello-world__ imajının kullanılacağı bir deployment oluşturulabilir;
 
-```cat > ornek.yaml <<EOF
+```bash
+cat > ornek.yaml <<EOF
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,7 +33,8 @@ spec:
         - containerPort: 8080
       imagePullSecrets:
       - name: registry-cred
-EOF```{{execute}}
+EOF
+```{{execute}}
 
 Oluşturulan __ornek.yaml__ dosyası yardımıyla deployment oluşturulur;
 
