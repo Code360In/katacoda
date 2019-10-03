@@ -34,10 +34,10 @@ Değişiklik ardından `master` node'da Docker servisi yeniden başlatılır;
 
 Benzer şekilde aşağıdaki komut yardımıyla `node01` node'dunda **/etc/docker/daemon.json** dosyasını düzenleyiniz;
 
-`nano /etc/docker/daemon.json`{{execute node01}}
+`nano /etc/docker/daemon.json`{{execute HOST2}}
 
 Değişiklik ardından `node01` node'dunda Docker servisi yeniden başlatılır;
 
-`service docker restart`{{execute node01}}
+`service docker restart`{{execute HOST2}}
 
 **Continue** butonuna basarak kurulum test adımına geçebilirsiniz.
