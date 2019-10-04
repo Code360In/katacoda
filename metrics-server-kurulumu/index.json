@@ -24,7 +24,8 @@
     ],
     "intro": {
       "text": "intro.md",
-      "courseData": "env-init.sh"
+      "courseData": "env-init.sh",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"

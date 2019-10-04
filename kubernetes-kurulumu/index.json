@@ -15,7 +15,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"
