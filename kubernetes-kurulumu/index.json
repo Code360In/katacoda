@@ -23,7 +23,7 @@
   },
   "environment": {
     "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.\u001b[m\r\n"
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
     "imageid": "kubernetes-cluster"
