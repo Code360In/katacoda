@@ -23,6 +23,7 @@
   },
   "environment": {
     "uilayout": "terminal-terminal",
+    "icon": "fa-kubernetes",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
