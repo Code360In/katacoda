@@ -20,11 +20,11 @@ Sadece bash ve ls kullanımı istediğimiz için bu kök dizin altında tam bir 
 
 Sırada bu dizin hiyerarşisine gerekli dosyaları kopyalamakta. **ls** uygulamasını **/home/enterprisecoding/bin** dizini altına kopyalayın;
 
-`cp /usr/bin/ls /home/enterprisecoding/bin/`{{execute}}
+`cp /bin/ls /home/enterprisecoding/bin/`{{execute}}
 
 Benzer şekilde **bash** uygulamasını kopyalayın;
 
-`cp /usr/bin/bash /home/enterprisecoding/bin/`{{execute}}
+`cp /bin/bash /home/enterprisecoding/bin/`{{execute}}
 
 __ls__ uygulaması bağımlılıkları aşağıdaki komut yardımıyla hedef dizine kopyalayın;
 

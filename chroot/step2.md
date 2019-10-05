@@ -2,7 +2,7 @@
 
 Dizin oluşturulması ardından chroot sistem çağrısının nasıl çalıştığını aşağıdaki komutla deneyimleyebilirsiniz;
 
-`chroot /home/enterprisecoding/ /bin/bash`
+`chroot /home/enterprisecoding/ /bin/bash`{{execute}}
 
 Bu komut `/home/enterprisecoding/` kök dizin olacak şekilde yeni bir bash oturumu başlatacaktır. Aşağıdaki komut yardımıyla bulunduğunuz dizini kontrol edin;
 
