@@ -12,7 +12,7 @@ Senaryomuzda bir kullanıcı oluşturarak sanal bir dizin hiyerarşisinde ve sad
 
 Senaryomuzda kullanıcının göreceği dizin hiyerarşisini oluşturmalısınız. Bunun için `/home/enterprisecoding` dizinini ve sadece bash ve ls kullanımı istediğimiz için bu kök dizin altında tam bir işletim sistemi dizin hiyerarşisi yerine sadece **bin** ve **lib64** dizinlerini oluşturun;
 
-`mkdir /home/enterprisecoding/{bin,lib64} -p`{{execute}}
+`mkdir -p /home/enterprisecoding/{bin,lib64}`{{execute}}
 
 Sıra bu dizin hiyerarşisine gerekli dosyaları kopyalamakta. **ls** uygulamasını `/home/enterprisecoding/bin` dizini altına kopyalayın;
 

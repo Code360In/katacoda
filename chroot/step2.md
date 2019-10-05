@@ -1,6 +1,10 @@
 # Chroot Test edilmesi
 
-Dizin oluşturulması ardından chroot sistem çağrısının nasıl çalıştığını aşağıdaki komutla deneyimleyebilirsiniz;
+Dizin oluşturulması ardından Gerçek dosya sisteminde bulunduğunuz dizini sorgulayın;
+
+`pwd`{{execute}}
+
+chroot sistem çağrısının nasıl çalıştığını aşağıdaki komutla deneyimleyebilirsiniz;
 
 `chroot /home/enterprisecoding/ /bin/bash`{{execute}}
 
