@@ -29,15 +29,20 @@ Benzer şekilde **bash** uygulamasını kopyalayın;
 __ls__ uygulaması bağımlılıkları aşağıdaki komut yardımıyla hedef dizine kopyalayın;
 
 ```bash
-for library in $(ldd /bin/ls | cut -d '>' -f 2 | awk '{print $1}')
-do
-  cp --verbose --parents ${library} /home/enterprisecoding/
+for library in $(ldd /bin/ls | cut -d '>' -f 2 | awk '{print $1}') \
+do \
+  cp --verbose --parents ${library} /home/enterprisecoding/  \
 done
 ```{{execute}}
 
 __bash__ uygulaması bağımlılıkları aşağıdaki komut yardımıyla hedef dizine kopyalayın;
 
-`for library in $(ldd /bin/bash | cut -d '>' -f 2 | awk '{print $1}'); do cp --verbose --parents "${library}" "/home/enterprisecoding/"; done`{{execute}}
+```bash
+for library in $(ldd /bin/bash | cut -d '>' -f 2 | awk '{print $1}')  \
+do
+  cp --verbose --parents ${library} /home/enterprisecoding/  \
+done
+```{{execute}}
 
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
