@@ -8,7 +8,7 @@
       {
         "title": "Adım 1 - Dizin Hiyerarşisinin Oluşturulması",
         "text": "step1.md",
-        "code": "env-init.sh",
+        "code": "env-init.sh"
       },
       {
         "title": "Adım 2 - Chroot Testi",
