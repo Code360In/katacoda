@@ -1,5 +1,5 @@
-Bu adımlar ardından artık Kubernetes Cluster'ı kullanılabilir durumda.
+Bu adımlar ardından artık chroot ve kullanımı hakkında deneyim kazandınız.
 
-Enterprisecoding üzerinde paylaştığım [diğer Kubernetes makalelerini](http://www.enterprisecoding.com/post/tag/kubernetes) takip edebilirsiniz.
+Enterprisecoding üzerinde paylaştığım [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 
-Kubernetes ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Container, Docker ve Kubernetes ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
