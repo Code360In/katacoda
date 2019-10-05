@@ -10,15 +10,11 @@ Senaryomuzda bir kullanıcı oluşturarak sanal bir dizin hiyerarşisinde ve sad
 
 ## Dizin Hiyerarşisinin Oluşturulması
 
-Senaryomuzda kullanıcının göreceği dizin hiyerarşisini oluşturmalısınız. Bunun için kök dizin olarak kullanılacak bir dizin oluşturun;
+Senaryomuzda kullanıcının göreceği dizin hiyerarşisini oluşturmalısınız. Bunun için `/home/enterprisecoding` dizinini ve sadece bash ve ls kullanımı istediğimiz için bu kök dizin altında tam bir işletim sistemi dizin hiyerarşisi yerine sadece **bin** ve **lib64** dizinlerini oluşturun;
 
-`mkdir /home/enterprisecoding`{{execute}}
+`mkdir /home/enterprisecoding/{bin,lib64} -p`{{execute}}
 
-Sadece bash ve ls kullanımı istediğimiz için bu kök dizin altında tam bir işletim sistemi dizin hiyerarşisi yerine sadece **bin** ve **lib64** dizinlerini oluşturun;
-
-`mkdir /home/enterprisecoding/{bin,lib64}`{{execute}}
-
-Sırada bu dizin hiyerarşisine gerekli dosyaları kopyalamakta. **ls** uygulamasını **/home/enterprisecoding/bin** dizini altına kopyalayın;
+Sıra bu dizin hiyerarşisine gerekli dosyaları kopyalamakta. **ls** uygulamasını `/home/enterprisecoding/bin` dizini altına kopyalayın;
 
 `cp /bin/ls /home/enterprisecoding/bin/`{{execute}}
 
@@ -28,11 +24,10 @@ Benzer şekilde **bash** uygulamasını kopyalayın;
 
 __ls__ uygulaması bağımlılıkları aşağıdaki komut yardımıyla hedef dizine kopyalayın;
 
-`for library in $(ldd /bin/ls | cut -d '>' -f 2 | awk '{print $1}');do  cp --verbose --parents ${library} /home/enterprisecoding/; done`{{execute}}
+`for library in $(ldd /bin/ls | cut -d '>' -f 2 | awk 'NR>1{print $1}');do  cp --verbose --parents ${library} /home/enterprisecoding/; done`{{execute}}
 
 __bash__ uygulaması bağımlılıkları aşağıdaki komut yardımıyla hedef dizine kopyalayın;
 
-`for library in $(ldd /bin/bash | cut -d '>' -f 2 | awk '{print $1}'); do cp --verbose --parents ${library} /home/enterprisecoding/; done`{{execute}}
-
+`for library in $(ldd /bin/bash | cut -d '>' -f 2 | awk 'NR>1{print $1}'); do cp --verbose --parents ${library} /home/enterprisecoding/; done`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
