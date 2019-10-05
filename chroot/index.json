@@ -7,7 +7,8 @@
     "steps": [
       {
         "title": "Adım 1 - Dizin Hiyerarşisinin Oluşturulması",
-        "text": "step1.md"
+        "text": "step1.md",
+        "code": "env-init.sh",
       },
       {
         "title": "Adım 2 - Chroot Testi",
@@ -24,7 +25,6 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "code": "env-init.sh",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
