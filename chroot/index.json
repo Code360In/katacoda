@@ -1,0 +1,32 @@
+{
+  "title": "Chroot",
+  "description": "Linux işletim sistemi chroot ve kullanımı",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Dizin Hiyerarşisinin Oluşturulması",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Chroot Testi",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "bash",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "bash"
+  }
+}
