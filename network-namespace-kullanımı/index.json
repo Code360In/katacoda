@@ -1,0 +1,32 @@
+{
+  "title": "Network Namespace Kullanımı",
+  "description": "Linux işletim sistemi network namespace ve kullanımı",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Network Namespace Oluşturulması",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Farklı Network Namespace'de Process Başlatma",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
