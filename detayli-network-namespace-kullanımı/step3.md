@@ -28,23 +28,29 @@ Yapılandırdığınız `v-eth1`'i ayağa kaldırın;
 
 `ip link set v-eth1 up`{{execute}}
 
-Benzer şekilde `v-peer1`'in ipv4 yapılandırmasını gerçekleştirin;
+Benzer şekilde `v-peer1`'in ipv4 yapılandırmasını gerçekleştirmek için `enterprisecodingNNS` network namespace'inde bash oturumu başlatın;
 
-`ip netns exec enterprisecodingNNS ip addr add 10.200.1.2/24 dev v-peer1`{{execute}}
+`ip netns exec enterprisecodingNNS bash --rcfile <(echo "PS1=\"namespace[enterprisecodingNNS]> \"")`{{execute}}
 
-`ip addr add 10.200.1.1/24 dev v-eth1`{{execute}}
+`v-peer1` için ipv4 yapılandırmasını gerçekleştirin;
+
+`ip addr add 10.200.1.2/24 dev v-peer1`{{execute}}
 
 Yapılandırdığınız `v-peer1`'i ayağa kaldırın;
 
-`ip netns exec enterprisecodingNNS ip link set v-peer1 up`{{execute}}
+`ip link set v-peer1 up`{{execute}}
 
-Yapılandırdığınız `enterprisecodingNNS` network namespace'indeki loopback'i ayağa kaldırın;
+Yapılandırdığınız loopback'i ayağa kaldırın;
 
-`ip netns exec enterprisecodingNNS ip link set lo up`{{execute}}
+`ip link set lo up`{{execute}}
 
 `enterprisecodingNNS`'dan çıkan tüm trafiği `v-eth1`'e yönlendirin;
 
-`ip netns exec enterprisecodingNNS ip route add default via 10.200.1.1`{{execute}}
+`ip route add default via 10.200.1.1`{{execute}}
+
+`enterprisecodingNNS`'dan çıkarak root network namespace'e geri dönün;
+
+`exit`{{execute}}
 
 Internet bağlantısını varsayılan network namespace'i ile paylaşmak için aşağıdaki komutu çalıştırarak Ip forward'ı aktif hale getirin;
 
