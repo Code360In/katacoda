@@ -6,7 +6,7 @@ Dış dünya ile bağlantısı varsayılanda kesik olan `enterprisecodingNNS` ne
 
 `ip netns exec enterprisecodingNNS bash --rcfile <(echo "PS1=\"namespace[enterprisecodingNNS]> \"")`{{execute}}
 
-İş bir loopback cihazı ekleyerek başlayın;
+İşe bir loopback cihazı ekleyerek başlayın;
 
 `ip link set dev lo up`{{execute}}
 

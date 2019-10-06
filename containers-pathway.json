@@ -1,0 +1,22 @@
+{
+    "title": "Containers Kursu",
+    "description": "Enterprisecoding Containers kursu",
+    "icon": "fa-docker",
+    "courses": [
+      {
+        "course_id": "chroot-kullanımı",
+        "title": "Chroot Kullanımı",
+        "description": "Linux işletim sistemi chroot ve kullanımı"
+      },
+      {
+        "course_id": "network-namespace-kullanımı",
+        "title": "Network Namespace Kullanımı",
+        "description": "Linux işletim sistemi network namespace ve kullanımı"
+      },
+      {
+        "course_id": "detayli-network-namespace-kullanımı",
+        "title": "Network Namespace Kullanımı, Detaylı Örnek",
+        "description": "Linux işletim sistemi network namespace ve detaylı kullanımı"
+      }
+    ]
+  }

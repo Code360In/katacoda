@@ -1,0 +1,27 @@
+{
+    "title": "Kubernetes Kursu",
+    "description": "Enterprisecoding Kubernetes kursu",
+    "icon": "fa-kubernetes",
+    "courses": [
+      {
+        "course_id": "kubernetes-kurulumu",
+        "title": "Kubernetes Kurulumu",
+        "description": "2 Node üzerinde Kubernetes Cluster kurulumu"
+      },
+      {
+        "course_id": "helm-kurulumu",
+        "title": "Helm Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi kurulumu"
+      },
+      {
+        "course_id": "metrics-server-kurulumu",
+        "title": "Metrics Server Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Metrics Server kurulumu"
+      },
+      {
+        "course_id": "docker-registry-kurulumu",
+        "title": "Docker Registry Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Docker Registry kurulumu"
+      }
+    ]
+  }
