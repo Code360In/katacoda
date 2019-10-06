@@ -1,6 +1,6 @@
 # Chroot Yapılandırması
 
-Chroot kullanımı için sağ bölümde yer alan bash ortamı hazırlanmıştır. Bu terminaller üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz. 
+Chroot kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlanmıştır. Bu terminaller üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
 
 ## Chroot
 
