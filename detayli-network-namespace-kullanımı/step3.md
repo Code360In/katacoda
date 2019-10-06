@@ -2,13 +2,21 @@
 
 Dış dünya ile bağlantısı varsayılanda kesik olan `enterprisecodingNNS` network namespace'i için aşağıdaki adımlarla birlikte gerekli yapılandırmayı gerçekleştireceksiniz.
 
+`enterprisecodingNNS` network namespace'inde bash oturumu başlatın;
+
+`ip netns exec enterprisecodingNNS bash --rcfile <(echo "PS1=\"namespace[enterprisecodingNNS]> \"")`{{execute}}
+
 İş bir loopback cihazı ekleyerek başlayın;
 
-`ip netns exec enterprisecodingNNS ip link set dev lo up`{{execute}}
+`ip link set dev lo up`{{execute}}
 
 Henüz bir yapılandırma yapılmadığı için routing table boş olmalı. Aşağıdaki komutla listenin boş olduğunu kontrol edin;
 
-`ip netns exec enterprisecodingNNS ip route show`{{execute}}
+`ip route show`{{execute}}
+
+`enterprisecodingNNS`'dan çıkarak root network namespace'e geri dönün;
+
+`exit`{{execute}}
 
 Yapılandırmaya sanal bir ethernet çifti ekleyerek başlayın. `v-eth1` olarak adlandıracağımız arayüz root network namespace'inde yer alacak. v-eth1'in çifti olan `v-peer1` ise `enterprisecodingNNS` network namespace'ine taşıyacaksınız. Bu sayede root network namespace'i ile enterprisecodingNNS arasında bir bağlantı sağlanacaktır.
 
@@ -59,6 +67,7 @@ Internet bağlantısını varsayılan network namespace'i ile paylaşmak için a
 Gerekli IP Tables ip forward yapıladırmalarını gerçekleştirin;
 
 `iptables -P FORWARD DROP`{{execute}}
+
 `iptables -F FORWARD`{{execute}}
 
 Nat kurallarını gerçekleştirin;
@@ -72,6 +81,7 @@ Nat kurallarını gerçekleştirin;
 `ens3` ve `v-eth1` arasında iletimi gerçekleştirin;
 
 `iptables -A FORWARD -i ens3 -o v-eth1 -j ACCEPT`{{execute}}
+
 `iptables -A FORWARD -o ens3 -i v-eth1 -j ACCEPT`{{execute}}
 
 Network yapılandırmaları bu adımlarla tamamladınız. Test için `enterprisecodingNNS` network namespace'i ile bash oturumu başlatın;
