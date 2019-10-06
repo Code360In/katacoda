@@ -39,3 +39,5 @@ Son olarak `8.8.8.8` ip adresine ping atmayı deneyin;
 `ping -c 3 8.8.8.8`{{execute}}
 
 gördüğünüz gibi varsayılan network namespace ile `enterprisecodingNNS` network namespace'leri arasında farklı network yapılandırmaları bulunmakta. `enterprisecodingNNS` network namespace'i içerisinde başlatılan bir process bu namespace'in yapılandırmasına tabi olarak çalışır.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
