@@ -10,7 +10,11 @@ Senaryomuzda bir network namespace'i oluşturarak burada iptables ile yaptığı
 
 ## Bir Network Namespace Oluşturulması
 
-Senaryomuzda network namespace kernel kaynak ayrımını net olarak görebilmek adına öncelikle aşağıdaki komutla `enterprisecodingNNS` adıyla bir network namespace'i oluşturun;
+Senaryomuzda network namespace kernel kaynak ayrımını net olarak görebilmek adına öncelikle bir network namespace'i oluşturulmalıdır. Network namespace'i şu şekildeki bir komutla oluşturulur;
+
+`sudo ip netns add [NAMESPACE ADI]`
+
+Aşağıdaki komutla `enterprisecodingNNS` adıyla bir network namespace'i oluşturun;
 
 `sudo ip netns add enterprisecodingNNS`{{execute}}
 

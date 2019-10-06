@@ -1,8 +1,12 @@
 # Farklı Network Namespace'de Process Başlatma
 
-Sırada bir önceki adımda oluşturduğumuz network namespace'i ile bir process başlatmakta. Aşağıdaki komutu çalıştırarak `enterprisecodingNNS` namespace'i ile bir bash oturumu başlatın;
+Sırada bir önceki adımda oluşturduğumuz network namespace'i ile bir process başlatmakta. Bir Network Namespace'i altında process başlatmak için şu şekilde bir ifade kullanılır;
 
-`sudo ip netns exec enterprisecodingNNS bash`{{execute}}
+`ip netns exec [NAMESPACE ADI] [KOMUT]`
+
+Aşağıdaki komutu çalıştırarak `enterprisecodingNNS` namespace'i ile bir bash oturumu başlatın;
+
+`ip netns exec enterprisecodingNNS bash --rcfile <(echo "PS1=\"namespace[enterprisecodingNNS]> \"")`{{execute}}
 
 Başlatılan bash oturumunda ip bilgilerini sorgulayın;
 
@@ -16,7 +20,7 @@ google'e ping atmayı deneyin;
 
 `ping 8.8.8.8`{{execute}}
 
-Gördüğünüz üzere, aynı network kablosu takılı olmayan bir bilgisayar gibi, oluşturduğumuz network namespace'inin dış dünya ile bir bağlantısı bulunmuyor.
+Gördüğünüz üzere, aynı network kablosu takılı olmayan bir bilgisayar gibi, oluşturduğumuz network namespace'inin dış dünya ile bir bağlantısı bulunmuyor. Bu network namespace'i ile çalışan process'lerin dış dünya ile etkileşimlerini sağlamak için gerekli yapılandırmaları yapmadığınız sürece bu şekilde bvağlantı kesik olarak kalacaktır.
 
 `bash`'i sonlandırarak varsayılan network namespace'ine geri dönün;
 
