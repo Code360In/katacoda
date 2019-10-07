@@ -4,7 +4,7 @@ Chroot kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlanmışt�
 
 ## Chroot
 
-**Chroot** bir Linux sistem çağrısıdır. Çalışan bir process'in kök dizininin değiştirilmesini sağlar. Bu sayede process sanal bir kök dizin ve ona bağlı tanımlanmış alt dizinler üzerinde işlem görecektir. Bu sayede normal koşullar altında process asıl kök dizin ve altındaki dizinleri göremeyecek ve değişiklik yapamayacaktır. Bu çağrının sistem yöneticileri tarafından kullanılabilmesi için hazırlanan hizmet programının da adı **chroot**'tur. Chroot ile hazırlanan bu __sanal__ ortama **chroot jail** adı verilmektedir. Taip eden adımlarda gerekli dizin hiyerarşisini oluşturarak bir chroot jail oluşturaksınız.
+**Chroot** bir Linux sistem çağrısıdır. Çalışan bir process'in kök dizininin değiştirilmesini sağlar. Bu sayede process sanal bir kök dizin ve ona bağlı tanımlanmış alt dizinler üzerinde işlem görecektir. Bu sayede normal koşullar altında process asıl kök dizin ve altındaki dizinleri göremeyecek ve değişiklik yapamayacaktır. Bu çağrının sistem yöneticileri tarafından kullanılabilmesi için hazırlanan hizmet programının da adı **chroot**'tur. Chroot ile hazırlanan bu __sanal__ ortama **chroot jail** adı verilmektedir. Takip eden adımlarda gerekli dizin hiyerarşisini oluşturarak bir chroot jail oluşturaksınız.
 
 Senaryomuzda bir kullanıcı oluşturarak sanal bir dizin hiyerarşisinde ve sadece **bash** üzerinde **ls** komutunu kullanabilmesine izin vereceğiz.
 
