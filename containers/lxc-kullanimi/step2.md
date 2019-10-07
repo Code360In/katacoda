@@ -12,6 +12,10 @@ Gerekli imajın indirilerek başlatılması ardından imaj listesini yeniden inc
 
 `lxc list`{{execute}}
 
+Yerelde bulunan imajları aşağıdaki komutla listeleyin;
+
+`lxc image list`{{execute}}
+
 Şimdi sırada çalışır durumdaki `my-alpine` container'ı içerisinde bir shell oturumu başlatmakta. Alpine linux ile birlikte **ash** geldiği için `/bin/ash` komutunu çalıştırın;
 
 `lxc exec my-alpine -- /bin/ash`{{execute}}
