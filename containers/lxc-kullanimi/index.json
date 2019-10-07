@@ -1,0 +1,32 @@
+{
+  "title": "Linux Containers (LXC) Kullanımı",
+  "description": "Linux container (LXC/LXD) temel kullanımı",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - LXC Kurulumu",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Linux Container Başlatma",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

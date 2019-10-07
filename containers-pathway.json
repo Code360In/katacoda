@@ -4,19 +4,24 @@
     "icon": "fa-docker",
     "courses": [
       {
-        "course_id": "chroot-kullanımı",
+        "course_id": "chroot-kullanimi",
         "title": "Chroot Kullanımı",
         "description": "Linux işletim sistemi chroot ve kullanımı"
       },
       {
-        "course_id": "network-namespace-kullanımı",
+        "course_id": "network-namespace-kullanimi",
         "title": "Network Namespace Kullanımı",
         "description": "Linux işletim sistemi network namespace ve kullanımı"
       },
       {
-        "course_id": "detayli-network-namespace-kullanımı",
+        "course_id": "detayli-network-namespace-kullanimi",
         "title": "Network Namespace Kullanımı, Detaylı Örnek",
         "description": "Linux işletim sistemi network namespace ve detaylı kullanımı"
+      },
+      {
+        "course_id": "lxc-kullanimi",
+        "title": "Linux Containers (LXC) Kullanımı",
+        "description": "Linux container temel kullanımı"
       }
     ]
   }
