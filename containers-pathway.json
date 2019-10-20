@@ -19,6 +19,11 @@
         "description": "Linux işletim sistemi network namespace ve detaylı kullanımı"
       },
       {
+        "course_id": "pid-namespace-kullanimi",
+        "title": "PID Namespace Kullanımı",
+        "description": "Linux işletim sistemi PID namespace kullanımı"
+      },
+      {
         "course_id": "lxc-kullanimi",
         "title": "Linux Containers (LXC) Kullanımı",
         "description": "Linux container temel kullanımı"
