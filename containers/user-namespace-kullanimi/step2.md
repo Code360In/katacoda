@@ -26,4 +26,8 @@ Aşağıdaki komutla oturumdan çıkış yapınız;
 
 `exit`{{execute}}
 
+test kullanıcı oturumunu da sonlandırarak root oturumuna geri dönün;
+
+`exit`{{execute}}
+
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
