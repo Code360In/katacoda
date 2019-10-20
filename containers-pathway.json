@@ -29,6 +29,11 @@
         "description": "Linux işletim sistemi UNIX Time-sharing System (UTS) namespace kullanımı"
       },
       {
+        "course_id": "user-namespace-kullanimi",
+        "title": "User Namespace Kullanımı",
+        "description": "Linux işletim sistemi User namespace kullanımı"
+      },
+      {
         "course_id": "lxc-kullanimi",
         "title": "Linux Containers (LXC) Kullanımı",
         "description": "Linux container temel kullanımı"

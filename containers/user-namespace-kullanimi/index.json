@@ -1,0 +1,36 @@
+{
+  "title": "User Namespace Kullanımı",
+  "description": "Linux işletim sistemi User namespace ve kullanımı",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - User Namespace Oluşturulması",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Standart Kullanıcılar ile İşlem",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Kullanıcı Eşleme",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

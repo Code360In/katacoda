@@ -6,7 +6,7 @@ UTS namespace kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlan
 
 Linux **Namespace**'leri kernel kaynaklarını bölümlere ayırmaya olanak sağlayan bir Kernel özelliğidir. Farklı namespace'lere bağlı çalışan process'ler farklı kernel kaynaklarını görecektir. Linux Kernel'ı 6+1 farklı namespace'e sahiptir. Aşağıdaki adımlarda bu namespace'lerden 2006 yılında Linux 2.6.19 ile birlikte gelen **UTS Namespace**'ini deneyimleyeceksiniz.
 
-Senaryomuzda bir UTS namespace'i oluşturarak burada diğer namespace'lere ait process'lere ulaşılamadığını deneyimleyeceksiniz.
+Senaryomuzda bir UTS namespace'i oluşturarak burada diğer namespace'lere ait hostname'lere ulaşılamadığını deneyimleyeceksiniz.
 
 ## Senaryo
 
