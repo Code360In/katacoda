@@ -22,7 +22,7 @@ Aşağıdaki komutu ile mevcutta çalışan process'leri listeleyin;
 
 Alternatif olarak aşağıdaki komutla çalışan process'leri ve PID namespace'lerini birlikte listeleyebilirsiniz;
 
-`pid -eo pidns,cmd --sort=pidns`{{execute}}
+`ps -eo pidns,cmd --sort=pidns`{{execute}}
 
 Gelen process listesinin ilk sütunu bize PID namespace'ini, ikinci sütunu ise çalışan komutu verekcektir. Görüldüğü gibi listelenen process'lerin hepsi aynı PID namespace'i içerisinde.
 
@@ -38,7 +38,7 @@ Gördüğünüz gibi yeni namespace'de 1 numaralı pid olarak `/bin/bash`, hemen
 
 Önceki adımda olduğu gibi çalışan process'leri PID namespace'leri ile birlikte listeleyin;
 
-`pid -eo pidns,cmd --sort=pidns`{{execute}}
+`ps -eo pidns,cmd --sort=pidns`{{execute}}
 
 İçinde bulunduğumuz oturum öncekinden farklı bir PID namespace ile çalıştığı görülecektir.
 
