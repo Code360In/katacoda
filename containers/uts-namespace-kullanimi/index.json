@@ -1,12 +1,12 @@
 {
-  "title": "PID Namespace Kullanımı",
-  "description": "Linux işletim sistemi PID namespace ve kullanımı",
+  "title": "UTS Namespace Kullanımı",
+  "description": "Linux işletim sistemi UTS namespace ve kullanımı",
   "difficulty": "Beginner",
   "time": "2 minutes",
   "details": {
     "steps": [
       {
-        "title": "PID Namespace Oluşturulması",
+        "title": "UTS Namespace Oluşturulması",
         "text": "step1.md"
       }
     ],

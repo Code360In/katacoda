@@ -1,4 +1,4 @@
-Bu adımlar ardından artık PID Namespace ve kullanımı hakkında deneyim kazandınız.
+Bu adımlar ardından artık UNIX Time-sharing System (UTS) Namespace ve kullanımı hakkında deneyim kazandınız.
 
 Enterprisecoding üzerinde paylaştığım [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 

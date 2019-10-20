@@ -24,6 +24,11 @@
         "description": "Linux işletim sistemi PID namespace kullanımı"
       },
       {
+        "course_id": "uts-namespace-kullanimi",
+        "title": "UTS Namespace Kullanımı",
+        "description": "Linux işletim sistemi UNIX Time-sharing System (UTS) namespace kullanımı"
+      },
+      {
         "course_id": "lxc-kullanimi",
         "title": "Linux Containers (LXC) Kullanımı",
         "description": "Linux container temel kullanımı"
