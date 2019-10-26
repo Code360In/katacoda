@@ -34,9 +34,9 @@
         "description": "Linux işletim sistemi User namespace kullanımı"
       },
       {
-        "course_id": "lxc-kullanimi",
-        "title": "Linux Containers (LXC) Kullanımı",
-        "description": "Linux container temel kullanımı"
+        "course_id": "linux-containers-kullanimi",
+        "title": "Linux Containers (LXD/LXC) Kullanımı",
+        "description": "Linux containers temel kullanımı"
       }
     ]
   }

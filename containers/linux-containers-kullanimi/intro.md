@@ -1,11 +1,11 @@
 
-# LXC Kullanımı
+# Linux Containers Kullanımı
 
-Enterprisecoding LXC kullanım senaryosuna hoş geldiniz.
+Enterprisecoding Linux Containers kullanım senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, Linux çekirdeği üzerinde işletim sistemi seviyesinde çalışan ve aynı anda birden fazla izole sistem (kontayner) çalıştırılabilmesine olanak sunan LXC (Linux Containers) kurulum ve kullanımını deneyimleyebilirsiniz.
+Bu senaryoda, Linux çekirdeği üzerinde işletim sistemi seviyesinde çalışan ve aynı anda birden fazla izole sistem (kontayner) çalıştırılabilmesine olanak sunan Linux Containers kurulum ve kullanımını deneyimleyebilirsiniz.
 
 ## Yardım
 
