@@ -42,6 +42,11 @@
         "course_id": "docker-kurulumu",
         "title": "Docker Kurulumu",
         "description": "Ubuntu üzerinde Docker kurulumu"
+      },
+      {
+        "course_id": "docker-imaj-kullanimi",
+        "title": "Docker Imaj Kullanımı",
+        "description": "Docker Imaj kullanımı ve yapısı"
       }
     ]
   }
