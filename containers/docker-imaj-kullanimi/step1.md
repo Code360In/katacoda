@@ -14,7 +14,7 @@ Bu komut Docker Hub'ta bulunan Alpine linux imajının 3.10.3 tag'ine ait katman
 
 Aşağıdaki komutla indirdiğimiz imajın geçmişini görüntüleyin;
 
-`docker history alpine:3.10.3`
+`docker history alpine:3.10.3`{{execute}}
 
 Bu komut bize alpine 3.10.3 imajının **965ea09ff2eb** id'li bir katmandan oluştuğunu göstecektir.
 
