@@ -31,10 +31,11 @@ Bu komut aşağıdakine benzer bir çıktı üretecektir;
 ```bash
 docker-ce:
   Installed: (none)
-  Candidate: 18.06.1~ce~3-0~ubuntu
+  Candidate: 5:19.03.4~3-0~ubuntu-xenial
   Version table:
-     18.06.1~ce~3-0~ubuntu 500
+     5:19.03.4~3-0~ubuntu-xenial 500
         500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages
+     ...
 ```
 Çıktı bize kurulumun `https://download.docker.com/linux/ubuntu` deposundan yapılacağını söylemektedir.
 
