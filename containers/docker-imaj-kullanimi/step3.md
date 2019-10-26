@@ -14,4 +14,4 @@ Alpine 3.10.3 imajına ait **965ea09ff2eb** katmanının yeniden kullanıldığ�
 
 `docker history enterprisecoding-sample`{{execute}}
 
-Listenen imajlardan ikincisinin **965ea09ff2eb**  olduğunu göreceksiniz.
+Listenen katmanlardan ikincisinin **965ea09ff2eb**  olduğunu göreceksiniz.
