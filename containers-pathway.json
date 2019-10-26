@@ -37,6 +37,11 @@
         "course_id": "linux-containers-kullanimi",
         "title": "Linux Containers (LXD/LXC) Kullanımı",
         "description": "Linux containers temel kullanımı"
+      },
+      {
+        "course_id": "docker-kurulumu",
+        "title": "Docker Kurulumu",
+        "description": "Ubuntu üzerinde Docker kurulumu"
       }
     ]
   }

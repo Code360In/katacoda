@@ -1,0 +1,36 @@
+{
+  "title": "Docker Kurulumu",
+  "description": "Ubuntu üzerinde Docker kurulumu",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Gereksinimlerin Kurulumu",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Docker Kurulumu",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Sudo'suz Docker",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
