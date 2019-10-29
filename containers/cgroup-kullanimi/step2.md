@@ -20,6 +20,6 @@ Limit tanımlaması ardından artık bu kontrol grubu ile bir işle başlatmaya 
 
 Betik arkaplanda çalışmaya başlayacak ve her 20sn'de bir ekrana `Enterprisecoding cgroup senaryosundan merhaba!` yazacaktır. Aşağıdaki komutu çalıştırarak script'in bağlı olduğu process'in memory limitine bağlı olduğunu teyit edin;
 
-`ps -o cgroup $(pgrep -f test.sh | sed -n 2p) | grep memory:/enterprisecoding_demo`{{execute}}
+`ps -o cgroup $! | grep memory:/enterprisecoding_demo`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

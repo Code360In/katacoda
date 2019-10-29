@@ -4,6 +4,10 @@
 
 Yapılandırmaya sanal bir ethernet çifti ekleyerek başlayın. `v-eth1` olarak adlandıracağımız arayüz root network namespace'inde yer alacak. v-eth1'in çifti olan `v-peer1` ise `enterprisecodingNNS` network namespace'ine taşıyacaksınız. Bu sayede root network namespace'i ile enterprisecodingNNS arasında bir bağlantı sağlanacaktır.
 
+Aşağıdaki komutla `enterprisecodingNNS` adıyla bir network namespace'i oluşturun;
+
+`sudo ip netns add enterprisecodingNNS`{{execute}}
+
 Aşağıdaki komutla sanal ethernet çitfini oluşturun;
 
 `ip link add v-eth1 type veth peer name v-peer1`{{execute}}
