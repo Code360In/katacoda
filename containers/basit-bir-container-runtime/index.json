@@ -26,12 +26,12 @@
       "text": "finish.md"
     },
     "assets": { 
-      "host01": 
-      [ 
+      "host01": [ 
         {"file": "busybox.tar", "target": "/root/"} 
       ] 
     }
   },
+  "files": [],
   "environment": {
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"

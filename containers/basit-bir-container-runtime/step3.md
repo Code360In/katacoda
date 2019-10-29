@@ -2,7 +2,7 @@
 
 Aşağıdaki komutu kullanarak `enterprisecoding_demo` kontrol grubu limitlerinde `unshare` process'ini başlatın;
 
-`cgexec -g cpu,memory:enterprisecoding_demo unshare -uinpUrf --mount-proc sh -c "/bin/hostname enterprisecoding_demo && chroot $ROOTFS /bin/sh"`{{execute}}
+`cgexec -g cpu,memory:enterprisecoding_demo unshare -uinpUrf --mount-proc sh -c "/bin/hostname enterprisecoding && chroot $ROOTFS /bin/sh"`{{execute}}
 
 `unshare` busybox dizininde bilgisayar adı `enterprisecoding_demo` ve kök dizini ilk adımda oluşturduğumuz kök dizin olacak şekilde bir oturum başlatacaktır.
 
