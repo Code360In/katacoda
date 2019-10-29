@@ -18,8 +18,12 @@ Limit tanımlaması ardından artık bu kontrol grubu ile bir işle başlatmaya 
 
 `sudo cgexec -g memory:enterprisecoding_demo ~/test.sh &`{{execute}}
 
+Takip eden adımlarda kullanmak üzere arkaplanda çalışan betiğin process id'sini **TEST_PID** değişkeninde saklayın;
+
+`export TEST_PID=$!`{{execute}}
+
 Betik arkaplanda çalışmaya başlayacak ve her 20sn'de bir ekrana `Enterprisecoding cgroup senaryosundan merhaba!` yazacaktır. Aşağıdaki komutu çalıştırarak script'in bağlı olduğu process'in memory limitine bağlı olduğunu teyit edin;
 
-`ps -o cgroup $! | grep memory:/enterprisecoding_demo`{{execute}}
+`ps -o cgroup $TEST_PID | grep memory:/enterprisecoding_demo`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
