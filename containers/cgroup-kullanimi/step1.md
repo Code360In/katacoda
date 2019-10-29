@@ -16,18 +16,19 @@ CGroup sisteml kaynaklarının process'ler özelince limitlenmesi üzerine kurgu
 
 CGroup kullanımı için **libcgroup1** ve **cgroup-tools** paketlerinin sistemde kurulu olması gerekmektedir. Aşağıdaki komutu çalıştırarak bu paketleri kurunuz;
 
-`sudo apt install libcgroup1 cgroup-tools`{{execute}}
+`sudo apt install -y libcgroup1 cgroup-tools`{{execute}}
 
 Sistem limitlerini uygulamak üzere aşağıdaki komutla örnek bir shell betiği oluşturun;
 
 ```bash
-cat <<EOT >> ~/test.sh
+cat <<EOF >> ~/test.sh
 #!/bin/sh
 
 while [ 1 ]; do
         echo "Enterprisecoding cgroup senaryosundan merhaba!"
         sleep 60
 done
+EOF
 ```{{execute}}
 
 **test.sh** betiği sonsuz bir döngü içerisinde ekrana `Enterprisecoding cgroup senaryosundan merhaba!` mesajını yazacaktır. Aşağıdaki komutu çalıştırarak bu betiği çalıştırılabilir yapınız;
