@@ -1,4 +1,4 @@
-# Temizlik
+# Betiği Sonlandırma
 
 Çalışan betik aşağıdaki komutla sonlandırılır;
 
