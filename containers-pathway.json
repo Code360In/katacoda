@@ -34,6 +34,11 @@
         "description": "Linux işletim sistemi User namespace kullanımı"
       },
       {
+        "course_id": "cgroup-kullanimi",
+        "title": "CGroup Kullanımı",
+        "description": "Linux işletim sistemi CGroup kullanımı"
+      },
+      {
         "course_id": "linux-containers-kullanimi",
         "title": "Linux Containers (LXD/LXC) Kullanımı",
         "description": "Linux containers temel kullanımı"

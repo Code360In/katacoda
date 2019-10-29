@@ -1,0 +1,32 @@
+{
+  "title": "CGroup Kullanımı",
+  "description": "Linux işletim sistemi CGroup kullanımı",
+  "difficulty": "Beginner",
+  "time": "2 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Gerekli Paketlerin Kurulumu",
+        "text": "step1.md"
+      },
+      {
+        "title": "Process'e Limit Uygulanması",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
