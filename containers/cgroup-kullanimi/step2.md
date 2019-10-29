@@ -16,4 +16,8 @@ Aşağıdaki koutu kullanarak oluşturduğunuz kontrol grubuna hafıza 50MB'lık
 
 Limit tanımlaması ardından artık bu kontrol grubu ile bir işle başlatmaya hazırsınız. Aşağıdaki komutu çalıştırarak **test.sh**'ı **enterprisecoding_demo** kontrol grubu ile başlatın;
 
-`sudo cgexec -g memory:enterprisecoding_demo ~/test.sh`{{execute}}
+`sudo cgexec -g memory:enterprisecoding_demo ~/test.sh &`{{execute}}
+
+Betik arkaplanda çalışmaya başlayacak ve her 20sn'de bir ekrana `Enterprisecoding cgroup senaryosundan merhaba!` yazacaktır. Aşağıdaki komutu çalıştırarak script'in bağlı olduğu process'in memory limitine bağlı olduğunu teyit edin;
+
+`ps -o cgroup $$(pgrep -f test.sh | sed -n 2p) | grep memory:/enterprisecoding_demo`{{execute}}

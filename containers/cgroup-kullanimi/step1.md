@@ -26,7 +26,7 @@ cat <<EOF >> ~/test.sh
 
 while [ 1 ]; do
         echo "Enterprisecoding cgroup senaryosundan merhaba!"
-        sleep 60
+        sleep 20
 done
 EOF
 ```{{execute}}
