@@ -22,4 +22,8 @@ Sizin için home dizinine önceden indirilmiş bir BusyBox imajı bulunmaktadır
 
 `tar -xf busybox.tar -C $ROOTFS`{{execute}}
 
+Kök dizin içeriğine göz atın;
+
+`ls -al $ROOTFS`{{execute}}
+
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

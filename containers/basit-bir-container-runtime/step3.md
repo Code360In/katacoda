@@ -12,4 +12,22 @@ Açılan shell oturumu bize konteynar içerisinde komut çalıştırma imkanı s
 
 Konteynar adını aşağıdaki komutla kontrol edin;
 
-`/bin/hostname`{{execute}}
+`hostname`{{execute}}
+
+Çalışan process listesini alın;
+
+`ps aux`{{execute}}
+
+Ip bilgisini kontrol edin;
+
+`ip addr`{{execute}}
+
+loopback'in çalışmadığını göreceksiniz. Aşağıdaki komutu çalıştırarak container'dan çıkın;
+
+`exit`{{execute}}
+
+Aşağıdaki komutla host01'de olduğunuzu teyit edin;
+
+`hostname`{{execute}}
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

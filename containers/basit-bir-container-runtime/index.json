@@ -14,8 +14,12 @@
         "text": "step2.md"
       },
       {
-        "title": "Temizlik",
+        "title": "Container Çalıştırma",
         "text": "step3.md"
+      },
+      {
+        "title": "Container Network Yapılandırması",
+        "text": "step4.md"
       }
     ],
     "intro": {
