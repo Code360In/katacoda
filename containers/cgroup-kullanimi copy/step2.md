@@ -1,16 +1,16 @@
 # Process'e Limit Uygulanması
 
-Bir önceki adımda gerekli paketlerin kurulması ve örnek betiğimizi hazırlanması ardından artık kaynak kısıtı eklemeye hazırız. Aşağıdaki adımdalarda **test.sh** betiğine, **libcgroup** paketi ile gelen komutlar yardımıyla kaynak kısıtlaması uygulayacaksınız.
+Bir önceki adımda gerekli paketlerin kurulması ve örnek betiğimizi hazırlanması ardından artık kaynak kısıtı eklemeye hazırız. Aşağıdaki adımlarda **test.sh** betiğine, **libcgroup** paketi ile gelen komutlar yardımıyla kaynak kısıtlaması uygulayacaksınız.
 
 ## CGroup Oluşturma
 
-**libcgroup** paketi ile gelen `cgcreate ` komutu gerekli sysfs girdilerini oluşturarak bizim adımıza bir CGroup oluşturacaktır.
+**libcgroup** paketi ile gelen `cgcreate` komutu gerekli sysfs girdilerini oluşturarak bizim adımıza bir CGroup oluşturacaktır.
 
 Aşağıdaki komutu çalıştırarak `memory` alt sistemi için **enterprisecoding_demo** adıyla bir kontrol grubu oluşturun;
 
 `sudo cgcreate -g memory:enterprisecoding_demo`{{execute}}
 
-Aşağıdaki koutu kullanarak oluşturduğunuz kontrol grubuna hafıza 50MB'lık bir hafıza kullanım limiti tanımlayın;
+Aşağıdaki koutu kullanarak oluşturduğunuz kontrol grubuna 50MB'lık bir hafıza kullanım limiti tanımlayın;
 
 `echo 50000000 | sudo tee /sys/fs/cgroup/memory/enterprisecoding_demo/memory.limit_in_bytes`{{execute}}
 

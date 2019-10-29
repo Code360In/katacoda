@@ -39,6 +39,11 @@
         "description": "Linux işletim sistemi CGroup kullanımı"
       },
       {
+        "course_id": "basit-bir-container-runtime",
+        "title": "Basit Bir Container Runtime Oluşturma",
+        "description": "Linux işletim sistemi üzerinde basit bir konteynar çalışma-zamanı oluşturma"
+      },
+      {
         "course_id": "linux-containers-kullanimi",
         "title": "Linux Containers (LXD/LXC) Kullanımı",
         "description": "Linux containers temel kullanımı"

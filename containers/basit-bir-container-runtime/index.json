@@ -1,0 +1,42 @@
+{
+  "title": "Basit Bir Container Runtime Oluşturma",
+  "description": "Linux işletim sistemi üzerinde basit bir konteynar çalışma-zamanı oluşturma",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Gerekli Paketlerin Kurulumu",
+        "text": "step1.md"
+      },
+      {
+        "title": "Kontrol Grubu Oluşturulması",
+        "text": "step2.md"
+      },
+      {
+        "title": "Temizlik",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": { 
+      "host01": 
+      [ 
+        {"file": "busybox.tar", "target": "/root/"} 
+      ] 
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

@@ -1,6 +1,6 @@
 # Gerekli Paketlerin Kurulumu
 
-CGroup kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlanmıştır. Bu terminaller üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
+CGroup kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlanmıştır. Bu terminal üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
 
 ## CGroup
 
@@ -10,7 +10,7 @@ Senaryomuzda bir CGroup oluşturarak process'leri limitlemeyi deneyimleyeceksini
 
 ## Senaryo
 
-CGroup sisteml kaynaklarının process'ler özelince limitlenmesi üzerine kurgulanmıştır. Bu senaryoda, öncelikle gerekli paketleri kuracaksınız. Kurulum ardından bir cgroup oluşturacaksınız. Son olarak sistem kaynağı tüketen bir process'i oluşturduğunuz cgroup içerisinde başlatarak limitlerin uygulandığını gözlemleyeceksiniz.
+CGroup sistem kaynaklarının process'ler özelince limitlenmesi üzerine kurgulanmıştır. Bu senaryoda, öncelikle gerekli paketleri kuracaksınız. Kurulum ardından bir cgroup oluşturacaksınız. Son olarak sistem kaynağı tüketen bir process'i oluşturduğunuz cgroup içerisinde başlatarak limitlerin uygulandığını gözlemleyeceksiniz.
 
 ## Gerekli Paketlerin Kurulması
 
