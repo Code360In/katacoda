@@ -20,7 +20,7 @@ Limit tanımlaması ardından artık bu kontrol grubu ile bir işle başlatmaya 
 
 Takip eden adımlarda kullanmak üzere arkaplanda çalışan betiğin process id'sini **TEST_PID** değişkeninde saklayın;
 
-`export TEST_PID=$!`{{execute}}
+`export TEST_PID=$(pgrep -f test.sh | sed -n 2p)`{{execute}}
 
 Betik arkaplanda çalışmaya başlayacak ve her 20sn'de bir ekrana `Enterprisecoding cgroup senaryosundan merhaba!` yazacaktır. Aşağıdaki komutu çalıştırarak script'in bağlı olduğu process'in memory limitine bağlı olduğunu teyit edin;
 
