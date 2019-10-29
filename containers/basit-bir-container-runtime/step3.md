@@ -18,16 +18,8 @@ Konteynar adını aşağıdaki komutla kontrol edin;
 
 `ps aux`{{execute}}
 
-Ip bilgisini kontrol edin;
-
-`ip addr`{{execute}}
-
-loopback'in çalışmadığını göreceksiniz. Aşağıdaki komutu çalıştırarak container'dan çıkın;
-
 `exit`{{execute}}
 
 Aşağıdaki komutla host01'de olduğunuzu teyit edin;
 
 `hostname`{{execute}}
-
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
