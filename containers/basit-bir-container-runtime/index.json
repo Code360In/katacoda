@@ -23,12 +23,20 @@
       }
     ],
     "intro": {
-      "courseData": "background.sh",
       "text": "intro.md",
       "credits": "[Fatih Boy](http://enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+        "client": [],
+        "host01": [
+            {
+                "file": "busybox.tar",
+                "target": "/root/"
+            }
+        ]
     }
   },
   "environment": {
