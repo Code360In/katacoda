@@ -1,8 +1,4 @@
-# Kaynakları Silme
-
-Aşağıdaki komutu çalıştırarak konteynar shell oturumunu sonlandırın;
-
-`exit`{{execute}}
+# Oluşturulan Kaynakları Silme
 
 Aşağıdaki komutla oluşturduğunuz kontrol grubunu silin;
 
