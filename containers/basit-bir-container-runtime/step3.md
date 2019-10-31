@@ -4,7 +4,7 @@ Aşağıdaki komutu kullanarak `enterprisecoding_demo` kontrol grubu limitlerind
 
 `cgexec -g cpu,memory:enterprisecoding_demo unshare -uinpUrf --mount-proc sh -c "/bin/hostname enterprisecoding && chroot $ROOTFS /bin/sh"`{{execute}}
 
-`unshare` busybox dizininde bilgisayar adı `enterprisecoding_demo` ve kök dizini ilk adımda oluşturduğumuz kök dizin olacak şekilde bir oturum başlatacaktır.
+`unshare` komutu, bilgisayar adı `enterprisecoding` ve kök dizini ilk adımda oluşturduğumuz kök dizin olacak şekilde bağımsız bir oturum başlatacaktır.
 
 Açılan shell oturumu bize konteynar içerisinde komut çalıştırma imkanı sağlayacaktır. Aşağıdaki komutu çalıştırarak `merhaba dünya` diyebiliriz;
 

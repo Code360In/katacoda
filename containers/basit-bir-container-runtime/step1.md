@@ -12,15 +12,19 @@ CGroup kullanımı için **libcgroup1** ve **cgroup-tools** paketlerinin sistemd
 
 `sudo apt install -y libcgroup1 cgroup-tools`{{execute}}
 
-# Geçici Dizinde BusyBox imajı
+# Geçici Dizinde Alpine Linux imajı
+
+Aşağıdaki komutla Alpine linux minimal rootfs'i yerele indirin;
+
+`wget http://dl-cdn.alpinelinux.org/alpine/v3.10/releases/x86_64/alpine-minirootfs-3.10.1-x86_64.tar.gz`{{execute}}
 
 Aşağıdaki komutu çalıştırarak oluşturacağımız container için bir kök dizin oluşturun;
 
 `ROOTFS=$(mktemp -d)`{{execute}}
 
-Sizin için home dizinine önceden indirilmiş bir BusyBox imajı bulunmaktadır. Aşağıdaki komutu çalıştırarak bu imajı az önce oluşturduğunuz kök dizine ayıklayın;
+Aşağıdaki komutu çalıştırarak Alpine Linux imajını az önce oluşturduğunuz kök dizine ayıklayın;
 
-`tar -xf busybox.tar -C $ROOTFS`{{execute}}
+`tar -xzf alpine-minirootfs-3.10.1-x86_64.tar.gz -C $ROOTFS`{{execute}}
 
 Kök dizin içeriğine göz atın;
 
