@@ -30,7 +30,7 @@ Yeni politika Docker tarafından iletilen bilgilerde Privileged değerinin true 
 
 Aşağıdaki komut ile Alpine containerı içerisinde bir shell oturumu başlatın;
 
-`docker run --privileged alpine sh`{{execute}}
+`docker run hello-world`{{execute}}
 
 herhangi bir problem olmayacaktır. Öte yandan aşağıdaki komutu çalıştırmanıza Docker izin vermeyecektir;
 
