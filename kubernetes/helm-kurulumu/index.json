@@ -1,6 +1,6 @@
 {
-  "title": "Helm Kurulumu",
-  "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi kurulumu",
+  "title": "Helm v2 Kurulumu",
+  "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi sürüm 2 kurulumu",
   "difficulty": "Beginner",
   "time": "2 minutes",
   "details": {

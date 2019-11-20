@@ -15,8 +15,8 @@
       },
       {
         "course_id": "helm-kurulumu",
-        "title": "Helm Kurulumu",
-        "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi kurulumu"
+        "title": "Helm v2 Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi sürüm 2 kurulumu"
       },
       {
         "course_id": "metrics-server-kurulumu",

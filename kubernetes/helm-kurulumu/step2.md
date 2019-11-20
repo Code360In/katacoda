@@ -2,11 +2,11 @@
 
 Helm kurulumu için gerekli dosyalar github üzerinde yer almaktadır. Kurulum için kullanılacak güncel sürüm aşağıdaki komutla öğrenilebilir;
 
-`curl -s https://api.github.com/repos/helm/helm/releases/latest | grep tag_name | cut -d '"' -f 4`{{execute}}
+`curl --silent "https://api.github.com/repos/helm/helm/releases" | grep -Po '"tag_name": "\Kv2\..*?(?=")' | head -1`{{execute}}
 
 İlerleyen kurulum adımlarında bu değeri kullanmak üzere aşağıdaki komutla **HELM_RELEASE** değişkeninde saklayın;
 
-`export HELM_RELEASE=$(curl -s https://api.github.com/repos/helm/helm/releases/latest | grep tag_name | cut -d '"' -f 4)`{{execute}}
+`export HELM_RELEASE=$(curl --silent "https://api.github.com/repos/helm/helm/releases" | grep -Po '"tag_name": "\Kv2\..*?(?=")' | head -1)`{{execute}}
 
 ## Kurulum Dosyalarının İndirilmesi
 
