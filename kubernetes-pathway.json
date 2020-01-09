@@ -14,6 +14,11 @@
         "description": "2 Node üzerinde Kubernetes Cluster kurulumu"
       },
       {
+        "course_id": "workspace",
+        "title": "Kubernetes Çalışma Alanı",
+        "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
+      },
+      {
         "course_id": "helm-kurulumu",
         "title": "Helm v2 Kurulumu",
         "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi sürüm 2 kurulumu"

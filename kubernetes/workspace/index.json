@@ -1,0 +1,18 @@
+{
+  "title": "Kubernetes Çalışma Alanı",
+  "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı",
+  "difficulty": "Beginner",
+  "time": "60 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}
