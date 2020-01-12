@@ -1,0 +1,23 @@
+{
+  "title": "Kubernetes Hands-On",
+  "description": "Kubernetes Cluster'ı üzerinde hands-on deneyim",
+  "difficulty": "Beginner",
+  "time": "60 minutes",
+  "details": {
+    "steps": [],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "hidefinish": true,
+    "showdashboard": true,
+    "dashboards": [{"name": "Sınav Portalı", "port": 30006}]
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}

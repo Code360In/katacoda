@@ -32,6 +32,11 @@
         "course_id": "docker-registry-kurulumu",
         "title": "Docker Registry Kurulumu",
         "description": "Kubernetes Cluster'ı üzerinde Docker Registry kurulumu"
+      },
+      {
+        "course_id": "kubernetes-handson",
+        "title": "Kubernetes Hands-On Eğitimi",
+        "description": "Kubernetes Cluster'ı üzerinde senaryo ve sorulara cevap vererek handson deneyimi kazandırır"
       }
     ]
   }
