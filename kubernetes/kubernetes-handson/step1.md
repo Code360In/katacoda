@@ -8,4 +8,8 @@ Yan bölümde yer alan terminal segmesi yardımıyla 2 node'dan oluşan Kubernet
 
 Sınav portalında yer alan her bir soruyu cevapladıktan sonra cevabınızı 'Cevabı Onayla' butonuna basarak onaylayabilirsiniz. Onaylanan bir soruya verilmiş cevap daha sonradan değiştirilememektedir.
 
+# Sınav Portalı
+
+Yan tarafta yer alan 'Sınav Portalı' segmesine ek olarak aşağıdaki adresten de sınav portalına erişebilirsiniz.
+
 https://[[HOST_SUBDOMAIN]]-30006-[[KATACODA_HOST]].environments.katacoda.com
