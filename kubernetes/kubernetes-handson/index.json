@@ -4,7 +4,12 @@
   "difficulty": "Beginner",
   "time": "60 minutes",
   "details": {
-    "steps": [],
+    "steps": [
+      {
+        "title": "Merhaba",
+        "text": "step1.md"
+      }
+    ],
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",
@@ -12,7 +17,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
     "hidefinish": true,
     "showdashboard": true,
     "dashboards": [{"name": "Sınav Portalı", "port": 30006}]

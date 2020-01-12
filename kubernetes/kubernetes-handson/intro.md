@@ -3,7 +3,6 @@
 
 Kubernetes Cluster'ı üzerinde hands-on deneyim senaryosuna hoş geldiniz.
 
-
 ## Senaryo
 
 Bu eğitimde yan bölümde yer alan link üzerinden açılan sınav portalı üzerinde sizlere Kubernetes Cluster'ı üzerinde aksiyon alabileceğiniz sorular sorulmaktadır. Sınav portalında yer alan her bir soruyu cevapladıktan sonra cevabınızı 'Cevabı Onayla' butonuna basarak onaylayabilirsiniz. Onaylanan bir soruya verilmiş cevap daha sonradan değiştirilememektedir.
