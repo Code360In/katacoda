@@ -14,7 +14,7 @@
         "description": "2 Node üzerinde Kubernetes Cluster kurulumu"
       },
       {
-        "course_id": "workspace",
+        "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
       },

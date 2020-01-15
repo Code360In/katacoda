@@ -4,6 +4,12 @@
   "difficulty": "Beginner",
   "time": "60 minutes",
   "details": {
+    "steps": [
+    {
+      "title": "Merhaba",
+      "text": "step1.md"
+    }
+  ],
     "intro": {
       "text": "intro.md",
       "credits": "[Fatih Boy](http://enterprisecoding.com)"
