@@ -84,7 +84,7 @@ spec:
     spec:
       serviceAccountName: api-service-account
       containers:
-      - image: fatihboy/kubernetes-handson
+      - image: enterprisecodingcom/kubernetes-handson
         name: kubernetes-handson
         ports:
         - containerPort: 80
