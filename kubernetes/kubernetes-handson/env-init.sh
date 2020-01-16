@@ -67,7 +67,6 @@ subjects:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: kubernetes-handson
   name: kubernetes-handson
@@ -104,6 +103,35 @@ spec:
   selector:
     app: kubernetes-handson
   type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: nfs-server
+  name: nfs-server
+  namespace: handson
+spec:
+  containers:
+  - image: enterprisecodingcom/nfs-server
+    name: nfs-server
+    securityContext:
+      privileged: true
+    env:
+    - name: SHARED_DIRECTORY
+      value: /exports
+    args:
+    - /exports/data-0001
+    - /exports/data-0002
+    volumeMounts:
+    - mountPath: /exports
+      name: exports-volume
+  restartPolicy: Always
+  volumes:
+  - name: exports-volume
+    hostPath:
+      path: /nfs-exports
+      type: DirectoryOrCreate
 EOF
 
 while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "." && sleep 1; done
