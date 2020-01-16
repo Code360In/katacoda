@@ -105,33 +105,185 @@ spec:
   type: NodePort
 ---
 apiVersion: v1
-kind: Pod
+kind: ServiceAccount
 metadata:
+  name: nfs-provisioner
+  namespace: handson
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nfs-provisioner
+  namespace: handson
   labels:
-    app: nfs-server
-  name: nfs-server
+    app: nfs-provisioner
+spec:
+  ports:
+    - name: nfs
+      port: 2049
+    - name: mountd
+      port: 20048
+    - name: rpcbind
+      port: 111
+    - name: rpcbind-udp
+      port: 111
+      protocol: UDP
+  selector:
+    app: nfs-provisioner
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nfs-provisioner
   namespace: handson
 spec:
-  containers:
-  - image: enterprisecodingcom/nfs-server
-    name: nfs-server
-    securityContext:
-      privileged: true
-    env:
-    - name: SHARED_DIRECTORY
-      value: /exports
-    args:
-    - /exports/data-0001
-    - /exports/data-0002
-    volumeMounts:
-    - mountPath: /exports
-      name: exports-volume
-  restartPolicy: Always
-  volumes:
-  - name: exports-volume
-    hostPath:
-      path: /nfs-exports
-      type: DirectoryOrCreate
+  selector:
+    matchLabels:
+      app: nfs-provisioner
+  replicas: 1
+  strategy:
+    type: Recreate 
+  template:
+    metadata:
+      labels:
+        app: nfs-provisioner
+    spec:
+      serviceAccount: nfs-provisioner
+      containers:
+        - name: nfs-provisioner
+          image: quay.io/kubernetes_incubator/nfs-provisioner:latest
+          ports:
+            - name: nfs
+              containerPort: 2049
+            - name: nfs-udp
+              containerPort: 2049
+              protocol: UDP
+            - name: nlockmgr
+              containerPort: 32803
+            - name: nlockmgr-udp
+              containerPort: 32803
+              protocol: UDP
+            - name: mountd
+              containerPort: 20048
+            - name: mountd-udp
+              containerPort: 20048
+              protocol: UDP
+            - name: rquotad
+              containerPort: 875
+            - name: rquotad-udp
+              containerPort: 875
+              protocol: UDP
+            - name: rpcbind
+              containerPort: 111
+            - name: rpcbind-udp
+              containerPort: 111
+              protocol: UDP
+            - name: statd
+              containerPort: 662
+            - name: statd-udp
+              containerPort: 662
+              protocol: UDP
+          securityContext:
+            capabilities:
+              add:
+                - DAC_READ_SEARCH
+                - SYS_RESOURCE
+          args:
+            - "-provisioner=enterprisecoding.com/nfs"
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: SERVICE_NAME
+              value: nfs-provisioner
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          imagePullPolicy: "IfNotPresent"
+          volumeMounts:
+            - name: export-volume
+              mountPath: /export
+      volumes:
+        - name: export-volume
+          hostPath:
+            path: /nfs-provisioner
+            type: DirectoryOrCreate
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nfs-provisioner-runner
+  namespace: handson
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch", "create", "delete"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["create", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["services", "endpoints"]
+    verbs: ["get"]
+  - apiGroups: ["extensions"]
+    resources: ["podsecuritypolicies"]
+    resourceNames: ["nfs-provisioner"]
+    verbs: ["use"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: run-nfs-provisioner
+  namespace: handson
+subjects:
+  - kind: ServiceAccount
+    name: nfs-provisioner
+    namespace: handson
+roleRef:
+  kind: ClusterRole
+  name: nfs-provisioner-runner
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-provisioner
+  namespace: handson
+rules:
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-provisioner
+  namespace: handson
+subjects:
+  - kind: ServiceAccount
+    name: nfs-provisioner
+    namespace: handson
+roleRef:
+  kind: Role
+  name: leader-locking-nfs-provisioner
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: enterprisecoding-nfs
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: enterprisecoding.com/nfs
+mountOptions:
+  - vers=4.1
 EOF
 
 while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "." && sleep 1; done
