@@ -12,6 +12,7 @@ cat << "EOF"
                                                |_|                                            |___/
 ====================================================================================================================
 
-Handson ortamı kullanıma hazırlanıyor
+Kubernetes handson ortamı kullanıma hazırlanıyor lütfen bekleyiniz
 EOF
 while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True True" ]]; do printf "." && sleep 1; done
+echo "Kubernetes handson ortamı kullanıma hazır..."
