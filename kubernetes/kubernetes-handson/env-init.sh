@@ -285,5 +285,3 @@ provisioner: enterprisecoding.com/nfs
 mountOptions:
   - vers=4.1
 EOF
-
-while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "." && sleep 1; done
