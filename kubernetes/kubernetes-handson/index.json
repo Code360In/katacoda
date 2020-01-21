@@ -3,18 +3,22 @@
   "description": "Kubernetes Cluster'ı üzerinde hands-on deneyim",
   "difficulty": "Beginner",
   "time": "60 minutes",
-  "details": {
-    "steps": [
-      {
-        "title": "Merhaba",
-        "text": "step1.md"
-      }
-    ],
+  "details": {    
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",
       "code": "foreground.sh",
       "credits": "[Fatih Boy](http://enterprisecoding.com)"
+    },"steps": [
+      {
+        "title": "Merhaba",
+        "text": "step1.md"
+      }
+    ],
+    "assets": {
+        "host01": [
+            {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
     }
   },
   "environment": {
