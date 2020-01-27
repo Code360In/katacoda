@@ -83,7 +83,7 @@ spec:
     spec:
       serviceAccountName: api-service-account
       containers:
-      - image: enterprisecodingcom/kubernetes-handson
+      - image: quay.io/enterprisecoding/k8s-handson-exam
         name: kubernetes-handson
         ports:
         - containerPort: 80
