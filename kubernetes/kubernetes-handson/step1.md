@@ -8,7 +8,7 @@ Yan bölümde yer alan terminal segmesi yardımıyla 2 node'dan oluşan Kubernet
 
 Kurumlara göre özelleştirilmiş olan Kubernetes Hands-On sınavını deneyimlemek için '*Sınav Kodu*' olarak aşağıdaki değeri kullanabilirsiniz;
 
-> **DEMO**
+> **Demo**
 
 ## Dikkat
 
