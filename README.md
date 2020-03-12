@@ -1,8 +1,8 @@
 # Etkileşimli Katacoda Senaryoları
 
-[![](http://shields.katacoda.com/katacoda/fatihboy/count.svg)](https://www.katacoda.com/fatihboy "Fatih Boy'un katacoda denaryoları")
+[![](http://shields.katacoda.com/katacoda/fatihboy/count.svg)](https://www.katacoda.com/fatihboy "Enterprisecoding'in katacoda senaryoları")
 
-https://www.katacoda.com/fatihboy adresini ziyaret ederek etkileşimli senaryoları deneyimleyebilirsiniz.
+https://www.enterprisecoding.com/egitimler/etkilesimli-egitimler/ adresini ziyaret ederek etkileşimli senaryoları deneyimleyebilirsiniz.
 
 ## İletişim
 
