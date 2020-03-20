@@ -24,6 +24,11 @@
         "description": "Linux işletim sistemi PID namespace kullanımı"
       },
       {
+        "course_id": "mount-namespace-kullanimi",
+        "title": "Mount Namespace Kullanımı",
+        "description": "Linux işletim sistemi Mount namespace kullanımı"
+      },
+      {
         "course_id": "uts-namespace-kullanimi",
         "title": "UTS Namespace Kullanımı",
         "description": "Linux işletim sistemi UNIX Time-sharing System (UTS) namespace kullanımı"
