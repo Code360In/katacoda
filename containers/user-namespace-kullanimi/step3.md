@@ -22,7 +22,7 @@ id'nizi teyit edin;
 
 `id -u`{{execute}}
 
-Her ne kadar root kullanıcısı olarak gözüksekte, gerçekte bu __sanal__ root kullanıcısı hala önceki adımda oluşturduğumuz ve bu oturumu başlattığımız kullanıyla eşleştirilmekte. Bunu process'in uid_map dosyasında görebilirsiniz;
+Her ne kadar root kullanıcısı olarak gözüksekte, gerçekte bu __sanal__ root kullanıcısı hala önceki adımda oluşturduğumuz ve bu oturumu başlattığımız kullanıyla eşleştirilmekte. unshare komutuna geçtiğimiz __map-root-user__ parametresi process içerisindeki root kullanıcısının process'i başlatan kullanıcı haklarına sahip olmasını istediğimizi belirtmektedir. Bunu process'in uid_map dosyasında görebilirsiniz;
 
 `cat /proc/self/uid_map`{{execute}}
 
