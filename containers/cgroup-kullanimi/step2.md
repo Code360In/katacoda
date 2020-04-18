@@ -10,7 +10,7 @@ Aşağıdaki komutu çalıştırarak `cpu` alt sistemi için **enterprisecoding_
 
 `sudo cgcreate -g cpu:enterprisecoding_demo`{{execute}}
 
-Aşağıdaki komutları kullanarak oluşturduğunuz kontrol grubuna %50'lik bir cpu kullanım limiti tanımlayın;
+Aşağıdaki komutları kullanarak oluşturduğunuz kontrol grubuna 0.2 saniyelik bir cpu kullanım limiti tanımlayın;
 
 `echo 200000 | sudo tee /sys/fs/cgroup/cpu/enterprisecoding_demo/cpu.cfs_quota_us`{{execute}}
 
