@@ -10,7 +10,7 @@ Senaryomuzda bir CGroup oluşturarak process'leri limitlemeyi deneyimleyeceksini
 
 ## Senaryo
 
-CGroup sistem kaynaklarının process'ler özelince limitlenmesi üzerine kurgulanmıştır. Bu senaryoda, öncelikle gerekli paketleri kuracaksınız. Kurulum ardından bir cgroup oluşturacaksınız. Son olarak sistem kaynağı tüketen bir process'i oluşturduğunuz cgroup içerisinde başlatarak limitlerin uygulandığını gözlemleyeceksiniz.
+CGroup sistem kaynaklarının process'ler özelinde limitlenmesi üzerine kurgulanmıştır. Bu senaryoda, öncelikle gerekli paketleri kuracaksınız. Kurulum ardından bir cgroup oluşturacaksınız. Son olarak; sistem kaynağı tüketen bir process'i oluşturduğunuz cgroup içerisinde başlatarak limitlerin uygulandığını gözlemleyeceksiniz.
 
 ## Gerekli Paketlerin Kurulması
 
@@ -18,21 +18,8 @@ CGroup kullanımı için **libcgroup1** ve **cgroup-tools** paketlerinin sistemd
 
 `sudo apt install -y libcgroup1 cgroup-tools`{{execute}}
 
-Sistem limitlerini uygulamak üzere aşağıdaki komutla örnek bir shell betiği oluşturun;
+CPU kaynağını zorlayarak cgroup ile limit'lerin uygulandığını görebilmek adına aşağıdaki komut yardımıyla **stress** uygulamasını kurunuz;
 
-```bash
-cat <<EOF >> ~/test.sh
-#!/bin/sh
-
-while [ 1 ]; do
-        echo "Enterprisecoding cgroup senaryosundan merhaba!"
-        sleep 20
-done
-EOF
-```{{execute}}
-
-**test.sh** betiği sonsuz bir döngü içerisinde ekrana `Enterprisecoding cgroup senaryosundan merhaba!` mesajını yazacaktır. Aşağıdaki komutu çalıştırarak bu betiği çalıştırılabilir yapınız;
-
-`chmod +x ~/test.sh`{{execute}}
+`sudo apt install -y stress`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
