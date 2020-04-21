@@ -16,7 +16,7 @@ CGroup kullanımı için **libcgroup1** ve **cgroup-tools** paketlerinin sistemd
 
 Aşağıdaki komutla Alpine linux minimal rootfs'i yerele indirin;
 
-`wget http://dl-cdn.alpinelinux.org/alpine/v3.10/releases/x86_64/alpine-minirootfs-3.10.1-x86_64.tar.gz`{{execute}}
+`wget http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64/alpine-minirootfs-3.11.5-x86_64.tar.gz`{{execute}}
 
 Aşağıdaki komutu çalıştırarak oluşturacağımız container için bir kök dizin oluşturun;
 
@@ -24,7 +24,7 @@ Aşağıdaki komutu çalıştırarak oluşturacağımız container için bir kö
 
 Aşağıdaki komutu çalıştırarak Alpine Linux imajını az önce oluşturduğunuz kök dizine ayıklayın;
 
-`tar -xzf alpine-minirootfs-3.10.1-x86_64.tar.gz -C $ROOTFS`{{execute}}
+`tar -xzf alpine-minirootfs-3.11.5-x86_64.tar.gz -C $ROOTFS`{{execute}}
 
 Kök dizin içeriğine göz atın;
 
