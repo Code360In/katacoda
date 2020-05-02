@@ -14,4 +14,4 @@ Senaryoya başlamak için lütfen aşağıda yer alan **Start Scenario** butonun
 
 ## İletişim
 
-Container ve Kubernetes ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Container ve Kubernetes ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

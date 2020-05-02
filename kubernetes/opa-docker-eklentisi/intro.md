@@ -15,4 +15,4 @@ Senaryoya başlamak için lütfen aşağıda yer alan **Start Scenario** butonun
 
 ## İletişim
 
-Docker ve Open Policy Agent ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Docker ve Open Policy Agent ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

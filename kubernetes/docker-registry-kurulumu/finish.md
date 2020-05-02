@@ -2,4 +2,4 @@ Bu adımlar ardından artık özel Docker Registry'niz kullanılabilir durumdad�
 
 Enterprisecoding üzerinde paylaştığım [diğer Kubernetes makalelerini](http://www.enterprisecoding.com/post/tag/kubernetes) takip edebilirsiniz.
 
-Kubernetes veya Docker Registry ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Kubernetes veya Docker Registry ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

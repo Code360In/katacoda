@@ -2,4 +2,4 @@ Bu adımlar ardından artık Docker Open Policy Agent eklentiniz kullanılabilir
 
 Enterprisecoding üzerinde paylaştığım [diğer makaleleri](http://www.enterprisecoding.com/) takip edebilirsiniz.
 
-Docker ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Docker ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

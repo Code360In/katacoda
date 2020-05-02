@@ -17,4 +17,4 @@ Sınava başlamak için lütfen aşağıda yer alan **Start Scenario** butonuna 
 
 ## İletişim
 
-Kubernetes veya Metrics Server ile ilgili sorularınız için bana Enterprisecoding web sitesinde yer alan [kontak](http://www.enterprisecoding.com/contact) sayfasından ulaşabilirsiniz.
+Kubernetes veya Metrics Server ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.
