@@ -1,4 +1,4 @@
-# LXC Kurulumu
+# Linux Containers Kurulumu
 
 LXC (Linux Containers) kurulum ve kullanımı için sağ bölümde yer alan ubuntu ortamı hazırlanmıştır. Bu terminaller üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
 
@@ -8,9 +8,9 @@ LXC (Linux Containers) kurulum ve kullanımı için sağ bölümde yer alan ubun
 
 Takip eden adımlarda, Ubuntu üzerinde LXC kurulumunu yaparak üzerinden bir linux sistemi (__container__) başlatacaksınız.
 
-## LXC ve İstemci Kurulumu
+## LXD ve İstemci Kurulumu
 
-LXC ve LXC istemcisi kurulumu için aşağıdaki komutu çalıştırın;
+LXD ve LXD istemcisi kurulumu için aşağıdaki komutu çalıştırın;
 
 `sudo apt install -y lxd lxd-client`{{execute}}
 
