@@ -7,6 +7,10 @@ Enterprisecoding Chroot kullanım senaryosuna hoş geldiniz.
 
 Bu senaryoda, container teknolojisinin temelleri olarak kabul edilen ve 1979 yılında geliştirilen linux chroot sistem çağrısı ve bunu kullanan chroot programının kullanımını deneyimleyebilirsiniz.
 
+## Eğitim
+
+Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için Udemy üzerinde yer alan [Uygulamalı Konteyner Temelleri ve Docker](https://www.udemy.com/course/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
+
 ## Yardım
 
 Docker'ın, Kubernetes'in ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için [Enterprisecoding makalelerini](http://www.enterprisecoding.com) takip edebilirsiniz.

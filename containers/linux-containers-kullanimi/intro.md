@@ -7,6 +7,10 @@ Enterprisecoding Linux Containers kullanım senaryosuna hoş geldiniz.
 
 Bu senaryoda, Linux çekirdeği üzerinde işletim sistemi seviyesinde çalışan ve aynı anda birden fazla izole sistem (kontayner) çalıştırılabilmesine olanak sunan Linux Containers kurulum ve kullanımını deneyimleyebilirsiniz.
 
+## Eğitim
+
+Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için Udemy üzerinde yer alan [Uygulamalı Konteyner Temelleri ve Docker](https://www.udemy.com/course/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
+
 ## Yardım
 
 Docker'ın, Kubernetes'in ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için [Enterprisecoding makalelerini](http://www.enterprisecoding.com) takip edebilirsiniz.
