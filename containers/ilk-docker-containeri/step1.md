@@ -2,7 +2,7 @@
 
 Docker, tüm konteyner işlemlerinin komut satırı arayüzü (CLI) üzerinden yapılabilmesine imkan vermektedir. İhtiyaç duyacağınız komutlar docker uygulamasına vereceğiniz parametrelerle kullanılabilir.
 
-Varsayılanda kurulumda Docker koumutlarının çalışması için `sudo` ile birlikte kullanılması gerekmektedir. Sudo komutuna ihtiyaç duymadan Docker komutlarını kullanabilmek için aşağıdaki komutla kullanıcınızın docker grubuna eklenmesi gereklidir;
+Varsayılan kurulumda Docker koumutlarının çalışması için `sudo` ile birlikte kullanılması gerekmektedir. Sudo komutuna ihtiyaç duymadan Docker komutlarını kullanabilmek için aşağıdaki komutla kullanıcınızın docker grubuna eklenmesi gereklidir;
 
 `sudo usermod -aG docker ${USER}`
 

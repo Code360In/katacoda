@@ -1,11 +1,11 @@
 
-# Docker CLI Kullanımı
+# İlk Docker Konteyner'ı
 
-Enterprisecoding Docker CLI kullanımı senaryosuna hoş geldiniz.
+Enterprisecoding Docker konteyner kullanımı senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, Docker komut satırı kullanımı deneyimleyebilirsiniz.
+Bu senaryoda, Docker komut satırı kullanımı ile ilk docker konteyner'ınızı başlatmayı deneyimleyebilirsiniz.
 
 ## Eğitim
 

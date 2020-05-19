@@ -59,9 +59,9 @@
         "description": "Ubuntu üzerinde Docker kurulumu"
       },
       {
-        "course_id": "docker-cli",
-        "title": "Docker CLI",
-        "description": "Docker komut satırı arayüzü (CLI)"
+        "course_id": "ilk-docker-containeri",
+        "title": "İlk Docker Konteyner'ı",
+        "description": "İlk Docker konteyner'ınızı ayağa kaldırın"
       },
       {
         "course_id": "docker-imaj-kullanimi",

@@ -1,13 +1,21 @@
 {
-  "title": "Docker CLI Kullanımı",
-  "description": "Docker komut satırı arayüzü kullanımı",
+  "title": "İlk Docker Konteyner'ı",
+  "description": "İlk Docker konteyner'ınızı ayağa kaldırın",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Kullanılabilecek Komut Listesi",
+        "title": "Adım 1 - Docker CLI",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - İmaj Yönetimi",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Konteyner Başlatma",
+        "text": "step3.md"
       }
     ],
     "intro": {
