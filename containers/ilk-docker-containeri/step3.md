@@ -21,7 +21,7 @@ Pek çok kullanım senaryosunda başlatılan konteyner'ın arkaplanda çalışı
 
 Aşağıdaki komut çalıştırın;
 
-`docker run --name redis-konteyner -d redis`{{execute}}
+`docker run -d --name redis-konteyner redis`{{execute}}
 
 Öncekinden farklı olarak bu komutta kullandığımız `-d` parametresi sayesinde konteynar'ımız arkaplanda başlatılarak çalışan konteyner id'si çıktıda belirtilecektir.
 
