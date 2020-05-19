@@ -1,6 +1,6 @@
 # Sudo'suz Docker
 
-Varsayılanda Docker koumutlarının çalışması için sudo ile bielikte kullanılması gerekmektedir. Sudo komutuna ihtiyaç duymadan Docker komutlarını kullanabilmek için aşağıdaki komutla kullanıcınızı docker grubuna ekleyin;
+Varsayılanda Docker koumutlarının çalışması için sudo ile birlikte kullanılması gerekmektedir. Sudo komutuna ihtiyaç duymadan Docker komutlarını kullanabilmek için aşağıdaki komutla kullanıcınızı docker grubuna ekleyin;
 
 `sudo usermod -aG docker ${USER}`{{execute}}
 
