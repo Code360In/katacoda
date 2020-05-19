@@ -10,7 +10,7 @@ Yüklü olan bu imajlardan kullanılmayanlar disk alanında yer açabilmek adın
 
 örneğin;
 
-`docker images rm ubuntu`{{execute}}
+`docker image rm ubuntu`{{execute}}
 
 # İmaj Arama ve Yerele İndirme
 
@@ -39,7 +39,11 @@ Aşağıdaki komutu çalıştırın;
 
 `docker pull alpine:3.7`{{execute}}
 
-Bu komut Alpine linux konteyner imajının 3.7 etiketisine sahip halini yerele indirecektir. Bu etiket Alpine linux'ün 3.7 vrsiyonuna denk geldiği için yerelinizde artık 3.7 sürümüne ait bit konteyner imajı yer alacaktır.
+Bu komut Alpine linux konteyner imajının 3.7 etiketisine sahip halini yerele indirecektir. Bu etiket Alpine linux'ün 3.7 vresiyonuna denk geldiği için yerelinizde artık 3.7 sürümüne ait bit konteyner imajı yer alacaktır.
+
+Alpine linux 3.11.6 sürümüne ait digest değeri `sha256:9a839e63dad54c3a6d1834e29692c8492d93f90c59c978c1ed79109ea4fb9a54`'dir. Bu değeri kullanarak imajı aşağıda komutu kullanarak yerele indiriniz;
+
+`docker pull alpine@sha256:9a839e63dad54c3a6d1834e29692c8492d93f90c59c978c1ed79109ea4fb9a54`{{execute}}
 
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

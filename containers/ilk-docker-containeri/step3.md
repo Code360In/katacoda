@@ -12,6 +12,8 @@ Gördüğünüz gibi yerelde kurulu olmamasına rağmen redis başlatıldı ve k
 
 <kbd>Ctrl</kbd>+<kbd>C</kbd> ile redis uygulamasını ve dolayısıyla da konteyner'ı sonlandırabilirsiniz.
 
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
 
 ## Konteyner'ı Hizmet Olarak Başlatma
 
@@ -19,7 +21,7 @@ Pek çok kullanım senaryosunda başlatılan konteyner'ın arkaplanda çalışı
 
 Aşağıdaki komut çalıştırın;
 
-`docker run -d redis`{{execute}}
+`docker run --name redis-konteyner -d redis`{{execute}}
 
 Öncekinden farklı olarak bu komutta kullandığımız `-d` parametresi sayesinde konteynar'ımız arkaplanda başlatılarak çalışan konteyner id'si çıktıda belirtilecektir.
 
