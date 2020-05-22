@@ -59,6 +59,11 @@
         "description": "Ubuntu üzerinde Docker kurulumu"
       },
       {
+        "course_id": "docker-kurulumu-script",
+        "title": "Docker Kurulumu-Kolay Yol",
+        "description": "Ubuntu üzerinde kolay şekilde Docker kurulumu"
+      },
+      {
         "course_id": "ilk-docker-containeri",
         "title": "İlk Docker Konteyner'ı",
         "description": "İlk Docker konteyner'ınızı ayağa kaldırın"
