@@ -10,7 +10,7 @@ Docker kurulum adımlarını kolaylaştırmak için bir kurulum betiği hazırla
 
 Bu komut Docker kurulum script'ini yerele indirerek shell oturumunda indirilen scripti çalıştırarak kurulumu gerçekleştirecektir.
 
-## Docker Deposunun Eklenmesi
+## Sudo'suz Docker
 
 Kurulum ardından varsayılanda Docker komutları `sudo` ile çalışmaktadır. Bunun yerine komutları non-root olarak çalıştırmak isterseniz aşağıdaki şekilde kullanıcısını docker grubuna dahil etmelisiniz.
 

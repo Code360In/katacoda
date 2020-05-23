@@ -13,5 +13,3 @@ Konteyner'ı yeni yapılandırma ile başlatmak için öncelikle mevcutta çalı
 Aynı konteyner'ı bu defa **6379** ile dışarı açarak başlatın;
 
 `docker run -d --name redis-konteyner -p 6379:6379 redis`{{execute}}
-
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
