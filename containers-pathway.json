@@ -69,6 +69,11 @@
         "description": "İlk Docker konteyner'ınızı ayağa kaldırın"
       },
       {
+        "course_id": "docker-interaktif-imaj-olusturma",
+        "title": "Docker Interaktif Imaj Oluşturma",
+        "description": "Interaktif olarak Docker imajı oluşturma"
+      },
+      {
         "course_id": "docker-imaj-kullanimi",
         "title": "Docker Imaj Kullanımı",
         "description": "Docker Imaj kullanımı ve yapısı"
