@@ -14,12 +14,22 @@ Senaryomuzda, nginx dağıtımını baz olarak üzerine kendi dosyalarımızı e
 
 `docker pull nginx:latest`{{execute}}
 
+Yerelde yer alan imajları aşağıdaki komutla listeleyin;
+
+`docker images`{{execute}}
+
+Gelen listede **nginx:latest** imajının da yer aldığını göreceksiniz.
+
 ## Konteyner'ı Başlatma
 
 Temel olarak kullanacağınız ata Nginx imajını yerele indirdikten sonra sırada bu imajı kullanarak yeni bir konteyner başlatmakta. Aşağıdaki komutu çalıştırın;
 
+`docker container run -d --name nginx_base_konteyner -p 8000:80 nginx:latest`{{execute}}
+
+Bu komut **nginx_base_konteyner** adıyla atıfta bulunabileceğiniz bir konteyner ayağa kaldırarak 80 portunu ana makinede 8000 portu üzerinden erişime açacaktır. Konteyner başladıktan sonra aşağıdaki komut çalıştırın;
+
 `docker container exec -it nginx_base_konteyner /bin/bash`{{execute}}
 
-Bu komut **nginx_base_konteyner** adıyla atıfta bulunabileceğiniz bir konteyner ayağa kaldırarak içerisinde bir bash oturumu başlatttı. Bu bash oturumu yeni konteyner imajı için interaktif olarak gerekli komutları çalıştırmanıza olanak verecek.
+Bu komut **nginx_base_konteyner** içerisinde bir bash oturumu başlatttı. Bu bash oturumu yeni konteyner imajı için interaktif olarak gerekli komutları çalıştırmanıza olanak verecek.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

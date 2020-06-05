@@ -2,14 +2,18 @@
 
 Ata imajı özelleştirme için başlattıktan sonra elinizde çalışan bir Nginx konteyner'ı bulunuyor. Aşağıdaki komutu çalıştırın;
 
-`echo "Enterprisecoding Nginx docker imajından merhaba!" > /usr/share/nginx/html/index.html`{{execute}}
+`echo "Enterprisecoding Nginx docker imajindan merhaba!" > /usr/share/nginx/html/index.html`{{execute}}
 
 Bu komut ile ata konteyner imajı içerisinde **/usr/share/nginx/html/index.html** adresinde yeni bir dosya oluşturdunuz. Aşağıdaki linke tıklayarak bu dosyanın Nginx tarafından sunulduğunu görebilirsiniz;
 
-https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
 
 Aşağıdaki komutla ata konteynerı shell oturumunu sonlandırın;
 
 `exit`{{execute}}
+
+Aşağıdaki komutu çalıştırarak konteyner'ı durdurun;
+
+`docker stop nginx_base_konteyner`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
