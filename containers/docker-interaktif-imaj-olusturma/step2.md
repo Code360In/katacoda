@@ -4,9 +4,7 @@ Ata imajı özelleştirme için başlattıktan sonra elinizde çalışan bir Ngi
 
 `echo "Enterprisecoding Nginx docker imajindan merhaba!" > /usr/share/nginx/html/index.html`{{execute}}
 
-Bu komut ile ata konteyner imajı içerisinde **/usr/share/nginx/html/index.html** adresinde yeni bir dosya oluşturdunuz. Aşağıdaki linke tıklayarak bu dosyanın Nginx tarafından sunulduğunu görebilirsiniz;
-
-https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
+Bu komut ile ata konteyner imajı içerisinde **/usr/share/nginx/html/index.html** adresinde yeni bir dosya oluşturdunuz. **8000 Portu** tabını açarak bu dosyanın Nginx tarafından sunulduğunu görebilirsiniz.
 
 Aşağıdaki komutla ata konteynerı shell oturumunu sonlandırın;
 

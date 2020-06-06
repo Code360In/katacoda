@@ -28,7 +28,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [{"name": "8000 Portu", "port": 8000}],
+    "uilayout": "terminal-iframe",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {

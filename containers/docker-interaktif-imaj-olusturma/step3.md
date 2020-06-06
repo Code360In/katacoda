@@ -12,6 +12,4 @@ Aşağıdaki komutu çalıştırarak bu imaj ile bir konteyner başlatın;
 
 `docker container run -d --name webserver_konteyner -p 8000:80 enterprisecoding-webserver`{{execute}}
 
-Konteyner'da yer alan dosyanın aşağıdaki adreste sunulduğunu görebilirsiniz;
-
-https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
+**8000 Portu** tabında Konteyner'da yer alan dosyanın sunulduğunu görebilirsiniz.
