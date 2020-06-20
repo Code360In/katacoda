@@ -10,12 +10,16 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Özelleştirme",
+        "title": "Adım 2 - FROM Talimatı",
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - Konteyner Imajı",
+        "title": "Adım 3 - RUN Talimatı",
         "text": "step3.md"
+      },
+      {
+        "title": "Adım 4 - Derleme İşlemi",
+        "text": "step4.md"
       }
     ],
     "intro": {

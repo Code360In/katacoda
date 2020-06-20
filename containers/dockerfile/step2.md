@@ -18,6 +18,4 @@ Bu senaryoda oluşturacağınız konteyner imajı nginx'in güncel sürümü ola
 <pre class="file" data-filename="dockerfile" data-target="replace">FROM nginx:latest
 </pre>
 
-
-
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -7,3 +7,5 @@ Konteyner imajında yer alan __/usr/share/nginx/html/index.html__ dosyasının i
 
 <pre class="file" data-filename="dockerfile" data-target="append">RUN echo "Enterprisecoding Nginx docker imajindan merhaba!" > /usr/share/nginx/html/index.html
 </pre>
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
