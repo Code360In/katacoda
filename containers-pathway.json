@@ -74,6 +74,11 @@
         "description": "Interaktif olarak Docker imajı oluşturma"
       },
       {
+        "course_id": "dockerfilea",
+        "title": "Dockerfile ile Imaj Oluşturma",
+        "description": "Dockerfile yardımıyla bir Docker imajı oluşturma"
+      },
+      {
         "course_id": "docker-imaj-kullanimi",
         "title": "Docker Imaj Kullanımı",
         "description": "Docker Imaj kullanımı ve yapısı"
