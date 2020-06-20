@@ -1,11 +1,15 @@
-# RUN
+# LABEL
 
-`RUN` talimatı konteyner imaj oluşturulması sırasında belirlediğiniz komutun çalıştırılmasını sağlar. Bu sayede ata imajdan türettiğiniz yeni konteyner imajınızı özelleştirebilirsiniz. Dockerfile içerisinde yer alan her bir RUN talimatı yeni bir imaj katmanı oluşturacağından dikkatli kullanmanızda fayda olacaktır.
+`LABEL` talimatı konteyner imajına meta veril eklemenizi sağlar. Anahtar ve değer ikilisinden oluşan **LABEL** talimatı sayesinde konteyner imaj dosyayla birlikte taşınabilecek meta veri girdileri oluşturursunuz.
 
-Konteyner imajında yer alan __/usr/share/nginx/html/index.html__ dosyasının içeriğini değiştirmek için aşağıdaki talimatı dockerfile dosyasına ekleyin;
+Aşağıdaki ifadeyi dockerfile'e ekleyerek geliştirici bilgisini ekleyin;
 
+<pre class="file" data-filename="dockerfile" data-target="replace">LABEL maintainer="Enterprisecoding <info@enterprisecoding.com>"
+</pre>
 
-<pre class="file" data-filename="dockerfile" data-target="append">RUN echo "Enterprisecoding Nginx docker imajindan merhaba!" > /usr/share/nginx/html/index.html
+Dockerfile imajı paketine eklenmesini istediğiniz tüm meta verileri benzer şekilde ekleyebilirsiniz. Örneğin;
+
+<pre class="file" data-filename="dockerfile" data-target="replace">LABEL mimari="amd64/x86_64" \
 </pre>
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

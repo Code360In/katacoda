@@ -1,21 +1,21 @@
-# BUILD
+# RUN
 
-Dockerfile içerisine gerekli talimatları eklemenizin ardından `docker build` komutunu kullanarak konteyner imajının oluşturulmasını sağlayabilirsiniz. docker build komutu dockerfile içerisinde verdiğiniz talimatları sırasıyla işleterek konteyner imajını oluşturacaktır. 
+`RUN` talimatı konteyner imaj oluşturulması sırasında belirlediğiniz komutun çalıştırılmasını sağlar. Bu sayede ata imajdan türettiğiniz yeni konteyner imajınızı özelleştirebilirsiniz. Dockerfile içerisinde yer alan her bir RUN talimatı yeni bir imaj katmanı oluşturacağından dikkatli kullanmanızda fayda olacaktır.
 
-Docker build aşağıda örneklendiği şekilde bir yapıya sahiptir;
+Konteyner oluştururken güncel paketleri kullanmak istediğimiz için öncelikle `apk update` komutunun çalışmasını istediğimiz için aşağıdaki satırı dockerfile'a ekleyin;
 
-`docker build -t <IMAJ_ADI>:<IMAJ_TAG'İ> <DOCKERFILE_DOSYASI>`
 
-Senaryodaki dosyamızın mevcut dizinde bulunması ve dosya adının **dockerfile** olması nedeniyle dockerfile dosya adresi olarak **.** vermeniz yeterli olacaktır. 
+<pre class="file" data-filename="dockerfile" data-target="append">RUN apk update
+</pre>
 
-Aşağıdaki komutu çalıştırarak konteyner imajınızı oluşturun;
+Güncelleme ardından nginx paketi kurulum talimatını ekleyin;
 
-`docker build -t enterprisecoding-webserver:latest .`{{execute}}
+<pre class="file" data-filename="dockerfile" data-target="append">RUN apk add nginx
+</pre>
 
-Derleme işlemi ardından konteyner imajının başarıyla oluştuğuna dair aşağıdaki mesajı göreceksiniz;
+Sunmak için örnek bir index dosyası oluşturun;
 
-`Successfully tagged enterprisecoding-webserver:latest`
+<pre class="file" data-filename="dockerfile" data-target="append">RUN echo "Enterprisecoding Nginx docker imajindan merhaba!" > /usr/share/nginx/html/index.html
+</pre>
 
-Oluşturulan imaj yerel imajlar arasında yerini alacaktır. Aşağıdaki komutu çalıştırarak listede yer aldığını görün;
-
-`docker images`{{execute}}
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -14,12 +14,28 @@
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - RUN Talimatı",
+        "title": "Adım 3 - LABEL Talimatı",
         "text": "step3.md"
       },
       {
-        "title": "Adım 4 - Derleme İşlemi",
+        "title": "Adım 4 - RUN Talimatı",
         "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - ADD Talimatı",
+        "text": "step5.md"
+      },
+      {
+        "title": "Adım 6 - EXTRYPOINT Talimatı",
+        "text": "step6.md"
+      },
+      {
+        "title": "Adım 7 - EXPOSE Talimatı",
+        "text": "step7.md"
+      },
+      {
+        "title": "Adım 8 - Derleme İşlemi",
+        "text": "step8.md"
       }
     ],
     "intro": {
@@ -32,9 +48,8 @@
     }
   },
   "environment": {
-    "showdashboard": true,
-    "dashboards": [{"name": "8000 Portu", "port": 8000}],
     "uilayout": "editor-terminal",
+    "hideHiddenFiles":" true",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
