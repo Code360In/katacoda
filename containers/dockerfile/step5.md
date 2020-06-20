@@ -10,7 +10,7 @@ Senaryoda kurulumu yapılan nginx'in çalışması için `nginx.conf`{{open}} ve
 
 Bu dosyaları eklemek için Dockerfile'a aşağıdaki iki girdiyi ekleyin;
 
-<pre class="file" data-filename="dockerfile" data-target="replace">ADD nginx.conf /etc/nginx/nginx.conf
+<pre class="file" data-filename="dockerfile" data-target="append">ADD nginx.conf /etc/nginx/nginx.conf
 ADD nginx.default /etc/nginx/conf.d/default.conf
 </pre>
 

@@ -38,6 +38,12 @@
         "text": "step8.md"
       }
     ],
+    "assets": {
+      "host01": [
+          {"file": "nginx.conf", "target": "/root/"},
+          {"file": "nginx.default", "target": "/root/"}
+      ]
+    },
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",

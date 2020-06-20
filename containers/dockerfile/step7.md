@@ -14,7 +14,7 @@ Senaryoda kurulumu yapılan nginx'in 80/TCP portundan hizmet vermesi beklenmekte
 
 80/TCP portunun açılabileceğini belirtmek için Dockerfile'a aşağıdaki girdiyi ekleyin;
 
-<pre class="file" data-filename="dockerfile" data-target="replace">EXPOSE 80
+<pre class="file" data-filename="dockerfile" data-target="append">EXPOSE 80
 </pre>
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -4,7 +4,7 @@
 
 Konteyner'ımızı giriş noktasının nginx olması için aşağıdaki talimatı dockerfile dosyasına ekleyiniz;
 
-<pre class="file" data-filename="dockerfile" data-target="replace">ENTRYPOINT nginx
+<pre class="file" data-filename="dockerfile" data-target="append">ENTRYPOINT ["nginx"]
 </pre>
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
