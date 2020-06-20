@@ -27,3 +27,5 @@ Aşağıdaki komutu kullanarak konteyner'ınızı başlatın;
 Konteyner başladıktan sonra aşağıki komutla index.html dosyası içeriğini görebilirsiniz;
 
 `curl http://localhost`{{execute}}
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
