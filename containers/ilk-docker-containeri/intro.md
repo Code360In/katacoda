@@ -9,7 +9,7 @@ Bu senaryoda, Docker komut satırı kullanımı ile ilk docker konteyner'ınız�
 
 ## Eğitim
 
-Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için Udemy üzerinde yer alan [Uygulamalı Konteyner Temelleri ve Docker](https://www.udemy.com/course/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
+Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için eğitim sitemiz üzerinden [0’dan 100’e Uygulamalı Konteyner Temelleri ve Docker](https://learn.enterprisecoding.com/egitimler/konteyner/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
 
 ## Yardım
 
@@ -19,4 +19,4 @@ Senaryoya başlamak için lütfen aşağıda yer alan **Start Scenario** butonun
 
 ## İletişim
 
-Container ve Kubernetes ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.
+Container ve Kubernetes ile ilgili sorularınız ve danışmanlık talepleriniz için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

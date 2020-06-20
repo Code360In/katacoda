@@ -12,7 +12,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "credits": "[Enterprisecoding](https://enterprisecoding.com)"
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"
@@ -20,7 +20,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için Enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
     "imageid": "ubuntu"
