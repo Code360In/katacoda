@@ -28,6 +28,6 @@
     "dashboards": [{"name": "Sınav Portalı", "port": 30006}]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }
