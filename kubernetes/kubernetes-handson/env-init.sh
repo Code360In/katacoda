@@ -1,3 +1,5 @@
+sleep 3; wait.sh
+
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Namespace
