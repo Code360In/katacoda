@@ -1,11 +1,11 @@
 
 # ETCD Kurulum ve Kullanımı
 
-ETCD kurulumu ve kullanımı senaryosuna hoş geldiniz.
+Etcd kurulumu ve kullanımı senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda 1 Centos 7 üzerinde nasıl ETCD server kurabileceğinizi ve kullanabileceğinizi deneyimleyebilirsiniz.
+Bu senaryoda 1 Linux üzerinde nasıl Etcd server kurabileceğinizi ve kullanabileceğinizi deneyimleyebilirsiniz.
 
 ## Yardım
 
