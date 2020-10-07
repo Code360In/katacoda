@@ -29,6 +29,11 @@
         "description": "Kubernetes Cluster'ı üzerinde Metrics Server kurulumu"
       },
       {
+        "course_id": "hpa-kullanimi",
+        "title": "Horizontal Pod Autoscaler (HPA) Kullanımı",
+        "description": "HPA kullanarak yatayda otomatik büyüyen uygulamalar oluşturma"
+      },
+      {
         "course_id": "docker-registry-kurulumu",
         "title": "Docker Registry Kurulumu",
         "description": "Kubernetes Cluster'ı üzerinde Docker Registry kurulumu"
