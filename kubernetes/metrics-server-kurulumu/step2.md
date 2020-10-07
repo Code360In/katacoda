@@ -14,7 +14,7 @@ Yukarıdaki komutun çalıştırılması ardından metrics-server pod'unun durum
 
 Problemi tespit edebilmek için öncelikle pod'umuzun loglarına göz atmalıyız;
 
-`watch kubectl logs -l app=metrics-server -n kube-system`{{execute}}
+`watch kubectl logs -l k8s-app=metrics-server -n kube-system`{{execute}}
 
 bir süre bekledikten sonra aşağıdaki hata loglarının oluştuğunu göreceksiniz;
 

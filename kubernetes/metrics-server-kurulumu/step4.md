@@ -4,11 +4,19 @@ Bir önceki adımda tespit ettiğimiz DNS probleminin çözümü olarak Metrics 
 
 Öncelikle mevcut sürümü kaldırmalıyız;
 
-`helm delete metrics-server --purge`{{execute}}
+`kubectl delete -f components-dns-fix.yaml`{{execute}}
 
 Mevcut sürümü kaldırdıktan sonra aşağıdaki komut çalıştırılarak **kubelet-insecure-tls** parametresi de eklenir;
 
-`helm install stable/metrics-server --name metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls"`{{execute}}
+`cat components-dns-fix.yaml | sed s/'args:'/'args:\n          - --kubelet-insecure-tls'/ > components-fixed.yaml`{{execute}}
+
+ardından güncel **components-fixed.yaml** dosyası uygulanır;
+
+`kubectl apply -f components-fixed.yaml`{{execute}}
+
+Aşağıdaki komutu çalıştırarak Metrics Server'ın yaygınlaşmasını bekleyin;
+
+`kubectl rollout status deployment metrics-server -n kube-system`{{execute}}
 
 Metrics Server'ın ikinci defa yeniden kurulumu ardından bir kaç dakika bekleyerek CPU ve RAM bilgilerinin toplanmasına izin verdikten sonra aşağıdaki komutun çalıştırılması ile birlikte node bilgilerinin artık geldiği görülecektir;
 
@@ -16,4 +24,4 @@ Metrics Server'ın ikinci defa yeniden kurulumu ardından bir kaç dakika bekley
 
 Aşağıdaki komut yardımıyla metrics-server pod'una dair bilgiler görülebilir;
 
-`kubectl top pod $(kubectl get pods -l app=metrics-server -n kube-system -o 'jsonpath={.items[0].metadata.name}') -n kube-system`{{execute}}
+`kubectl top pod $(kubectl get pods -l k8s-app=metrics-server -n kube-system -o 'jsonpath={.items[0].metadata.name}') -n kube-system`{{execute}}

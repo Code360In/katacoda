@@ -1,6 +1,6 @@
 # Kurulum Bilgisi
 
-Sizin için 1 master, 1 worker node olarak yapılandırılmış şekilde bir Kubernetes Cluster'ı kuruludur. Kurulum sırasında ihtiyacınız olacak Helm paket yöneticisi kurularak ilklendirilmiştir. Sağ bölümde kurulu olan bu Kubernetes Cluster'ının `master` node'u terminalini bulabilirsiniz. Bu terminal üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz. Senaryo çerçevesinde ihtiyaç duyabileceğiniz araçlar yapılandırılmıştır.
+Sizin için 1 master, 1 worker node olarak yapılandırılmış şekilde bir Kubernetes Cluster'ı kuruludur. Sağ bölümde kurulu olan bu Kubernetes Cluster'ının `master` node'u terminalini bulabilirsiniz. Bu terminal üzerinden aşağıda ve takip eden adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz. Senaryo çerçevesinde ihtiyaç duyabileceğiniz araçlar yapılandırılmıştır.
 
 Örneğin aşağıdaki komutla Kubernetes Cluster'ı hakkında bilgi alabilirsiniz;
 
@@ -10,23 +10,27 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-ya da aşağıdaki komutla helm paket yöneticisi sürümünü kontrol edebilirsiniz;
+## Metrics Server Kurulumu
 
-`helm version`{{execute}}
+Metric Server kurulumu için ihtiyaç duyulan tanımlar github üzerinde yer alan metrics-server deposunda yer almaktadır. Belirli aralıklar kuruluma ait yaml dosyası güncellenerek github sürümler sayfasında yayınlanmaktadır. Güncel bir kurulym yapabilmek için öncelikle aşağıdaki komutu çalıştırarak güncel Metrics Server sürümünü tespit edin ve bunu takip eden adımlarda kullanmak üzere **METRICS_SERVER_RELEASE** değişkeninde saklayın;
 
-## Metric Server Kurulumu
+`METRICS_SERVER_RELEASE=$(curl --silent "https://api.github.com/repos/kubernetes-sigs/metrics-server/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')`{{execute}}
 
-Helm kurulu bir sistemde aşağıdaki komutu kullanarak kube-system namespace'i altında Metrics Server kurabilirsiniz;
+Tespit edilen sürümü aşağıdaki komutla görüntüleyebilirsiniz;
 
-`helm install stable/metrics-server --name metrics-server --namespace kube-system`{{execute}}
+`echo $METRICS_SERVER_RELEASE`{{execute}}
 
-Aşağıdaki komutla pod'hazır duruma gelene kadar beklenebilir;
+Aşağıdaki komutla güncel sürüme ait **components.yaml** dosyasını yerele indirin;
 
-`while [[ $(kubectl get pods -l app=helm,name=tiller -n kube-system -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Metric Server pod'u bekleniyor.." && sleep 1; done`{{execute}}
+`curl -L https://github.com/kubernetes-sigs/metrics-server/releases/download/${METRICS_SERVER_RELEASE}/components.yaml -o components.yaml`{{execute}}
 
-Kurulum durumu hakkında güncel bilgi aşağıdaki komutla sorgulanabilir;
+İndirdiğiniz dosyayı kubectl yardımıyla uygulayı;
 
-`helm status metrics-server`{{execute}}
+`kubectl apply -f components.yaml`{{execute}}
+
+Aşağıdaki komutu çalıştırarak Metrics Server'ın yaygınlaşmasını bekleyin;
+
+`kubectl rollout status deployment metrics-server -n kube-system`{{execute}}
 
 Kurulumla gelen api aşağıdaki komutla kullanılabilir;
 

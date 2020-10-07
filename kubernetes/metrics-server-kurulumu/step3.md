@@ -4,11 +4,19 @@ Bir önceki adımda tespit ettiğimiz DNS probleminin çözümü olarak Metrics 
 
 Öncelikle mevcut sürümü kaldırmalıyız;
 
-`helm delete metrics-server --purge`{{execute}}
+`kubectl delete -f components.yaml`{{execute}}
 
 Mevcut sürümü kaldırdıktan sonra aşağıdaki komut çalıştırılarak **kubelet-preferred-address-types=InternalIP** parametresi de eklenir;
 
-`helm install stable/metrics-server --name metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP"`{{execute}}
+`cat components.yaml | sed s/'args:'/'args:\n          - --kubelet-preferred-address-types=InternalIP'/ > components-dns-fix.yaml`{{execute}}
+
+ardından güncel **components-dns-fix.yaml** dosyası uygulanır;
+
+`kubectl apply -f components-dns-fix.yaml`{{execute}}
+
+Aşağıdaki komutu çalıştırarak Metrics Server'ın yaygınlaşmasını bekleyin;
+
+`kubectl rollout status deployment metrics-server -n kube-system`{{execute}}
 
 Metrics Server'ın yeniden kurulumu ardından aşağıdaki komutun çalıştırılması ile birlikte node bilgileri gelmelidir;
 
@@ -24,7 +32,7 @@ Bu komutun çalıştırılması ardından metrics-server pod'unun durumuna göre
 
 Problemi tespit edebilmek için öncelikle pod'umuzun loglarına göz atmalıyız;
 
-`watch kubectl logs -l app=metrics-server -n kube-system`{{execute}}
+`watch kubectl logs -l k8s-app=metrics-server -n kube-system`{{execute}}
 
 bir süre bekledikten sonra aşağıdaki hata loglarının oluştuğunu göreceksiniz;
 
