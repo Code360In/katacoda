@@ -20,11 +20,13 @@ Conflicts=etcd2.service
 
 [Service]
 Type=notify
+Environment=ETCD_DATA_DIR=/var/lib/etcd
+Environment=ETCD_NAME=%m
 Restart=always
 RestartSec=25s
 LimitNOFILE=40000
 TimeoutStartSec=20s
-ExecStart=/bin/sh -c "/usr/local/bin/etcd --name etcd-${SELF_IP} --data-dir /var/lib/etcd --quota-backend-bytes 8589934592 --auto-compaction-retention 3 --listen-client-urls http://${SELF_IP}:2379,http://localhost:2379 --advertise-client-urls http://${SELF_IP}:2379,http://localhost:2379 --listen-peer-urls http://${SELF_IP}:2380"
+ExecStart=/usr/local/bin/etcd --quota-backend-bytes 8589934592 --auto-compaction-retention 3 
 
 [Install]
 WantedBy=multi-user.target

@@ -22,7 +22,7 @@ Aşağıdaki komutlarla etcd ve etcdctl dosyaları **/usr/local/bin/** altına k
 
 `cp /tmp/etcd/etcd /usr/local/bin/`{{execute}}
 
-`ccp /tmp/etcd/etcdctl /usr/local/bin/`{{execute}}
+`cp /tmp/etcd/etcdctl /usr/local/bin/`{{execute}}
 
 Aşağıdaki adımla etcd sürümü teyit edin;
 
