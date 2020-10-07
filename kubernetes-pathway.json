@@ -4,6 +4,11 @@
     "icon": "fa-kubernetes",
     "courses": [
       {
+        "course_id": "etcd-kurulumu",
+        "title": "Etcd kullanımı",
+        "description": "Etcd veritabanı kurulumu ve kullanımı"
+      },
+      {
         "course_id": "opa-docker-eklentisi",
         "title": "Open Policy Agent-Docker",
         "description": "Open Policy Agent Docker entegrasyonu"
