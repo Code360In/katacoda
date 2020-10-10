@@ -16,6 +16,10 @@ Aşağıdaki komutla yaml çıkısını bir dosyaya yazdırın;
 
 `kubectl get pod ilk-pod --output yaml --export > pod-tanimi.yaml`{{execute}}
 
+Aşağıdaki komutla **pod-tanimi.yaml** dosyasını inceleyin;
+
+`cat pod-tanimi.yaml`{{execute}}
+
 Aşağıdaki komutla pod’u silin;
 
 `kubectl delete pod ilk-pod`{{execute}}

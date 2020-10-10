@@ -50,6 +50,10 @@ Alternatif olarak aşağıdaki komutla durum güncellemesi oldukça bilgilenin;
 
 `kubectl get pods -w`{{execute}}
 
+<kbd>Ctrl</kbd>+<kbd>C</kbd> ile redis uygulamasını ve dolayısıyla da konteyner'ı sonlandırabilirsiniz.
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
 Aşağıdaki komutu çalıştırarak daha detaylı pod listesi görüntüleyin;
 
 `kubectl get pods -o wide`{{execute}}
