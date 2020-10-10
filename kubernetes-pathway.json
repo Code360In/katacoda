@@ -34,6 +34,11 @@
         "description": "Kubernetes Cluster üzerinde pod evreleri ve konteyner durumları"
       },
       {
+        "course_id": "init-konteyner-kullanimi",
+        "title": "Init Konteyner Kullanımı",
+        "description": "Kubernetes Cluster üzerinde init konteyner kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
