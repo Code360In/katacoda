@@ -4,19 +4,24 @@
     "icon": "fa-kubernetes",
     "courses": [
       {
-        "course_id": "etcd-kurulumu",
-        "title": "Etcd kullanımı",
-        "description": "Etcd veritabanı kurulumu ve kullanımı"
-      },
-      {
         "course_id": "opa-docker-eklentisi",
         "title": "Open Policy Agent-Docker",
         "description": "Open Policy Agent Docker entegrasyonu"
       },
       {
+        "course_id": "etcd-kurulumu",
+        "title": "Etcd kullanımı",
+        "description": "Etcd veritabanı kurulumu ve kullanımı"
+      },
+      {
         "course_id": "kubernetes-kurulumu",
         "title": "Kubernetes Kurulumu",
         "description": "2 Node üzerinde Kubernetes Cluster kurulumu"
+      },
+      {
+        "course_id": "namespace-kullanimi",
+        "title": "Namespace Kullanımı",
+        "description": "Kubernetes Cluster üzerinde namespace'lerin kullanımı"
       },
       {
         "course_id": "playground",
