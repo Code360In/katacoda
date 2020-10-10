@@ -33,4 +33,12 @@ Aşağıdaki komutu çalıştırarak girdiğiniz bu üç değeri tek kalemde oku
 
 `etcdctl get uygulama --prefix`{{execute}}
 
+Aşağıdaki komutu çalıştırarak sadece değerleri liste şeklinde görüntüleyin;
+
+`etcdctl get uygulama --prefix --print-value-only`{{execute}}
+
+Aşağıdaki komutu çalıştırarak sadece ilk iki değeri liste şeklinde görüntüleyin;
+
+`etcdctl get uygulama --prefix --print-value-only --limit=2`{{execute}}
+
 **Continue** butonuna basarak hata düzeltmesi adımına geçebilirsiniz.

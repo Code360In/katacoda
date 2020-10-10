@@ -6,9 +6,7 @@ Veri dizini olarak kullanılmak üzere **/var/lib/etcd** dizinini oluşturun;
 
 `mkdir /var/lib/etcd`{{execute}}
 
-Aşağıdaki komutlarla etcd3 servis dosyası oluşturulur;
-
-`SELF_IP=$(hostname -I | awk '{print $1}')`{{execute}}
+Aşağıdaki komutla etcd3 servis dosyası oluşturulur;
 
 ```bash
 cat > /etc/systemd/system/etcd3.service <<EOF
