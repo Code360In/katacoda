@@ -37,17 +37,19 @@ Alternatif olarak aşağıdaki komutla da pod oluşturulabilir;
 
 Alternatif olarak aşağıdaki komutla da pod oluşturulabilir;
 
-`kubectl get pods -w`{{execute}}
+`watch kubectl get pods`{{execute}}
 
 Görüldüğü gibi pod **Running**, içerisindeki konteyner **Ready** statüsünde.
 
-İkinci bir terminal açarak bu terminalde aşağıdaki komutla pod içerisinde bir Shell process’i başlatın;
+İkinci bir terminal açın. Bu Terminalde aşağıdaki komutu çalıştırarak **pod-probe** pod'u için atanan ip adresini not alın;
 
-`kubectl exec pod-probe -i -t -- sh`{{execute}}
+`kubectl get pods -o wide`{{execute}}
 
-Ardından bu shell oturumunda aşağıdaki curl komutu ile uygulamaya sağlık durumunu değiştirmesi için komut gönderin;
+Ardından aşağıdaki curl komutu ile uygulamaya sağlık durumunu değiştirmesi için komut gönderin;
 
-`curl localhost/durum_degistir`{{execute}}
+`curl [POD_CLUSTER_IP]/durum_degistir`
+
+Komutta yer alan **[POD_CLUSTER_IP]** ifadesi yerine az önce not aldığınız ip adresini yazınız.
 
 Bu komutu çalıştırdıktan kısa bir süre sonra önceki terminalde pod’un önce ready durumda olmadığı görülecek, ardından da kubernetes tarafından yeniden başlatılacaktır.
 

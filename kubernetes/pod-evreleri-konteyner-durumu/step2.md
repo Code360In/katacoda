@@ -46,7 +46,7 @@ Pod’un durumunu aşağıdaki komutla kontrol edin;
 
 `kubectl get pods`{{execute}}
 
-Görüldüğü gibi pod 4 defa başlatılmaya çalışılmış; fakat hata ile sonlanmıştır. Ardından **CrashLoopBackOff** durum kodunu almuştır. Aşağıdaki komutla pod detayını görüntüleyin;
+Görüldüğü gibi pod virkaç defa başlatılmaya çalışılmış; fakat hata ile sonlanmıştır. Ardından **CrashLoopBackOff** durum kodunu almuştır. Aşağıdaki komutla pod detayını görüntüleyin;
 
 `kubectl describe pod restart-politikasi`{{execute}}
 
