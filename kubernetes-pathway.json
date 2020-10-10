@@ -24,6 +24,11 @@
         "description": "Kubernetes Cluster üzerinde namespace'lerin kullanımı"
       },
       {
+        "course_id": "pod-kullanimi",
+        "title": "Pod Kullanımı",
+        "description": "Kubernetes Cluster üzerinde pod'ların kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

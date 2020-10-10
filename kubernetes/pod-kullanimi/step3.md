@@ -1,0 +1,59 @@
+# Shell Oturumu
+
+**ilk-pod.yaml** dosya içeriğini aşağıdaki komutla güncelleyin;
+
+```bash
+cat <<EOT >> ilk-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ilk-pod
+spec:
+  containers:
+  - name: shell
+    image: busybox
+    command: ['sh', '-c', 'echo "Shell kullanıma hazır" && sleep 3600']
+EOT
+```{{execute}}
+
+Aşağıdaki komutla **ilk-pod** yeni haliyle oluşturun;
+
+`kubectl create -f ilk-pod.yaml`{{execute}}
+
+Pod’un durumunu aşağıdaki komutla kontrol edin;
+
+`kubectl get pod ilk-pod`{{execute}}
+
+Pod hazır duruma geldikten sonra aşağıdaki komutla pod içerisinde bir sh process’i başlatın;
+
+`kubectl exec ilk-pod -i -t -- sh`{{execute}}
+
+Pod içerisinde bir sh process’i başlatıldı aşağıdaki komutla ilk-pod içerisinde olduğunuzu teyit edin;
+
+`hostname`{{execute}}
+
+Aşağıdaki komutla sh process’ini sonlandırarak bilgisayara geri dönün;
+
+`exit`{{execute}}
+
+Aşağıdaki komutu çalıştırarak pod bilgilerini görüntüleyin;
+
+`kubectl describe pod ilk-pod`{{execute}}
+
+Aşağıdaki komutu çalıştırarak pod tanımını yaml formatında alın;
+
+`kubectl describe pod ilk-pod --output yaml`{{execute}}
+
+Yaml formatında tanımı dışarı almaya daha uygun halini aşağıdaki komutla görüntüleyin;
+
+`kubectl describe pod ilk-pod --output yaml --export`{{execute}}
+
+Aşağıdaki komutla yaml çıkısını bir dosyaya yazdırın;
+
+`kubectl get pod ilk-pod --output yaml --export > pod-tanimi.yaml`{{execute}}
+
+Aşağıdaki komutla pod’u silin;
+
+`kubectl delete pod ilk-pod`{{execute}}
+
+**Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
