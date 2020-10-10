@@ -3,7 +3,7 @@
 **ilk-pod.yaml** dosya içeriğini aşağıdaki komutla güncelleyin;
 
 ```bash
-cat <<EOT >> ilk-pod.yaml
+cat <<EOT > ilk-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:

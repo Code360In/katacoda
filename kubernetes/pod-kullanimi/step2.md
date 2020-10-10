@@ -3,7 +3,7 @@
 Bir pod içerisinde birden fazla konteyner bulunabilir. **ilk-pod.yaml** dosyasının içeriğini aşağıdaki şekilde güncelleyin;
 
 ```bash
-cat <<EOT >> ilk-pod.yaml
+cat <<EOT > ilk-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -24,10 +24,6 @@ Yeni halinde ilk-pod içerisinde **ilk-pod-konteyner-1** ve **ilk-pod-konteyner-
 `kubectl create -f ilk-pod.yaml`{{execute}}
 
 Pod’un durumunu aşağıdaki komutla kontrol edin;
-
-`kubectl get pods`{{execute}}
-
-Pod içerisindeki her iki konteyner’ın da hazır durumda olduğunu gözlemleyin. Ardından aşağıdaki komutla loglarını inceleyi deneyin;
 
 `kubectl get pods`{{execute}}
 

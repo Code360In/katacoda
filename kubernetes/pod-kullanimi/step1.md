@@ -46,9 +46,13 @@ Aşağıdaki komutla Kubernetes Cluster'ı üzerinde mevcut namespace'de yer ala
 
 Gelen listede **ilk-pod** pod'unun da bulunduğunu teyit edin.
 
-Aşağıdaki komutu çalıştırarak daha detaylı pod listesi görüntüleyin;
+Alternatif olarak aşağıdaki komutla durum güncellemesi oldukça bilgilenin;
 
 `kubectl get pods -w`{{execute}}
+
+Aşağıdaki komutu çalıştırarak daha detaylı pod listesi görüntüleyin;
+
+`kubectl get pods -o wide`{{execute}}
 
 Pod’un Running statüsüne gelmesini bekleyin. Ardından aşağıdaki komutla loglarını inceleyin;
 
