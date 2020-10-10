@@ -29,6 +29,11 @@
         "description": "Kubernetes Cluster üzerinde pod'ların kullanımı"
       },
       {
+        "course_id": "pod-evreleri-konteyner-durumu",
+        "title": "Pod Evreleri ve Konteyner Durumları",
+        "description": "Kubernetes Cluster üzerinde pod evreleri ve konteyner durumları"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

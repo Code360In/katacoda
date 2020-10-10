@@ -50,7 +50,7 @@ Alternatif olarak aşağıdaki komutla durum güncellemesi oldukça bilgilenin;
 
 `kubectl get pods -w`{{execute}}
 
-<kbd>Ctrl</kbd>+<kbd>C</kbd> ile redis uygulamasını ve dolayısıyla da konteyner'ı sonlandırabilirsiniz.
+<kbd>Ctrl</kbd>+<kbd>C</kbd> ile beklemeyi sonlandırabilirsiniz.
 
 `echo "Konsola geri dönüldü"`{{execute interrupt}}
 
