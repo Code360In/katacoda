@@ -6,7 +6,7 @@ Aşağıdaki komutla **test** namespace’i oluşturun;
 
 Aşağıdaki komutla test namespace’ini eğitim etiketi ile işaretleyin;
 
-`kubectl create namespace test kullanim=egitim`{{execute}}
+`kubectl label namespace test kullanim=egitim`{{execute}}
 
 Aşağıdaki komutla namespace’leri etiketleri ile birlite listeleyin;
 
