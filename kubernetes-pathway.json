@@ -74,6 +74,11 @@
         "description": "Kubernetes Cluster üzerinde deployment kullanımı"
       },
       {
+        "course_id": "deployment-olcekleme",
+        "title": "Deployment Ölçekleme",
+        "description": "Kubernetes Cluster üzerinde deployment ile yatayda ölçekleme"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
