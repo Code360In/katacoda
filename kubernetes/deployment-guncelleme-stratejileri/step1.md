@@ -24,7 +24,7 @@ metadata:
     app: k8sornek
 spec:
   revisionHistoryLimit: 10
-  replicas: 3
+  replicas: 4
   strategy:
     type: Recreate
   selector:
