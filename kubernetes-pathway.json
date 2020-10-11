@@ -54,6 +54,11 @@
         "description": "Kubernetes Cluster üzerinde konteyner yaşam döngüsü olayları"
       },
       {
+        "course_id": "ilk-replicaset",
+        "title": "İlk Replicaset",
+        "description": "Kubernetes Cluster üzerinde replicaset kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
