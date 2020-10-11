@@ -64,6 +64,11 @@
         "description": "Kubernetes Cluster üzerinde replicaset ile yatayda ölçekleme"
       },
       {
+        "course_id": "replicaset-pod-takibi",
+        "title": "Replicaset Pod Takini",
+        "description": "Kubernetes Cluster üzerinde replicaset pod takibi"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
