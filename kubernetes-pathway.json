@@ -94,6 +94,11 @@
         "description": "Kubernetes Cluster üzerinde deployment güncelleme stratejileri"
       },
       {
+        "course_id": "ilk-statefulset",
+        "title": "İlk StatefulSet",
+        "description": "Kubernetes Cluster üzerinde statefulset kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
