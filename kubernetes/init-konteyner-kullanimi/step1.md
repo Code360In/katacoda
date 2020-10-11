@@ -56,6 +56,8 @@ Hemen ardından aşağıdaki komut çalıştırılarak pod durumunu izleyin;
 
 <kbd>Ctrl</kbd>+<kbd>C</kbd> ile beklemeyi sonlandırabilirsiniz..
 
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
 Pod başladıktan sonra aşağıdaki komutla içerisinde bir Shell process’i başlatın;
 
 `kubectl exec -it init-konteyner -- /bin/bash`{{execute}}
@@ -65,6 +67,10 @@ Shell oturumunda aşağıdaki komutu çalıştırarak nginx index sayfasını g�
 `curl localhost`{{execute}}
 
 Açılan sayfayı https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/pod/ornek-index.html adresindeki dosya ile kıyaslayın.
+
+Container içerisindeki shell oturumunuz sonlandırın;
+
+`exit`
 
 Aşağıdaki komutla pod’u silin;
 
