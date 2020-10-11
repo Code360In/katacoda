@@ -1,7 +1,7 @@
 
 # Replicaset Pod Takini
 
-Kubernetes iş yüklerinden replicaset pod takibisenaryosuna hoş geldiniz.
+Kubernetes iş yüklerinden replicaset pod takibi senaryosuna hoş geldiniz.
 
 ## Senaryo
 

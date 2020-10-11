@@ -65,7 +65,7 @@
       },
       {
         "course_id": "replicaset-pod-takibi",
-        "title": "Replicaset Pod Takini",
+        "title": "Replicaset Pod Takibi",
         "description": "Kubernetes Cluster üzerinde replicaset pod takibi"
       },
       {
