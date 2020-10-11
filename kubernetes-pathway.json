@@ -39,6 +39,11 @@
         "description": "Kubernetes Cluster üzerinde init konteyner kullanımı"
       },
       {
+        "course_id": "gecici-konteyner-kullanimi",
+        "title": "Geçici Konteyner Kullanımı",
+        "description": "Kubernetes Cluster üzerinde gecici konteyner kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
