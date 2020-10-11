@@ -59,6 +59,11 @@
         "description": "Kubernetes Cluster üzerinde replicaset kullanımı"
       },
       {
+        "course_id": "replicaset-olcekleme",
+        "title": "Replicaset Ölçekleme",
+        "description": "Kubernetes Cluster üzerinde replicaset ile yatayda ölçekleme"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
