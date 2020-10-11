@@ -24,7 +24,7 @@ metadata:
     app: k8sornek
 spec:
   revisionHistoryLimit: 10
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: k8sornek
@@ -45,20 +45,20 @@ Aşağıdaki komutla Deployment yaygınlaşma durumunu inceleyin;
 
 `kubectl rollout status deployment ilk-deployment`{{execute}}
 
+Aşağıdaki komutla imaj tag'ini v1 yapın;
+
+`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v1 --record`{{execute}}
+
+Aşağıdaki komutla imaj tag'ini v2 yapın;
+
+`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v2 --record`{{execute}}
+
 Aşağıdaki komutla deployment’ı yukarı doğru ölçekleyin;
 
-`kubectl scale deployment ilk-deployment --replicas=5 --record`{{execute}}
-
-Aşağıdaki komutla Deployment yaygınlaşma durumunu inceleyin;
-
-`kubectl rollout status deployment ilk-deployment`{{execute}}
+`kubectl scale deployment ilk-deployment --replicas=4 --record`{{execute}}
 
 Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
 
 `kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
-
-Aşağıdaki komutla deployment’ı aşağı doğru ölçekleyin;
-
-`kubectl scale deployment ilk-deployment --replicas=4 --record`{{execute}}
 
 **Continue** butonuna basarak Docker yapılandırması adıma geçebilirsiniz.
