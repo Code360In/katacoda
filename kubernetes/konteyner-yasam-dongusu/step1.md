@@ -30,7 +30,7 @@ spec:
           command: ["/bin/sh", "-c", "echo Pod başlangıç kancasından merhaba > /usr/share/message"]
       preStop:
         exec:
-          command: ["/bin/sh","-c","nginx -s quit; while killall -0 nginx; do sleep 1; done”]
+          command: ["/bin/sh","-c","nginx -s quit; while killall -0 nginx; do sleep 1; done"]
 EOF
 ```{{execute}}
 
