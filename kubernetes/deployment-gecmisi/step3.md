@@ -46,6 +46,10 @@ Aşağıdaki komutla son deployment’ı yeniden gerçekleştirin;
 
 `kubectl rollout restart deployment ilk-deployment`{{execute}}
 
+Deployment durumunu aşağıdaki komutla tekrar kontrol edin;
+
+`kubectl rollout status deployment ilk-deployment`{{execute}}
+
 Hemen ardından Pod listesini görüntüleyin;
 
 `kubectl get pods`{{execute}}
