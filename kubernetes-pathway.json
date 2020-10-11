@@ -119,6 +119,11 @@
         "description": "Kubernetes Cluster üzerinde job kullanımı"
       },
       {
+        "course_id": "job-yeniden-baslatma",
+        "title": "Job Yeniden Başlatma Politikası",
+        "description": "Kubernetes Cluster üzerinde job yeniden başlatma politikası"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

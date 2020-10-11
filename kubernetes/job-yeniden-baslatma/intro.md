@@ -1,7 +1,7 @@
 
-# İlk Job
+# Job Yeniden Başlatma Politikası
 
-Kubernetes iş yüklerinden Job kullanımı senaryosuna hoş geldiniz.
+Kubernetes iş yüklerinden Job yeniden başlatma politikası senaryosuna hoş geldiniz.
 
 ## Senaryo
 
