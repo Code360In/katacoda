@@ -134,6 +134,11 @@
         "description": "Kubernetes Cluster üzerinde paralel iş çalıştırma"
       },
       {
+        "course_id": "job-active-deadline",
+        "title": "Job Çalışma Süresi",
+        "description": "Kubernetes Cluster üzerinde job çalışma süresinin kısıtlanması"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
