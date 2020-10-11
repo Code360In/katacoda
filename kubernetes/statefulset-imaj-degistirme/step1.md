@@ -49,6 +49,16 @@ Aşağıdaki komutla Pod’ları listeleyin;
 
 `kubectl get pods`{{execute}}
 
+Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını v1 tag'li imaj ile değiştirin;
+
+`kubectl set image statefulset ilk-statefulset uygulama=enterprisecodingcom/k8sornek:v1 --record`{{execute}}
+
+`kubectl rollout status statefulset ilk-statefulset`{{execute}}
+
+Aşağıdaki komutla Pod’ları listeleyin;
+
+`kubectl get pods`{{execute}}
+
 Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
 
 `kubectl set image statefulset ilk-statefulset uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
