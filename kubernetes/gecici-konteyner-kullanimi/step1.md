@@ -34,6 +34,14 @@ Aşağıdaki komutla pod içerisinde busybox imajından yeni bir konteyner oluş
 
 `kubectl alpha debug -it ephemeral-demo --image=busybox --target=ephemeral-demo`{{execute}}
 
+Daha önceden geçici konteyner özelliğini aktif hale getirmediğiniz için bu komutu çalıştırdığınızda aşağıdaki hata mesajını alacaksınız;
+
+`error: ephemeral containers are disabled for this cluster (error from server: "the server could not find the requested resource").`
+
+Geçici konteyner özelliğini aktif hale getirmek için **/etc/kubernetes/manifests/** dizini altında bulunan **kube-apiserver.yaml** ve **kube-scheduler.yaml** dosyalarında command bölümüne aşağıdaki girdiyi ekleyin;
+
+`--feature-gates=EphemeralContainers=true`
+
 Shell oturumunda hata ayıklamaya yönelik adımları izleyebilirsiniz.
 
 Aşağıdaki komutu çalıştırarak Shell oturumunu sonlandırın;
