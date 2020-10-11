@@ -53,6 +53,10 @@ Aşağıdaki komutla Deployment yaygınlaşma durumunu inceleyin;
 
 `kubectl rollout status deployment ilk-deployment`{{execute}}
 
+Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
+
+`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
+
 Aşağıdaki komutla deployment’ı aşağı doğru ölçekleyin;
 
 `kubectl scale deployment ilk-deployment --replicas=4 --record`{{execute}}
