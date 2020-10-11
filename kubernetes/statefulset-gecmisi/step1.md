@@ -41,7 +41,7 @@ spec:
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla StatefulSet yaygınlaşma durumunu inceleyin;
+Aşağıdaki komutla StatefulSet yaygınlaşmasını bekleyin;
 
 `kubectl rollout status statefulset ilk-statefulset`{{execute}}
 
@@ -49,9 +49,17 @@ Aşağıdaki komutla imaj tag'ini v1 yapın;
 
 `kubectl set image statefulset ilk-statefulset uygulama=enterprisecodingcom/k8sornek:v1 --record`{{execute}}
 
+Aşağıdaki komutla StatefulSet yaygınlaşmasını bekleyin;
+
+`kubectl rollout status statefulset ilk-statefulset`{{execute}}
+
 Aşağıdaki komutla imaj tag'ini v2 yapın;
 
 `kubectl set image statefulset ilk-statefulset uygulama=enterprisecodingcom/k8sornek:v2 --record`{{execute}}
+
+Aşağıdaki komutla StatefulSet yaygınlaşmasını bekleyin;
+
+`kubectl rollout status statefulset ilk-statefulset`{{execute}}
 
 Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
 
