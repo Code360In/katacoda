@@ -39,6 +39,14 @@ Kubectl yardımıyla default namespace’inde çalışan pod teyit edilir;
 
 `kubectl get pods`{{execute}}
 
+Aşağıdaki komutla pod'u silin;
+
+`kubectl delete pod static-web-sunucusu-node01`{{execute}}
+
+Yeni bir pod'un otomatik olarak başladığını teyit edin;
+
+`kubectl get pods`{{execute}}
+
 Yapılandırmaları eski haline getirmek için **/lib/systemd/system/kubelet.service** dosyası aşağıdaki içerikle eski haline geri getirilir;
 
 `Environment=KUBELET_EXTRA_ARGS=`

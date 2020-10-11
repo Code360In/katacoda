@@ -62,7 +62,15 @@ Kısa bir süre sonrasında pod başlatılacaktır. Worker node üzerinde aşağ
 
 `docker ps | grep static-web-sunucusu`{{execute}}
 
-Kubectl yardımıyla default namespace’inde çalışan pod teyit edilir;
+Kubectl yardımıyla default namespace’inde çalışan pod teyit edin;
+
+`kubectl get pods`{{execute}}
+
+Aşağıdaki komutla pod'u silin;
+
+`kubectl delete pod static-web-sunucusu-node01`{{execute}}
+
+Yeni bir pod'un otomatik olarak başladığını teyit edin;
 
 `kubectl get pods`{{execute}}
 
