@@ -79,6 +79,11 @@
         "description": "Kubernetes Cluster üzerinde deployment ile yatayda ölçekleme"
       },
       {
+        "course_id": "deployment-imaj-degistirme",
+        "title": "Deployment Imaj Değiştirme",
+        "description": "Kubernetes Cluster üzerinde deployment imaj değiştirme"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
