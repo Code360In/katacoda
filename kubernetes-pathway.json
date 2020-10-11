@@ -99,6 +99,11 @@
         "description": "Kubernetes Cluster üzerinde statefulset kullanımı"
       },
       {
+        "course_id": "statefulset-imaj-degistirme",
+        "title": "StatefulSet Imaj Değiştirme",
+        "description": "Kubernetes Cluster üzerinde statefulset imaj değiştirme"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

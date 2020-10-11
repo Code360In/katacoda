@@ -10,9 +10,9 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Statefulset
+## Imaj Değişikliği
 
-Aşağıdaki komutla ilk statefulset’inizi oluşturun;
+Aşağıdaki komutla deployment'ınızı oluşturun;
 
 ```bash
 cat <<EOF | kubectl create -f -
@@ -41,26 +41,28 @@ spec:
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla StatefulSet yaygınlaşma durumunu inceleyin;
+Aşağıdaki komutla Deployment yaygınlaşma durumunu inceleyin;
 
 `kubectl rollout status statefulset ilk-statefulset`{{execute}}
 
-Aşağıdaki komutla StataefulSet ve Pod listesini alın;
-
-`kubectl get statefulsets,pods`{{execute}}
-
-Listede gelen pod’lardan birinin tanımını inceleyin.
-
-`kubectl describe pod/ilk-statefulset-0`{{execute}}
-
-Pod tanımında **Controlled By** alan değeri olarak **StatefulSet/ilk-statefulset** yazdığını teyit edin.
-
-**ilk-statefulset-1** pod’unun tanımını silin;
-
-`kubectl delete pod/ilk-statefulset-1`{{execute}}
-
-Aşağıdaki komutla Pod listesini yeniden alın;
+Aşağıdaki komutla Pod’ları listeleyin;
 
 `kubectl get pods`{{execute}}
 
-Pod’un aynı isimle yeniden oluşturulduğunu teyit edin.
+Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
+
+`kubectl set image statefulset ilk-statefulset uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
+
+StatefulSet durumunu aşağıdaki komutla kontrol edin;
+
+`kubectl rollout status statefulset ilk-statefulset`{{execute}}
+
+Ekrandaki mesaj 1 pod değiştirildiğini ve beklendiğini belirtmekte. <kbd>Ctrl</kbd>+<kbd>C</kbd> ile bu ekrandan çıkabilirsiniz.
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
+Aşağıdaki komutla Pod’ları listeleyin;
+
+`kubectl get pods`{{execute}}
+
+Son pod’un imajı bulamadığı için ImagePullBackOff durumunda olduğunu teyit edin.
