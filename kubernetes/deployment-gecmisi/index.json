@@ -1,0 +1,37 @@
+{
+  "title": "Deployment Gecmisi",
+  "description": "Kubernetes Cluster üzerinde deployment geçmişi ve geri alma",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Hazırlık",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Deployment Geçmişi",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Deployment Geri Alma",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}
