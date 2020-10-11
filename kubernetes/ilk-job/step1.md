@@ -61,4 +61,4 @@ Alternatif olarak aşağıdaki komut kullanılarak job tarafından oluşturulan 
 
 Aşağıdaki komutla iş tanımı silinir;
 
-`kubectl logs --selector=job-name=ilk-is`{{execute}}
+`kubectl delete job ilk-is`{{execute}}
