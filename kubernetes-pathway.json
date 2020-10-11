@@ -44,6 +44,11 @@
         "description": "Kubernetes Cluster üzerinde gecici konteyner kullanımı"
       },
       {
+        "course_id": "statik-pod-kullanimi",
+        "title": "Statik Pod Kullanımı",
+        "description": "Kubernetes Cluster üzerinde statik pod kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
