@@ -16,9 +16,9 @@ Tekrar Pod listesini görüntüleyin;
 
 Bir önceki durum ile aynı olduğunu teyit edin.
 
-Aşağıdaki komutla ilk-statefulset-3’i silin;
+Aşağıdaki komutla ilk-statefulset-2’yi silin;
 
-`kubectl delete pod ilk-statefulset-3`
+`kubectl delete pod ilk-statefulset-2`{{execute}}
 
 Tekrar Pod listesini görüntüleyin;
 

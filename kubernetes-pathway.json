@@ -109,6 +109,11 @@
         "description": "Kubernetes Cluster üzerinde statefulset geçmişi ve geri alma"
       },
       {
+        "course_id": "ilk-daemonset",
+        "title": "İlk Daemonset",
+        "description": "Kubernetes Cluster üzerinde daemonset kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

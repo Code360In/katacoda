@@ -10,21 +10,19 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Hazırlık
+## Daemonset
 
-Aşağıdaki komutla deployment'ınızı oluşturun;
+Aşağıdaki komutla ilk DeamonSet’inizi oluşturun;
 
 ```bash
 cat <<EOF | kubectl create -f -
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: ilk-deployment
+  name: ilk-daemonset
   labels:
     app: k8sornek
 spec:
-  revisionHistoryLimit: 10
-  replicas: 3
   selector:
     matchLabels:
       app: k8sornek
@@ -41,24 +39,18 @@ spec:
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla Deployment yaygınlaşma durumunu inceleyin;
+Aşağıdaki komutla DaemonSet yaygınlaşma durumunu inceleyin;
 
-`kubectl rollout status deployment ilk-deployment`{{execute}}
+`kubectl get daemonsets`{{execute}}
 
-Aşağıdaki komutla imaj tag'ini v1 yapın;
+Aşağıdaki komutla Pod listesini alın;
 
-`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v1 --record`{{execute}}
+`kubectl get pods -o wide`{{execute}}
 
-Aşağıdaki komutla imaj tag'ini v2 yapın;
+Gelen listede her worker node için 1 adet pod bulunduğunu, master node'da bir pod yer almadığını teyit edin.
 
-`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v2 --record`{{execute}}
+Listede gelen pod’lardan birinin tanımını inceleyin. Örneğin;
 
-Aşağıdaki komutla deployment’ı yukarı doğru ölçekleyin;
+`kubectl describe pod ilk-daemonset-d8lrf`
 
-`kubectl scale deployment ilk-deployment --replicas=4 --record`{{execute}}
-
-Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
-
-`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
-
-**Continue** butonuna basarak bir sonraki adıma geçebilirsiniz.
+Pod tanımında **Controlled By** alan değeri olarak **DaemonSet/ilk-daemonset** yazdığını teyit edin.

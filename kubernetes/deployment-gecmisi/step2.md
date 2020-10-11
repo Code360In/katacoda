@@ -6,4 +6,4 @@ Aşağıdaki komutla deployment geçmişini listeleyin;
 
 **Record** parametresi ile yaptığımı değişikliklerin listelendiğini teyit edin.
 
-**Continue** butonuna basarak Docker yapılandırması adıma geçebilirsiniz.
+**Continue** butonuna basarak bir sonraki adıma geçebilirsiniz.
