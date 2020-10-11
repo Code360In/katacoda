@@ -114,6 +114,11 @@
         "description": "Kubernetes Cluster üzerinde daemonset kullanımı"
       },
       {
+        "course_id": "ilk-job",
+        "title": "İlk Job",
+        "description": "Kubernetes Cluster üzerinde job kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
