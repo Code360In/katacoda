@@ -129,6 +129,11 @@
         "description": "Kubernetes Cluster üzerinde çoklu iş çalıştırma"
       },
       {
+        "course_id": "job-paralel",
+        "title": "Paralel Job Çalıştırma",
+        "description": "Kubernetes Cluster üzerinde paralel iş çalıştırma"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

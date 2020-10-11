@@ -10,7 +10,9 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Çoklu İş Tanımı
+## Paralel İş Tanımı
+
+Varsayılanda Job ile tanımlanan iş ardıl çalışmaktadır. İstenirse job’ların paralel olarak çalıştırılabilmesi mümkündür. Bu Lab’da bir job’ı paralelde nasıl çalıştıracağınızı deneyimleyeceksiniz.
 
 Aşağıdaki komut çalıştırılarak yeni bir job tanımı oluşturulur;
 
@@ -19,18 +21,18 @@ cat <<EOF | kubectl apply -f -
 apiVersion: batch/v1
 kind: Job
 metadata:
- name: coklu-is
+ name: paralel-is
 spec:
- completions: 3
+ parallelism: 6
  template:
    metadata:
-     name: coklu-is
+     name: paralel-is
    spec:
      containers:
-     - name: coklu-is-konteyner
+     - name: paralel-is-konteyner
        image: busybox
        command: ["/bin/sh","-c"]
-       args: ["echo 'Çoklu iş çalışıyor..'; sleep 5"]
+       args: ["echo 'Paralel iş çalışıyor..'; sleep \$(shuf -i 5-10 -n 1)"]
      restartPolicy: OnFailure
 EOF
 ```{{execute}}
@@ -39,18 +41,8 @@ Aşağıdaki komuta iş için oluşturulan pod’lar izlenir;
 
 `kubectl get pods --watch`{{execute}}
 
-Ardıl şekilde 3 işin çalıştığı gözlemlenecektir.
+İşlerin paralel olarak çalıştığı gözlemleyin.
 
-Aşağıdaki komutla job tanımını inceleyin;
+Aşağıdaki komutla iş tanımı silin;
 
-`kubectl get jobs`{{execute}}
-
-Aşağıdaki komutla pod'ları listeleyin;
-
-`kubectl get pods`{{execute}}
-
-İş tanımı içerisindeki **completions** değeri ile oynayarak denemeler yapınız.
-
-Aşağıdaki komutla iş tanımı silinir;
-
-`kubectl delete job coklu-is`{{execute}}
+`kubectl delete job paralel-is`{{execute}}
