@@ -19,7 +19,7 @@ Environment=KUBELET_EXTRA_ARGS="--manifest-url=https://raw.githubusercontent.com
 ExecStart=/usr/bin/kubelet
 Restart=always
 ...
-```{{execute}}
+```
 
 pod-manifest-path parametresi ile izlenecek dizin bilgisini kubelet’e iletilmiş olur.
 

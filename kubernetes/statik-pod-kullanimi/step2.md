@@ -46,7 +46,7 @@ Environment=KUBELET_EXTRA_ARGS="--pod-manifest-path=/etc/kubelet.d/"
 ExecStart=/usr/bin/kubelet
 Restart=always
 ...
-```{{execute}}
+```
 
 pod-manifest-path parametresi ile izlenecek dizin bilgisini kubelet’e iletilmiş olur.
 
