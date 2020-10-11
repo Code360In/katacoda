@@ -2,14 +2,32 @@
 
 Bu adımda github üzerinde yer alan manifest dosyasının kubelet tarafından takip edilerek node üzerinde statik pod oluşturulması sağlanacak.
 
-Github’da yer alan manifest dosyasının kubelet tarafından izlenmesi için **/etc/sysconfig/kubelet** dosyası düzenlenmek üzere açılır. Dosya içeriği aşağıdaki şekilde düzenlenir;
+Github’da yer alan manifest dosyasının kubelet tarafından izlenmesi için **/lib/systemd/system/kubelet.service** dosyası düzenlenmek üzere açılır. 
 
+`vi /lib/systemd/system/kubelet.service`{{execute}}
 
-`KUBELET_EXTRA_ARGS="--manifest-url=https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/pod/statik-web-sunucusu.yaml"`
+Dosyada **[Service]** başlığının hemen altına aşağıdaki içeriği ekleyin;
+
+`Environment=KUBELET_EXTRA_ARGS="--manifest-url=https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/pod/statik-web-sunucusu.yaml"`
+
+Örneğin;
+
+```bash
+...
+[Service]
+Environment=KUBELET_EXTRA_ARGS="--manifest-url=https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/pod/statik-web-sunucusu.yaml"
+ExecStart=/usr/bin/kubelet
+Restart=always
+...
+```{{execute}}
 
 pod-manifest-path parametresi ile izlenecek dizin bilgisini kubelet’e iletilmiş olur.
 
-Değişikliklerin algılanması için kubelet servisi yeniden başlatılır;
+Değişikliklerin algılanması için aşağıdaki komutu çalıştırın;
+
+`systemctl daemon-reload`{{execute}}
+
+kubelet servisi yeniden başlatılır;
 
 `systemctl restart kubelet`{{execute}}
 
@@ -21,10 +39,14 @@ Kubectl yardımıyla default namespace’inde çalışan pod teyit edilir;
 
 `kubectl get pods`{{execute}}
 
-Yapılandırmaları eski haline getirmek için /etc/sysconfig/kubelet dosyası aşağıdaki içerikle eski haline geri getirilir;
+Yapılandırmaları eski haline getirmek için **/lib/systemd/system/kubelet.service** dosyası aşağıdaki içerikle eski haline geri getirilir;
 
-`KUBELET_EXTRA_ARGS=`
+`Environment=KUBELET_EXTRA_ARGS=`
 
-Değişikliklerin algılanması için kubelet servisi yeniden başlatılır;
+Değişikliklerin algılanması için aşağıdaki komutu çalıştırın;
+
+`systemctl daemon-reload`{{execute}}
+
+kubelet servisi yeniden başlatılır;
 
 `systemctl restart kubelet`{{execute}}

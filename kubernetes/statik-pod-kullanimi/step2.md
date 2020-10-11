@@ -1,6 +1,10 @@
 # Pod Manifest Dizini
 
-Bir worker node’da ssh oturumu başlatırlır. Başlatılan ssh oturumunda aşağıdaki komut çalıştırılarak **/etc/kubelet.d** dizini oluşturulur;
+Worker node’da ssh oturumu başlatırlır;
+
+`ssh node01`{{execute}}
+
+Başlatılan ssh oturumunda aşağıdaki komut çalıştırılarak **/etc/kubelet.d** dizini oluşturulur;
 
 `mkdir /etc/kubelet.d`{{execute}}
 
@@ -25,13 +29,32 @@ spec:
 EOF
 ```{{execute}}
 
-Oluşturduğumuz dizinin kubelet tarafından izlenmesi için **/etc/sysconfig/kubelet** dosyası düzenlenmek üzere açılır. Dosya içeriği aşağıdaki şekilde düzenlenir;
+Oluşturduğumuz dizinin kubelet tarafından izlenmesi için **/lib/systemd/system/kubelet.service** dosyası düzenlenmek üzere açın;
 
-`KUBELET_EXTRA_ARGS="--pod-manifest-path=/etc/kubelet.d/"`
+`vi /lib/systemd/system/kubelet.service`{{execute}}
+
+Dosyada **[Service]** başlığının hemen altına aşağıdaki içeriği ekleyin;
+
+`Environment=KUBELET_EXTRA_ARGS="--pod-manifest-path=/etc/kubelet.d/"`
+
+Örneğin;
+
+```bash
+...
+[Service]
+Environment=KUBELET_EXTRA_ARGS="--pod-manifest-path=/etc/kubelet.d/"
+ExecStart=/usr/bin/kubelet
+Restart=always
+...
+```{{execute}}
 
 pod-manifest-path parametresi ile izlenecek dizin bilgisini kubelet’e iletilmiş olur.
 
-Değişikliklerin algılanması için kubelet servisi yeniden başlatılır;
+Değişikliklerin algılanması için aşağıdaki komutu çalıştırın;
+
+`systemctl daemon-reload`{{execute}}
+
+kubelet servisi yeniden başlatılır;
 
 `systemctl restart kubelet`{{execute}}
 
@@ -51,11 +74,15 @@ kubectl ile yeniden pod listesi çekilerek nginx pod’un silindiği tespit edil
 
 `kubectl get pods`{{execute}}
 
-Yapılandırmaları eski haline getirmek için /etc/sysconfig/kubelet dosyası aşağıdaki içerikle eski haline geri getirilir;
+Yapılandırmaları eski haline getirmek için **/lib/systemd/system/kubelet.service** dosyası aşağıdaki içerikle eski haline geri getirilir;
 
-`KUBELET_EXTRA_ARGS=`
+`Environment=KUBELET_EXTRA_ARGS=`
 
-Değişikliklerin algılanması için kubelet servisi yeniden başlatılır;
+Değişikliklerin algılanması için aşağıdaki komutu çalıştırın;
+
+`systemctl daemon-reload`{{execute}}
+
+kubelet servisi yeniden başlatılır;
 
 `systemctl restart kubelet`{{execute}}
 
