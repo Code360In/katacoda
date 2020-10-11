@@ -43,6 +43,14 @@ Aşağıdaki komuta iş için oluşturulan pod’lar izlenir;
 
 İşlerin paralel olarak çalıştığı gözlemleyin.
 
+şağıdaki komutla job tanımını inceleyin;
+
+`kubectl get jobs`{{execute}}
+
+Aşağıdaki komutla pod'ları listeleyin;
+
+`kubectl get pods`{{execute}}
+
 Aşağıdaki komutla iş tanımı silin;
 
 `kubectl delete job paralel-is`{{execute}}
