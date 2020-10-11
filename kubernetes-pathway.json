@@ -69,6 +69,11 @@
         "description": "Kubernetes Cluster üzerinde replicaset pod takibi"
       },
       {
+        "course_id": "ilk-deployment",
+        "title": "İlk Deployment",
+        "description": "Kubernetes Cluster üzerinde deployment kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

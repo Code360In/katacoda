@@ -10,7 +10,7 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Konteyner Yaşam Döngüsü
+## Replicaset
 
 Aşağıdaki komutla ilk replicaset’inizi oluşturun;
 
