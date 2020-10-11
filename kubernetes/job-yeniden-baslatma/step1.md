@@ -41,7 +41,3 @@ Oluşturulmaya çalışılan iş tanımının hatalı olması nedeniyle aşağı
 `The Job "yeniden-baslatma-politikasi" is invalid: spec.template.spec.restartPolicy: Unsupported value: "Always": supported values: "OnFailure", "Never"`
 
 İş tanımlamalarında yeniden başlatma politikası olarak sadece **OnFailure** ve **Never** değerlerine izin verilmektedir.
-
-Aşağıdaki komutla iş tanımı silin;
-
-`kubectl delete job yeniden-baslatma-politikasi`{{execute}}
