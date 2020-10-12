@@ -149,6 +149,11 @@
         "description": "Kubernetes Cluster üzerinde cronjob başarılı job geçmişini limitleme"
       },
       {
+        "course_id": "cronjob-es-zamanli-calisma",
+        "title": "CronJob, Eş Zamanlı Çalışma",
+        "description": "Kubernetes Cluster üzerinde cronjob eş zamanlı çalışma"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
