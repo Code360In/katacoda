@@ -70,20 +70,18 @@ Aşağıdaki komutla servisler listeyin;
 
 `kubectl get services`{{execute}}
 
-## Endpoint'ler
+Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
 
-Aşağıdaki komutla endpoint’ler listeleyin;
+`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
 
-`kubectl get endpoints`{{execute}}
+Aşağıdaki deployment yaygınlaştırmasını bekleyin;
 
-uygulama-servisi ve uygulama-servisi-np endpoint’lerinin aynı küme değerine sahip olduğunu teyit edin.
+`kubectl rollout status deployment ornek-uygulama`{{execute}}
 
-Aşağıdaki komutla **uygulama-servisi-np** endpoint detayını görüntüleyin;
+Ekrandaki mesaj 4 pod’dan öncelikle 2’sinin değiştirildiğini ve beklendiğini belirtmekte. <kbd>Ctrl</kbd>+<kbd>C</kbd> ile bu ekrandan çıkabilirsiniz.
 
-`kubectl describe endpoints uygulama-servisi-np`{{execute}}
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
 
-Gelen açıklamada **NotReadyAddresses** bölümünün olduğunu teyit edin. Bu bölümde hazır olmayan pod’lara ait ip adresleri yer almaktadır. Teyit etmek için aşağıdaki komutu çalıştırın;
+Aşağıdaki komutla pod'ları listeleyin;
 
-`kubectl get pods -o wide`{{execute}}
-
-Hazır olmayan pod ip adresinin bir önceki çıktıda yer alan ip ile aynı olduğunu teyit edin.
+`kubectl get pods`{{execute}}

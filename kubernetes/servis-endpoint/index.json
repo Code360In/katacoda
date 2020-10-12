@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Servis Endpoint'leri",
+        "title": "Adım 1 - Hazırlık",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Servis Endpoint'leri",
+        "text": "step2.md"
       }
     ],
     "intro": {
