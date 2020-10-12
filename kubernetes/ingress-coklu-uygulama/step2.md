@@ -31,10 +31,10 @@ EOF
 
 Önceki bölümde not aldığınız ingress adresini kullanarak aşağıda örneklendiği şekilde **v1.k8s.localhost** host adıyla talep gönderin;
 
-`curl --header 'Host: v1.k8s.localhost' 127.0.0.1:$HTTP_PORT/surum`{{execute}}
+`curl --header 'Host: v1.k8s.localhost' http://127.0.0.1:$HTTP_PORT/surum`{{execute}}
 
 Benzer şekilde aşağıda örneklendiği şekilde v2.k8s.localhost host adıyla talep gönderin;
 
-`curl --header 'Host: v2.k8s.localhost' 127.0.0.1:$HTTP_PORT/surum`{{execute}}
+`curl --header 'Host: v2.k8s.localhost' http://127.0.0.1:$HTTP_PORT/surum`{{execute}}
 
 Nginx Ingress Controller’ın host adından yola çıkarak gelen http taleplerini farklı pod’lara yönlendirdiğini teyit edin.
