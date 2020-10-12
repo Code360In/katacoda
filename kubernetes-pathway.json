@@ -154,6 +154,11 @@
         "description": "Kubernetes Cluster üzerinde cronjob eş zamanlı çalışma"
       },
       {
+        "course_id": "ilk-servis",
+        "title": "İlk Servis",
+        "description": "Kubernetes Cluster üzerinde service kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
