@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - ConfigMap Kullanımı",
+        "title": "ConfigMap Kullanımı",
         "text": "step1.md"
       }
     ],
