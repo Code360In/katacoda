@@ -26,7 +26,13 @@ Başlatılan sh oturumunda aşağıdaki komutla uygulamaya talep gönderin;
 
 `curl uygulama-servisi.test/surum`{{execute}}
 
-Talebininiz uzun süre bekleme durumunda kalarak yanıt alınamadığını teyit edin. Ctrl + c tuş kombinasyonu ile talebi sonlandırın. exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
+Talebininiz uzun süre bekleme durumunda kalarak yanıt alınamadığını teyit edin. 
+
+<kbd>Ctrl</kbd>+<kbd>C</kbd> ile talebi sonlandırın.
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
+exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
 
 `exit`
 

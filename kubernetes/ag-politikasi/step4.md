@@ -12,9 +12,13 @@ Başlatılan sh oturumunda aşağıdaki komutla uygulamaya talep gönderin;
 
 Talebin yanıtlandığını teyit edin. Aşağıdaki komutla bu defa google.com adresine talep göndermeyi deneyin;
 
-`curl google.com`{{execute}}
+`curl www.google.com`{{execute}}
 
 Talebin yanıtlandığını teyit edin.
+
+exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
+
+`exit`
 
 **Dev** namespace’ine dışarı çıkan trafiğe izin vermemek için aşağıdaki komutla bir ağ politikası oluşturun;
 
@@ -52,11 +56,15 @@ Başlatılan sh oturumunda aşağıdaki komutla uygulamaya talep gönderin;
 
 Talebin yanıtlandığını teyit edin. Aşağıdaki komutla bu defa google.com adresine talep göndermeyi deneyin;
 
-`curl google.com`{{execute}}
+`curl www.google.com`{{execute}}
 
-Talebininiz uzun süre bekleme durumunda kalarak yanıt alınamadığını teyit edin. Ctrl + c tuş kombinasyonu ile talebi sonlandırın. exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
+Talebininiz uzun süre bekleme durumunda kalarak yanıt alınamadığını teyit edin. 
 
-`exitm`
+<kbd>Ctrl</kbd>+<kbd>C</kbd> ile talebi sonlandırın.
+
+exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
+
+`exit`
 
 Aşağıdaki komutla Network politikasını silin;
 
