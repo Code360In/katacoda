@@ -62,6 +62,8 @@ Talebininiz uzun süre bekleme durumunda kalarak yanıt alınamadığını teyit
 
 <kbd>Ctrl</kbd>+<kbd>C</kbd> ile talebi sonlandırın.
 
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
+
 exit komutu ile sh oturumunu sonlandırarak terminale geri dönün;
 
 `exit`
