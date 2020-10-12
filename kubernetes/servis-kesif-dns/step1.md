@@ -43,6 +43,10 @@ spec:
 EOF
 ```{{execute}}
 
+Aşağıdaki komutla deployment'ın yaygınlaşmasını bekleyin;
+
+`kubectl rollout status deployment http-server-deployment`{{execute}}
+
 Deployment ile oluşturulan pod’ların hizmetine erişim işim aşağıdaki komutla yeni bir servis oluşturun;
 
 ```bash
