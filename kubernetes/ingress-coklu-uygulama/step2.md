@@ -3,8 +3,8 @@
 Önceki adımdaki hazırlık adımları ardından aşağıda komutla ilk ingress tanımınızı güncelleyin;
 
 ```bash
-cat <<EOF | kubectl replace -f -
-apiVersion: networking.k8s.io/v1
+cat <<EOF | kubectl create -f -
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ilk-ingress
@@ -16,20 +16,16 @@ spec:
       - pathType: Prefix
         path: /
         backend:
-          service:
-            name: uygulama-servisi-v1
-            port:
-              number: 80
+          serviceName: uygulama-servisi-v1
+          servicePort: 80
   - host: "v2.k8s.localhost"
     http:
       paths:
       - pathType: Prefix
         path: /
         backend:
-          service:
-            name: uygulama-servisi-v2
-            port:
-              number: 80
+          serviceName: uygulama-servisi-v2
+          servicePort: 80
 EOF
 ```{{execute}}
 

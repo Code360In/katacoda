@@ -103,6 +103,10 @@ spec:
 EOF
 ```{{execute}}
 
+Aşağıdaki komutla deployment yaygınlaşma durumunu inceleyin;
+
+`kubectl rollout status deployment ornek-uygulama-v2`{{execute}}
+
 Aşağıdaki komutla ikinci deployment’a ait podları işaret eden **ClusterIP** türünde bir servis oluşturun;
 
 ```bash
@@ -124,5 +128,9 @@ spec:
       targetPort: 80
 EOF
 ```{{execute}}
+
+Aşağıdaki komutla Ingress http portunu **HTTP_PORT** değişkeninde saklayın;
+
+`HTTP_PORT=$(kubectl get service ingress-nginx-controller -n ingress-nginx -o jsonpath='{.spec.ports[?(@.name=="http")].nodePort}')`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
