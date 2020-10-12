@@ -24,7 +24,7 @@ metadata:
     app: k8sornek
 spec:
   revisionHistoryLimit: 10
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: k8sornek
@@ -44,6 +44,10 @@ EOF
 Aşağıdaki deployment yaygınlaştırmasını bekleyin;
 
 `kubectl rollout status deployment ornek-uygulama`{{execute}}
+
+Aşağıdaki komutla pod'ları listeleyin;
+
+`kubectl get pods`{{execute}}
 
 Aşağıdaki komutla ilk servis tanımınızı yapın;
 
@@ -72,7 +76,7 @@ Aşağıdaki komutla servisler listeyin;
 
 Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
 
-`kubectl set image deployment ilk-deployment uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
+`kubectl set image deployment ornek-uygulama uygulama=enterprisecodingcom/k8sornek:v6 --record`{{execute}}
 
 Aşağıdaki deployment yaygınlaştırmasını bekleyin;
 
