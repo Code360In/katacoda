@@ -169,6 +169,11 @@
         "description": "Kubernetes Cluster üzerinde service endpointleri"
       },
       {
+        "course_id": "servis-kesif-ortam-degiskeni",
+        "title": "Ortam Değişkenleri ile Servis Keşfi",
+        "description": "Kubernetes Cluster üzerinde ortam değişkenleri ile servis keşfi"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

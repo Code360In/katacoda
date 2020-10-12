@@ -89,3 +89,5 @@ Ekrandaki mesaj 4 pod’dan öncelikle 2’sinin değiştirildiğini ve beklendi
 Aşağıdaki komutla pod'ları listeleyin;
 
 `kubectl get pods -o wide`{{execute}}
+
+**Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
