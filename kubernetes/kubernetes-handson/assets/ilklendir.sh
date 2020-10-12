@@ -17,7 +17,7 @@ EOF
 
 RET=1
 until [ ${RET} -eq 0 ]; do
-  kubectl apply -f /tmp/handson.yaml &>/dev/null 2>/dev/null
+  kubectl apply -f /tmp/handson.yaml 2>/dev/null &> /dev/null
   RET=$?
   printf "*"
   sleep 2
