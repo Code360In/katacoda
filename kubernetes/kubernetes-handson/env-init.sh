@@ -1,4 +1,4 @@
-sleep 3; wait.sh
+sleep 3
 
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
@@ -287,3 +287,5 @@ provisioner: enterprisecoding.com/nfs
 mountOptions:
   - vers=4.1
 EOF
+
+ wait.sh
