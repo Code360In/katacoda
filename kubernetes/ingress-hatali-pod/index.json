@@ -1,0 +1,40 @@
+{
+  "title": "Ingress, Hatalı Durumdaki Pod",
+  "description": "Kubernetes Cluster üzerinde ingress, hatalı durumdaki pod",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Hazırlık",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Ingress Tanımı",
+        "text": "step2.md"
+      }
+    ],
+    "assets": {
+        "host01": [
+            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "code": "foreground.sh",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-iframe",
+    "dashboards": [{"name": "Ingress", "port": 31629}],
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}

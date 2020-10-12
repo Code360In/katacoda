@@ -199,6 +199,11 @@
         "description": "Kubernetes Cluster üzerinde ingress ile alt dizinde uygulama sunmak"
       },
       {
+        "course_id": "ingress-hatali-pod",
+        "title": "Ingress, Hatalı Durumdaki Pod",
+        "description": "Kubernetes Cluster üzerinde ingress, hatalı durumdaki pod"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
