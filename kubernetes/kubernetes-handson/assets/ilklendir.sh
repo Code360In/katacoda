@@ -15,7 +15,9 @@ cat << "EOF"
 Kubernetes handson ortamı kullanıma hazırlanıyor lütfen bekleyiniz
 EOF
 
-
+RET=1
+until [ ${RET} -eq 0 ]; do
+sleep 2
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Namespace
@@ -302,7 +304,9 @@ metadata:
 provisioner: enterprisecoding.com/nfs
 mountOptions:
   - vers=4.1
-EOF &> /dev/null
+EOF
+  RET=$?
+done
 
 while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' 2>/dev/null) != "True True" ]]; do printf "." && sleep 1; done
 echo ""
