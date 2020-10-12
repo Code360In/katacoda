@@ -139,6 +139,11 @@
         "description": "Kubernetes Cluster üzerinde job çalışma süresinin kısıtlanması"
       },
       {
+        "course_id": "ilk-cronjob",
+        "title": "İlk CronJob",
+        "description": "Kubernetes Cluster üzerinde cronjob kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
