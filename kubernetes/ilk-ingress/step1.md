@@ -10,14 +10,6 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-Aşağıdaki komutla Nginx Ingress Controller'ın hazır olduğunu teyi edin;
-
-```bash
-kubectl wait --namespace ingress-nginx \
-  --for=condition=ready pod \
-  --selector=app.kubernetes.io/component=controller
-```{{execute}}
-
 ## Ingress
 
 Ingress Controller kurulumu ardından ilk ingress talebinizi oluşturabilirsiniz. Bunun için öncelikle aşağıdaki komutu çalıştırarak bir deployment ile örnek uygulamanızı 3 instance olarak başlatın;
@@ -105,12 +97,10 @@ Aşağıdaki komutla ingress’leri listeleyin;
 
 `kubectl get ingress`{{execute}}
 
-Burada belirtilen adresin az önce öğrendiğiniz $HTTP_PORT portuna bir http talebi gönderin. Örneğin;
+Burada belirtilen adresin az önce öğrendiğiniz $HTTP_PORT portuna bir http talebi gönderin;
 
-`curl 192.168.177.10:$HTTP_PORT/surum`
+`curl 127.0.0.1$HTTP_PORT/surum`{{execute}}
 
 Uygulamanın sunduğu sunucu adı ve sürüme dair kısa bilgi karşınıza gelecek. Bu komutu arka arkaya birkaç defa çalıştırarak round-robin mantığı ile deployment’a ait iki pod’dan yanıt geldiğini teyit edin.
 
-Bir tarayıcıda aşağıdaki komutun çıktısındaki url’yi açarak web sayfasının geldiğini teyit edin. 
-
-`echo "http://192.168.177.10:$HTTP_PORT"`{{execute}}
+Sağ bölümde yer alan **Ingress** segmesini yenileyerek uygulamanın açıldığını teyit edin

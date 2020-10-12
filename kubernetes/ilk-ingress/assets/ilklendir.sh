@@ -12,7 +12,7 @@ cat << "EOF"
                             |_|                                            |___/
 ===================================================================================
 
-Ingress controller kullanıma hazırlanıyor lütfen bekleyiniz
+Kubernetes Cluster'ı hazırlanıyor. Lütfen bekleyiniz.
 EOF
 
 RET=1
@@ -23,6 +23,7 @@ until [ ${RET} -eq 0 ]; do
   sleep 2
 done
 
+echo "Ingress controller kullanıma hazırlanıyor lütfen bekleyiniz"
 kubectl apply -f https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/ingress/deploy-nginx-ingress-controller.yaml 2>/dev/null &> /dev/null
 
 while [[ $(kubectl get pods -n ingress-nginx -l  app.kubernetes.io/component=controller  -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' 2>/dev/null) != "True" ]]; do printf "." && sleep 1; done
