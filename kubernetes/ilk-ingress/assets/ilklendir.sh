@@ -23,6 +23,7 @@ until [ ${RET} -eq 0 ]; do
   sleep 2
 done
 
+echo ""
 echo "Ingress controller kullanıma hazırlanıyor lütfen bekleyiniz"
 kubectl apply -f https://raw.githubusercontent.com/enterprisecoding-ltd/k8s-ornekleri/master/ingress/deploy-nginx-ingress-controller.yaml 2>/dev/null &> /dev/null
 

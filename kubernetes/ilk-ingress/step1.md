@@ -103,4 +103,4 @@ Burada belirtilen adresin az önce öğrendiğiniz $HTTP_PORT portuna bir http t
 
 Uygulamanın sunduğu sunucu adı ve sürüme dair kısa bilgi karşınıza gelecek. Bu komutu arka arkaya birkaç defa çalıştırarak round-robin mantığı ile deployment’a ait iki pod’dan yanıt geldiğini teyit edin.
 
-Sağ bölümde yer alan **Ingress** segmesini yenileyerek uygulamanın açıldığını teyit edin
+Sağ bölümde yer alan **Ingress** segmesine geçiş yaparak **Try Again** linkine ya da **Display Port ** butonuna basarak uygulamanın açıldığını teyit edin
