@@ -30,8 +30,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-iframe",
-    "dashboards": [{"name": "Ingress", "port": 31629}],
+    "uilayout": "terminal",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
