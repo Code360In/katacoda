@@ -16,7 +16,8 @@
     ],
     "assets": {
         "host01": [
-            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "handson.yaml", "target": "/tmp/"}
         ]
     }
   },
