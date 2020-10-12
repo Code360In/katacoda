@@ -14,6 +14,6 @@ cat << "EOF"
 
 Kubernetes handson ortamı kullanıma hazırlanıyor lütfen bekleyiniz
 EOF
-while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True True" ]]; do printf "." && sleep 1; done
+while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' 2>/dev/null) != "True True" ]]; do printf "." && sleep 1; done
 echo ""
 echo "Kubernetes handson ortamı kullanıma hazır. Başarılar..."
