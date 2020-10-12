@@ -117,7 +117,7 @@ Komut çıktısı olarak **nginx-conf** içerisinde yer alan **nginx.conf**’un
 Aşağıdaki komutla uygulamayı NodePort üzerinden erişime açın;
 
 ```bash
-cat <<EOF | kubectl create -f –
+cat <<EOF | kubectl create -f -
 apiVersion: v1
 kind: Service
 metadata:
