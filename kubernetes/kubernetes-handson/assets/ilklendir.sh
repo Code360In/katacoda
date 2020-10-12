@@ -19,9 +19,11 @@ RET=1
 until [ ${RET} -eq 0 ]; do
   kubectl apply -f /tmp/handson.yaml 2>/dev/null &> /dev/null
   RET=$?
-  printf "*"
+  printf "."
   sleep 2
 done
+
+printf "*"
 
 while [[ $(kubectl get pods -n handson -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' 2>/dev/null) != "True True" ]]; do printf "." && sleep 1; done
 echo ""
