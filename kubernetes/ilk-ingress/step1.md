@@ -53,7 +53,7 @@ EOF
 
 Aşağıdaki komutla StatefulSet yaygınlaşma durumunu inceleyin;
 
-`kubectl rollout status statefulset ornek-uygulama-v1`{{execute}}
+`kubectl rollout status deployment ornek-uygulama-v1`{{execute}}
 
 Aşağıdaki komutla deployment’a ait podları işaret eden **ClusterIP** türünde bir servis oluşturun;
 
@@ -81,7 +81,7 @@ Bu hazırlık adımları ardından aşağıda komutla ilk ingress tanımınızı
 
 ```bash
 cat <<EOF | kubectl create -f -
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ilk-ingress
@@ -92,10 +92,8 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service:
-            name: uygulama-servisi-v1
-            port:
-              number: 80
+          serviceName: uygulama-servisi-v1
+          servicePort: 80
 EOF
 ```{{execute}}
 

@@ -10,9 +10,15 @@
         "text": "step1.md"
       }
     ],
+    "assets": {
+        "host01": [
+            {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",
+      "code": "foreground.sh",
       "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
     },
     "finish": {
@@ -20,7 +26,8 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-iframe",
+    "dashboards": [{"name": "Ingress", "port": 31629}],
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
