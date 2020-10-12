@@ -24,7 +24,7 @@ metadata:
     app: k8sornek
 spec:
   revisionHistoryLimit: 10
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: k8sornek
@@ -88,4 +88,4 @@ Ekrandaki mesaj 4 pod’dan öncelikle 2’sinin değiştirildiğini ve beklendi
 
 Aşağıdaki komutla pod'ları listeleyin;
 
-`kubectl get pods`{{execute}}
+`kubectl get pods -o wide`{{execute}}

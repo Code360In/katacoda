@@ -4,7 +4,7 @@ Aşağıdaki komutla endpoint’ler listeleyin;
 
 `kubectl get endpoints`{{execute}}
 
-uygulama-servisi ve uygulama-servisi-np endpoint’lerinin aynı küme değerine sahip olduğunu teyit edin.
+uygulama-servisi-np endpoint’inde sadece **Running** statüsündeki pod'lara ait ip'lerin olduğunu teyit edin.
 
 Aşağıdaki komutla **uygulama-servisi-np** endpoint detayını görüntüleyin;
 
