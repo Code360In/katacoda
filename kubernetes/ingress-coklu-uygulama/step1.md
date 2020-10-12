@@ -10,9 +10,9 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Ingress
+## İlk Uygulamanın Hazırlanması
 
-Ingress Controller kurulumu ardından ilk ingress talebinizi oluşturabilirsiniz. Bunun için öncelikle aşağıdaki komutu çalıştırarak bir deployment ile örnek uygulamanızı 3 instance olarak başlatın;
+Aşağıdaki komutla ilk uygulamaya ait deployment tanımı oluşturulur;
 
 ```bash
 cat <<EOF | kubectl create -f -
@@ -43,11 +43,11 @@ spec:
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla deployment yaygınlaşma durumunu inceleyin;
+Aşağıdaki komutla ilk uygulama deployment'ının yaygınlaşma durumunu inceleyin;
 
 `kubectl rollout status deployment ornek-uygulama-v1`{{execute}}
 
-Aşağıdaki komutla deployment’a ait podları işaret eden **ClusterIP** türünde bir servis oluşturun;
+Aşağıdaki komutla ilk uygulama deployment’ına ait podları işaret eden **ClusterIP** türünde bir servis oluşturun;
 
 ```bash
 cat <<EOF | kubectl create -f -
@@ -69,38 +69,60 @@ spec:
 EOF
 ```{{execute}}
 
-Bu hazırlık adımları ardından aşağıda komutla ilk ingress tanımınızı yapın;
+## İkinci Uygulamanın Hazırlanması
+
+Aşağıdaki komutu çalıştırarak örnek uygulamanın v2 sürümüne dair bir deployment oluşturun;
 
 ```bash
 cat <<EOF | kubectl create -f -
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: ilk-ingress
+  name: ornek-uygulama-v2
+  labels:
+    app: k8sornek
+    version: v2
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          serviceName: uygulama-servisi-v1
-          servicePort: 80
+  revisionHistoryLimit: 10
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8sornek
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: k8sornek
+        version: v2
+    spec:
+      containers:
+      - name: uygulama
+        image: enterprisecodingcom/k8sornek:v2
+        ports:
+        - containerPort: 80
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla Ingress http portunu **HTTP_PORT** değişkeninde saklayın;
+Aşağıdaki komutla ikinci deployment’a ait podları işaret eden **ClusterIP** türünde bir servis oluşturun;
 
-`HTTP_PORT=$(kubectl get service ingress-nginx-controller -n ingress-nginx -o jsonpath='{.spec.ports[?(@.name=="http")].nodePort}')`{{execute}}
+```bash
+cat <<EOF | kubectl create -f -
+apiVersion: v1
+kind: Service
+metadata:
+  name: uygulama-servisi-v2
+  labels:
+    app: k8sornek
+    version: v2
+spec:
+  selector:
+    app: k8sornek
+    version: v2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+EOF
+```{{execute}}
 
-Aşağıdaki komutla ingress’leri listeleyin;
-
-`kubectl get ingress`{{execute}}
-
-Burada belirtilen adresin az önce öğrendiğiniz $HTTP_PORT portuna bir http talebi gönderin;
-
-`curl 127.0.0.1:$HTTP_PORT/surum`{{execute}}
-
-Uygulamanın sunduğu sunucu adı ve sürüme dair kısa bilgi karşınıza gelecek. Bu komutu arka arkaya birkaç defa çalıştırarak round-robin mantığı ile deployment’a ait iki pod’dan yanıt geldiğini teyit edin.
-
-Sağ bölümde yer alan **Ingress** segmesine geçiş yaparak **Try Again** linkine ya da **Display Port ** butonuna basarak uygulamanın açıldığını teyit edin
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
