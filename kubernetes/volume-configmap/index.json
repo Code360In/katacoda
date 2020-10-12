@@ -10,6 +10,11 @@
         "text": "step1.md"
       }
     ],
+    "assets": {
+        "host01": [
+            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",
