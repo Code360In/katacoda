@@ -10,7 +10,7 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## Servis
+## NodePort Üzerinden Erişim
 
 Aşağıdaki komut çalıştırılarak örnek uygulama Deployment tanımı gerçekleştirin;
 
@@ -52,7 +52,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
-  name: uygulama-servisi
+  name: uygulama-servisi-np
   labels:
     app: k8sornek
 spec:
@@ -62,45 +62,20 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: NodePort
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla servisler listelenir;
+Aşağıdaki komutla servisler listeyin;
 
 `kubectl get services`{{execute}}
 
-Gelen listede **uygulama-servisi**’nin olduğu teyit edilir.
+Gelen listede **uygulama-servisi-np** için atanan **NodePort** değeri tespit edin. Aşağıdaki komut kullanılarak NodePort değerini **nodePort** değişkenine atayın.
 
-Servisi test etmek için bir **curl** pod’u ayağa kaldırılarak içerisinde **sh** process’i başlatılır;
+`nodePort=$(kubectl get services uygulama-servisi-np -o=jsonpath='{.spec.ports[0].nodePort}')`{{execute}}
 
-`kubectl run -i --tty curl --image=enterprisecodingcom/curl --rm --restart=Never -- sh`{{execute}}
+curl ile worker node’lardan birisine tespit edilen nodePort portundan get talebi gönderin. Örneğin;
 
-sh oturumunda aşağıdaki komutla servis üzerinden servise http talebi gönderin;
+`curl 192.168.177.9:$nodePort`
 
-`curl uygulama-servisi`{{execute}}
-
-Servisin işaret ettiği pod’larda hizmet veren uygulamanın yanıt verdiğini teyit edin. Bir başka terminal’de Örnek uygulamayı yatayda çoğaltın;
-
-`kubectl scale deployment ornek-uygulama --replicas=3`{{execute}}
-
-Pod sh process’inin bulunduğu terminal’e geri dönerek yeniden talepte bulunun;
-
-`curl uygulama-servisi`{{execute}}
-
-Servisin işaret ettiği pod’larda hizmet veren uygulamanın yanıt vermeye devam ettiğini teyit edin. Tekrar ikinci termale geçiş yapın. Aşağıdaki komutu çalıştırarak uygulama konteyner’ının imajını olmayan bir imaj ile değiştirin;
-
-`kubectl set image deployment ornek-uygulama uygulama=enterprisecodingcom/k8sornek:v6`{{execute}}
-
-Pod listesini görüntüleyin;
-
-`kubectl get pods`{{execute}}
-
-Listede bir pod’un **ImagePullBackOff** durumunda iken diğerlerinin hizmet verdiğini teyit edin.
-
-Curl pod’una geri dönerek yeniden talepte bulunun;
-
-`curl uygulama-servisi`{{execute}}
-
-Servisin işaret ettiği pod’larda hizmet veren uygulamanın yanıt vermeye devam ettiğini teyit edin. sh oturumunu sonlandırın;
-
-`exit`{{execute}}
+Dışarıdan, servisin işaret ettiği pod’larda hizmet veren uygulamanın yanıt alabildiğinizi teyit edin.

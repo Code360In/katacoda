@@ -159,6 +159,11 @@
         "description": "Kubernetes Cluster üzerinde service kullanımı"
       },
       {
+        "course_id": "servis-nodeport",
+        "title": "Servis, NodePort Üzerinden Erişim",
+        "description": "Kubernetes Cluster üzerinde service nodePort üzerinden erişim"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
