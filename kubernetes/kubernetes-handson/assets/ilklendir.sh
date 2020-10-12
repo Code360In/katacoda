@@ -19,7 +19,7 @@ RET=1
 until [ ${RET} -eq 0 ]; do
   kubectl apply -f /tmp/handson.yaml 2>/dev/null
   RET=$?
-  echo "*"
+  printf "*"
   sleep 2
 done
 
