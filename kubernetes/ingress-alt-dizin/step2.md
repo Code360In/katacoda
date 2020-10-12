@@ -12,16 +12,14 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /\$2
 spec:
   rules:
-  - host: "v1.k8s.localhost"
-    http:
+  - http:
       paths:
       - pathType: Prefix
         path: /v1(/|$)(.*)
         backend:
           serviceName: uygulama-servisi-v1
           servicePort: 80
-  - host: "v2.k8s.localhost"
-    http:
+  - http:
       paths:
       - pathType: Prefix
         path: /v2(/|$)(.*)
