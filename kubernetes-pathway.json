@@ -174,6 +174,11 @@
         "description": "Kubernetes Cluster üzerinde ortam değişkenleri ile servis keşfi"
       },
       {
+        "course_id": "servis-kesif-dns",
+        "title": "DNS ile Servis Keşfi",
+        "description": "Kubernetes Cluster üzerinde dns kayıtları ile servis keşfi"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"

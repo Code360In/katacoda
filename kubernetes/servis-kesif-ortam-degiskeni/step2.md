@@ -12,7 +12,7 @@ Açılan shell oturumunda aşağıdaki komutla ortam değişkenleri sorgulayın;
 
 Gelen yanıtta **http-server-service** için oluşturulan ortam değişkenleri görüldüğünü teyit edin. Aşağıdaki komutla pod’dan çıkış yapılır;
 
-`exit`{{execute}}
+`exit`
 
 Görüntülenen ip adresinin incelenmesi için aşağıdaki komutla servis bilgileri alın;
 
