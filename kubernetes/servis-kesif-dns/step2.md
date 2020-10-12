@@ -21,7 +21,7 @@ EOF
 
 Pod loglarını inceleyerek curl işleminin sonucunu takip edin;
 
-`kkubectl logs http-server-istemci`{{execute}}
+`kubectl logs http-server-istemci`{{execute}}
 
 Bu komut sonunda gördüğünüz çıktı servis için DNS çözümlemesi yapıldığını göstermektedir.
 
@@ -31,7 +31,7 @@ Kubernetes DNS hizmeti http-server-service adındaki servisimizin adresini çöz
 
 Kubernetes DNS kayıtlarını incelemek için aşağıdaki komutla busybox konteyner’ı bulunan bir pod içerisinde Shell oturumu başlatın;
 
-`kubectl run -i --tty dnsutils --image=docker.io/enterprisecodingcom/dnsutils-- sh`{{execute}}
+`kubectl run -i --tty dnsutils --image=docker.io/enterprisecodingcom/dnsutils -- sh`{{execute}}
 
 Açılan shell oturumunda aşağıdaki komutla **http-server-service.default.svc** adresi sorgulanır;
 
@@ -40,6 +40,10 @@ Açılan shell oturumunda aşağıdaki komutla **http-server-service.default.svc
 Ek olarak aşağıdaki kayıtlar için sorgulama yapılır;
 * http-server-service.default
 * http-server-service
+
+`nslookup http-server-service.default`{{execute}}
+
+`nslookup http-server-service`{{execute}}
 
 Gelen yanıtta http-server-service için oluşturulan cluster ip’si görülecektir. Aşağıdaki komutla pod’dan çıkış yapılır;
 
