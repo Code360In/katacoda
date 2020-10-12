@@ -1,1 +1,1 @@
-sleep 2; wait.sh
+sleep 2; ilklendir.sh
