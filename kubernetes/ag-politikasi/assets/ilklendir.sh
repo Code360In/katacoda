@@ -15,13 +15,22 @@ cat << "EOF"
 Kubernetes Cluster'ı hazırlanıyor. Lütfen bekleyiniz.
 EOF
 
-RET=1
-until [ ${RET} -eq 0 ]; do
-  kubectl wait --for=condition=ready node node01 2>/dev/null &> /dev/null
-  RET=$?
-  printf "."
-  sleep 2
-done
+#kubeadm config images pull
+#
+#kubeadm init --pod-network-cidr 192.168.0.0/16
+#
+#mkdir -p $HOME/.kube
+#sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+#sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#
+#RET=1
+#until [ ${RET} -eq 0 ]; do
+#  kubectl wait --for=condition=ready node node01 2>/dev/null &> /dev/null
+#  RET=$?
+#  printf "."
+#  sleep 2
+#done
+
 
 echo ""
 echo "Kubernetes Cluster'ı kullanıma hazır..."

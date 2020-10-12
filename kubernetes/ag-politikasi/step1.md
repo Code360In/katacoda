@@ -62,6 +62,10 @@ spec:
 EOF
 ```{{execute}}
 
+Aşağıdaki komutla deployment'ın yaygınlaştırmasını bekleyin;
+
+`kubectl rollout status deployment ornek-uygulama -n test`{{execute}}
+
 Aşağıdaki komutla ilgili kaynakların **test** namespace’inde oluştuğunu teyit ediniz;
 
 `kubectl get pods,replicasets,deployments,services --namespace test`{{execute}}
