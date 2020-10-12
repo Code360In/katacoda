@@ -101,6 +101,10 @@ spec:
 EOF 
 ```{{execute}}
 
+Aşağıdaki komutla deployment yaygınlaşma durumunu inceleyin;
+
+`kubectl rollout status deployment nginx`{{execute}}
+
 Yapılandırmayı inceleyerek **nginx-conf** içerisinde yer alan **nginx.conf**’un pod içerisinde **/etc/nginx** altına bağlandığını teyit edin.
 
 Aşağıdaki komutla pod içerisindeki **/etc/nginx** dizinini listeleyin;
