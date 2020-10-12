@@ -10,44 +10,39 @@ aşağıdaki komutla Kubernetes Cluster'ına dahil node'ları listeleyebilirsini
 
 `kubectl get nodes`{{execute}}
 
-## CronJob
+## Başarılı Job Geçmişini Limitleme
 
-Aşağıdaki komut çalıştırılarak ilk cronjob tanımı gerçekleştirilir;
+CronJob’lar varsayılanda başarılı çalışan son 3 adet job’a ait kaydı tutmaktadır. İstenirse **.spec.successfulJobsHistoryLimit** alanı ile bu varsayılan değer değiştirilebilmektedir. Bu lab’da varsayılan değeri değiştirmeyi deneyimleyeceksiniz.
+
+Aşağıdaki komut çalıştırılarak cronjob tanımı oluşturulur;
 
 ```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: ilk-cronjob
+  name: basarili-gecmis-limit
 spec:
   schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 1
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: ilk-cronjob-konteyner
+          - name: basarili-gecmis-limit-konteyner
             image: busybox
-            command: ["echo", "İlk zamanlanmış iş çalışıyor.."]
+            command: ["echo", "Zamanlanmış iş çalışıyor.."]
           restartPolicy: OnFailure
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla 3 dakika boyunca cronjob tarafından oluşturulan job’lar izlenir;
+2 dakika ardından aşağıdaki komutla job’lar listelenir;
 
-`kubectl get jobs -w`{{execute}}
+`kubectl get jobs`{{execute}}
 
-Aşağıdaki komut çalıştırılarak Job hakkında bilgi alınır;
-
-`kubectl describe cronjob ilk-cronjob`{{execute}}
-
-Komut çıktısında yer alan bilgiler incelenir.
-
-Job tarafından oluşturulan pod’ları listelemek için aşağıdaki komut çalıştırılır;
-
-`kubectl get pods`{{execute}}
+Gelen listede sadece son başarılı job çalışmasının yer aldığı görülecektir.
 
 Aşağıdaki komutla cronjob tanımı silinir;
 
-`kubectl delete cronjob ilk-cronjob`{{execute}}
+`kubectl delete cronjob basarili-gecmis-limit`{{execute}}

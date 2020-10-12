@@ -144,6 +144,11 @@
         "description": "Kubernetes Cluster üzerinde cronjob kullanımı"
       },
       {
+        "course_id": "cronjob-gecmis-limiti",
+        "title": "CronJob, Başarılı Job Geçmişini Limitleme",
+        "description": "Kubernetes Cluster üzerinde cronjob başarılı job geçmişini limitleme"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
