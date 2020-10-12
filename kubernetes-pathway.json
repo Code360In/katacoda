@@ -184,6 +184,11 @@
         "description": "Kubernetes Cluster üzerinde nginx'in ingress controller olarak kurulumu"
       },
       {
+        "course_id": "ilk-ingress",
+        "title": "İlk Ingress",
+        "description": "Kubernetes Cluster üzerinde ilk ingress tanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
