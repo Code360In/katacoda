@@ -51,7 +51,6 @@ data:
               proxy_set_header Referer https://www.google.com;
           }
       }
-      include /etc/nginx/virtualhost/virtualhost.conf;
     }
 EOF
 ```{{execute}}
