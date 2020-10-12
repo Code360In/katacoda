@@ -99,7 +99,7 @@ Aşağıdaki komutla ingress’leri listeleyin;
 
 Burada belirtilen adresin az önce öğrendiğiniz $HTTP_PORT portuna bir http talebi gönderin;
 
-`curl 127.0.0.1$HTTP_PORT/surum`{{execute}}
+`curl 127.0.0.1:$HTTP_PORT/surum`{{execute}}
 
 Uygulamanın sunduğu sunucu adı ve sürüme dair kısa bilgi karşınıza gelecek. Bu komutu arka arkaya birkaç defa çalıştırarak round-robin mantığı ile deployment’a ait iki pod’dan yanıt geldiğini teyit edin.
 
