@@ -14,6 +14,6 @@ cat << "EOF"
 
 Ingress controller kullanıma hazırlanıyor lütfen bekleyiniz
 EOF
-while [[ $(kubectl get pods -n ingress-nginx -l  app.kubernetes.io/component=controller  -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do printf "." && sleep 1; done
+while [[ $(kubectl get pods -n ingress-nginx -l  app.kubernetes.io/component=controller  -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}' 2>/dev/null) != "True" ]]; do printf "." && sleep 1; done
 echo ""
 echo "Ingress ortamı kullanıma hazır..."
