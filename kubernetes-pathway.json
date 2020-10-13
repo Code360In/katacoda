@@ -264,6 +264,11 @@
         "description": "Kubernetes Cluster'ı üzerinde Docker Registry kurulumu"
       },
       {
+        "course_id": "jaeger-kurulumu",
+        "title": "Jaeger Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Jaeger kurulumu"
+      },
+      {
         "course_id": "kubernetes-handson",
         "title": "Kubernetes Hands-On Eğitimi",
         "description": "Kubernetes Cluster'ı üzerinde senaryo ve sorulara cevap vererek handson deneyimi kazandırır"
