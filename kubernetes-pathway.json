@@ -244,7 +244,7 @@
         "description": "HPA kullanarak yatayda otomatik büyüyen uygulamalar oluşturma"
       },
       {
-        "course_id": "helm-v3-kullanimi",
+        "course_id": "helm-v3-kurulumu",
         "title": "Helm v3 Kurulum ve Kullanımı",
         "description": "Kubernetes defakto paket yöneticisi Helm v3 kurulum ve kullanımı"
       },
