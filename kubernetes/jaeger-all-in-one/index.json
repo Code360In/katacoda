@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Jaeger Kurulumu",
+        "title": "Adım 1 - Jaeger Kurulumu",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Örnek Uygulama",
+        "text": "step2.md"
       }
     ],
     "intro": {
@@ -23,7 +27,10 @@
     "uilayout": "terminal-iframe",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
     "showdashboard": true,
-    "dashboards": [{"name": "Jaeger UI", "port": 16686}]
+    "dashboards": [
+      {"name": "Jaeger UI", "port": 16686},
+      {"name": "HotRod UI", "port": 8080}
+    ]
   },
   "backend": {
     "imageid": "docker"
