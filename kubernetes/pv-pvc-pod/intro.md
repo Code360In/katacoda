@@ -1,7 +1,7 @@
 
-# PersistentVolume ve PersistentVolumeClaim Kullanımı
+# PersistentVolume, PersistentVolumeClaim ve Pod İlişkisi
 
-Kubernetes PersistentVolume ve PersistentVolumeClaim kullanımı senaryosuna hoş geldiniz.
+Kubernetes PersistentVolume, PersistentVolumeClaim ve Pod ilişkisi senaryosuna hoş geldiniz.
 
 ## Senaryo
 
