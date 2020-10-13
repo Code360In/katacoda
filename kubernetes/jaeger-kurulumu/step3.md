@@ -26,7 +26,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: JAEGER_AGENT_HOST
-          value: 
+          value: jaeger-temel-kurulum-agent
         - name: JAEGER_AGENT_PORT
           value: "6831"
         ports:
@@ -67,7 +67,11 @@ spec:
 EOF
 ```{{execute}}
 
-bir kaç dakika içerisinde uygulama arayüzü **31256** portu üzerinden yayına hazır olacaktır.
+Aşağıdaki komutla deployment'ın yaygınlaşması beklenir;
+
+`kubectl rollout status deployment hotrod`{{execute}}
+
+Uygulama arayüzü **31256** portu üzerinden yayına hazır olacaktır.
 
 Sağ taraftaki tablardan **HotRod UI** tabına geçiş yaparak arayüze ulaşabilirsiniz.
 

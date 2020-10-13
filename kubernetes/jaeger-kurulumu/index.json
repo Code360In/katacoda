@@ -46,7 +46,7 @@
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
     "showdashboard": true,
     "dashboards": [
-      {"name": "Jaeger UI", "port": 16686},
+      {"name": "Jaeger UI", "port": 31629},
       {"name": "HotRod UI", "port": 31256}
     ]
   },

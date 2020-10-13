@@ -21,9 +21,9 @@ Aşağıdaki komutla jaeger-temel-kurulum'a ait pod'ları listeleyin;
 
 Pod'lara ait logları aşağıdaki komutla görüntüleyin;
 
-`kubectl logs -l app.kubernetes.io/instance=simplest`{{execute}}
+`kubectl logs -l app.kubernetes.io/instance=jaeger-temel-kurulum`{{execute}}
 
-bir kaç dakika içerisinde Jaeger arayüzü **16686** portu üzerinden yayına hazır olacaktır.
+bir kaç dakika içerisinde Jaeger arayüzü **31629** portu üzerinden yayına hazır olacaktır.
 
 Sağ taraftaki tablardan **Jaeger UI** tabına geçiş yaparak arayüze ulaşabilirsiniz.
 
