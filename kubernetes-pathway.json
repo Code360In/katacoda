@@ -234,16 +234,6 @@
         "description": "Kubernetes Cluster üzerinde kaynak kullanımına dair politikalar"
       },
       {
-        "course_id": "playground",
-        "title": "Kubernetes Çalışma Alanı",
-        "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
-      },
-      {
-        "course_id": "helm-kurulumu",
-        "title": "Helm v2 Kurulumu",
-        "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi sürüm 2 kurulumu"
-      },
-      {
         "course_id": "metrics-server-kurulumu",
         "title": "Metrics Server Kurulumu",
         "description": "Kubernetes Cluster'ı üzerinde Metrics Server kurulumu"
@@ -252,6 +242,21 @@
         "course_id": "hpa-kullanimi",
         "title": "Horizontal Pod Autoscaler (HPA) Kullanımı",
         "description": "HPA kullanarak yatayda otomatik büyüyen uygulamalar oluşturma"
+      },
+      {
+        "course_id": "helm-v3-kullanimi",
+        "title": "Helm v3 Kurulum ve Kullanımı",
+        "description": "Kubernetes defakto paket yöneticisi Helm v3 kurulum ve kullanımı"
+      },
+      {
+        "course_id": "playground",
+        "title": "Kubernetes Çalışma Alanı",
+        "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
+      },
+      {
+        "course_id": "helm-kurulumu",
+        "title": "Helm v2 Kurulumu",
+        "description": "Kubernetes Cluster'ı üzerinde Helm paket yöneticisi sürüm 2 kurulumu"
       },
       {
         "course_id": "docker-registry-kurulumu",
