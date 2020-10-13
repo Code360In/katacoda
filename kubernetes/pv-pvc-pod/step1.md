@@ -51,6 +51,24 @@ spec:
 EOF
 ```{{execute}}
 
+Aşağıdaki komutla bir başka PersistentVolumeClaim oluşturun;
+
+```bash
+cat <<EOF | kubectl create -f -
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc-10gi
+spec:
+  storageClassName: yerel-depolama
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+EOF
+```{{execute}}
+
 Aşağıdaki komutu çalıştırarak bir PersistentVolumeClaim’i kullanacağınız bir Deployment oluşturun.
 
 ```bash

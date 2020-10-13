@@ -4,13 +4,17 @@ Aşağıdaki komutla **yerel-pv**’yi silmeyi deneyin;
 
 `kubectl delete persistentvolume yerel-pv`{{execute}}
 
-Komutun uzun süre beklettiğiniz fakat yerel-pv’nin silinmediğini teyit edin. Ctrl + C tuş kombinasyonu ile komuttan çıkabilirsiniz.
+Komutun uzun süre beklettiğiniz fakat yerel-pv’nin silinmediğini teyit edin. 
+
+<kbd>Ctrl</kbd>+<kbd>C</kbd> tuş kombinasyonu ile komuttan çıkabilirsiniz.
+
+`echo "Konsola geri dönüldü"`{{execute interrupt}}
 
 Aşağıdaki komutla Persistent Volume’leri listeleyin;
 
 `kubectl get persistentvolume`{{execute}}
 
-yerel-pv’nin **Pending** durumunda olduğunu teyit edin.
+yerel-pv’nin **Terminating** durumunda olduğunu teyit edin.
 
 Aşağıdaki komutlar yardımıyla deployment ve PVC kayıtlarını silin;
 
