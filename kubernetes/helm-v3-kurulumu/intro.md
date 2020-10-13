@@ -1,5 +1,5 @@
 
-# Hrlm Kurulum Kullanımı
+# Helm Kurulum Kullanımı
 
 Helm v3 kullanımı senaryosuna hoş geldiniz.
 
