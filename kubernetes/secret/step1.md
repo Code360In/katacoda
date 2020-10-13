@@ -16,10 +16,6 @@ Aşağıdaki komutla şifre bilgisi barındıran bir dosya oluşturun;
 
 `echo -n "123456789" > ./sifre.txt`{{execute}}
 
-Oluşturduğunuz bu configMap içerisinde yer alan nginx.conf tanımı nginx’i Google için bir reverse proxy olarak yapılandıracak şekilde hazırlanmıştır. configMap’in oluştuğunu teyit edin;
-
-`kubectl get configMap `{{execute}}
-
 Bu dosya yardımıyla **sifre** adıyla bir secret oluşturun;
 
 `kubectl create secret generic sifre --from-file=./sifre.txt`{{execute}}
@@ -78,4 +74,4 @@ Aşağıdaki komutla sifre.txt dosyasının içeriğini görüntüleyin;
 
 Aşağıdaki komutla shell oturumunu sonlandırın;
 
-`exit`{{execute}}
+`exit`

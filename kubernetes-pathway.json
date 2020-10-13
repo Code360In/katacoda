@@ -219,6 +219,11 @@
         "description": "Kubernetes Cluster üzerinde secret kullanımı"
       },
       {
+        "course_id": "pv-pvc-kullanimi",
+        "title": "PersistentVolume ve PersistentVolumeClaim Kullanımı",
+        "description": "Kubernetes Cluster üzerinde PersistentVolume ve PersistentVolumeClaim kullanımı"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
