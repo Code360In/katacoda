@@ -1,6 +1,6 @@
 # Jeager All-In-One Kurulumu
 
-Aşağıdaki komut yardımıyla Jeager All-In-One kurulumuna sağlayan CRD tanımını oluşturun;
+Aşağıdaki komut yardımıyla Jeager All-In-One kurulumunu sağlayan CRD tanımını oluşturun;
 
 ```bash
 cat <<EOF | kubectl create -f -

@@ -22,6 +22,8 @@ Aşağıdaki komutla gerekli Jeager CustomResourceDefinition tanımlamalarını 
 
 `kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/crds/jaegertracing.io_jaegers_crd.yaml`{{execute}}
 
+RBAC için gerekli tanımları gerçekleştirin.
+
 Servis hesabını oluşturun;
 
 `kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/service_account.yaml`{{execute}}

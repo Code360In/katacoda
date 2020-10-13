@@ -1,16 +1,16 @@
 {
-  "title": "PersistentVolume ve PersistentVolumeClaim Kullanımı",
-  "description": "Kubernetes Cluster üzerinde PersistentVolume ve PersistentVolumeClaim kullanımı",
+  "title": "Jaeger Kurulumu",
+  "description": "Kubernetes Cluster'ı üzerinde Jaeger kurulumu",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - PersistentVolume Kullanımı",
+        "title": "Adım 1 - Jaeger Operator Kurulumu",
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - PersistentVolumeClaim Kullanımı",
+        "title": "Adım 2 - Jaeger All-In-One Kurulumu",
         "text": "step2.md"
       },
       {
