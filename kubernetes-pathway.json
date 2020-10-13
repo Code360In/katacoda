@@ -229,6 +229,11 @@
         "description": "Kubernetes Cluster üzerinde PersistentVolume, PersistentVolumeClaim ve Pod ilişkisi"
       },
       {
+        "course_id": "kaynak-kotalari",
+        "title": "Kaynak Kotaları",
+        "description": "Kubernetes Cluster üzerinde kaynak kullanımına dair politikalar"
+      },
+      {
         "course_id": "playground",
         "title": "Kubernetes Çalışma Alanı",
         "description": "Kubernetes Cluster'ı üzerinde denemeler yapılabilecek temel çalışma alanı"
