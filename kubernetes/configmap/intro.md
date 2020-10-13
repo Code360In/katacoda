@@ -1,5 +1,5 @@
 
-# Volume, ConfigMap
+# ConfigMap
 
 Kubernetes configmap kullanımı senaryosuna hoş geldiniz.
 

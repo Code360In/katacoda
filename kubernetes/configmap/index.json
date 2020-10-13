@@ -1,5 +1,5 @@
 {
-  "title": "Colume, ConfigMap",
+  "title": "ConfigMap",
   "description": "Kubernetes Cluster üzerinde configmap kullanımı",
   "difficulty": "Beginner",
   "time": "15 minutes",

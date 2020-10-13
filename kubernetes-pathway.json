@@ -209,9 +209,14 @@
         "description": "Kubernetes Cluster üzerinde ağ politikası yönetimi"
       },
       {
-        "course_id": "volume-configmap",
-        "title": "Volume, ConfigMap",
+        "course_id": "configmap",
+        "title": "ConfigMap",
         "description": "Kubernetes Cluster üzerinde configmap kullanımı"
+      },
+      {
+        "course_id": "secret",
+        "title": "Secret",
+        "description": "Kubernetes Cluster üzerinde secret kullanımı"
       },
       {
         "course_id": "playground",
