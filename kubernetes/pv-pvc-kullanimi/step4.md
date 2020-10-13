@@ -10,11 +10,7 @@ Bu pod içerisinde bir shell oturumu başlatın;
 
 Başlatılan shell oturumunda **/data/nginx** dizini altında aşağıdaki komutla **index.html** dosyası oluşturun;
 
-```bash
-cat <<EOT >> /data/nginx/index.html
-Örnek içerik
-EOF
-```{{execute}}
+`echo "Örnek içerik" > /data/nginx/index.html`{{execute}}
 
 **/data/nginx** dizinini listeleyin;
 
