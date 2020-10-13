@@ -36,17 +36,37 @@ RoleBinding'i oluşturun;
 
 `kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/role_binding.yaml`{{execute}}
 
-Operator'ü oluşturun;
-
-`kubectl create -n observability -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml`{{execute}}
-
-Zorunlulu olmamakla birlikte Kubernetes Cluster geneli rol tanımlanması durumundan operator ekstra yetenekler sunacaktır. Aşağıdaki komutla Cluster geneli rol oluşturun;
+Aşağıdaki komutla Cluster geneli rol oluşturun;
 
 `kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/cluster_role.yaml`{{execute}}
 
 Bu rol için bir rolebinding oluşturun;
 
 `kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/cluster_role_binding.yaml`{{execute}}
+
+Operator'ü tanımını yerele indirin;
+
+`curl -L https://raw.githubusercontent.com/jaegertracing/jaeger-operator/master/deploy/operator.yaml -o operator.yaml`{{execute}}
+
+**operator.yaml** dosyasını açarak bu bölümü;
+
+```bash
+        - name: WATCH_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+```
+
+aşağıdaki şekilde değiştirin;
+
+```bash
+        - name: WATCH_NAMESPACE
+          value:
+```
+
+Aşağıdaki komutla **operator.yaml**  dosyasını uygulayın;
+
+`kubectl create -n observability -f operator.yaml`{{execute}}
 
 Aşağıdaki komutla deployment'ın yaygınlaşmasını bekleyin;
 

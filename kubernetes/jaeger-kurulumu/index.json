@@ -14,12 +14,16 @@
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - Pod İçerisinde Tanımlama",
+        "title": "Adım 3 - Örnek Uygulama Kurulumu",
         "text": "step3.md"
       },
       {
-        "title": "Adım 4 - Kalıcı Depolama",
+        "title": "Adım 4 - Örnek Uygulama Mimarisi",
         "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - Örnek Uygulama Veri Akışı",
+        "text": "step5.md"
       }
     ],
     "assets": {
@@ -39,7 +43,12 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [
+      {"name": "Jaeger UI", "port": 16686},
+      {"name": "HotRod UI", "port": 31256}
+    ]
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
