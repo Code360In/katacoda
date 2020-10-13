@@ -26,6 +26,10 @@ Komut çıktısında talebiniz yerine getirildiğini ve **yerel-pv**’e bağlan
 
 1Gi’lik alan talep etmemize karşın 3Gi’li alan verildiğine dikkat edin.
 
+Aşağıdaki komutla PVC detayını görüntüleyin;
+
+`kubectl describe persistentvolumeclaim nginx-pvc`{{execute}}
+
 Aşağıdaki komutla bir başka PersistentVolumeClaim oluşturun;
 
 ```bash

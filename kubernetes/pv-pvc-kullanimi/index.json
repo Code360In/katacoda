@@ -14,8 +14,12 @@
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - Pod İçerisinde Kullanım",
+        "title": "Adım 3 - Pod İçerisinde Tanımlama",
         "text": "step3.md"
+      },
+      {
+        "title": "Adım 4 - Kalıcı Depolama",
+        "text": "step4.md"
       }
     ],
     "assets": {

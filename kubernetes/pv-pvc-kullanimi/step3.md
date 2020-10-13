@@ -38,3 +38,5 @@ Aşağıdaki komutu çalıştırarak talebinizin durumunu kontrol edin;
 `kubectl get deployment nginx`{{execute}}
 
 Pod’u ready durumda olduğunu teyit edin.
+
+**Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.

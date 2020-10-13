@@ -37,6 +37,10 @@ Oluşturun Persistent Volume’u aşağıdaki komutla kontrol edin;
 
 `kubectl get persistentvolume`{{execute}}
 
+Aşağıdaki komutla **yerel-pv** detayını görüntüleyin;
+
+`kubectl describe persistentvolume yerel-pv`{{execute}}
+
 Persistent Volume’u oluşturulduğunu ve **Avaliable** durumunda olduğunu teyit edin.
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
