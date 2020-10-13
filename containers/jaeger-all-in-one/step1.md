@@ -23,3 +23,5 @@ docker run -d --name jaeger \
 bir kaç dakika içerisinde Jaeger arayüzü **16686** portu üzerinden yayına hazır olacaktır.
 
 Sağ taraftaki tablardan **Jaeger UI** tabına geçiş yaparak arayüze ulaşabilirsiniz.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

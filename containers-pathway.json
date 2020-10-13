@@ -82,6 +82,11 @@
         "course_id": "docker-imaj-kullanimi",
         "title": "Docker Imaj Kullanımı",
         "description": "Docker Imaj kullanımı ve yapısı"
+      },
+      {
+        "course_id": "jaeger-all-in-one",
+        "title": "Jaeger, Docker Tümü bir Arada",
+        "description": "Docker üzerinde jaeger all-in-one kullanımı"
       }
     ]
   }

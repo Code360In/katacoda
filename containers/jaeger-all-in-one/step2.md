@@ -18,3 +18,5 @@ docker run --rm -it \
 bir kaç dakika içerisinde uygulama arayüzü **8080** portu üzerinden yayına hazır olacaktır.
 
 Sağ taraftaki tablardan **HotRod UI** tabına geçiş yaparak arayüze ulaşabilirsiniz.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
