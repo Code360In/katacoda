@@ -14,9 +14,15 @@
         "text": "step2.md"
       }
     ],
+    "assets": {
+        "host01": [
+            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
     "intro": {
       "text": "intro.md",
       "courseData": "env-init.sh",
+      "code": "foreground.sh",
       "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
     },
     "finish": {

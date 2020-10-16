@@ -14,8 +14,14 @@
         "text": "step2.md"
       }
     ],
+    "assets": {
+        "host01": [
+            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
     "intro": {
       "text": "intro.md",
+      "code": "foreground.sh",
       "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
     },
     "finish": {
@@ -28,6 +34,6 @@
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "kubernetes-cluster"
+    "imageid": "kubernetes-cluster:1.18"
   }
 }
