@@ -44,4 +44,5 @@ subjects:
     namespace: kube-system
 EOF
 
+echo ""
 echo "Kubernetes Cluster'ı kullanıma hazır..."

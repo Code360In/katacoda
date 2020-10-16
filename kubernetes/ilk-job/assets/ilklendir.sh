@@ -23,4 +23,5 @@ until [ ${RET} -eq 0 ]; do
   sleep 2
 done
 
+echo ""
 echo "Kubernetes Cluster'ı kullanıma hazır..."
