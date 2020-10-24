@@ -1,0 +1,12 @@
+{
+    "title": "Rancher Kursu",
+    "description": "Enterprisecoding Rancher kursu",
+    "icon": "fa-kubernetes",
+    "courses": [
+      {
+        "course_id": "rancher-custom-cluster",
+        "title": "Rancher, Özel Cluster",
+        "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme"
+      }
+    ]
+  }
