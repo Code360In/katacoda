@@ -47,6 +47,9 @@ if [ $HOSTNAME == "controlplane" ]; then
    #Rancher sunucu adresini ayarla
    RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
    curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"'"${RANCHER_SERVER}"'"}' 2>/dev/null &> /dev/null
+   
+   #Telemetriyi kapat
+   curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"telemetry-opt","value":"out"}' 2>/dev/null &> /dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"
