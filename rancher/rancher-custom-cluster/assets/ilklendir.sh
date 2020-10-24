@@ -58,6 +58,11 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher kullanıma hazır"
    echo "Kullanıcı Adı: admin"
    echo "Şifre: $(cat /root/rancher_sifresi)"
+
+   hostnamectl set-hostname rancher-node
+   export PS1="\[\]rancher-node $ "
 else 
    echo "Sunucu kullanıma hazır..."
+   hostnamectl set-hostname k8s-node
+   export PS1="\[\]rancher-node $ "
 fi
