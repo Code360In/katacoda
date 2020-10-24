@@ -25,8 +25,8 @@ Sunucu hazırlanıyor...
 EOF
 
 echo "$HOSTNAME"
-systemctl stop kubelet 2>&1 >/dev/null
-systemctl disable kubelet 2>&1 >/dev/null
+systemctl stop kubelet 2>/dev/null &> /dev/null
+systemctl disable kubelet 2>/dev/null &> /dev/null
 
 if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher Hazırlanıyor"
@@ -37,7 +37,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    RANCHER_PASS=$(openssl rand -base64 12)
    echo $RANCHER_PASS > /root/rancher_sifresi
 
-   docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:latest
+   docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:latest 2>/dev/null &> /dev/null
    while true; do curl -sLk https://127.0.0.1/ping && break; printf "."; sleep 2; done
 
    #Rancher'a giriş yap
@@ -54,7 +54,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    done
 
    #Varsayılan Rancher şifresini değiştir
-   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASSWORD}"'"}' 2>&1 >/dev/null
+   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASSWORD}"'"}' 2>/dev/null &> /dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"
