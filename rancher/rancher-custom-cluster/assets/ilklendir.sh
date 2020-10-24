@@ -15,8 +15,7 @@ cat << "EOF"
 Sunucu hazırlanıyor...
 EOF
 
-systemctl disable kubelet
-systemctl stop kubelet
+systemctl stop kubelet 2>&1 >/dev/null
 
 if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher Hazırlanıyor"
@@ -41,7 +40,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    done
 
    #Varsayılan Rancher şifresini değiştir
-   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASSWORD}"'"}'
+   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASSWORD}"'"}' 2>&1 >/dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"

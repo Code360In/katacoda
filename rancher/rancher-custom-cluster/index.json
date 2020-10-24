@@ -11,9 +11,12 @@
       }
     ],
     "assets": {
-        "host01": [
-            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
-        ]
+      "host01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ],
+      "node01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
     },
     "intro": {
       "text": "intro.md",
