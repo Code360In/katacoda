@@ -24,7 +24,6 @@ cat << "EOF"
 Sunucu hazırlanıyor...
 EOF
 
-echo "$HOSTNAME"
 systemctl stop kubelet 2>/dev/null &> /dev/null
 systemctl disable kubelet 2>/dev/null &> /dev/null
 
@@ -60,9 +59,11 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo "Şifre: $(cat /root/rancher_sifresi)"
 
    hostnamectl set-hostname rancher-node
-   export PS1="\[\]rancher-node $ "
+   export PS1='\[\e[1;32m\][\u@rancher-node \W]\$\[\e[0m\] '
 else 
    echo "Sunucu kullanıma hazır..."
    hostnamectl set-hostname k8s-node
-   export PS1="\[\]rancher-node $ "
+   export PS1='\[\e[1;32m\][\u@k8s-node \W]\$\[\e[0m\] '
 fi
+
+exec bash
