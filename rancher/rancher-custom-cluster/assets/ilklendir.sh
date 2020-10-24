@@ -12,13 +12,27 @@ cat << "EOF"
                             |_|                                            |___/
 ===================================================================================
 
+EOF
+
+if [ $HOSTNAME == "controlplane" ]; then
+   echo "     Host : Rancher-Node"
+else
+   echo "     Host : K8s-Node"
+fi
+cat << "EOF"
+==================================================================================="
+
 Sunucu hazırlanıyor...
 EOF
 
 systemctl stop kubelet 2>&1 >/dev/null
+systemctl disable kubelet 2>&1 >/dev/null
 
 if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher Hazırlanıyor"
+
+   hostname rancher-node
+
    #Rancher şifresi oluştur
    RANCHER_PASS=$(openssl rand -base64 12)
    echo $RANCHER_PASS > /root/rancher_sifresi
@@ -45,5 +59,10 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo ""
    echo "Rancher kullanıma hazır"
    echo "Kullanıcı Adı: admin"
-   echo "Şifre: $(cat /root/rancher_sifresi)"   
+   echo "Şifre: $(cat /root/rancher_sifresi)"
+else
+   hostname k8s-node
+   echo "Sunucu kullanıma hazır..."
 fi
+
+PS1="\h$ "
