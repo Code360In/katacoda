@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Statik Pod Kullanımı",
+        "title": "Adım 1 - Hazırlık",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Import",
+        "text": "step2.md"
       }
     ],
     "assets": {

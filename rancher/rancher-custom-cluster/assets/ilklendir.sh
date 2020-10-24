@@ -21,7 +21,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    RANCHER_PASS=$(openssl rand -base64 12)
    echo $RANCHER_PASS > /root/rancher_sifresi
 
-   docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:latest 2>/dev/null &> /dev/null
+   docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:v2.5.1 2>/dev/null &> /dev/null
    while true; do curl -sLk https://127.0.0.1/ping && break; printf "."; sleep 2; done
 
    #Rancher'a giriş yap
