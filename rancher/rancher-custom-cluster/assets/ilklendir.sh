@@ -31,8 +31,6 @@ systemctl disable kubelet 2>/dev/null &> /dev/null
 if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher Hazırlanıyor"
 
-   hostname rancher-node
-
    #Rancher şifresi oluştur
    RANCHER_PASS=$(openssl rand -base64 12)
    echo $RANCHER_PASS > /root/rancher_sifresi
@@ -60,9 +58,6 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher kullanıma hazır"
    echo "Kullanıcı Adı: admin"
    echo "Şifre: $(cat /root/rancher_sifresi)"
-else
-   hostname k8s-node
+else 
    echo "Sunucu kullanıma hazır..."
 fi
-
-PS1="\h$ "
