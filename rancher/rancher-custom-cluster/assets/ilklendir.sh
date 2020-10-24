@@ -42,7 +42,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
    #API token al
    APIRESPONSE=$(curl -sk 'https://127.0.0.1/v3/token' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"type":"token","description":"automation"}')
-   APITOKEN=`echo $APIRESPONSE | docker run --rm -i $jqimage -r .token`
+   APITOKEN=`echo $APIRESPONSE | jq -r .token`
 
    #Rancher sunucu adresini ayarla
    RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
