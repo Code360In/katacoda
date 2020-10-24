@@ -29,10 +29,11 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal",
+    "uilayout": "terminal-iframe",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
     "showdashboard": true,
-    "dashboards": [{"name": "Rancher UI", "port": 443}]
+    "dashboards": [{"name": "Rancher UI", "href": "https://[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"}],
+    "terminals": [{"name": "K8s-Node", "target": "host02"}]
   },
   "backend": {
     "imageid": "kubernetes-cluster:1.18"

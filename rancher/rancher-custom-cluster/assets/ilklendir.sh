@@ -24,9 +24,6 @@ cat << "EOF"
 Sunucu hazırlanıyor...
 EOF
 
-systemctl stop kubelet 2>/dev/null &> /dev/null
-systemctl disable kubelet 2>/dev/null &> /dev/null
-
 if [ $HOSTNAME == "controlplane" ]; then
    echo "Rancher Hazırlanıyor"
 
