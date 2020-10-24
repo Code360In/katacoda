@@ -11,7 +11,6 @@ cat << "EOF"
                             | |                                             __/ |
                             |_|                                            |___/
 ===================================================================================
-
 EOF
 
 if [ $HOSTNAME == "controlplane" ]; then
@@ -25,6 +24,7 @@ cat << "EOF"
 Sunucu hazırlanıyor...
 EOF
 
+echo "$HOSTNAME"
 systemctl stop kubelet 2>&1 >/dev/null
 systemctl disable kubelet 2>&1 >/dev/null
 
