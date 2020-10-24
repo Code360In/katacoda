@@ -11,17 +11,7 @@ cat << "EOF"
                             | |                                             __/ |
                             |_|                                            |___/
 ===================================================================================
-EOF
 
-if [ $HOSTNAME == "controlplane" ]; then
-   echo "     Host : Rancher-Node"
-else
-   echo "     Host : K8s-Node"
-fi
-cat << "EOF"
-==================================================================================="
-
-Sunucu hazırlanıyor...
 EOF
 
 if [ $HOSTNAME == "controlplane" ]; then
@@ -48,7 +38,15 @@ if [ $HOSTNAME == "controlplane" ]; then
    done
 
    #Varsayılan Rancher şifresini değiştir
-   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASSWORD}"'"}' 2>/dev/null &> /dev/null
+   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASS}"'"}' 2>/dev/null &> /dev/null
+
+   #API token al
+   APIRESPONSE=$(curl -sk 'https://127.0.0.1/v3/token' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"type":"token","description":"automation"}')
+   APITOKEN=`echo $APIRESPONSE | docker run --rm -i $jqimage -r .token`
+
+   #Rancher sunucu adresini ayarla
+   RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
+   curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"'"${RANCHER_SERVER}"'"}' 2>/dev/null &> /dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"
