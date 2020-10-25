@@ -19,3 +19,15 @@ Kurulum ardından aşağıdaki komutlarla kubectl kullanıma hazırlayın;
 Aşağıdaki komutla node'ların durumunu kontrol edin;
 
 `kubectl get nodes`{{execute HOST1}}
+
+Kurulum ardından oluşturulan dosyaları listeleyin;
+
+`ls`{{execute HOST1}}
+
+**kube_config_rancher-cluster.yml** dosyasının içeriğini inceleyin;
+
+`cat kube_config_rancher-cluster.yml`{{execute HOST1}}
+
+**rancher-cluster.rkestate** dosyasının içeriğini inceleyin;
+
+`cat rancher-cluster.rkestate`{{execute HOST1}}

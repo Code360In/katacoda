@@ -4,6 +4,11 @@
     "icon": "fa-kubernetes",
     "courses": [
       {
+        "course_id": "rke-ve-yapilandirma-dosyasi",
+        "title": "RKE ve Yapılandırma Dosyası",
+        "description": "RKE uygulaması ve yapılandırma dosyası oluşturma"
+      },
+      {
         "course_id": "rke-kurulumu",
         "title": "RKE Kurulumu",
         "description": "Rancher Kubernetes Engine kurulumu"
