@@ -9,11 +9,7 @@ Her iki node üzerinde de kurulum ve yapılandırma için kullanılacak bir ranc
 ### 1. Sunucuda
 Aşağıdaki komutla ilk sunucuda **rancher** kullanıcısını oluşturun;
 
-`useradd rancher`{{execute HOST1}}
-
-Oluşturduğunuz kullanıcının şifresini aşağıdaki komutla belirleyin;
-
-`passwd rancher`{{execute HOST1}}
+`adduser rancher`{{execute HOST1}}
 
 Oluşturduğunuz kullanıcının sudo ihtiyacı olmadan docker komutlarını çalıştırabilmesi için aşağıdaki komutla docker grubuna dahil edin;
 
@@ -24,10 +20,6 @@ Oluşturduğunuz kullanıcının sudo ihtiyacı olmadan docker komutlarını ça
 Aynı şekilde aşağıdaki komutla ikinci sunucuda **rancher** kullanıcısını oluşturun;
 
 `useradd rancher`{{execute HOST2}}
-
-Oluşturduğunuz kullanıcının şifresini aşağıdaki komutla belirleyin;
-
-`passwd rancher`{{execute HOST2}}
 
 Oluşturduğunuz kullanıcının sudo ihtiyacı olmadan docker komutlarını çalıştırabilmesi için aşağıdaki komutla docker grubuna dahil edin;
 

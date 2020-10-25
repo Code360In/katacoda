@@ -5,7 +5,7 @@
 ```bash
 cat <<EOT >> rancher-cluster.yml
 nodes:
-- address: controlplane
+- address: master
   user: rancher
   role: ['controlplane', 'etcd']
 - address: node01

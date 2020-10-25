@@ -8,12 +8,16 @@ Aşağıdaki komutu ilk sunucuda çalıştırarak şifresiz bir SSH anahtarı ü
 
 Ürettiğiniz bu ssh anahtarını kurulum yapılacak **tüm** sunuculara aşağıdaki komutlarla kopyalayın;
 
-`ssh-copy-id rancher@controlplan`{{execute HOST1}}
+`ssh-copy-id rancher@master`{{execute HOST1}}
 
 `ssh-copy-id rancher@node01`{{execute HOST1}}
 
-Her iki sunucuda da **/etc/ssh/sshd_config** dosyasını açarak **AllowTcpForwarding** değerinin aşağıdaki hale getirin;
+İlk sunucuda aşağıdaki **AllowTcpForwarding** değerini **/etc/ssh/sshd_config** dosyasına ekleyin;
 
-`AllowTcpForwarding yes`
+`echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config`{{execute HOST1}}
+
+Aynı şekilde ikinci sunucuda da aşağıdaki **AllowTcpForwarding** değerini **/etc/ssh/sshd_config** dosyasına ekleyin;
+
+`echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config`{{execute HOST2}}
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
