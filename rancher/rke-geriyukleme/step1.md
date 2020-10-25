@@ -6,7 +6,7 @@ Sizin için 2 node üzerinde bir RKE Cluster'ı kurulu şekildedir. Sağ bölüm
 
 Aşağıdaki komutla default namespace'inde herhangi bir pod ya da deployment bulunmadığını teyit edin;
 
-`kubectl get pod,deploy`{{execute}}
+`kubectl get pod,deploy,replicaset`{{execute}}
 
 Aşağıdaki komutu çalıştırarak 3 pod'lu **ornek-deployment** ismiyle bir deployment oluşturun;
 
@@ -54,7 +54,7 @@ Aşağıdaki komutla deployment'ı silin;
 
 Bir süre bekledikten sonra aşağıdaki komutla default namespace'inde herhangi bir pod ya da deployment bulunmadığını teyit edin;
 
-`kubectl get pod,deploy`{{execute}}
+`kubectl get pod,deploy,replicaset`{{execute}}
 
 ## RKE Cluster Yedekleme
 
@@ -64,6 +64,6 @@ Bir süre bekledikten sonra aşağıdaki komutla default namespace'inde herhangi
 
 Geri yüklemenin tamamlanması ardından aşağıdaki komutla default namespace'inde deployment'ı ve bu deployment'a bağlı 3 adet podûn çalışır durumda olduğunu görmeye çalışın;
 
-`kubectl get pod,deploy`{{execute}}
+`kubectl get pod,deploy,replicaset`{{execute}}
 
-Yedek aldığını sırada çalışır durumda olan pod ve deployment'ların yeniden geldiğini teyit edin.
+Yedek aldığını sırada çalışır durumda olan pod ve deployment'ların **aynı isimlerle** yeniden geldiğini teyit edin.
