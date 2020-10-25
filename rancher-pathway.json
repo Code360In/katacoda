@@ -19,6 +19,11 @@
         "description": "Rancher Kubernetes Engine elle yedek alma"
       },
       {
+        "course_id": "rke-geriyukleme",
+        "title": "RKE Geri yükleme",
+        "description": "Rancher Kubernetes Engine yedekten geri yükleme"
+      },
+      {
         "course_id": "rancher-custom-cluster",
         "title": "Rancher, Özel Cluster",
         "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme"

@@ -39,8 +39,7 @@ nodes:
   role: ['worker']
 EOF
 
-   printf "."
-   RKE_VERSION=$(curl --silent "https://api.github.com/repos/rancher/rke/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+   RKE_VERSION=v1.2.1
    printf "."
 
    curl -L https://github.com/rancher/rke/releases/download/$RKE_VERSION/rke_linux-amd64 -o rke 2>/dev/null &> /dev/null
