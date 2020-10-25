@@ -3,7 +3,7 @@
 İlk sunucuda aşağıdaki komutla **rancher-cluster.yml** dosyası oluşturun;
 
 ```bash
-cat <<EOT >> rancher-cluster.yml
+cat <<EOF >> rancher-cluster.yml
 nodes:
 - address: master
   user: rancher

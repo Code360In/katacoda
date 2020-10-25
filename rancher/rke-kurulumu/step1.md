@@ -19,7 +19,7 @@ Oluşturduğunuz kullanıcının sudo ihtiyacı olmadan docker komutlarını ça
 
 Aynı şekilde aşağıdaki komutla ikinci sunucuda **rancher** kullanıcısını oluşturun;
 
-`useradd rancher`{{execute HOST2}}
+`adduser rancher`{{execute HOST2}}
 
 Oluşturduğunuz kullanıcının sudo ihtiyacı olmadan docker komutlarını çalıştırabilmesi için aşağıdaki komutla docker grubuna dahil edin;
 
