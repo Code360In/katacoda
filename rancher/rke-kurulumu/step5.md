@@ -1,18 +1,8 @@
 ## RKE Kurulumu
 
-İlk sunucuda aşağıdaki komutla **rancher-cluster.yml** dosyası oluşturun;
+İlk sunucuda aşağıdaki komutla **rancher-cluster.yml** dosyasını inceleyin;
 
-```bash
-cat <<EOF >> rancher-cluster.yml
-nodes:
-- address: master
-  user: rancher
-  role: ['controlplane', 'etcd']
-- address: node01
-  user: rancher
-  role: ['worker']
-EOF
-```{{execute HOST1}}
+`cat rancher-cluster.yml`{{execute HOST1}}
 
 Aşağıdaki komutla RKE kurulumunu başlatın;
 
