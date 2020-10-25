@@ -12,8 +12,7 @@
     ],
     "assets": {
       "host01": [
-        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-        {"file": "ilk-yedek.zip", "target": "/opt/rke/etcd-snapshots/"}
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ],
       "node01": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
