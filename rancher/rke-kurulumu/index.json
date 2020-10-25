@@ -1,0 +1,54 @@
+{
+  "title": "RKE Kurulumu",
+  "description": "Rancher Kubernetes Engine kurulumu",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Kullanıcı",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - SSH Yapılandırması",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Kubectl",
+        "text": "step3.md"
+      },
+      {
+        "title": "Adım 4 - RKE",
+        "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - RKE Kurulumu",
+        "text": "step5.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ],
+      "node01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "code": "foreground.sh",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster:1.18"
+  }
+}

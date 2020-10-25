@@ -4,6 +4,11 @@
     "icon": "fa-kubernetes",
     "courses": [
       {
+        "course_id": "rke-kurulumu",
+        "title": "RKE Kurulumu",
+        "description": "Rancher Kubernetes Engine kurulumu"
+      },
+      {
         "course_id": "rancher-custom-cluster",
         "title": "Rancher, Özel Cluster",
         "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme"

@@ -51,6 +51,9 @@ if [ $HOSTNAME == "controlplane" ]; then
    #Telemetriyi kapat
    curl -sk 'https://127.0.0.1/v3/settings/telemetry-opt' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"telemetry-opt","value":"out"}' 2>/dev/null &> /dev/null
 
+   #Firma adını ayarla
+   curl -sk 'https://127.0.0.1/v3/settings/ui-pl' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"ui-pl","value":"Enterprisecoding"}' 2>/dev/null &> /dev/null
+
    echo ""
    echo "Rancher kullanıma hazır"
    echo "Kullanıcı Adı: admin"

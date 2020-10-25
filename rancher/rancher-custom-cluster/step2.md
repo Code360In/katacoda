@@ -4,7 +4,7 @@
 
 Yeniden **Rancher UI** segmesine geçin. Sayfanın alt bölümünde 1 node'un kayıt olduğuna dair aşağıdaki mesajı göreceksiniz;
 
-1 new node has registered 
+`1 new node has registered`
 
 Mesajın geldiğini teyit ederek **Done** butonuna basın.
 
