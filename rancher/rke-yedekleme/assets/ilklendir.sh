@@ -16,14 +16,19 @@ RKE Cluster'ı hazırlanıyor...
 
 EOF
 
-systemctl stop kubelet
-systemctl disable kubelet
+systemctl stop kubelet 2>/dev/null &> /dev/null
+printf "."
+
+systemctl disable kubelet 2>/dev/null &> /dev/null
+printf "."
 
 echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config
+printf "."
 
 if [ $HOSTNAME == "controlplane" ]; then
     MASTER_IP=$(hostname -I | cut -d' ' -f1) 
     NODE01_IP=$(ssh node01 hostname -I | cut -d' ' -f1)
+    printf "."
 
     cat <<EOF >> /root/rancher-cluster.yml
 nodes:
@@ -35,14 +40,30 @@ nodes:
   role: ['worker']
 EOF
 
+   printf "."
    RKE_VERSION=$(curl --silent "https://api.github.com/repos/rancher/rke/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
-   curl -L https://github.com/rancher/rke/releases/download/$RKE_VERSION/rke_linux-amd64 -o rke
-   chmod +x rke
-   mv rke /usr/local/bin
+   printf "."
 
-   rke up --config ./rancher-cluster.yml
+   curl -L https://github.com/rancher/rke/releases/download/$RKE_VERSION/rke_linux-amd64 -o rke 2>/dev/null &> /dev/null
+   printf "."
 
-   mkdir -p $HOME/.kube
-   cp -i kube_config_rancher-cluster.yml $HOME/.kube/config
-   chown $(id -u):$(id -g) $HOME/.kube/config
+   chmod +x rke 2>/dev/null &> /dev/null
+   mv rke /usr/local/bin 2>/dev/null &> /dev/null
+   printf "."
+   echo ""
+   echo "RKE Cluster'ı başlatılıyor..."
+
+   rke up --config ./rancher-cluster.yml 2>/dev/null &> /dev/null
+   printf "."
+
+   mkdir -p $HOME/.kube 2>/dev/null &> /dev/null
+   cp -i kube_config_rancher-cluster.yml $HOME/.kube/config 2>/dev/null &> /dev/null
+   chown $(id -u):$(id -g) $HOME/.kube/config 2>/dev/null &> /dev/null
+
+   echo ""
+   echo "Node'ların hazır olması bekleniyor..."
+   kubectl wait --for=condition=Ready node $NODE01_IP 2>/dev/null &> /dev/null
+
+   echo ""
+   echo "RKE Cluster'ı kullanıma hazır..."
 fi
