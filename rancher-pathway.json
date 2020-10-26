@@ -37,6 +37,11 @@
         "course_id": "rancher-kurulumu",
         "title": "Rancher Kurulumu",
         "description": "RKE üzerinde Rancher kurulumu"
+      },
+      {
+        "course_id": "rancher-yedekleme",
+        "title": "Rancher Yedekleme",
+        "description": "Rancher elle yedek alma"
       }
     ]
   }
