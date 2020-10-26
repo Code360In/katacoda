@@ -26,7 +26,7 @@ printf "."
 
 if [ $HOSTNAME == "controlplane" ]; then
     MASTER_IP=$(hostname -I | cut -d' ' -f1) 
-    NODE01_IP=$(ssh node01 hostname -I -o LogLevel=quiet | cut -d' ' -f1)
+    NODE01_IP=$(ssh -o LogLevel=quiet node01 hostname -I | cut -d' ' -f1)
     printf "."
 
     cat <<EOF >> /root/rancher-cluster.yml
