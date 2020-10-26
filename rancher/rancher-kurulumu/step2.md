@@ -1,5 +1,9 @@
 # Rancher Kurulumu
 
+Kurulum yapılacak olan **cattle-system** namespace'ini oluşturun;
+
+`kubectl create namespace cattle-system`{{execute}}
+
 Aşağıdaki komutu çalıştırarak en son Rancher Chart'ları deposunu helm depoları arasına ekleyin;
 
 `helm repo add rancher-latest https://releases.rancher.com/server-charts/latest`{{execute}}
