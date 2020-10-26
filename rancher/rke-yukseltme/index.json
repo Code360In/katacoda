@@ -1,12 +1,12 @@
 {
-  "title": "RKE Geri yükleme",
-  "description": "Rancher Kubernetes Engine yedekten geri yükleme",
+  "title": "RKE Sürüm Yükseltme",
+  "description": "Rancher Kubernetes Engine sürümünü yükseltme",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Yedekleme",
+        "title": "Adım 1 - Yükseltme",
         "text": "step1.md"
       }
     ],

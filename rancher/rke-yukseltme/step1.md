@@ -2,7 +2,7 @@
 
 Sizin için 2 node üzerinde sürümüyle bir RKE Cluster'ı kurulu şekildedir. Sağ bölümde yer alan **Terminal** segmesinde bu control plane node'una ait Terminal kullanılabilir durumdadır. Bu terminal üzerinden aşağıda belirtilen adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
 
-## Hazırlık
+## RKE Sürüm Yükseltme
 
 Senaryo için **1.18.10** sürümüyle bir RKE Cluster'ı kurulmuştur. Aşağıdaki komutla Kubernetes sürümünü kontrol edin;
 
