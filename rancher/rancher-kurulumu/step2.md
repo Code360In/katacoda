@@ -14,6 +14,10 @@ Aşağıdaki komutla deployment’ın hazır olması bekleyin;
 
 `kubectl -n cattle-system rollout status deploy/rancher`{{execute}}
 
+Aşağıdaki komutla Rancher arayüzünün hazır olmasını bekleyin;
+
+`while true; do curl -sLk https://127.0.0.1/ping && break; printf "."; sleep 2; done`{{execute}}
+
 **Rancher UI** segmesine geçerek Rancher Dasboard sayfasını açın. Açılan sayfada şifre ayarlayın ve **continue** butonuna basın.
 
 Bu adımlar ardından rancher kullanıma hazırdır.
