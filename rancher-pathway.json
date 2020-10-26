@@ -32,6 +32,11 @@
         "course_id": "rancher-custom-cluster",
         "title": "Rancher, Özel Cluster",
         "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme"
+      },
+      {
+        "course_id": "rancher-kurulumu",
+        "title": "Rancher Kurulumu",
+        "description": "RKE üzerinde Rancher kurulumu"
       }
     ]
   }

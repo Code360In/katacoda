@@ -12,7 +12,7 @@ Aşağıdaki komutla kullanabileceğiniz sürümleri listeleyin;
 
 `rke config --list-version --all`{{execute}}
 
-Listelenen sürümlerden en günceli olan **v1.19.3-rancher1-1** sürümünü hedef sürüm olarak belirleyin. Bu amaçla **rancher-cluster.yml** dosyasına açarak **kubernetes_version** değerini bu değerle değiştirin. Dosyanın güncel hali aşağıda örneklendiği şekilde olacaktır;
+Listelenen sürümlerden en günceli olan **v1.19.3-rancher1-1** sürümünü hedef sürüm olarak belirleyin. Bu amaçla **rancher-cluster.yml** dosyasını açarak **kubernetes_version** değerini bu değerle değiştirin. Dosyanın güncel hali aşağıda örneklendiği şekilde olacaktır;
 
 ```bash
 nodes:
