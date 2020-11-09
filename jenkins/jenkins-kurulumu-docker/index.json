@@ -1,6 +1,6 @@
 {
   "title": "Jenkins Kurulumu (Docker)",
-  "description": "Docker yardımıyla Jenkins kurulumu",
+  "description": "Docker yardımıyla Jenkins kurulumu ve yapılandırması",
   "difficulty": "Beginner",
   "time": "5 minutes",
   "details": {
@@ -15,7 +15,7 @@
       }
     ],
     "assets": {
-      "host01": [
+      "client": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },

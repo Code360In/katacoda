@@ -6,12 +6,12 @@
       {
         "course_id": "jenkins-kurulumu",
         "title": "Jenkins Kurulumu",
-        "description": "Ubuntu dağıtımı üzerinde Jenkins kurulumu"
+        "description": "Ubuntu dağıtımı üzerinde Jenkins kurulumu ve yapılandırması"
       },
       {
         "course_id": "jenkins-kurulumu-docker",
         "title": "Jenkins Kurulumu (Docker)",
-        "description": "Docker yardımıyla Jenkins kurulumu"
+        "description": "Docker yardımıyla Jenkins kurulumu ve yapılandırması"
       }
     ]
   }
