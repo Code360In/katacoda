@@ -6,11 +6,11 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Başlatma",
+        "title": "Adım 1 - Ön Hazırlık",
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Yapılandırma",
+        "title": "Adım 2 - Agent",
         "text": "step2.md"
       }
     ],

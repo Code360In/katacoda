@@ -21,6 +21,7 @@ if [ $HOSTNAME == "controlplane" ]; then
       sleep 0.1;
    done;
 
+   ADMIN_PASS=$(cat /var/secrets/jenkins-pass)
    echo ''
    echo "Jenkins Kullanıcı Bilgileri"
    echo "Kullanıcı Adı : admin"
