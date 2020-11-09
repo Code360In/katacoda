@@ -22,6 +22,6 @@ Paket listesinin güncellenmesi adına depoları güncelleyin;
 
 `sudo apt-get update`{{execute}}
 
-Bu adımlar ardından ardın sisteme Jenkins kurmaya hazırsınız.
+Bu adımlar ardından sisteme Jenkins kurmaya hazırsınız.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
