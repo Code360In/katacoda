@@ -12,6 +12,11 @@
         "course_id": "jenkins-kurulumu-docker",
         "title": "Jenkins Kurulumu (Docker)",
         "description": "Docker yardımıyla Jenkins kurulumu ve yapılandırması"
+      },
+      {
+        "course_id": "jenkins-agent-ekleme",
+        "title": "Jenkins Agent",
+        "description": "Jenkins Agent Kurulum ve Yapılandırması"
       }
     ]
   }

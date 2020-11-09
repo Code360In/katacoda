@@ -19,7 +19,7 @@
       }
     ],
     "assets": {
-      "host01": [
+      "client": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },

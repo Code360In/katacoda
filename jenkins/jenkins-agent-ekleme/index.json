@@ -1,0 +1,39 @@
+{
+  "title": "Jenkins Agent",
+  "description": "Jenkins Agent Kurulum ve Yapılandırması",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Başlatma",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Yapılandırma",
+        "text": "step2.md"
+      }
+    ],
+    "assets": {
+      "client": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "code": "foreground.sh",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster:1.18"
+  }
+}
