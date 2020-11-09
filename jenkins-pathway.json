@@ -1,0 +1,12 @@
+{
+    "title": "Jenkins Kursu",
+    "description": "Enterprisecoding Jenkins kursu",
+    "icon": "fa-jenkins",
+    "courses": [
+      {
+        "course_id": "jenkins-kurulumu",
+        "title": "Jenkins Kurulumu",
+        "description": "Ubuntu dağıtımı üzerinde Jenkins kurulumu"
+      }
+    ]
+  }

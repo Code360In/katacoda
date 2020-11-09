@@ -1,0 +1,45 @@
+{
+  "title": "Jenkins Kurulumu",
+  "description": "Ubuntu dağıtımı üzerinde Jenkins kurulumu",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Ön Gereksinimler",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Kurulum",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Yapılandırma",
+        "text": "step3.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh",
+      "code": "foreground.sh",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-iframe",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{"name": "Jenkins UI", "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"}],
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
