@@ -15,7 +15,10 @@
       }
     ],
     "assets": {
-      "client": [
+      "host01": [
+        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ],
+      "node01": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },
@@ -30,7 +33,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-terminal",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
   },
   "backend": {
