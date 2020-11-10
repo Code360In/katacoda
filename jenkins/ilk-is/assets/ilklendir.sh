@@ -17,7 +17,8 @@ EOF
 
 RUNNING=$(docker inspect --format="{{.State.Running}}" jenkins 2> /dev/null)
 
-until ["$RUNNING" == "true" ]; do
+while [ "$RUNNING" != "true" ]
+do
    printf '.'
    sleep 0.1;
 
