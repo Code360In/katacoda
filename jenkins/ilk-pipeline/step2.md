@@ -27,3 +27,5 @@ pipeline {
 ```
 
 Son olarak **Save**/**Kaydet** butonuna basarak ilk pipeline tanımınızı oluşturun.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -8,4 +8,6 @@
 
 Açılan **Yapılandırma #1** sayfasında sol bölümde yer alan **Console Output** linkine tıklayın.
 
-Açılan **Konsol Çıktısı** sayfasında ifconfig komutuna ait çıktının yer aldığını teyit edin. 
+Açılan **Konsol Çıktısı** sayfasında ifconfig komutuna ait çıktının yer aldığını teyit edin.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
