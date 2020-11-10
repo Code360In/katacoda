@@ -15,15 +15,13 @@ cat << "EOF"
 Jenkins Hazırlanıyor..
 EOF
 
-if [ $HOSTNAME == "controlplane" ]; then
-   until [ "`/usr/bin/docker inspect -f {{.State.Running}} jenkins`"=="true" ]; do
-      printf '.'
-      sleep 0.1;
-   done;
+until [ "`/usr/bin/docker inspect -f {{.State.Running}} jenkins`"=="true" ]; do
+   printf '.'
+   sleep 0.1;
+done;
 
-   ADMIN_PASS=$(cat /var/secrets/jenkins-pass)
-   echo ''
-   echo "Jenkins Kullanıcı Bilgileri"
-   echo "Kullanıcı Adı : admin"
-   echo "Şifre : $ADMIN_PASS"
-fi
+ADMIN_PASS=$(cat /var/secrets/jenkins-pass)
+echo ''
+echo "Jenkins Kullanıcı Bilgileri"
+echo "Kullanıcı Adı : admin"
+echo "Şifre : $ADMIN_PASS"
