@@ -1,14 +1,10 @@
 # Ön Hazırlık
 
-## Jenkins kullanıcısı
+## Jenkins Dizini
 
-Jenkins Agent'ı için kullanılacak bir kullanıcı oluşturmak için node01 makinesinde aşağıdaki komutu çalıştırın;
+Jenkins Agent'ı için kullanılacak bir dizin oluşturmak için node01 makinesinde aşağıdaki komutu çalıştırın;
 
-`useradd -m -d /opt/jenkins/ jenkins`{{execute HOST2}}
-
-Oluşturduğunuz kullanıcı için aşağıdaki komutla bir şifre belirleyin;
-
-`passwd jenkins`{{execute HOST2}}
+`mkdir /opt/jenkins/`{{execute HOST2}}
 
 ## Java Kurulumu
 

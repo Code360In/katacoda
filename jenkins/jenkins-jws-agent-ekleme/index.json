@@ -10,8 +10,12 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Kurulum",
+        "title": "Adım 2 - Tanımlama",
         "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Kurulum",
+        "text": "step3.md"
       }
     ],
     "assets": {

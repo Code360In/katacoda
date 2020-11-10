@@ -18,4 +18,4 @@ Yeni Node ekleme sayfasında aşağıdaki değerleri girin;
 
 Gerekli yapılandırmalar ardından sayfanın altında bulunan **Save** butonuna basarak Node kaydını oluşturun.
 
-Bu adımlar ardından Agent Node tanımını tamamladınız.
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

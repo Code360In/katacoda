@@ -26,4 +26,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo "Jenkins Kullanıcı Bilgileri"
    echo "Kullanıcı Adı : admin"
    echo "Şifre : $ADMIN_PASS"
+
+   MASTER_IP=$(hostname -I | cut -d' ' -f1) 
+   echo "$MASTER_IP master" | ssh -o LogLevel=quiet node01 -T "cat >> /etc/hosts"
 fi
