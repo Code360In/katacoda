@@ -19,7 +19,7 @@
         "description": "Jenkins SSH Agent Kurulum ve Yapılandırması"
       },
       {
-        "course_id": "jenkins-ssh-agent-ekleme",
+        "course_id": "jenkins-jws-agent-ekleme",
         "title": "Jenkins Agent (JWS)",
         "description": "Jenkins Java Web Start Agent Kurulum ve Yapılandırması"
       }
