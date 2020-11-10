@@ -21,7 +21,9 @@
     "assets": {
       "host01": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-        {"file": "jenkins/**/*.*", "target": "/var/jenkins"}
+        {"file": "jenkins/init.groovy.d/agent.groovy", "target": "/var/jenkins/init.groovy.d/"},
+        {"file": "jenkins/init.groovy.d/security.groovy", "target": "/var/jenkins/init.groovy.d/"},
+        {"file": "jenkins/secrets/jenkins-user", "target": "/var/jenkins/secrets/"}
       ],
       "node01": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
