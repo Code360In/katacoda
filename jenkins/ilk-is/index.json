@@ -19,14 +19,11 @@
       }
     ],
     "assets": {
-      "host01": [
+      "client": [
         {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"},
         {"file": "jenkins/init.groovy.d/agent.groovy", "target": "/var/jenkins/init.groovy.d/"},
         {"file": "jenkins/init.groovy.d/security.groovy", "target": "/var/jenkins/init.groovy.d/"},
         {"file": "jenkins/secrets/jenkins-user", "target": "/var/jenkins/secrets/"}
-      ],
-      "node01": [
-        {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },
     "intro": {
@@ -40,10 +37,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uilayout": "terminal-iframe",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{"name": "Jenkins UI", "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"}]
   },
   "backend": {
-    "imageid": "kubernetes-cluster:1.18"
+    "imageid": "ubuntu"
   }
 }
