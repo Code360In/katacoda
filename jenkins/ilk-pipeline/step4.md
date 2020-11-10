@@ -11,19 +11,29 @@ pipeline {
   agent any 
     stages { 
         stage ('Build') { 
- 
+            steps { 
+                echo 'Build adımı' 
+            }
         }
         stage ('Test') { 
-        
+            steps { 
+                echo 'Test adımı' 
+            }
         }
         stage ('QA') { 
-        
+            steps { 
+                echo 'QA adımı' 
+            }
         }
         stage ('Deploy') { 
-        
+            steps { 
+                echo 'Deploy adımı' 
+            }
         }
         stage ('Monitor') { 
- 
+            steps { 
+                echo 'Monitor adımı' 
+            }
         }
  
     }           
@@ -33,3 +43,5 @@ pipeline {
 **Save**/**Kaydet** butonuna basarak pipeline tanımınızı güncelleyin.
 
 **Pipeline IlkPipeline** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
+
+İşin sonlanması ardından **Stage View** bölümünde iş adımlarının yeşil olarak geldiğini teyit edin.

@@ -32,6 +32,11 @@
         "course_id": "ilk-pipeline",
         "title": "İlk Pipeline Tanımı",
         "description": "Jenkins üzerinde ilk pipeline tanımının yapılması"
+      },
+      {
+        "course_id": "github-pipeline",
+        "title": "Github Pipeline Tanımı",
+        "description": "Jenkins üzerinde github deposunda bulunan pipeline tanımının kullanılması"
       }
     ]
   }

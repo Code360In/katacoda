@@ -1,6 +1,6 @@
 {
-  "title": "İlk Pipelie Tanımı",
-  "description": "Jenkins üzerinde ilk pipeline tanımının yapılması",
+  "title": "Github Pipeline Tanımı",
+  "description": "Jenkins üzerinde github deposunda bulunan pipeline tanımının kullanılması",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -10,16 +10,12 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - İlk Pipeline",
+        "title": "Adım 2 - Github Projesi",
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - Detay",
+        "title": "Adım 3 - Adımlar",
         "text": "step3.md"
-      },
-      {
-        "title": "Adım 4 - Adımlar",
-        "text": "step4.md"
       }
     ],
     "assets": {

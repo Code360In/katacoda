@@ -1,11 +1,11 @@
 
-# Jenkins İlk Pipeline Tanımı
+# Jenkins Github Pipeline Tanımı
 
-Enterprisecoding Jenkins üzerinde ilk pipeline tanımı oluşturma senaryosuna hoş geldiniz.
+Enterprisecoding Jenkins üzerinde github deposunda yer alan pipeline tanımını kullanma senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, Jenkins kurulumu üzerinde ilk pipeline tanımınızı oluşturmayı deneyimleyebilirsiniz.
+Bu senaryoda, Jenkins kurulumu üzerinde github deposunda yeralan pipeline tanımınızı kullanmayı deneyimleyebilirsiniz.
 
 ## Eğitim
 

@@ -1,4 +1,4 @@
-# İş Tanımı
+# Pipeline Tanımı
 
 Kullanıcı bilgileri yardımıyla Jenkins arayüzüne giriş yapın.
 
