@@ -10,16 +10,12 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - İlk Pipeline",
+        "title": "Adım 2 - Pipeline",
         "text": "step2.md"
       },
       {
         "title": "Adım 3 - Detay",
         "text": "step3.md"
-      },
-      {
-        "title": "Adım 4 - Adımlar",
-        "text": "step4.md"
       }
     ],
     "assets": {
