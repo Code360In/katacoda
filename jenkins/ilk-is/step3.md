@@ -1,3 +1,3 @@
 # İş Detayı
 
-Kullanıcı bilgileri yardımıyla Jenkins arayüzüne giriş yapın.
+Bir dakika sonra sayfayı yenileyerek iş'e ait çalışma kaydı olduğunu teyit edin.
