@@ -15,7 +15,7 @@ cat << "EOF"
 Jenkins Hazırlanıyor..
 EOF
 
-until [ "`/usr/bin/docker inspect -f {{.State.Running}} jenkins`"=="true" ]; do
+until [ docker ps | grep -q jenkins ]; do
    printf '.'
    sleep 0.1;
 done;
