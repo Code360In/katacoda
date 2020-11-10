@@ -20,7 +20,7 @@ until [ "`/usr/bin/docker inspect -f {{.State.Running}} jenkins`"=="true" ]; do
    sleep 0.1;
 done;
 
-ADMIN_PASS=$(cat /var/secrets/jenkins-pass)
+ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
 echo ''
 echo "Jenkins Kullanıcı Bilgileri"
 echo "Kullanıcı Adı : admin"
