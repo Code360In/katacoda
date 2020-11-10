@@ -16,6 +16,14 @@
       {
         "title": "Adım 3 - Detay",
         "text": "step3.md"
+      },
+      {
+        "title": "Adım 4 - Test",
+        "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - Teslimat",
+        "text": "step5.md"
       }
     ],
     "assets": {
