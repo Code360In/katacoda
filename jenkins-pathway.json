@@ -42,6 +42,11 @@
         "course_id": "java-projesi",
         "title": "Java Pipeline Tanımı",
         "description": "Jenkins üzerinde github deposunda bulunan java projesi iş tanımının yapılması"
+      },
+      {
+        "course_id": "nexus-entegrasyonu",
+        "title": "Nexus Entegrasyonu",
+        "description": "Jenkins üzerinde oluşan artifact'ların Nexus depolarına gönderimi"
       }
     ]
   }
