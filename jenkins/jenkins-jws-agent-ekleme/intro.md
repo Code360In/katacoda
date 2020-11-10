@@ -1,11 +1,11 @@
 
-# Jenkins Kurulumu (Docker)
+# Jenkins SSH Agent Ekleme
 
-Enterprisecoding Jenkins kurulumu (Docker) senaryosuna hoş geldiniz.
+Enterprisecoding Jenkins ssh agent ekleme senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, Ubuntu üzerinde Jenkins kurulumunu ve ilk yapılandırmasını deneyimleyebilirsiniz.
+Bu senaryoda, Jenkins kurulumunu üzerinde bir ssh agent eklemeyi deneyimleyebilirsiniz.
 
 ## Eğitim
 

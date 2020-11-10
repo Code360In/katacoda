@@ -4,11 +4,21 @@
 
 Jenkins Agent'ı için kullanılacak bir kullanıcı oluşturmak için node01 makinesinde aşağıdaki komutu çalıştırın;
 
-`useradd -m -d /var/jenkins jenkins`{{execute HOST2}}
+`useradd -m -d /opt/jenkins/ jenkins`{{execute HOST2}}
 
 Oluşturduğunuz kullanıcı için aşağıdaki komutla bir şifre belirleyin;
 
 `passwd jenkins`{{execute HOST2}}
+
+## Java Kurulumu
+
+Java Web Start agent'ı yardımıyla bir Agent kurabilmek için önelikle hedef makinede bir java kurulumu olmalıdır. Aşağıdaki komutu çalıştırarak JDK 1.8'i kurun;
+
+`sudo apt install openjdk-8-jdk`{{execute HOST2}}
+
+Kurulumun başarılı olduğunu teyit edin;
+
+`java -version`{{execute HOST2}}
 
 ## Jenkins'e giriş
 

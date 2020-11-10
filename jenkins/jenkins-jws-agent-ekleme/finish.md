@@ -1,4 +1,4 @@
-Bu adımlar ardından artık Jenkins'e bir agent ekleme hakkında deneyim kazandınız.
+Bu adımlar ardından artık Jenkins'e bir ssh agent ekleme hakkında deneyim kazandınız.
 
 Enterprisecoding üzerinde paylaştığımız [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 

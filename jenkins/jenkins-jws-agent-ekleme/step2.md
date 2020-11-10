@@ -13,12 +13,8 @@ Açılan sayfada **Node Name** alanına **node01** değerini girin. **Permanent 
 Yeni Node ekleme sayfasında aşağıdaki değerleri girin;
 
 * **# of executors** değeri olarak **2** girin.
-* **Remote root directory** değeri olarak **/var/jenkins** girin.
-* **Launch method** değeri olarak **Launch agents via SSH** değerini seçin.
-* **Host** değeri olarak **node01** değerini girin.
-* **Credentials** bölümünde **Add** butonuna tıklayın. Açılan combobox'ta **Jenkins**'i seçin. Açılan **Jenkins Credentials Provider: Jenkins** dialogunda **Username** alanına **jenkins** değerini yazın. **Password** alanına ise jenkins kullanıcısının şifresini yazın. **Add** tuuşuna basarak ekrandan çıkın.
-* **Credentials** bölümünde az önce oluşturduğunu jenkins/****** değerini seçin.
-* **Host Key Verification Strategy** değeri olarak **Non verifying Verification Strategy** değerini seçin.
+* **Remote root directory** değeri olarak **/opt/jenkins/** girin.
+* **Launch method** değeri olarak **Launch agent by connecting it to the master** değerini seçin.
 
 Gerekli yapılandırmalar ardından sayfanın altında bulunan **Save** butonuna basarak Node kaydını oluşturun.
 

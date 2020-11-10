@@ -1,6 +1,6 @@
 {
-  "title": "Jenkins Agent",
-  "description": "Jenkins Agent Kurulum ve Yapılandırması",
+  "title": "Jenkins Agent (JWS)",
+  "description": "Jenkins Java Web Start Agent Kurulum ve Yapılandırması",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
@@ -10,7 +10,7 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Agent",
+        "title": "Adım 2 - Kurulum",
         "text": "step2.md"
       }
     ],

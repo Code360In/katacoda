@@ -14,9 +14,14 @@
         "description": "Docker yardımıyla Jenkins kurulumu ve yapılandırması"
       },
       {
-        "course_id": "jenkins-agent-ekleme",
-        "title": "Jenkins Agent",
-        "description": "Jenkins Agent Kurulum ve Yapılandırması"
+        "course_id": "jenkins-ssh-agent-ekleme",
+        "title": "Jenkins Agent (SSH)",
+        "description": "Jenkins SSH Agent Kurulum ve Yapılandırması"
+      },
+      {
+        "course_id": "jenkins-ssh-agent-ekleme",
+        "title": "Jenkins Agent (JWS)",
+        "description": "Jenkins Java Web Start Agent Kurulum ve Yapılandırması"
       }
     ]
   }
