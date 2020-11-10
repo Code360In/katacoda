@@ -27,6 +27,11 @@
         "course_id": "ilk-is",
         "title": "İlk İş Tanımı",
         "description": "Jenkins üzerinde ilk iş tanımının yapılması"
+      },
+      {
+        "course_id": "ilk-pipeline",
+        "title": "İlk Pipeline Tanımı",
+        "description": "Jenkins üzerinde ilk pipeline tanımının yapılması"
       }
     ]
   }
