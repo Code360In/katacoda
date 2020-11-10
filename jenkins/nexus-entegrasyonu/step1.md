@@ -1,33 +1,35 @@
 # Ortam
 
-Bu senaryo için bir Jenkins ve ssh agent kurulum ve yapılandırması sizin için yapılmıştır. Sağ bölümde yer alan terminalden agent sunucusunda işlem yapabilirsiniz.
+Bu senaryo için bir Jenkins, Nexus ve ssh agent kurulum ve yapılandırması sizin için yapılmıştır. Sağ bölümde yer alan terminalden agent sunucusunda işlem yapabilirsiniz.
 
-Jenkins arayüzüne sağ taraftaki **Jenkins UI** segmesinden ulaşabilirsiniz.
+Jenkins arayüzüne sağ taraftaki **Jenkins UI** segmesinden, Nexus arayüzüne **Nexus UI** segmesinden ulaşabilirsiniz.
 
-Giriş için ihtiyacınız olan kullanıcı adı ve şifresi **Terminal**'de sizlere verilmiştir.
+Giriş için ihtiyacınız olan kullanıcı adı ve şifreleri **Terminal**'de sizlere verilmiştir.
 
-## Kaynak kodları
+## Nexus Depo Tanımı
 
-Bu senaryoda kullanılacak temel kaynak kodları aşağıdaki adreste yer almaktadır;
+**Nexus UI** segmesine geçiş yaparak açılarak sayfada Nexus'a giriş yapınız. 
 
-`https://github.com/fatihboy/jenkins-java-maven-app`
+Giriş yaptıktan sonra sunucu yönetimi ekranına geçiş yapın.
 
-Bu depodaki örnek java uygulamasına ait kodları kendi github reponuza kopyalayın.
+Açılan Nexus yönetim ekranında **Repositories** bölümüne geçiş yaparak **Create repository** butonuna basınız.
 
-Kopyaladığınız kendi github deposunda proje ana dizininde aşağıdaki içerikle **Jenkinsfile** dosyasını oluşturun;
+Açılan **Select Recipe** ekranında **maven2 (hosted)** seçeneğini seçiniz.
 
-```
-pipeline {
-    agent any
+Açılan **Create Repository: maven2 (hosted)** ekranında **name** alanı için **maven-nexus-repo** değerini girin.
 
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'mvn -B -DskipTests clean package' 
-            }
-        }
-    }
-}
-```
+**Version policy** alanı için **Mixed** değerini seçin.
+
+**Hosted** bölümünde **Deployment policy** alanı için **Allow redeploy** değerini seçin.
+
+**create repository** butonuna basarak depo tanımını oluşturun.
+
+**Security** > **Users** ekranına geçin.
+
+Açılan ekranda **Create local user** butonuna basınız.
+
+Açılan **Create User** ekranında ID alanına  **jenkins-user** değerini giriniz. First name, last name ve email alanlarına istediğiniz değeri verebilirsiniz. **Password** alanına **jenkins-user** değerini girin. **Status** alanı için **Active** değerini seçin. Rollerden **nx-admin** rolünü kullanıcıya atayın.
+
+**Create local user** butonuna basarak kullanıcıyı oluşturun.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

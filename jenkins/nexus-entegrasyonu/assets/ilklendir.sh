@@ -38,8 +38,10 @@ do
    RUNNING=$(docker inspect --format="{{.State.Running}}" nexus 2> /dev/null)
 done;
 
+docker exec -i nexus bash -c "while [ ! -f /nexus-data/admin.password ]; do sleep 1; printf '.'; done;"
+
 ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
-NEXUS_PASS=$(docker exec -i nexus_repo cat /nexus-data/admin.password)
+NEXUS_PASS=$(docker exec -i nexus cat /nexus-data/admin.password)
 
 echo ''
 echo "Jenkins Kullanıcı Bilgileri"

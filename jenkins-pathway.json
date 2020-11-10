@@ -45,7 +45,7 @@
       },
       {
         "course_id": "nexus-entegrasyonu",
-        "title": "Nexus Entegrasyonu",
+        "title": "Jenkins-Nexus Entegrasyonu",
         "description": "Jenkins üzerinde oluşan artifact'ların Nexus depolarına gönderimi"
       }
     ]

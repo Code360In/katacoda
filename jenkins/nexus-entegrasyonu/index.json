@@ -1,5 +1,5 @@
 {
-  "title": "JNexus Entegrasyonu",
+  "title": "Jenkins-Nexus Entegrasyonu",
   "description": "Jenkins üzerinde oluşan artifact'ların Nexus depolarına gönderimi",
   "difficulty": "Beginner",
   "time": "15 minutes",
@@ -10,7 +10,7 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Pipeline",
+        "title": "Adım 2 - Jenkins",
         "text": "step2.md"
       },
       {
@@ -48,7 +48,10 @@
     "uilayout": "terminal-iframe",
     "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
     "showdashboard": true,
-    "dashboards": [{"name": "Jenkins UI", "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"}]
+    "dashboards": [
+      {"name": "Jenkins UI", "href": "https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com"},
+      {"name": "Nexus UI", "href": "https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com"}
+    ]
   },
   "backend": {
     "imageid": "ubuntu"

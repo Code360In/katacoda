@@ -1,23 +1,7 @@
-# Pipeline Tanımı
+# Jenkins Yapılandırması
 
-Kullanıcı bilgileri yardımıyla Jenkins arayüzüne giriş yapın.
+Jenkins UI segmesine geçiş yaparak kullanıcı bilgileri ile giriş yapın.
 
-Açılan Dashboard'da **New Item**/**Yeni Item** linkine basın.
-
-Açılan ekranda **Enter an item name** bölümünde değer olarak **IlkJava** yazın.
-
-İş türü olarak **Pipeline** seçerek **OK** tuşuna basın.
-
-**Description**/**Açıklama** alanına değer olarak bir açıklama girin.
-
-## Pipeline
-
-**Pipeline** bölümünde yer alan **Definition** combobox'ında bulunan **Pipeline script from SCM** değerini seçin. 
-
-**SCM** alanı değeri olarak **git** seçin.
-
-Açılan **Repositories** bölümünde **Repository URL** bölümünde değer olarak bir önceki adımda kendi github deponuzun adresini girin.
-
-Son olarak **Save**/**Kaydet** butonuna basarak java pipeline tanımınızı oluşturun.
+Açılan ekranda Dashboard > Manage Jenkins > Manage Plugins > Available patikası üzerinden aktif eklentiler ekranına gidin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
