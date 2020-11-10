@@ -1,6 +1,6 @@
 # İş Detayı
 
-**Pipeline IlkPipeline** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
+**Pipeline IlkJava** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
 
 **Yapılandırma Geçmişi** bölümünde **#1** girdisi şeklinde iş'e ait çalışma kaydı olduğunu teyit edin.
 
@@ -8,6 +8,6 @@
 
 Açılan **Yapılandırma #1** sayfasında sol bölümde yer alan **Console Output** linkine tıklayın.
 
-Açılan **Konsol Çıktısı** sayfasında echo komutuna ait **Jenkins'ten merhaba!** çıktısının yer aldığını teyit edin.
+Açılan **Konsol Çıktısı** sayfasında yapılandırma işlemine ait çıktının yer aldığını teyit edin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

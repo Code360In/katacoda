@@ -37,6 +37,11 @@
         "course_id": "github-pipeline",
         "title": "Github Pipeline Tanımı",
         "description": "Jenkins üzerinde github deposunda bulunan pipeline tanımının kullanılması"
+      },
+      {
+        "course_id": "java-projesi",
+        "title": "Java Pipeline Tanımı",
+        "description": "Jenkins üzerinde github deposunda bulunan java projesi iş tanımının yapılması"
       }
     ]
   }
