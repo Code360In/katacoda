@@ -15,9 +15,13 @@ cat << "EOF"
 Jenkins Hazırlanıyor..
 EOF
 
-until [ docker ps | grep -q jenkins ]; do
+RUNNING=$(docker inspect --format="{{.State.Running}}" jenkins 2> /dev/null)
+
+until ["$RUNNING" == "true" ]; do
    printf '.'
    sleep 0.1;
+
+   RUNNING=$(docker inspect --format="{{.State.Running}}" jenkins 2> /dev/null)
 done;
 
 ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
