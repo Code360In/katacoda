@@ -41,7 +41,8 @@ done;
 docker exec -i nexus bash -c "while [ ! -f /nexus-data/admin.password ]; do sleep 1; printf '.'; done;"
 
 ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
-NEXUS_PASS=$(docker exec -i nexus cat /nexus-data/admin.password)
+
+/var/nexus/scripts/provision.sh
 
 echo ''
 echo "Jenkins Kullanıcı Bilgileri"

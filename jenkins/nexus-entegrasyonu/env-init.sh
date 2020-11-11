@@ -13,4 +13,4 @@ docker run --name jenkins \
         --add-host node01:$NODE_IP \
         quay.io/enterprisecoding/jenkins-suggested:latest
 
-docker run -d --name nexus -p 8081:8081 sonatype/nexus3
+docker run -d --name nexus -p 8081:8081 -v /var/nexus/nexus.properties:/nexus-data/etc/nexus.properties sonatype/nexus3
