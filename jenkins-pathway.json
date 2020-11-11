@@ -49,6 +49,11 @@
         "description": "Jenkins üzerinde github deposunda bulunan dotnet core projesi iş tanımının yapılması"
       },
       {
+        "course_id": "sonarqube-entegrasyonu",
+        "title": "Jenkins-Sonarqube Entegrasyonu",
+        "description": "Jenkins ve Sonarqube yardımıyla statik kod analizi"
+      },
+      {
         "course_id": "nexus-entegrasyonu",
         "title": "Jenkins-Nexus Entegrasyonu",
         "description": "Jenkins üzerinde oluşan artifact'ların Nexus depolarına gönderimi"
