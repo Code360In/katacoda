@@ -6,7 +6,7 @@ Jenkins UI segmesine geçiş yaparak kullanıcı bilgileri ile giriş yapın.
 
 Açılan ekranda **Manage Jenkins** / **Jenkins's Yönet** > **Manage Plugins** / **Eklentileri Yönet** > **Available** / **Kullanılabilir** patikası üzerinden kullanılabilir eklentiler ekranına gidin.
 
-Arama bölümü kullanarak **Nexus Artifact Uploader** ve **Pipeline Utility Steps** eklentilerini bulup yükleyin.
+Arama bölümü kullanarak **Nexus Artifact Uploader** ve **Pipeline Utility Steps** eklentilerini bulup seçin. Sayfanın altında yer alan **Şimdi indir ve yeniden başlatıldıktan sonra yükle** butonuna basarak kurulumu tamamlayın.
 
 ## Nexus Kullanıcı Tanımlaması
 
@@ -20,9 +20,9 @@ Açılan **Global credentials (unrestricted)** sayfasında sol bölümde yer ala
 
 Açılan sayfada aşağıdaki belirtilen bilgilerle formu doldurun;
 
-Username : **jenkins-user** 
-Password : **jenkins-user**
-ID       : **jenkins-user-credentials** 
+* Username : **jenkins-user** 
+* Password : **jenkins-user**
+* ID       : **nexus-user-credentials** 
 
 
 Bu işlemler ardından **Ok** butonuna basarak credential kaydını tamamlayın.
@@ -32,5 +32,7 @@ Bu işlemler ardından **Ok** butonuna basarak credential kaydını tamamlayın.
 **Dashboard** / **Ana Sayfa** > **Manage Jenkins** / **Jenkins's Yönet** > **Global Tool Configuration** sayfasına gidin.
 
 Açılan sayfanın en altında yer alan **Maven** bölümüne geçin. **Maven installations** başlığında bulunan **Add maven** butonuna tıklayın.
+
+**İsim** alanına **Maven** değerini girin. **Save** butonuna basarak değişiklikleri saklayın.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

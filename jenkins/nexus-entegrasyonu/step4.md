@@ -1,34 +1,8 @@
-# Birim Testlerinin Çalıştırılması
+# İş'in Çalıştırılması
 
-Projede yer alan birim testlerinin çalıştırılması için Jenkinsfile dosyasını aşağıdaki şekilde güncelleyin;
+Jenkins arayüzünden **Pipeline ArtifactPipeline** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
 
-```
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-    }
-}
-```
+Yapılandırmanın tamamlanması ardından **Stage View** bölümünde **Projeyi Klonla**, **Maven Build** ve **Artifact Yayınla** adımlarının yer aldığını teyit edin.
 
-Pipeline tanımında yer alan **Test** adımı java testlerini çalıştıracaktır. Bu adımın başarılı sonlanması ardından **post** adımında birin testler yayınlanacaktır.
-
-Bu değişiklik ardından Jenkins arayüzünden **Pipeline IlkJava** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
-
-Yapılandırmanın tamamlanması ardından **Stage View** bölümünde **Build** yanında artık **Test** adımınında yer aldığını, **Test Sonuçları Eğilimi** eklendiğini teyit edin.
-
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+**Nexus UI** segmesine geçerek Nexus ana sayfasını açın. Sol taraftaki **Browse** linkine tıklayın. Açılan ekranda **maven-nexus-repo** deposunu geçin.
+**maven-nexus-repo** deposunu az önce derlemesi yapılan **cargo-tracker** uygulamasına ait artifactlerin yer aldığını teyit edin.

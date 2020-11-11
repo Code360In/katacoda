@@ -16,13 +16,6 @@ pipeline {
     tools {
         maven "Maven"
     }
-    environment {
-        NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "nexus:8081"
-        NEXUS_REPOSITORY = "maven-nexus-repo"
-        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
-    }
     stages {
         stage("Projeyi Klonla") {
             steps {
@@ -38,7 +31,7 @@ pipeline {
                 }
             }
         }
-        stage("Nexus'ta Yayınla") {
+        stage("Artifact Yayınla") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
@@ -47,15 +40,15 @@ pipeline {
                     artifactPath = filesByGlob[0].path;
                     artifactExists = fileExists artifactPath;
                     if(artifactExists) {
-                        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
+                        echo "*** Dosya: ${artifactPath}, grup: ${pom.groupId}, paket: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
+                            nexusVersion: "nexus3",
+                            protocol: "http",
+                            nexusUrl: nexus:8081,
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            repository: "maven-nexus-repo",
+                            credentialsId: "nexus-user-credentials",
                             artifacts: [
                                 [artifactId: pom.artifactId,
                                 classifier: '',
@@ -78,3 +71,5 @@ pipeline {
 ```
 
 Son olarak **Save**/**Kaydet** butonuna basarak ilk pipeline tanımınızı oluşturun.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
