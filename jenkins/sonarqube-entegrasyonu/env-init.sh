@@ -1,6 +1,8 @@
 ADMIN_PASS=$(openssl rand -base64 12)
 NODE_IP=$(hostname -I | cut -d' ' -f1)
 
+echo "$NODE_IP sonarqube" >> /etc/hosts
+
 echo $ADMIN_PASS > /var/jenkins/secrets/jenkins-pass
 
 useradd -m -d /opt/jenkins/ jenkins

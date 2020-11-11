@@ -34,13 +34,39 @@ DotNet Core 3.1 kurulumunu yapın;
 
 `sudo apt-get install -y dotnet-sdk-3.1`{{execute}}
 
-## Gerekli Eklentilerin Yüklenmesi
+## SonarQube Scanner Kurulumu
+
+DotNet projelerinin SonarQube tarafından statik kod analizi yapılabilmesi için sistemde **Sonar Scanner** kurulu olmalıdır. Aşağıdaki komutla Sonar Scanner kurulumunu gerçekleştirin;
+
+`runuser -l jenkins -c "dotnet tool install --global dotnet-sonarscanner"`{{execute}}
+
+## SonarQube Token'ı
+
+Jenkins'in statik kod analizi için SonarQube'u kullanabilmesi için bir token'a ihtiyacı bulunmaktadır. Bunun için **SonarQube UI** segmesine giderek SonarQube'e giriş yapın.
+
+Ekranın sağ üst köşesinde yer alan **A** harfine tıklayarak açılan menüden **My Account**'u seçin. Açılan hesabım sayfasında **Security** segmesine geçiş yapın. **Tokens** bölümü altındaki **Generate Tokens** bölümünde değer olarak **Jenkins** girdikten sonra **Generate** butonuna basın. oluşan token'ı ilerleyen adımlarda kullanmak için not alın.
+
+## Gerekli Eklentilerin Yüklenmesi ve Yapılandırması
 
 Jekins UI segmesine giderek sisteme giriş yapın. Açılan ekranda **Manage Jenkins** / **Jenkins's Yönet** > **Manage Plugins** / **Eklentileri Yönet** > **Available** / **Kullanılabilir** patikası üzerinden kullanılabilir eklentiler ekranına gidin.
 
-Arama bölümü kullanarak **XUnit** eklentisini bulup seçin. Sayfanın altında yer alan **Şimdi indir ve yeniden başlatıldıktan sonra yükle** butonuna basarak kurulumu tamamlayın.
+Arama bölümü kullanarak **XUnit** ve **SonarQube Scanner** eklentilerini bulup seçin. Sayfanın altında yer alan **Şimdi indir ve yeniden başlatıldıktan sonra yükle** butonuna basarak kurulumu tamamlayın.
 
 **Eklentiler/yükseltmeler kuruluyor** sayfasında **Yükleme tamamlandığında ve bekleyen bir iş yoksa Jenkins'i yeniden başlat.** seçeneğini işaretleyin.
+
+Eklentilerin yüklenmesi ardından **Manage Jenkins** / **Jenkins's Yönet** > **Sistem Konfigürasyonunu Değiştir** patikası üzerinden sistem yapılandırma sayfasına gidin.
+
+Açılan yapılandırma sayfasında **SonarQube servers** bölümünü bulun. Bu bölümde yer alan **Environment variables** seçeneğini işaretleyin. **Add SonarQube** butonuna tıklayarak yeni bir SonarQube tanımı başlatın. 
+
+Açılan **SonarQube installations** bölümünde **Name** alanına değer olarak **SonarQube** girin. **Server URL** alanına değer olarak aşağıdaki adresi girin;
+
+`http://sonarqube:9000`
+
+**Server authentication token** bölümünde yer alan **Add** butonuna tıklayın. Açılan **Add Credentials** ekranından **Kind** alanında **Secret text** değerini seçin. **Secret** alanına daha önce oluşturduğunuz SonarQube token'ını giriniz. **ID** alanına **sonarqube_token** yazın. **OK** tuşuna basarak kaydı oluşturun.
+
+Bir önceki ekrana geri döndüğünüzde **Server authentication token** alan değeri olarak **sonarqube_token** seçiniz.
+
+**Kaydet** butonuna basarak ayarları kaydedin.
 
 ## Kaynak kodları
 

@@ -4,7 +4,7 @@ Kullanıcı bilgileri yardımıyla Jenkins arayüzüne giriş yapın.
 
 Açılan Dashboard'da **New Item**/**Yeni Item** linkine basın.
 
-Açılan ekranda **Enter an item name** bölümünde değer olarak **IlkDotNetCore** yazın.
+Açılan ekranda **Enter an item name** bölümünde değer olarak **DotNetAnaliz** yazın.
 
 İş türü olarak **Pipeline** seçerek **OK** tuşuna basın.
 
