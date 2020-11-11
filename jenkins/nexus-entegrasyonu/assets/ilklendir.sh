@@ -15,41 +15,35 @@ cat << "EOF"
 Nexus başlatılıyor..
 EOF
 
-NEXUS_PASS=enterprisecoding
-
-RUNNING=$(docker inspect --format="{{.State.Running}}" nexus 2> /dev/null)
-
-while [ "$RUNNING" != "true" ]
-do
+echo ""
+echo "Nexus'un başlaması bekleniyor"
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:8081/service/rest/v1/status)" != "200" ]]
+do 
    printf '.'
-   sleep 0.1;
-
-   RUNNING=$(docker inspect --format="{{.State.Running}}" nexus 2> /dev/null)
-done;
+   sleep 5
+done
 
 echo ""
-echo "Jenkins başlatılıyor.."
-
-RUNNING=$(docker inspect --format="{{.State.Running}}" jenkins 2> /dev/null)
-
-while [ "$RUNNING" != "true" ]
-do
-   printf '.'
-   sleep 0.1;
-
-   RUNNING=$(docker inspect --format="{{.State.Running}}" jenkins 2> /dev/null)
-done;
-
-ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
-
-echo ""
-echo "Nexus ilklendiriliyor.."
+echo "Nexus başladı, ilklendiriliyor.."
 
 HOST_IP=$(hostname -I | cut -d' ' -f1)
 docker run -it --rm -v /var/nexus/scripts:/scripts --add-host=nexus:$HOST_IP groovy /scripts/provision.sh 2> /dev/null &> /dev/null
 echo "Nexus ilklendirildi.."
 
-echo ''
+echo ""
+echo "Jenkins'un başlaması bekleniyor"
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:8080/service/rest/v1/status)" != "200" ]]
+do 
+   printf '.'
+   sleep 5
+done
+echo ""
+echo "Nexus başladı.."
+
+NEXUS_PASS=enterprisecoding
+ADMIN_PASS=$(cat /var/jenkins/secrets/jenkins-pass)
+
+echo '=============================='
 echo "Jenkins Kullanıcı Bilgileri"
 echo "Kullanıcı Adı : admin"
 echo "Şifre : $ADMIN_PASS"
