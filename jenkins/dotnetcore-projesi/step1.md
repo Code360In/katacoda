@@ -34,6 +34,14 @@ DotNet Core 3.1 kurulumunu yapın;
 
 `sudo apt-get install -y dotnet-sdk-3.1`{{execute}}
 
+## Gerekli Eklentilerin Yüklenmesi
+
+Jekins UI segmesine giderek sisteme giriş yapın. Açılan ekranda **Manage Jenkins** / **Jenkins's Yönet** > **Manage Plugins** / **Eklentileri Yönet** > **Available** / **Kullanılabilir** patikası üzerinden kullanılabilir eklentiler ekranına gidin.
+
+Arama bölümü kullanarak **XUnit** eklentisini bulup seçin. Sayfanın altında yer alan **Şimdi indir ve yeniden başlatıldıktan sonra yükle** butonuna basarak kurulumu tamamlayın.
+
+**Eklentiler/yükseltmeler kuruluyor** sayfasında **Yükleme tamamlandığında ve bekleyen bir iş yoksa Jenkins'i yeniden başlat.** seçeneğini işaretleyin.
+
 ## Kaynak kodları
 
 Bu senaryoda kullanılacak temel kaynak kodları aşağıdaki adreste yer almaktadır;

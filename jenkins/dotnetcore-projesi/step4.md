@@ -21,7 +21,7 @@ pipeline {
 
         stage('Test') { 
             steps {
-                sh 'dotnet test --logger trx;LogFileName=unit_tests.testresults' 
+                sh 'dotnet test --logger:"trx;LogFileName=unit_tests.testresults"' 
             }
             post {
                 always {
