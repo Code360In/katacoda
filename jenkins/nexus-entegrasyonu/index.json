@@ -10,11 +10,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Jenkins",
+        "title": "Adım 2 - Hazırlık",
         "text": "step2.md"
       },
       {
-        "title": "Adım 3 - Detay",
+        "title": "Adım 3 - Pipeline",
         "text": "step3.md"
       },
       {
@@ -33,6 +33,7 @@
         {"file": "jenkins/init.groovy.d/security.groovy", "target": "/var/jenkins/init.groovy.d/"},
         {"file": "jenkins/secrets/jenkins-user", "target": "/var/jenkins/secrets/"},
         {"file": "nexus/nexus.properties", "target": "/var/nexus/"},
+        {"file": "nexus/scripts/addUpdateScript.groovy", "target": "/var/nexus/scripts/"},
         {"file": "nexus/scripts/maven2Repositories.groovy", "target": "/var/nexus/scripts/"},
         {"file": "nexus/scripts/provision.sh", "target": "/var/nexus/scripts/", "chmod": "+x"},
         {"file": "nexus/scripts/security.groovy", "target": "/var/nexus/scripts/"}

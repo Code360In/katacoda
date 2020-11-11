@@ -46,7 +46,8 @@ echo ""
 echo "Nexus ilklendiriliyor.."
 
 HOST_IP=$(hostname -I | cut -d' ' -f1)
-docker run -it --rm -v /var/nexus/scripts:/scripts --add-host=nexus:$HOST_IP groovy /scripts/provision.sh
+docker run -it --rm -v /var/nexus/scripts:/scripts --add-host=nexus:$HOST_IP groovy /scripts/provision.sh 2> /dev/null &> /dev/null
+echo "Nexus ilklendirildi.."
 
 echo ''
 echo "Jenkins Kullanıcı Bilgileri"

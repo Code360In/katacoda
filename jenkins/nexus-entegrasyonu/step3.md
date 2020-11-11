@@ -1,13 +1,80 @@
-# İş Detayı
+# Jenkins Pipeline'ı Oluşturma
 
-**Pipeline IlkJava** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
+Ana sayfaya gidin. Bu sayfada **New Item**/**Yeni Item** linkine basın.
 
-**Yapılandırma Geçmişi** bölümünde **#1** girdisi şeklinde iş'e ait çalışma kaydı olduğunu teyit edin.
+Açılan ekranda **Enter an item name** bölümünde değer olarak **ArtifactPipeline** yazın.
 
-**#1** linkine tıklayarak yapılandırma sayfasına gidin.
+İş türü olarak **Pipeline** seçerek **OK** tuşuna basın.
 
-Açılan **Yapılandırma #1** sayfasında sol bölümde yer alan **Console Output** linkine tıklayın.
+## Pipeline
 
-Açılan **Konsol Çıktısı** sayfasında yapılandırma işlemine ait çıktının yer aldığını teyit edin.
+**Pipeline** bölümünde yer alan **Definition** combobox'ında bulunan **Pipeline Script** değerini seçin. Script olarak ise aşağıdaki ifadeyi girin;
 
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+```
+pipeline {
+    agent any
+    tools {
+        maven "Maven"
+    }
+    environment {
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "nexus:8081"
+        NEXUS_REPOSITORY = "maven-nexus-repo"
+        NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+    }
+    stages {
+        stage("Projeyi Klonla") {
+            steps {
+                script {
+                    git 'https://github.com/javaee/cargotracker.git';
+                }
+            }
+        }
+        stage("Maven Build") {
+            steps {
+                script {
+                    sh "mvn package -DskipTests=true"
+                }
+            }
+        }
+        stage("Nexus'ta Yayınla") {
+            steps {
+                script {
+                    pom = readMavenPom file: "pom.xml";
+                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
+                    artifactPath = filesByGlob[0].path;
+                    artifactExists = fileExists artifactPath;
+                    if(artifactExists) {
+                        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
+                        nexusArtifactUploader(
+                            nexusVersion: NEXUS_VERSION,
+                            protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+                            groupId: pom.groupId,
+                            version: pom.version,
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            artifacts: [
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: artifactPath,
+                                type: pom.packaging],
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
+                        );
+                    } else {
+                        error "*** Dosya: ${artifactPath}, bulunamadı";
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+Son olarak **Save**/**Kaydet** butonuna basarak ilk pipeline tanımınızı oluşturun.
