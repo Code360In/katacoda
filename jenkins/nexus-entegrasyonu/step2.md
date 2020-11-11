@@ -8,6 +8,8 @@ Açılan ekranda **Manage Jenkins** / **Jenkins's Yönet** > **Manage Plugins** 
 
 Arama bölümü kullanarak **Nexus Artifact Uploader** ve **Pipeline Utility Steps** eklentilerini bulup seçin. Sayfanın altında yer alan **Şimdi indir ve yeniden başlatıldıktan sonra yükle** butonuna basarak kurulumu tamamlayın.
 
+**Eklentiler/yükseltmeler kuruluyor** sayfasında **Yükleme tamamlandığında ve bekleyen bir iş yoksa Jenkins'i yeniden başlat.** seçeneğini işaretleyin.
+
 ## Nexus Kullanıcı Tanımlaması
 
 **Dashboard** / **Ana Sayfa** > **Manage Jenkins** / **Jenkins's Yönet** > **Manage Credentials** patikası üzerinden **Credentials** sayfasını açın.

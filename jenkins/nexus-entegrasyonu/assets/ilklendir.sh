@@ -32,7 +32,7 @@ echo "Nexus ilklendirildi.."
 
 echo ""
 echo "Jenkins'un başlaması bekleniyor"
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:8080/service/rest/v1/status)" != "200" ]]
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:8080/)" != "200" ]]
 do 
    printf '.'
    sleep 5
