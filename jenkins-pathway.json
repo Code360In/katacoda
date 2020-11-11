@@ -44,6 +44,11 @@
         "description": "Jenkins üzerinde github deposunda bulunan java projesi iş tanımının yapılması"
       },
       {
+        "course_id": "dotnetcore-projesi",
+        "title": "DotNet Core Pipeline Tanımı",
+        "description": "Jenkins üzerinde github deposunda bulunan dotnet core projesi iş tanımının yapılması"
+      },
+      {
         "course_id": "nexus-entegrasyonu",
         "title": "Jenkins-Nexus Entegrasyonu",
         "description": "Jenkins üzerinde oluşan artifact'ların Nexus depolarına gönderimi"
