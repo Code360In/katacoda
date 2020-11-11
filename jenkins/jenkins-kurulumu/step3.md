@@ -1,4 +1,4 @@
-# Jenkisn Yapılandırması
+# Jenkins Yapılandırması
 
 Jenkins ilk kurulumda sistem yöneticisi için otomatik şifre oluşturacaktır. Aşağıdaki komutla bu şifreyi görüntüleyin;
 
@@ -15,3 +15,5 @@ Eklenti kurulumlarının tamamlanması ardından açılan **Create First Admin U
 Kullanıcının oluşturuması ardından açılan **Instance Configuration** ekranında **Jenkins URL** değerini mevcut haliyle bırakarak **Save and Finish** butonuna basınız.
 
 Açılan **Jenkins is ready!** ekranında yer alan **Start using Jenkins** butonuna basarak Jenkins ana sayfasını ziyaret edin. Jenkins kullanıma hazır.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
