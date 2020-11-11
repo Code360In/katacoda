@@ -18,4 +18,5 @@ docker run --name jenkins \
 
 docker run -d --name sonarqube \
         -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true \
+        --add-host jenkins:$NODE_IP \
         -p 9000:9000 sonarqube:latest

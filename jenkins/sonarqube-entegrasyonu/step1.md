@@ -36,7 +36,7 @@ DotNet Core 3.1 kurulumunu yapın;
 
 ## SonarQube Scanner Kurulumu
 
-DotNet projelerinin SonarQube tarafından statik kod analizi yapılabilmesi için sistemde **Sonar Scanner** kurulu olmalıdır. Aşağıdaki komutla Sonar Scanner kurulumunu gerçekleştirin;
+DotNet projelerinin SonarQube tarafından statik kod analizi yapılabilmesi için sistemde **Sonar Scanner** kurulu olmalıdır. Aşağıdaki komutla Jenkins kullanıcısı için Sonar Scanner kurulumunu gerçekleştirin;
 
 `runuser -l jenkins -c "dotnet tool install --global dotnet-sonarscanner"`{{execute}}
 

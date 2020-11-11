@@ -10,6 +10,6 @@ Açılan **Yapılandırma #1** sayfasında sol bölümde yer alan **Console Outp
 
 Açılan **Konsol Çıktısı** sayfasında yapılandırma işlemine ait çıktının yer aldığını teyit edin.
 
-**SonarQube UI** segmesine geçin. Açılan ekranda Yeni bir analiz projesinin yer aldığını ve analiz sonucunun başarılı olduğunu teyit edin. Bu projeyi inceleyin.
+**SonarQube UI** segmesine geçin. **Projects** linkine tıklayarak proje listesi sayfasını açın. Açılan ekranda **Örnek DotNet Core Uygulaması** adıyla yeni bir analiz projesinin yer aldığını ve analiz sonucunun başarılı olduğunu teyit edin. Bu projeyi inceleyin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

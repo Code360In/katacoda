@@ -18,8 +18,12 @@
         "text": "step3.md"
       },
       {
-        "title": "Adım 4 - Test",
+        "title": "Adım 4 - Başarısız Analiz",
         "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - Analiz Sonucu",
+        "text": "step5.md"
       }
     ],
     "assets": {

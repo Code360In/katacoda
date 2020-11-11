@@ -1,42 +1,41 @@
-# Birim Testlerinin Çalıştırılması
+# Başarısız Analiz Sonuçları
 
-Projede yer alan birim testlerinin çalıştırılması için Jenkinsfile dosyasını aşağıdaki şekilde güncelleyin;
+Proje kaynak koduna giderek PrimeService/PrimeService.cs dosyasını açın. Dosya içerisine 9. satırı aşağıdaki şekilde ekleyin;
+
+`int kullanilmayan_ve_uzun_bir_isme_sahip_degisken = 1;`
+
+Kodun güncel hali aşağıdaki şekilde olacaktır;
 
 ```
-pipeline {
-    agent any
+using System;
 
-    stages {
-        stage('Paket Yükleme') { 
-            steps {
-                sh 'dotnet restore' 
+namespace Prime.Services
+{
+    public class PrimeService
+    {
+        public bool IsPrime(int candidate)
+        {
+            int kullanilmayan_ve_uzun_bir_isme_sahip_degisken = 1;
+            if (candidate < 2)
+            {
+                return false;
             }
-        }
 
-        stage('Derleme') { 
-            steps {
-                sh 'dotnet build --configuration Release' 
-            }
-        }
-
-        stage('Test') { 
-            steps {
-                sh 'dotnet test --logger:"trx;LogFileName=unit_tests.testresults"' 
-            }
-            post {
-                always {
-                    xunit([MSTest(deleteOutputFiles: true, failIfNotNew: true, pattern: '**/*.testresults', skipNoTestFiles: false, stopProcessingIfError: true)])
+            for (var divisor = 2; divisor <= Math.Sqrt(candidate); divisor++)
+            {
+                if (candidate % divisor == 0)
+                {
+                    return false;
                 }
             }
+            return true;
         }
     }
 }
 ```
 
-Pipeline tanımında yer alan **Test** adımı dotnet core testlerini çalıştıracaktır. Bu adımın başarılı sonlanması ardından **post** adımında birin testler yayınlanacaktır.
+Jenkins arayüzüne geçerek DotNetAnaliz projesini yeniden yapılandırın.
 
-Bu değişiklik ardından Jenkins arayüzünden **Pipeline IlkJava** ekranında sol bölümde yer alan **Şimdi Yapılandır** butonuna basarak pipeline'ı başlatın.
-
-Yapılandırmanın tamamlanması ardından **Stage View** bölümünde **Build** yanında artık **Test** adımınında yer aldığını, **Test Sonuçları Eğilimi** eklendiğini teyit edin.
+SonarQube arayüzüne geçerek statik kod analizinin başarısız olarak sonuçlandığını teyit edin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
