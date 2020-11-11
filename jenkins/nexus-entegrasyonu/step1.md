@@ -24,12 +24,4 @@ Açılan **Create Repository: maven2 (hosted)** ekranında **name** alanı için
 
 **create repository** butonuna basarak depo tanımını oluşturun.
 
-**Security** > **Users** ekranına geçin.
-
-Açılan ekranda **Create local user** butonuna basınız.
-
-Açılan **Create User** ekranında ID alanına  **jenkins-user** değerini giriniz. First name, last name ve email alanlarına istediğiniz değeri verebilirsiniz. **Password** alanına **jenkins-user** değerini girin. **Status** alanı için **Active** değerini seçin. Rollerden **nx-admin** rolünü kullanıcıya atayın.
-
-**Create local user** butonuna basarak kullanıcıyı oluşturun.
-
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

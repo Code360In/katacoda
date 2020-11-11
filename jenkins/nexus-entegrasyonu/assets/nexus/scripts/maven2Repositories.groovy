@@ -8,6 +8,7 @@ repository.createMavenHosted('maven-nexus-repo',
         BlobStoreManager.DEFAULT_BLOBSTORE_NAME, 
         true, 
         VersionPolicy.MIXED,
-        WritePolicy.ALLOW_WRITE, LayoutPolicy.STRICT)
+        WritePolicy.ALLOW_WRITE, 
+        LayoutPolicy.STRICT)
 
 log.info('Script maven2Repositories completed successfully')

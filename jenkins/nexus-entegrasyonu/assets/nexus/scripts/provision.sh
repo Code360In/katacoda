@@ -1,11 +1,13 @@
 #!/bin/bash
 
+cd /scripts
+
 set -e
 set -u
 
 username=admin
 password=admin123
-host=http://localhost:8081
+host=http://nexus:8081
 
 #Nexus'abir komut dosyası ekle ve çalıştır
 
@@ -20,12 +22,12 @@ function addAndRunScript {
   printf "\n$name script'i başarıyla çalıştırıldı\n\n\n"
 }
 
-printf "Provisioning Integration API Scripts Starting \n\n" 
-printf "Publishing and executing on $host\n"
+printf "Provisioning Script'lerinin işletilmesi başlıyor \n\n" 
+printf "İşlem yapılacak sunucu : $host\n"
 
 
 #Aşağıdaki görevleri gerçekleştirmek için ilgili komut dosyaları çalıştırılıyor
 
-addAndRunScript security security.groovy
 addAndRunScript maven2 maven2Repositories.groovy
-printf "\nProvisioning Script'leri tamamlandı'\n\n"
+addAndRunScript security security.groovy
+printf "\nProvisioning Script'leri tamamlandı\n\n"

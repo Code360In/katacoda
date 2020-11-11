@@ -18,7 +18,7 @@ security.anonymousAccess = true
 def user = security.securitySystem.getUser('admin')
 user.setEmailAddress('nexus@enterprisecoding.com')
 security.securitySystem.updateUser(user)
-security.securitySystem.changePassword('admin','admin456')
+security.securitySystem.changePassword('admin','enterprisecoding')
 log.info('varsayılan admin şifresi güncellendi')
 
 log.info('Güvenlik scripti başarıyla çalıştırıldı')
