@@ -5,7 +5,7 @@ Enterprisecoding basit bir container runtime oluşturma senaryosuna hoş geldini
 
 ## Senaryo
 
-Bu senaryoda, Container teknolojisinin bileşenlerini kullanarak basit bir Konteynar çalışma zamanı oluşturmayı deneyimleyebilirsiniz.
+Bu senaryoda, Container teknolojisinin bileşenlerini kullanarak basit bir Konteyner çalışma zamanı oluşturmayı deneyimleyebilirsiniz.
 
 ## Eğitim
 

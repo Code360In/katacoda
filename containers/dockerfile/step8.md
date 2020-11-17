@@ -24,7 +24,7 @@ Aşağıdaki komutu kullanarak konteyner'ınızı başlatın;
 
 `docker run --rm --name webserver_konteyner -d -p 80:80 enterprisecoding-webserver`{{execute}}
 
-Konteyner başladıktan sonra aşağıki komutla index.html dosyası içeriğini görebilirsiniz;
+Konteyner başladıktan sonra aşağıdaki komutla index.html dosyası içeriğini görebilirsiniz;
 
 `curl http://localhost`{{execute}}
 

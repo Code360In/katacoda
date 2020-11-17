@@ -14,7 +14,7 @@ Aşağıdaki koutu kullanarak oluşturduğunuz kontrol grubuna 100MB'lık bir ha
 
 `sudo cgset -r memory.limit_in_bytes=100000000 enterprisecoding_demo`{{execute}}
 
-Aşağıdaki koutu kullanarak oluşturduğunuz kontrol grubuna %12'lik paylaşılan bir cpu kullanım limiti tanımlayın;
+Aşağıdaki komutu kullanarak oluşturduğunuz kontrol grubuna %12'lik paylaşılan bir cpu kullanım limiti tanımlayın;
 
 `sudo cgset -r cpu.shares=512 enterprisecoding_demo`{{execute}}
 
