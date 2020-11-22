@@ -97,11 +97,10 @@ else
    hostnamectl set-hostname k8s-node
 
    while [ ! -f /tmp/initialize_worker.sh ]; do echo "."; sleep 1; done
-   chmod +x /tmp/initialize_worker.sh
 
    echo ""
    echo "RKE hazırlanıyor..."
-   /tmp/initialize_worker.sh
+   cat /tmp/initialize_worker.sh | sh
 
    echo "Sunucu kullanıma hazır..."
    export PS1='\[\e[1;32m\][\u@k8s-node \W]\$\[\e[0m\] '
