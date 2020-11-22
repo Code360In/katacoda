@@ -1,11 +1,11 @@
 
-# RKE Yedekleme
+# Rancher, Özel Cluster
 
-Rancher Kubernetes Engine Cluster'ı elle yedekleme senaryosuna hoş geldiniz.
+Rancher yardımıyla özel cluster oluşturma ve yönetme senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda 2 node üzerinde kurulu bir RKE Cluster'ını yedeklemeyi deneyimleyebilirsiniz.
+Bu senaryoda 1 node üzerinde koşan Rancher kurulumunu kullanarak 1 Node üzere bir RKE Cluster'ı kurmayı ve yönetmeyi deneyimleyebilirsiniz.
 
 ## Yardım
 

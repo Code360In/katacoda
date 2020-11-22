@@ -1,13 +1,17 @@
 {
-  "title": "RKE Yedekleme",
-  "description": "Rancher elle yedek alma",
+  "title": "Rancher, Özel Cluster",
+  "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Yedekleme",
+        "title": "Adım 1 - Hazırlık",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Import",
+        "text": "step2.md"
       }
     ],
     "assets": {
@@ -29,8 +33,11 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uilayout": "terminal-iframe",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{"name": "Rancher UI", "href": "https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"}],
+    "terminals": [{"name": "K8s-Node", "target": "host02"}]
   },
   "backend": {
     "imageid": "kubernetes-cluster:1.18"

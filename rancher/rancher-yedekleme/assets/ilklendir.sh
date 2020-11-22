@@ -12,77 +12,99 @@ cat << "EOF"
                             |_|                                            |___/
 ===================================================================================
 
-RKE Cluster'ı hazırlanıyor...
 EOF
-
-systemctl stop kubelet 2>/dev/null &> /dev/null
-printf "."
-
-systemctl disable kubelet 2>/dev/null &> /dev/null
-printf "."
-
-echo "AllowTcpForwarding yes" >> /etc/ssh/sshd_config
-printf "."
 
 if [ $HOSTNAME == "controlplane" ]; then
-    MASTER_IP=$(hostname -I | cut -d' ' -f1) 
-    NODE01_IP=$(ssh -o LogLevel=quiet node01 hostname -I | cut -d' ' -f1)
-    printf "."
+   echo "Rancher Hazırlanıyor"
 
-    cat <<EOF >> /root/rancher-cluster.yml
-nodes:
-- address: $MASTER_IP
-  user: root
-  role: ['controlplane', 'etcd']
-- address: $NODE01_IP
-  user: root
-  role: ['worker']
-EOF
+   #Rancher şifresi oluştur
+   RANCHER_PASS=$(openssl rand -base64 12)
+   echo $RANCHER_PASS > /root/rancher_sifresi
 
-   printf "."
-   RKE_VERSION=$(curl --silent "https://api.github.com/repos/rancher/rke/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
-   printf "."
-
-   curl -L https://github.com/rancher/rke/releases/download/$RKE_VERSION/rke_linux-amd64 -o rke 2>/dev/null &> /dev/null
-   printf "."
-
-   chmod +x rke 2>/dev/null &> /dev/null
-   mv rke /usr/local/bin 2>/dev/null &> /dev/null
-   printf "."
-   echo ""
-   echo "RKE Cluster'ı başlatılıyor. Lütfen bekleyiniz..."
-
-   rke up --config ./rancher-cluster.yml 2>/dev/null &> /dev/null
-   printf "."
-
-   mkdir -p $HOME/.kube 2>/dev/null &> /dev/null
-   cp -i kube_config_rancher-cluster.yml $HOME/.kube/config 2>/dev/null &> /dev/null
-   chown $(id -u):$(id -g) $HOME/.kube/config 2>/dev/null &> /dev/null
-
-   echo ""
-   echo "Node'ların hazır olması bekleniyor..."
-   kubectl wait --for=condition=Ready node $NODE01_IP 2>/dev/null &> /dev/null
-
-   echo ""
-   echo "RKE Cluster'ı kullanıma hazır..."
-
-   echo "Gereksinimler hazırlanıyor..."
-   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-
-   kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.15.0/cert-manager.crds.yaml
-   kubectl create namespace cert-manager
-
-   helm repo add jetstack https://charts.jetstack.io
-   helm repo update
-
-   helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v0.15.0
-   kubectl wait --for condition=available deploy cert-manager -n cert-manager
-
-   echo "Rancher hazırlanıyor..."
-   kubectl create namespace cattle-system
-   helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
-   helm install rancher rancher-latest/rancher --namespace cattle-system --set hostname=[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com
-   kubectl wait --for condition=available -n cattle-system deploy/rancher
-
+   docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:v2.5.1 2>/dev/null &> /dev/null
    while true; do curl -sLk https://127.0.0.1/ping && break; printf "."; sleep 2; done
+
+   #Rancher'a giriş yap
+   while true; do
+      printf "."
+      LOGINRESPONSE=$(curl -sk "https://127.0.0.1/v3-public/localProviders/local?action=login" -H 'content-type: application/json' --data-binary '{"username":"admin","password":"admin"}')
+      LOGINTOKEN=$(echo $LOGINRESPONSE | jq -r .token)
+
+      if [ "$LOGINTOKEN" != "null" ]; then
+         break
+      else
+         sleep 5
+      fi
+   done
+
+   #Varsayılan Rancher şifresini değiştir
+   curl -sk 'https://127.0.0.1/v3/users?action=changepassword' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"currentPassword":"admin","newPassword":"'"${RANCHER_PASS}"'"}' 2>/dev/null &> /dev/null
+
+   #API token al
+   APIRESPONSE=$(curl -sk 'https://127.0.0.1/v3/token' -H 'content-type: application/json' -H "Authorization: Bearer $LOGINTOKEN" --data-binary '{"type":"token","description":"automation"}')
+   APITOKEN=`echo $APIRESPONSE | jq -r .token`
+
+   #Rancher sunucu adresini ayarla
+   RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
+   curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"'"${RANCHER_SERVER}"'"}' 2>/dev/null &> /dev/null
+   
+   #Telemetriyi kapat
+   curl -sk 'https://127.0.0.1/v3/settings/telemetry-opt' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"telemetry-opt","value":"out"}' 2>/dev/null &> /dev/null
+
+   #Firma adını ayarla
+   curl -sk 'https://127.0.0.1/v3/settings/ui-pl' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"ui-pl","value":"Enterprisecoding"}' 2>/dev/null &> /dev/null
+
+
+   # Custer kaydı oluştur
+   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableNetworkPolicy":false,"type":"cluster","rancherKubernetesEngineConfig":{"addonJobTimeout":30,"ignoreDockerVersion":true,"sshAgentAuth":false,"type":"rancherKubernetesEngineConfig","authentication":{"type":"authnConfig","strategy":"x509"},"network":{"type":"networkConfig","plugin":"canal"},"ingress":{"type":"ingressConfig","provider":"nginx"},"monitoring":{"type":"monitoringConfig","provider":"metrics-server"},"services":{"type":"rkeConfigServices","kubeApi":{"podSecurityPolicy":false,"type":"kubeAPIService"},"etcd":{"snapshot":false,"type":"etcdService","extraArgs":{"heartbeat-interval":500,"election-timeout":5000}}}},"name":"enterprisecodinf-cluster"}' --insecure`
+
+   # Docker run komutunu oluşturabilmek için clusterid'yi ayıkla
+   CLUSTERID=`echo $CLUSTERRESPONSE | jq -r .id`
+
+   # Cluster kayıt token'ı oluştur
+   curl -s 'https://127.0.0.1/v3/clusterregistrationtoken' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"type":"clusterRegistrationToken","clusterId":"'$CLUSTERID'"}' --insecure > /dev/null
+
+   # Master bayrakları
+   MASTER_ROLEFLAGS="--etcd --controlplane --worker"
+
+   # Worker bayrakları
+   WORKER_ROLEFLAGS="--worker"
+
+   # node komutu oluştur
+   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1`
+
+   # Master node komutunu oluştur
+   MASTER_DOCKERRUNCMD="$AGENTCMD $MASTER_ROLEFLAGS"
+
+   # Master node komutunu oluştur
+   WORKER_DOCKERRUNCMD="$AGENTCMD $WORKER_ROLEFLAGS"
+
+   ssh -o LogLevel=quiet node01 echo WORKER_DOCKERRUNCMD > /tmp/initialize_worker.sh
+
+   hostnamectl set-hostname rancher-node
+
+   echo ""
+   echo "RKE hazırlanıyor..."
+   "${MASTER_DOCKERRUNCMD[@]}"
+
+   echo ""
+   echo "Rancher kullanıma hazır"
+   echo "Kullanıcı Adı: admin"
+   echo "Şifre: $(cat /root/rancher_sifresi)"
+
+   export PS1='\[\e[1;32m\][\u@rancher-node \W]\$\[\e[0m\] '
+else 
+   hostnamectl set-hostname k8s-node
+
+   while [ ! -f /tmp/initialize_worker.sh ]; do echo "."; sleep 1; done
+   chmod +x /tmp/initialize_worker.sh
+
+   echo ""
+   echo "RKE hazırlanıyor..."
+   /tmp/initialize_worker.sh
+
+   echo "Sunucu kullanıma hazır..."
+   export PS1='\[\e[1;32m\][\u@k8s-node \W]\$\[\e[0m\] '
 fi
+
+exec bash
