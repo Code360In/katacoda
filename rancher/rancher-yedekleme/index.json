@@ -1,6 +1,6 @@
 {
-  "title": "Rancher, Özel Cluster",
-  "description": "Rancher yardımıyla özel cluster oluşturma ve yönetme",
+  "title": "Rancher Yedekleme",
+  "description": "Rancher elle yedek alma",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {

@@ -1,4 +1,4 @@
-Bu adımlar ardından artık Rancher kurulumu yardımıyla bir RKE Cluster'ını nasıl kurabileceğinizi deneyimlediniz.
+Bu adımlar ardından artık Rancher kurulumunu nasıl yedekleyebileceğinizi deneyimlediniz.
 
 Enterprisecoding üzerinde paylaştığımız [diğer Rancher ve Kubernetes makalelerini](http://www.enterprisecoding.com/post/tag/kubernetes) takip edebilirsiniz.
 
