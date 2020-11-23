@@ -93,6 +93,8 @@ if [ $HOSTNAME == "controlplane" ]; then
    echo "Kullanıcı Adı: admin"
    echo "Şifre: $(cat /root/rancher_sifresi)"
 
+   echo "[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].[[KATACODA_DOMAIN]]"
+
    export PS1='\[\e[1;32m\][\u@rancher-node \W]\$\[\e[0m\] '
 else 
    hostnamectl set-hostname k8s-node
