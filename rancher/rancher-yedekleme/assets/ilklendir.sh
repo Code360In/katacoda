@@ -56,7 +56,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
 
    # Custer kaydı oluştur
-   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableNetworkPolicy":false,"type":"cluster","rancherKubernetesEngineConfig":{"addonJobTimeout":30,"ignoreDockerVersion":true,"sshAgentAuth":false,"type":"rancherKubernetesEngineConfig","authentication":{"type":"authnConfig","strategy":"x509"},"network":{"type":"networkConfig","plugin":"canal"},"ingress":{"type":"ingressConfig","provider":"nginx"},"monitoring":{"type":"monitoringConfig","provider":"metrics-server"},"services":{"type":"rkeConfigServices","kubeApi":{"podSecurityPolicy":false,"type":"kubeAPIService"},"etcd":{"snapshot":false,"type":"etcdService","extraArgs":{"heartbeat-interval":500,"election-timeout":5000}}}},"name":"enterprisecodinf-cluster"}' --insecure`
+   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableClusterAlerting":false,"enableClusterMonitoring":false,"enableNetworkPolicy":false,"windowsPreferedCluster":false,"type":"cluster","name":"enterprisecoding-cluster","labels":{}}' --insecure`
 
    # Docker run komutunu oluşturabilmek için clusterid'yi ayıkla
    CLUSTERID=`echo $CLUSTERRESPONSE | jq -r .id`
@@ -79,13 +79,13 @@ if [ $HOSTNAME == "controlplane" ]; then
    # Master node komutunu oluştur
    WORKER_DOCKERRUNCMD="$AGENTCMD $WORKER_ROLEFLAGS"
 
-   ssh -o LogLevel=quiet node01 echo WORKER_DOCKERRUNCMD > /tmp/initialize_worker.sh
+   ssh -o LogLevel=quiet node01 "echo $WORKER_DOCKERRUNCMD > /tmp/initialize_worker.sh"
 
    hostnamectl set-hostname rancher-node
 
    echo ""
    echo "RKE hazırlanıyor..."
-   "${MASTER_DOCKERRUNCMD[@]}"
+   eval $MASTER_DOCKERRUNCMD
 
    echo ""
    echo "Rancher kullanıma hazır"
@@ -101,6 +101,7 @@ else
    echo ""
    echo "RKE hazırlanıyor..."
    cat /tmp/initialize_worker.sh | sh
+   cat tamam > /tmp/sonuc
 
    echo "Sunucu kullanıma hazır..."
    export PS1='\[\e[1;32m\][\u@k8s-node \W]\$\[\e[0m\] '
