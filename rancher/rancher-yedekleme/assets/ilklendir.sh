@@ -15,6 +15,7 @@ cat << "EOF"
 EOF
 
 if [ $HOSTNAME == "controlplane" ]; then
+   MASTER_IP=$(hostname -I | cut -d' ' -f1) 
    echo "Rancher Hazırlanıyor"
 
    #Rancher şifresi oluştur
@@ -46,7 +47,6 @@ if [ $HOSTNAME == "controlplane" ]; then
 
    #Rancher sunucu adresini ayarla
    RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
-   RANCHER_SERVER_SED="https:\/\/[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]]\.environments\.katacoda\.com"
    curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"'"${RANCHER_SERVER}"'"}' 2>/dev/null &> /dev/null
    
    #Telemetriyi kapat
@@ -72,7 +72,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    WORKER_ROLEFLAGS="--worker"
 
    # node komutu oluştur
-   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1 | sed "s/https:\/\/127\.0\.0\.1/$RANCHER_SERVER_SED/"`
+   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1 | sed "s/127\.0\.0\.1/$MASTER_IP/"`
 
    # Master node komutunu oluştur
    MASTER_DOCKERRUNCMD="$AGENTCMD $MASTER_ROLEFLAGS"
@@ -86,7 +86,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
    echo ""
    echo "RKE hazırlanıyor..."
-   eval "$MASTER_DOCKERRUNCMD"
+   eval "$MASTER_DOCKERRUNCMD" 2>/dev/null &> /dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"
