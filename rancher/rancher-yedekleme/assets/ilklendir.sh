@@ -46,6 +46,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
    #Rancher sunucu adresini ayarla
    RANCHER_SERVER="https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"
+   RANCHER_SERVER_SED="https:\/\/[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]]\.environments\.katacoda\.com"
    curl -sk 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"'"${RANCHER_SERVER}"'"}' 2>/dev/null &> /dev/null
    
    #Telemetriyi kapat
@@ -56,7 +57,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
 
    # Custer kaydı oluştur
-   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableClusterAlerting":false,"enableClusterMonitoring":false,"enableNetworkPolicy":false,"windowsPreferedCluster":false,"type":"cluster","name":"enterprisecoding-cluster","labels":{}}' --insecure`
+   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableClusterAlerting":false,"enableClusterMonitoring":false,"enableNetworkPolicy":false,"windowsPreferedCluster":false,"type":"cluster","name":"enterprisecoding-cluster","rancherKubernetesEngineConfig":{"addonJobTimeout":30,"ignoreDockerVersion":true,"sshAgentAuth":false,"type":"rancherKubernetesEngineConfig","kubernetesVersion":"v1.19.4-rancher1-1","authentication":{"strategy":"x509","type":"authnConfig"},"dns":{"type":"dnsConfig","nodelocal":{"type":"nodelocal","ip_address":"","node_selector":null,"update_strategy":{}}},"network":{"mtu":0,"plugin":"canal","type":"networkConfig","options":{"flannel_backend_type":"vxlan"}},"ingress":{"provider":"nginx","type":"ingressConfig"},"monitoring":{"provider":"metrics-server","replicas":1,"type":"monitoringConfig"},"services":{"type":"rkeConfigServices","kubeApi":{"alwaysPullImages":false,"podSecurityPolicy":false,"serviceNodePortRange":"30000-32767","type":"kubeAPIService"},"etcd":{"creation":"12h","extraArgs":{"heartbeat-interval":500,"election-timeout":5000},"gid":0,"retention":"72h","snapshot":false,"uid":0,"type":"etcdService","backupConfig":{"enabled":true,"intervalHours":12,"retention":6,"safeTimestamp":false,"type":"backupConfig"}}},"upgradeStrategy":{"maxUnavailableControlplane":"1","maxUnavailableWorker":"10%","drain":"false","nodeDrainInput":{"deleteLocalData":false,"force":false,"gracePeriod":-1,"ignoreDaemonSets":true,"timeout":120,"type":"nodeDrainInput"},"maxUnavailableUnit":"percentage"}},"localClusterAuthEndpoint":{"enabled":true,"type":"localClusterAuthEndpoint"},"labels":{},"scheduledClusterScan":{"enabled":false,"scheduleConfig":null,"scanConfig":null}}' --insecure`
 
    # Docker run komutunu oluşturabilmek için clusterid'yi ayıkla
    CLUSTERID=`echo $CLUSTERRESPONSE | jq -r .id`
@@ -71,7 +72,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    WORKER_ROLEFLAGS="--worker"
 
    # node komutu oluştur
-   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1`
+   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1 | sed "s/https:\/\/127\.0\.0\.1/$RANCHER_SERVER_SED/"`
 
    # Master node komutunu oluştur
    MASTER_DOCKERRUNCMD="$AGENTCMD $MASTER_ROLEFLAGS"
