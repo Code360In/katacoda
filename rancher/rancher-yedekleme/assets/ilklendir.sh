@@ -57,7 +57,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
 
    # Custer kaydı oluştur
-   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableClusterAlerting":false,"enableClusterMonitoring":false,"enableNetworkPolicy":false,"windowsPreferedCluster":false,"type":"cluster","name":"enterprisecoding-cluster","rancherKubernetesEngineConfig":{"addonJobTimeout":30,"ignoreDockerVersion":true,"sshAgentAuth":false,"type":"rancherKubernetesEngineConfig","kubernetesVersion":"v1.19.4-rancher1-1","authentication":{"strategy":"x509","type":"authnConfig"},"dns":{"type":"dnsConfig","nodelocal":{"type":"nodelocal","ip_address":"","node_selector":null,"update_strategy":{}}},"network":{"mtu":0,"plugin":"canal","type":"networkConfig","options":{"flannel_backend_type":"vxlan"}},"ingress":{"provider":"nginx","type":"ingressConfig"},"monitoring":{"provider":"metrics-server","replicas":1,"type":"monitoringConfig"},"services":{"type":"rkeConfigServices","kubeApi":{"alwaysPullImages":false,"podSecurityPolicy":false,"serviceNodePortRange":"30000-32767","type":"kubeAPIService"},"etcd":{"creation":"12h","extraArgs":{"heartbeat-interval":500,"election-timeout":5000},"gid":0,"retention":"72h","snapshot":false,"uid":0,"type":"etcdService","backupConfig":{"enabled":true,"intervalHours":12,"retention":6,"safeTimestamp":false,"type":"backupConfig"}}},"upgradeStrategy":{"maxUnavailableControlplane":"1","maxUnavailableWorker":"10%","drain":"false","nodeDrainInput":{"deleteLocalData":false,"force":false,"gracePeriod":-1,"ignoreDaemonSets":true,"timeout":120,"type":"nodeDrainInput"},"maxUnavailableUnit":"percentage"}},"localClusterAuthEndpoint":{"enabled":true,"type":"localClusterAuthEndpoint"},"labels":{},"scheduledClusterScan":{"enabled":false,"scheduleConfig":null,"scanConfig":null}}' --insecure`
+   CLUSTERRESPONSE=`curl -s 'https://127.0.0.1/v3/cluster' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --data-binary '{"dockerRootDir":"/var/lib/docker","enableClusterAlerting":false,"enableClusterMonitoring":false,"enableNetworkPolicy":false,"windowsPreferedCluster":false,"type":"cluster","name":"enterprisecoding-cluster","labels":{}}' --insecure`
 
    # Docker run komutunu oluşturabilmek için clusterid'yi ayıkla
    CLUSTERID=`echo $CLUSTERRESPONSE | jq -r .id`
@@ -77,37 +77,23 @@ if [ $HOSTNAME == "controlplane" ]; then
    # Master node komutunu oluştur
    MASTER_DOCKERRUNCMD="$AGENTCMD $MASTER_ROLEFLAGS"
 
-   # Master node komutunu oluştur
-   WORKER_DOCKERRUNCMD="$AGENTCMD $WORKER_ROLEFLAGS"
-
-   ssh -o LogLevel=quiet node01 "echo $WORKER_DOCKERRUNCMD > /tmp/initialize_worker.sh"
-
-   hostnamectl set-hostname rancher-node
-
    echo ""
-   echo "RKE hazırlanıyor..."
-   eval "$MASTER_DOCKERRUNCMD" 2>/dev/null &> /dev/null
+   echo "Kubernetes cluster'ı hazırlanıyor..."
+
+   RET=1
+   until [ ${RET} -eq 0 ]; do
+      kubectl wait --for=condition=ready node node01 2>/dev/null &> /dev/null
+      RET=$?
+      printf "."
+      sleep 2
+   done
+
+   echo "$MASTER_DOCKERRUNCMD" > /tmp/komut
 
    echo ""
    echo "Rancher kullanıma hazır"
    echo "Kullanıcı Adı: admin"
    echo "Şifre: $(cat /root/rancher_sifresi)"
-
-   echo "[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].[[KATACODA_DOMAIN]]"
-
-   export PS1='\[\e[1;32m\][\u@rancher-node \W]\$\[\e[0m\] '
-else 
-   hostnamectl set-hostname k8s-node
-
-   while [ ! -f /tmp/initialize_worker.sh ]; do echo "."; sleep 1; done
-
-   echo ""
-   echo "RKE hazırlanıyor..."
-   cat /tmp/initialize_worker.sh | sh
-   cat tamam > /tmp/sonuc
-
-   echo "Sunucu kullanıma hazır..."
-   export PS1='\[\e[1;32m\][\u@k8s-node \W]\$\[\e[0m\] '
 fi
 
 exec bash

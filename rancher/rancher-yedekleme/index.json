@@ -40,6 +40,6 @@
     "terminals": [{"name": "K8s-Node", "target": "host02"}]
   },
   "backend": {
-    "imageid": "kubernetes-cluster:1.18"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }
