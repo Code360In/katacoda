@@ -85,7 +85,7 @@ if [ $HOSTNAME == "controlplane" ]; then
 
    echo ""
    echo "RKE hazırlanıyor..."
-   eval $MASTER_DOCKERRUNCMD
+   eval "$MASTER_DOCKERRUNCMD"
 
    echo ""
    echo "Rancher kullanıma hazır"
