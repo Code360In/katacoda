@@ -26,4 +26,8 @@ Dosyanın **upper** dizininde oluştuğunu teyit edin.
 
 `ls -al /tmp/overlay-dizini/upper`{{execute}}
 
+Dosyanın içeriğini görüntüleyin;
+
+`cat /tmp/overlay-dizini/upper/enterprisecoding-overlay-ornek.txt`{{execute}}
+
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

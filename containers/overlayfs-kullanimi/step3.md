@@ -10,7 +10,7 @@ Aşağıdaki komut yardımıyla **/tmp/overlay-dizini/overlay** dizininde **orne
 
 **ornek.config** dosyasının içeriğini görüntüleyin;
 
-`cat /tmp/overlay-dizini/overlay`{{execute}}
+`cat /tmp/overlay-dizini/overlay/ornek.config`{{execute}}
 
 Aşağıdaki komut yardımıyla **ornek.config** dosyasının içeriğini değiştirin;
 
@@ -23,3 +23,13 @@ Aşağıdaki komut yardımıyla **ornek.config** dosyasının içeriğini deği�
 **/tmp/overlay-dizini/middle** dizinindeki **ornek.config** dosyasının içeriğini yeniden görüntüleyin;
 
 `cat /tmp/overlay-dizini/middle/ornek.config`{{execute}}
+
+**upper** dizinini listeyin;
+
+`ls /tmp/overlay-dizini/upper`{{execute}}
+
+upper dizininde **ornek.config** dosyasının olduğunu teyit edin ve içeriğini görüntüleyin;
+
+`cat /tmp/overlay-dizini/upper/ornek.config`{{execute}}
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
