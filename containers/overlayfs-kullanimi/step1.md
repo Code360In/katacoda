@@ -14,6 +14,6 @@ Bu dizinler birbirinden bağımsız bağlama noktalarını temsil etmektedir. Bu
 
 Aşağıdaki komutu çalıştırarak bir önceki adımda oluşturduğunuz dizinleri **/tmp/overlay-dizini/overlay** birleştirilmiş olarak overlay dizinine bağlayın;
 
-`mount -t overlay -o lowerdir=/root:/tmp/overlay-dizini/middle,upperdir=/tmp/overlay-dizini/upper,workdir=/tmp/overlay-dizini/workdir none /tmp/overlay`{{execute}}
+`mount -t overlay -o lowerdir=/root:/tmp/overlay-dizini/middle,upperdir=/tmp/overlay-dizini/upper,workdir=/tmp/overlay-dizini/workdir none /tmp/overlay-dizini/overlay`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
