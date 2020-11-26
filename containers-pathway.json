@@ -47,51 +47,6 @@
         "course_id": "basit-bir-container-runtime",
         "title": "Basit Bir Container Runtime Oluşturma",
         "description": "Linux işletim sistemi üzerinde basit bir konteynar çalışma-zamanı oluşturma"
-      },
-      {
-        "course_id": "linux-containers-kullanimi",
-        "title": "Linux Containers (LXD/LXC) Kullanımı",
-        "description": "Linux containers temel kullanımı"
-      },
-      {
-        "course_id": "docker-kurulumu",
-        "title": "Docker Kurulumu",
-        "description": "Ubuntu üzerinde Docker kurulumu"
-      },
-      {
-        "course_id": "docker-kurulumu-script",
-        "title": "Docker Kurulumu-Kolay Yol",
-        "description": "Ubuntu üzerinde kolay şekilde Docker kurulumu"
-      },
-      {
-        "course_id": "ilk-docker-containeri",
-        "title": "İlk Docker Konteyner'ı",
-        "description": "İlk Docker konteyner'ınızı ayağa kaldırın"
-      },
-      {
-        "course_id": "overlayfs-kullanimi",
-        "title": "Overlayfs Kullanımıı",
-        "description": "Overlay filesystem kullanımı"
-      },
-      {
-        "course_id": "docker-interaktif-imaj-olusturma",
-        "title": "Docker Interaktif Imaj Oluşturma",
-        "description": "Interaktif olarak Docker imajı oluşturma"
-      },
-      {
-        "course_id": "dockerfile",
-        "title": "Dockerfile ile Imaj Oluşturma",
-        "description": "Dockerfile yardımıyla bir Docker imajı oluşturma"
-      },
-      {
-        "course_id": "docker-imaj-kullanimi",
-        "title": "Docker Imaj Kullanımı",
-        "description": "Docker Imaj kullanımı ve yapısı"
-      },
-      {
-        "course_id": "jaeger-all-in-one",
-        "title": "Jaeger, Docker Tümü bir Arada",
-        "description": "Docker üzerinde jaeger all-in-one kullanımı"
       }
     ]
   }
