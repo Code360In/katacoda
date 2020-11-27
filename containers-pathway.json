@@ -70,7 +70,7 @@
       },
       {
         "course_id": "overlayfs-kullanimi",
-        "title": "Overlayfs Kullanımıı",
+        "title": "Overlayfs Kullanımı",
         "description": "Overlay filesystem kullanımı"
       },
       {
@@ -79,14 +79,14 @@
         "description": "Interaktif olarak Docker imajı oluşturma"
       },
       {
-        "course_id": "dockerfile",
-        "title": "Dockerfile ile Imaj Oluşturma",
-        "description": "Dockerfile yardımıyla bir Docker imajı oluşturma"
-      },
-      {
         "course_id": "docker-imaj-kullanimi",
         "title": "Docker Imaj Kullanımı",
         "description": "Docker Imaj kullanımı ve yapısı"
+      },
+      {
+        "course_id": "dockerfile",
+        "title": "Dockerfile ile Imaj Oluşturma",
+        "description": "Dockerfile yardımıyla bir Docker imajı oluşturma"
       },
       {
         "course_id": "jaeger-all-in-one",
