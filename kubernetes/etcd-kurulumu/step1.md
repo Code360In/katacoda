@@ -26,6 +26,6 @@ Aşağıdaki komutlarla etcd ve etcdctl dosyaları **/usr/local/bin/** altına k
 
 Aşağıdaki adımla etcd sürümü teyit edin;
 
-`etcdctl -version`{{execute}}
+`etcdctl version`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
