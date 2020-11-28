@@ -1,6 +1,6 @@
 # Pod Manifest Dizini
 
-Worker node’da ssh oturumu başlatırlır;
+Worker node’da ssh oturumu başlatılır;
 
 `ssh node01`{{execute}}
 
@@ -62,6 +62,10 @@ Kısa bir süre sonrasında pod başlatılacaktır. Worker node üzerinde aşağ
 
 `docker ps | grep static-web-sunucusu`{{execute}}
 
+Aşağıdaki komut yardımıyla node01'den çıkış yapılarak master node'a geri dönülür;
+
+`exit`{{execute}}
+
 Kubectl yardımıyla default namespace’inde çalışan pod teyit edin;
 
 `kubectl get pods`{{execute}}
@@ -81,6 +85,10 @@ Worker node’da aşağıdaki komutla nginx manifest dosyası silinir;
 kubectl ile yeniden pod listesi çekilerek nginx pod’un silindiği tespit edilir;
 
 `kubectl get pods`{{execute}}
+
+Worker node’da yeniden ssh oturumu başlatılır;
+
+`ssh node01`{{execute}}
 
 Yapılandırmaları eski haline getirmek için **/lib/systemd/system/kubelet.service** dosyası aşağıdaki içerikle eski haline geri getirilir;
 
