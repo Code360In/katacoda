@@ -6,11 +6,11 @@ Aşağıdaki komutu çalıştırarak pod bilgilerini görüntüleyin;
 
 Aşağıdaki komutu çalıştırarak pod tanımını yaml formatında alın;
 
-`kubectl describe pod ilk-pod --output yaml`{{execute}}
+`kubectl get pod ilk-pod --output yaml`{{execute}}
 
 Yaml formatında tanımı dışarı almaya daha uygun halini aşağıdaki komutla görüntüleyin;
 
-`kubectl describe pod ilk-pod --output yaml --export`{{execute}}
+`kubectl get pod ilk-pod --output yaml --export`{{execute}}
 
 Aşağıdaki komutla yaml çıkısını bir dosyaya yazdırın;
 
