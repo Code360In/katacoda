@@ -34,6 +34,11 @@
         "description": "Kubernetes Cluster üzerinde pod evreleri ve konteyner durumları"
       },
       {
+        "course_id": "konteyner-yasam-dongusu",
+        "title": "Konteyner Yaşam Döngüsü",
+        "description": "Kubernetes Cluster üzerinde konteyner yaşam döngüsü olayları"
+      },
+      {
         "course_id": "init-konteyner-kullanimi",
         "title": "Init Konteyner Kullanımı",
         "description": "Kubernetes Cluster üzerinde init konteyner kullanımı"
@@ -47,11 +52,6 @@
         "course_id": "statik-pod-kullanimi",
         "title": "Statik Pod Kullanımı",
         "description": "Kubernetes Cluster üzerinde statik pod kullanımı"
-      },
-      {
-        "course_id": "konteyner-yasam-dongusu",
-        "title": "Konteyner Yaşam Döngüsü",
-        "description": "Kubernetes Cluster üzerinde konteyner yaşam döngüsü olayları"
       },
       {
         "course_id": "ilk-replicaset",
