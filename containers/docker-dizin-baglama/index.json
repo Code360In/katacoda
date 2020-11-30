@@ -1,0 +1,44 @@
+{
+  "title": "Docker Dizin Bağlama",
+  "description": "Docker'da dizin bağlama",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Dizin'i Hazırlama",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - İmaj Yönetimi",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3 - Konteyner Başlatma",
+        "text": "step3.md"
+      },
+      {
+        "title": "Adım 4 - Konteyner Detay Bilgileri",
+        "text": "step4.md"
+      },
+      {
+        "title": "Adım 5 - Konteyner Portları",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "docker"
+  }
+}
