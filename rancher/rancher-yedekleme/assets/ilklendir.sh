@@ -72,10 +72,7 @@ if [ $HOSTNAME == "controlplane" ]; then
    WORKER_ROLEFLAGS="--worker"
 
    # node komutu oluştur
-   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].nodeCommand' | head -1 | sed "s/127\.0\.0\.1/$MASTER_IP/"`
-
-   # Master node komutunu oluştur
-   MASTER_DOCKERRUNCMD="$AGENTCMD $MASTER_ROLEFLAGS"
+   AGENTCMD=`curl -s 'https://127.0.0.1/v3/clusterregistrationtoken?id="'$CLUSTERID'"' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" --insecure | jq -r '.data[].insecureCommand' | head -1`
 
    echo ""
    echo "Kubernetes cluster'ı hazırlanıyor..."
@@ -88,7 +85,11 @@ if [ $HOSTNAME == "controlplane" ]; then
       sleep 2
    done
 
-   echo "$MASTER_DOCKERRUNCMD" > /tmp/komut
+   echo "$AGENTCMD" > agent.sh
+   chmod +x agentcmd.sh
+   
+   sleep 5
+   ./agentcmd.sh 2>/dev/null &> /dev/null
 
    echo ""
    echo "Rancher kullanıma hazır"
