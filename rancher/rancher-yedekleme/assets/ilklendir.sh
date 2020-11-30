@@ -85,7 +85,7 @@ if [ $HOSTNAME == "controlplane" ]; then
       sleep 2
    done
 
-   echo "$AGENTCMD" > agent.sh
+   echo "$AGENTCMD" > agentcmd.sh
    chmod +x agentcmd.sh
    
    sleep 5
