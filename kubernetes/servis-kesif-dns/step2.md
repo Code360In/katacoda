@@ -33,19 +33,23 @@ Kubernetes DNS kayıtlarını incelemek için aşağıdaki komutla busybox konte
 
 `kubectl run -i --tty dnsutils --image=docker.io/enterprisecodingcom/dnsutils -- sh`{{execute}}
 
-Açılan shell oturumunda aşağıdaki komutla **http-server-service.default.svc** adresi sorgulanır;
+Açılan shell oturumunda aşağıdaki komutla **http-server-service.default.svc.cluster.local** adresi sorgulanır;
 
-`nslookup http-server-service.default.svc`{{execute}}
+`dig -t A http-server-service.default.svc.cluster.local +short`{{execute}}
 
-Ek olarak aşağıdaki kayıtlar için sorgulama yapılır;
-* http-server-service.default
-* http-server-service
+Gelen yanıtta http-server-service için oluşturulan cluster ip’si görülecektir. 
 
-`nslookup http-server-service.default`{{execute}}
+Aşağıdaki komutla **http-server-service** içerisinde **tcp** protokolü ile açılmış olan **uygulama** adındaki servis bilgileri görüntülenecektir;
 
-`nslookup http-server-service`{{execute}}
+`dig -t srv _uygulama._tcp.http-server-service.default.svc.cluster.local +short`{{execute}}
 
-Gelen yanıtta http-server-service için oluşturulan cluster ip’si görülecektir. Aşağıdaki komutla pod’dan çıkış yapılır;
+Gelen ya ıt aşağıdaki şekilde olacaktır;
+
+`0 100 4000 http-server-service.default.svc.cluster.local.`
+
+Bu yanıttaki **4000** değeri servis portunu, **http-server-service.default.svc.cluster.local** değeri ise servisin dns adresini göstermektedir.
+
+Aşağıdaki komutla pod’dan çıkış yapılır;
 
 `exit`
 
