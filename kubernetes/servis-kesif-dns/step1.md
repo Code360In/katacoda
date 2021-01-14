@@ -59,7 +59,8 @@ spec:
   selector:
     app: http-server-pod
   ports:
-  - protocol: TCP
+  - name: uygulama
+    protocol: TCP
     port: 4000
     targetPort: http
 EOF
