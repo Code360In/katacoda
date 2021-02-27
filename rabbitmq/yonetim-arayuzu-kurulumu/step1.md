@@ -1,6 +1,10 @@
 # Management Eklentisi Kurulumu
 
-Aşağıdaki komut yardımıyla RabbitMQ yönetim eklentisini kurunİ
+Aşağıdaki komutla kurulumu kontrol edin;
+
+`rabbitmqctl status`{{execute}}
+
+Aşağıdaki komut yardımıyla RabbitMQ yönetim eklentisini kurun;
 
 `rabbitmq-plugins enable rabbitmq_management`{{execute}}
 
