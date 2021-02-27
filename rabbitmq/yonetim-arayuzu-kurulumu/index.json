@@ -6,12 +6,8 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Repository Tanımlama",
+        "title": "Adım 1 - Kurulum",
         "text": "step1.md"
-      },
-      {
-        "title": "Adım 2 - Kurulum",
-        "text": "step2.md"
       }
     ],
     "assets": {
@@ -29,7 +25,9 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{"name": "RabbitMQ Management UI", "href": "https://[[HOST_SUBDOMAIN]]-15672-[[KATACODA_HOST]].environments.katacoda.com"}]
   },
   "backend": {
     "imageid": "ubuntu"

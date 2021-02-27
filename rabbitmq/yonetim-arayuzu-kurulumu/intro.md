@@ -1,11 +1,11 @@
 
-# RabbitMQ Kurulumu
+# Yönetim Arayüzü Kurulumu
 
-Enterprisecoding  RabbitMQ kurulumu senaryosuna hoş geldiniz.
+Enterprisecoding  RabbitMQ yönetim arayüzü kurulumu senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, Linux işletim sistemi üzerinde RabbitMQ kurulumunu deneyimleyeceksiniz.
+Bu senaryoda, Linux işletim sistemi üzerinde RabbitMQ yönetim arayüzü kurulumunu deneyimleyeceksiniz.
 
 ## Eğitim
 

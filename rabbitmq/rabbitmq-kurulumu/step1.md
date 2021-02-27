@@ -24,7 +24,7 @@ Aşağıdaki komut kullanarak **/etc/apt/sources.list.d/bintray.erlang.list** do
 
 ```bash
 cat > /etc/apt/sources.list.d/bintray.erlang.list <<EOF
-deb https://dl.bintray.com/rabbitmq-erlang/debian \$distribution erlang
+deb https://dl.bintray.com/rabbitmq-erlang/debian xenial erlang
 EOF
 ```{{execute}}
 
@@ -34,7 +34,7 @@ Aşağıdaki komut kullanarak **/etc/apt/sources.list.d/bintray.rabbitmq.list** 
 
 ```bash
 cat > /etc/apt/sources.list.d/bintray.rabbitmq.list <<EOF
-deb https://dl.bintray.com/rabbitmq/debian \$distribution main
+deb https://dl.bintray.com/rabbitmq/debian xenial main
 EOF
 ```{{execute}}
 

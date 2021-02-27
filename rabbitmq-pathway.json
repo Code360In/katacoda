@@ -6,7 +6,12 @@
       {
         "course_id": "rabbitmq-kurulumu",
         "title": "RabbitMQ Kurulumu",
-        "description": "Linux işletim sistemi üzerinde RaabitMQ kurulumu"
+        "description": "Linux işletim sistemi üzerinde RabbitMQ kurulumu"
+      },
+      {
+        "course_id": "yonetim-arayuzu-kurulumu",
+        "title": "Yönetim Arayüzü Kurulumu",
+        "description": "Linux işletim sistemi üzerinde RabbitMQ yönetim arayüzü kurulumu"
       }
     ]
   }
