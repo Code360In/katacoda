@@ -8,6 +8,10 @@
       {
         "title": "Adım 1 - Kurulum",
         "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Kullanıcı",
+        "text": "step2.md"
       }
     ],
     "assets": {
