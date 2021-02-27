@@ -1,0 +1,32 @@
+{
+  "title": "RabbitMQ Kurulumu",
+  "description": "Linux işletim sistemi üzerinde RaabitMQ kurulumu",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1 - Repository Tanımlama",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2 - Kurulum",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
