@@ -16,7 +16,12 @@
       {
         "course_id": "exchange-olusturma",
         "title": "Exchange Oluşturma",
-        "description": "RabbitMQ yönetim arayüzü üzerinden exchange oluşturma"
+        "description": "RabbitMQ yönetim arayüzü ve komut satırı üzerinden exchange oluşturma"
+      },
+      {
+        "course_id": "queue-olusturma",
+        "title": "Queue Oluşturma",
+        "description": "RabbitMQ yönetim arayüzü ve komut satırı üzerinden queue oluşturma"
       }
     ]
   }

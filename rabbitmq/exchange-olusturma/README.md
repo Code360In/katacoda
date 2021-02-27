@@ -1,2 +1,2 @@
 # Exchange Oluşturma
-RabbitMQ yönetim arayüzü üzerinden exchange oluşturma
+RabbitMQ yönetim arayüzü ve komut satırın üzerinden exchange oluşturma

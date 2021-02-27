@@ -1,6 +1,6 @@
 {
-  "title": "Exchange Oluşturma",
-  "description": "RabbitMQ yönetim arayüzü üzerinden exchange oluşturma",
+  "title": "Queue Oluşturma",
+  "description": "RabbitMQ yönetim arayüzü ve komut satırı üzerinden queue oluşturma",
   "difficulty": "Beginner",
   "time": "5 minutes",
   "details": {

@@ -1,4 +1,4 @@
-Bu adımlar ardından artık RabbitMQ yönetim arayüzü ve komut satırı üzerinden exchange oluşturma hakkında deneyim kazandınız.
+Bu adımlar ardından artık RabbitMQ yönetim arayüzü ve komut satırı üzerinden qeueue oluşturma hakkında deneyim kazandınız.
 
 Enterprisecoding üzerinde paylaştığımız [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 

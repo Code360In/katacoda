@@ -1,11 +1,11 @@
 
-# Exchange Oluşturma
+# Queue Oluşturma
 
-Enterprisecoding RabbitMQ yönetim arayüzü ve komut satırı üzerinden exchange oluşturma senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ yönetim arayüzü ve komut satırı üzerinden queue oluşturma senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, RabbitMQ yönetim arayüzü ve komut satırı üzerinden exchange oluşturmayı deneyimleyeceksiniz.
+Bu senaryoda, RabbitMQ yönetim arayüzü ve komut satırı üzerinden queue oluşturmayı deneyimleyeceksiniz.
 
 ## Eğitim
 
