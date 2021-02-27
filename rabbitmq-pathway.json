@@ -12,6 +12,11 @@
         "course_id": "yonetim-arayuzu-kurulumu",
         "title": "Yönetim Arayüzü Kurulumu",
         "description": "Linux işletim sistemi üzerinde RabbitMQ yönetim arayüzü kurulumu"
+      },
+      {
+        "course_id": "exchange-olusturma",
+        "title": "Exchange Oluşturma",
+        "description": "RabbitMQ yönetim arayüzü üzerinden exchange oluşturma"
       }
     ]
   }

@@ -30,6 +30,14 @@ sudo apt-get install -y erlang-base \
 
 sudo apt-get install -y rabbitmq-server 2>/dev/null &> /dev/null
 
+echo "RabbitMQ hizmeti başlatılıyor..."
+
+service rabbitmq-server start 2>/dev/null &> /dev/null
+
+echo "Yönetim arayüzü eklentisi kuruluyor..."
+rabbitmq-plugins enable rabbitmq_management 2>/dev/null &> /dev/null
+
+echo "Yönetim arayüzü erişimi hazırlanıyor..."
 sudo apt-get install nginx -y 2>/dev/null &> /dev/null
 
 cat > /etc/nginx/sites-available/default <<EOF
@@ -62,9 +70,11 @@ EOF
 
 sudo systemctl reload nginx 2>/dev/null &> /dev/null
 
-echo "RabbitMQ hizmeti başlatılıyor..."
+echo "Yetkili kullanıcı oluşturuluyor..."
+rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
+rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
 
-service rabbitmq-server start 2>/dev/null &> /dev/null
+chmod +x /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."

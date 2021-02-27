@@ -8,4 +8,4 @@ Oluşturduğunuz **enterprisecoding** kullanıcına aşağıdaki komutla **admin
 
 `rabbitmqctl set_user_tags enterprisecoding administrator`{{execute}}
 
-Yönetim arayüzüne giderek **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapabildiğinizi teyit edin.
+Yönetim arayüzüne giderek **guest** kullanıcısı oturumunda çıkış yapın. Ardından **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapabildiğinizi teyit edin.

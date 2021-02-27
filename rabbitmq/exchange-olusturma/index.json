@@ -1,16 +1,16 @@
 {
-  "title": "RabbitMQ Kurulumu",
-  "description": "Linux işletim sistemi üzerinde RaabitMQ kurulumu",
+  "title": "Exchange Oluşturma",
+  "description": "RabbitMQ yönetim arayüzü üzerinden exchange oluşturma",
   "difficulty": "Beginner",
   "time": "5 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Kurulum",
+        "title": "Adım 1 - Exchange Oluşturma",
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Kullanıcı",
+        "title": "Adım 2 - Exchange Oluşturma",
         "text": "step2.md"
       }
     ],

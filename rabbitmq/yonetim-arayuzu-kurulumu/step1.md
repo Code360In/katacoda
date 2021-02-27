@@ -10,8 +10,6 @@ Aşağıdaki komut yardımıyla RabbitMQ yönetim eklentisini kurun;
 
 Kurulum ardından **RabbitMQ Management UI** segmesi üzerinden yönetim arayüzünü açarak inceleyin.
 
-Kullanıcı adı ve şifre alanına **guest** değerini vererek giriş yapmayı deneyin. **User can only log in via localhost** hata mesajı aldığınızı teyi edin.
-
-Bu hata mesajı **guest** kullanıcısının sadece yerelden giriş yapabileceğini belirtmektedir.
+Kullanıcı adı ve şifre alanına **guest** değerini vererek giriş yapın..
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
