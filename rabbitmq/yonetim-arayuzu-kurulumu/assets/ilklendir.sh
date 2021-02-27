@@ -39,23 +39,14 @@ server {
 
   server_name _;
 
-  location ~* /api/(.*?)/(.*) {
-        proxy_pass http://127.0.0.1:15672/api/\$1/%2F/\$2?$query_string;
-        proxy_buffering                    off;
-        proxy_set_header Host              \$http_host;
-        proxy_set_header X-Real-IP         \$remote_addr;
-        proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
-
-    location ~* /(.*) {
-        proxy_pass http://127.0.0.1:15672;
-        proxy_buffering                    off;
-        proxy_set_header Host              \$http_host;
-        proxy_set_header X-Real-IP         \$remote_addr;
-        proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
+  location ~* /(.*) {
+      proxy_pass http://127.0.0.1:15672;
+      proxy_buffering                    off;
+      proxy_set_header Host              \$http_host;
+      proxy_set_header X-Real-IP         \$remote_addr;
+      proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto \$scheme;
+  }
 
 }
 EOF
