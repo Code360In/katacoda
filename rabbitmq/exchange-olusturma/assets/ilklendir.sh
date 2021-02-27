@@ -73,6 +73,7 @@ sudo systemctl reload nginx 2>/dev/null &> /dev/null
 echo "Yetkili kullanıcı oluşturuluyor..."
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
 rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
+rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
 
 chmod +x /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
 
