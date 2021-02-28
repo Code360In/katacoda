@@ -47,25 +47,28 @@ server {
 
   server_name _;
 
-  upstream rabbitmq {
-    server localhost:15672;
-    keepalive 15;
-  }
-
   location / {
-     if ($request_uri ~* “/(.*)”) {
-        proxy_pass http://rabbitmq/$1;
-     }
-  } 
+      proxy_pass http://127.0.0.1:15672;
+      proxy_buffering                    off;
+      proxy_set_header Host              \$http_host;
+      proxy_set_header X-Real-IP         \$remote_addr;
+      proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto \$scheme;
+  }
 }
 EOF
 
 sudo systemctl reload nginx 2>/dev/null &> /dev/null
 
 echo "Yetkili kullanıcı oluşturuluyor..."
+rabbitmqctl delete_vhost /
+rabbitmqctl add_vhost default
+
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
 rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
+
 rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
+rabbitmqctl set_permissions -p default enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."

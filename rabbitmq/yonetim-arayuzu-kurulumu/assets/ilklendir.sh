@@ -28,33 +28,30 @@ sudo apt-get install -y erlang-base \
                         erlang-runtime-tools erlang-snmp erlang-ssl \
                         erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl 2>/dev/null &> /dev/null
 
-sudo apt-get install -y rabbitmq-server policycoreutils apache2 2>/dev/null &> /dev/null
-setsebool -P httpd_can_network_connect 1 2>/dev/null &> /dev/null
-a2enmod proxy 2>/dev/null &> /dev/null
-a2enmod proxy_http 2>/dev/null &> /dev/null
+sudo apt-get install -y rabbitmq-server 2>/dev/null &> /dev/null
 
-cat > /etc/apache2/sites-enabled/000-default.conf <<EOF
-<VirtualHost *:80>
-    ProxyRequests Off
-    ProxyPreserveHost On
+sudo apt-get install nginx -y 2>/dev/null &> /dev/null
 
-    <Proxy *>
-       Order deny,allow
-       Allow from all
-    </Proxy>
+cat > /etc/nginx/sites-available/default <<EOF
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
 
-    AllowEncodedSlashes NoDecode
-    ProxyPass / http://localhost:15672/ nocanon
-    ProxyPassReverse / http://localhost:15672/
+  server_name _;
 
-    <Location />
-       Order allow,deny
-       Allow from all
-    </Location>
-</VirtualHost>
+  location / {
+      proxy_pass http://127.0.0.1:15672;
+      proxy_buffering                    off;
+      proxy_set_header Host              \$http_host;
+      proxy_set_header X-Real-IP         \$remote_addr;
+      proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto \$scheme;
+  }
+
+}
 EOF
 
-service apache2 reload 2>/dev/null &> /dev/null
+sudo systemctl reload nginx 2>/dev/null &> /dev/null
 
 echo "RabbitMQ hizmeti başlatılıyor..."
 
