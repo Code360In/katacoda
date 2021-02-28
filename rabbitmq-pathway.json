@@ -42,6 +42,11 @@
         "course_id": "headers-exchange",
         "title": "Headers Exchange",
         "description": "RabbitMQ üzerinde headers exchange oluşturma"
+      },
+      {
+        "course_id": "default-exchange",
+        "title": "Default Exchange",
+        "description": "RabbitMQ üzerinde default exchange kullanımı"
       }
     ]
   }
