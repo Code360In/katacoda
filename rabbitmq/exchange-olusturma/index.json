@@ -6,11 +6,23 @@
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Arayüz",
+        "title": "Adım 1",
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Komut Satırı",
+        "title": "Adım 2",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 4",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 5",
         "text": "step2.md"
       }
     ],

@@ -61,14 +61,16 @@ EOF
 sudo systemctl reload nginx 2>/dev/null &> /dev/null
 
 echo "Yetkili kullanıcı oluşturuluyor..."
-rabbitmqctl delete_vhost /
-rabbitmqctl add_vhost default
+rabbitmqctl delete_vhost / 2>/dev/null &> /dev/null
+rabbitmqctl add_vhost default 2>/dev/null &> /dev/null
 
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
 rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
 
 rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
 rabbitmqctl set_permissions -p default enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
+
+rabbitmqctl delete_user guest 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."
