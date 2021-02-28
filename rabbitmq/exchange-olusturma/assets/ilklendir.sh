@@ -38,28 +38,33 @@ echo "Yönetim arayüzü eklentisi kuruluyor..."
 rabbitmq-plugins enable rabbitmq_management 2>/dev/null &> /dev/null
 
 echo "Yönetim arayüzü erişimi hazırlanıyor..."
-sudo apt-get install nginx -y 2>/dev/null &> /dev/null
+sudo apt-get install -y policycoreutils apache2 2>/dev/null &> /dev/null
+setsebool -P httpd_can_network_connect 1 2>/dev/null &> /dev/null
+a2enmod proxy 2>/dev/null &> /dev/null
+a2enmod proxy_http 2>/dev/null &> /dev/null
 
-cat > /etc/nginx/sites-available/default <<EOF
-server {
-  listen 80 default_server;
-  listen [::]:80 default_server;
+cat > /etc/apache2/sites-enabled/000-default.conf <<EOF
+<VirtualHost *:80>
+    ProxyRequests Off
+    ProxyPreserveHost On
 
-  server_name _;
+    <Proxy *>
+       Order deny,allow
+       Allow from all
+    </Proxy>
 
-  location ~* /(.*) {
-      proxy_pass http://127.0.0.1:15672;
-      proxy_buffering                    off;
-      proxy_set_header Host              \$http_host;
-      proxy_set_header X-Real-IP         \$remote_addr;
-      proxy_set_header X-Forwarded-For   \$proxy_add_x_forwarded_for;
-      proxy_set_header X-Forwarded-Proto \$scheme;
-  }
+    AllowEncodedSlashes NoDecode
+    ProxyPass / http://localhost:15672/ nocanon
+    ProxyPassReverse / http://localhost:15672/
 
-}
+    <Location />
+       Order allow,deny
+       Allow from all
+    </Location>
+</VirtualHost>
 EOF
 
-sudo systemctl reload nginx 2>/dev/null &> /dev/null
+service apache2 reload 2>/dev/null &> /dev/null
 
 echo "Yetkili kullanıcı oluşturuluyor..."
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
