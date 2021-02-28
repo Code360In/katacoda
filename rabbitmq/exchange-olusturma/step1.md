@@ -7,6 +7,6 @@ Yönetim arayüzünde **Exchanges** segmesine geçiş yapın ve **Add a new exch
 
 Açılan bölümde **Name** alanına **ilkExchange** değerini yazın ve **Add exchange** butonuna basın.
 
-Exchange listesinde yeni oluşturduğunuz exchange'in olduğunu teyit edin
+Exchange listesinde yeni oluşturduğunuz exchange'in olduğunu teyit edin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

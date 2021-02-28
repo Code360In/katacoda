@@ -1,6 +1,6 @@
 {
-  "title": "Default Exchange",
-  "description": "RabbitMQ üzerinde default exchange kullanımı",
+  "title": "Exchange-Exchange Binding",
+  "description": "RabbitMQ üzerinde exchange-exchange bindingkullanımı",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
@@ -12,6 +12,14 @@
       {
         "title": "Adım 2",
         "text": "step2.md"
+      },
+      {
+        "title": "Adım 3",
+        "text": "step3.md"
+      },
+      {
+        "title": "Adım 4",
+        "text": "step4.md"
       }
     ],
     "assets": {

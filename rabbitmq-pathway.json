@@ -47,6 +47,11 @@
         "course_id": "default-exchange",
         "title": "Default Exchange",
         "description": "RabbitMQ üzerinde default exchange kullanımı"
+      },
+      {
+        "course_id": "exchange-exchange",
+        "title": "Exchange-Exchange Binding",
+        "description": "RabbitMQ üzerinde exchange-exchange binding kullanımı"
       }
     ]
   }
