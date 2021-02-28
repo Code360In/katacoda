@@ -32,6 +32,11 @@
         "course_id": "direct-exchange",
         "title": "Direct Exchange",
         "description": "RabbitMQ üzerinde direct exchange oluşturma"
+      },
+      {
+        "course_id": "topic-exchange",
+        "title": "Topic Exchange",
+        "description": "RabbitMQ üzerinde topic exchange oluşturma"
       }
     ]
   }
