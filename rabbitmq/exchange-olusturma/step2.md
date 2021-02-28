@@ -10,7 +10,7 @@ Aşağıdaki komutu çalıştırarak rabbitmqadmin uygulamasını yerele indirin
 
 Aşağıdaki komutla **Direct** türündeki **ikinciExchange**'i tanımlayın;
 
-`rabbitmqadmin rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=ikinciExchange type=direct`{{execute}}
+`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=ikinciExchange type=direct`{{execute}}
 
 Yönetim arayüzüne giderek exchange'in oluşturulduğunu teyit edin.
 
