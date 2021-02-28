@@ -1,8 +1,8 @@
 # Yönetim Arayüzünden Mesaj Yayınlama
 
-Yönetim arayüzünde **Exchanges** segmesinde yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
+Yönetim arayüzünde **Exchanges** segmesine geçin. **fanoutExchange** exchange'i açın. Bu sayfada  yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
 
-`Enterprisecoding rabbitmq eğitimi örnek fanout mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek fanout exchange mesajı`
 
 **Publish message** butonuna basarak mesajı yayınlayın. 
 

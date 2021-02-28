@@ -27,6 +27,11 @@
         "course_id": "fanout-exchange",
         "title": "Fanout Exchange",
         "description": "RabbitMQ üzerinde fanout exchange oluşturma"
+      },
+      {
+        "course_id": "direct-exchange",
+        "title": "Direct Exchange",
+        "description": "RabbitMQ üzerinde direct exchange oluşturma"
       }
     ]
   }
