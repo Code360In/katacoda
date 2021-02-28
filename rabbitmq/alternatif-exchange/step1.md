@@ -13,7 +13,7 @@ Aynı ekranda **Name** alanına **personel-baslama-is-emirleri** değerini yazı
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
-Yine aynı ekranda **Name** alanına **personel-laternatif** değerini yazın ve **Add queue** butonuna basın.
+Yine aynı ekranda **Name** alanına **personel-alternatif** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 

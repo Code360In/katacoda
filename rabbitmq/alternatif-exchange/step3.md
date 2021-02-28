@@ -2,7 +2,7 @@
 
 Yönetim arayüzünde **Exchanges** segmesine geçiş yapın. **personelAlternateFanout** exchange'i açın ve **Bindings** bölümünü açın.
 
-Açılan bölümde **Add binding from this exchange** alanına **To queue** değerine **personel-laternatif** yazın ve **Bind** butonuna basın.
+Açılan bölümde **Add binding from this exchange** alanına **To queue** değerine **personel-alternatif** yazın ve **Bind** butonuna basın.
 
 Binding bölümünde yeni oluşturduğunuz binding'in olduğunu teyit edin.
 
