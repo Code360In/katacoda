@@ -1,6 +1,6 @@
 {
-  "title": "Exchange-Exchange Binding",
-  "description": "RabbitMQ üzerinde exchange-exchange binding kullanımı",
+  "title": "Alternatif Exchange",
+  "description": "RabbitMQ üzerinde alternatif exchange kullanımı",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {

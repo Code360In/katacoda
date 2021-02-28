@@ -52,6 +52,11 @@
         "course_id": "exchange-exchange",
         "title": "Exchange-Exchange Binding",
         "description": "RabbitMQ üzerinde exchange-exchange binding kullanımı"
+      },
+      {
+        "course_id": "alternatif-exchange",
+        "title": "Alternatif Exchange",
+        "description": "RabbitMQ üzerinde alternatif exchange kullanımı"
       }
     ]
   }
