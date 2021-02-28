@@ -4,7 +4,6 @@ Yönetim arayüzünde **Exchanges** segmesine geçiş yapın ve **Add a new exch
 
 Açılan bölümde **Name** alanına **anaExchange** değerini yazın.**Type** alanında **topic** değerini seçin ve **Add exchange** butonuna basın.
 
-
 Benzer şekilde aşağıdaki adımları takip ederek ikinci bir exchange oluşturun.
 **Name** alanına **personelExchange** değerini yazın.**Type** alanında **topic** değerini seçin ve **Add exchange** butonuna basın.
 
