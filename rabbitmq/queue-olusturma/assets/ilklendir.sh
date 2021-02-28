@@ -38,33 +38,29 @@ echo "Yönetim arayüzü eklentisi kuruluyor..."
 rabbitmq-plugins enable rabbitmq_management 2>/dev/null &> /dev/null
 
 echo "Yönetim arayüzü erişimi hazırlanıyor..."
-sudo apt-get install -y policycoreutils apache2 2>/dev/null &> /dev/null
-setsebool -P httpd_can_network_connect 1 2>/dev/null &> /dev/null
-a2enmod proxy 2>/dev/null &> /dev/null
-a2enmod proxy_http 2>/dev/null &> /dev/null
+sudo apt-get install nginx -y 2>/dev/null &> /dev/null
 
-cat > /etc/apache2/sites-enabled/000-default.conf <<EOF
-<VirtualHost *:80>
-    ProxyRequests Off
-    ProxyPreserveHost On
+cat > /etc/nginx/sites-available/default <<EOF
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
 
-    <Proxy *>
-       Order deny,allow
-       Allow from all
-    </Proxy>
+  server_name _;
 
-    AllowEncodedSlashes NoDecode
-    ProxyPass / http://localhost:15672/ nocanon
-    ProxyPassReverse / http://localhost:15672/
+  upstream rabbitmq {
+    server localhost:15672;
+    keepalive 15;
+  }
 
-    <Location />
-       Order allow,deny
-       Allow from all
-    </Location>
-</VirtualHost>
+  location / {
+     if ($request_uri ~* “/(.*)”) {
+        proxy_pass http://rabbitmq/$1;
+     }
+  } 
+}
 EOF
 
-service apache2 reload 2>/dev/null &> /dev/null
+sudo systemctl reload nginx 2>/dev/null &> /dev/null
 
 echo "Yetkili kullanıcı oluşturuluyor..."
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
