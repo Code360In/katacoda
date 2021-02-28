@@ -2,7 +2,7 @@
   "title": "Exchange Oluşturma",
   "description": "RabbitMQ yönetim arayüzü üzerinden exchange oluşturma",
   "difficulty": "Beginner",
-  "time": "5 minutes",
+  "time": "10 minutes",
   "details": {
     "steps": [
       {

@@ -10,6 +10,6 @@ Aşağıdaki komutu çalıştırarak rabbitmqadmin uygulamasını yerele indirin
 
 Aşağıdaki komutla **Direct** türündeki **ikinciQueue**'i tanımlayın;
 
-`rabbitmqadmin declare queue name=ikinciQueue durable=true`{{execute}}
+`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=ikinciQueue durable=true`{{execute}}
 
 Yönetim arayüzüne giderek queue'un oluşturulduğunu teyit edin.
