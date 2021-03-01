@@ -67,6 +67,11 @@
         "course_id": "cluster-kurulumu",
         "title": "Cluster Kurulumu",
         "description": "RabbitMQ cluster kurulumu"
+      },
+      {
+        "course_id": "clusterdan-cikarma",
+        "title": "Cluster'dan Çıkarma",
+        "description": "RabbitMQ cluster'ından node çıkarma"
       }
     ]
   }
