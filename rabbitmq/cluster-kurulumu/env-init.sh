@@ -1,6 +1,8 @@
 systemctl stop kubelet
 systemctl disable kubelet
 
+touch /opt/.scriptStarted
+
 if [ $HOSTNAME == "controlplane" ]
 then
     hostnamectl set-hostname rabbitmq01

@@ -12,13 +12,16 @@ cat << "EOF"
                             |_|                                            |___/
 ===================================================================================
 
-RabbitMQ instance'ları kuruluyor...
+RabbitMQ instance'ları hazırlanıyor...
 
 1. Sunucu
 =================
-Erlang kuruluyor...
+ilklendirmenin başlaması bekleniyor...
 EOF
 
+while [ ! -f /opt/.scriptStarted ] ; do sleep 2; done;
+
+echo "Erlang kuruluyor..."
 while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;
 
 echo "RabbitMQ kuruluyor..."
@@ -37,6 +40,9 @@ echo "RabbitMQ kullanıma hazır"
 echo ""
 echo "2. Sunucu"
 echo "================="
+echo "ilklendirmenin başlaması bekleniyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.scriptStarted ] ; do sleep 2; done;"
+
 echo "Erlang kuruluyor..."
 ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;"
 
