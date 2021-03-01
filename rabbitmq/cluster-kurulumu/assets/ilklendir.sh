@@ -55,3 +55,4 @@ echo "RabbitMQ kullanıma hazır"
 
 echo ""
 echo "RabbitMQ sunucuları kullanıma hazır..."
+export PS1='rabbitmq01 $ '
