@@ -1,16 +1,16 @@
 {
-  "title": "Rancher Kurulumu",
-  "description": "RKE üzerinde Rancher kurulumu",
+  "title": "Cluster Kurulumu",
+  "description": "RabbitMQ cluster kurulumu",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Adım 1 - Ön Gereksinimler",
+        "title": "Adım 1",
         "text": "step1.md"
       },
       {
-        "title": "Adım 2 - Kurulum",
+        "title": "Adım 2",
         "text": "step2.md"
       }
     ],

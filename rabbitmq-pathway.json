@@ -62,6 +62,11 @@
         "course_id": "alternatif-exchange",
         "title": "Alternatif Exchange",
         "description": "RabbitMQ üzerinde alternatif exchange kullanımı"
+      },
+      {
+        "course_id": "cluster-kurulumu",
+        "title": "Cluster Kurulumu",
+        "description": "RabbitMQ cluster kurulumu"
       }
     ]
   }

@@ -1,5 +1,5 @@
-Bu adımlar ardından artık RKE Cluster'ı üzerinde nasıl Rancher kurabileceğinizi deneyimlediniz.
+Bu adımlar ardından artık RabbitMQ cluster kurulumu hakkında deneyim kazandınız.
 
-Enterprisecoding üzerinde paylaştığımız [diğer Rancher ve Kubernetes makalelerini](http://www.enterprisecoding.com/post/tag/kubernetes) takip edebilirsiniz.
+Enterprisecoding üzerinde paylaştığımız [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 
-Kubernetes ve Rancher ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.
+RabbitMQ ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.

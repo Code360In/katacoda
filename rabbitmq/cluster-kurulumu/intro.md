@@ -1,18 +1,21 @@
+# Cluster Kurulumu
 
-# Rancher Kurulumu
-
-RKE üzerinde Rancher kurulumu senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ cluster kullanımı senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda 2 node üzerinde kurulu bir RKE Cluster'ı üzerinde Rancher kurulumunu deneyimleyebilirsiniz.
+Bu senaryoda, RabbitMQ cluster kurulumunu deneyimleyeceksiniz.
+
+## Eğitim
+
+Etkileşimli olarak RabbitMQ'ya giriş yapmak için eğitim sitemiz üzerinden [Etkileşimli RabbitMQ](https://learn.enterprisecoding.com/egitimler/konteyner/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
 
 ## Yardım
 
-Rancher'ın ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için bizlere ulaşabilirsiniz.
+RabbitMQ'nun ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için [Enterprisecoding makalelerini](http://www.enterprisecoding.com) takip edebilirsiniz.
 
 Senaryoya başlamak için lütfen aşağıda yer alan **Start Scenario** butonuna basarak anlatılan adımları takip ediniz.
 
 ## İletişim
 
-Kubernetes ve Rancher ile ilgili sorularınız için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.
+RabbitMQ ile ilgili sorularınız ve danışmanlık talepleriniz için bize Enterprisecoding web sitesinde yer alan [iletişim](https://enterprisecoding.com/iletisim/) sayfasından ulaşabilirsiniz.
