@@ -1,19 +1,23 @@
-# Guest Kullanıcısı Uzak Erişimine İzin Verme
+# RabbitMQ Eklentileri
 
-Aşağıdaki komutla guest kullanıcısının uzaktan oturum açabilmesi için gerekli yapılandırmayı yapın;
+Aşağıdaki komutla kullanılabilecek RabbitMQ eklentilerini ve kurulum durumlarını listeleyin;
 
-```bash
-cat > /etc/rabbitmq/rabbitmq.conf <<EOF
-loopback_users = none
-EOF
-```{{execute}}
+`rabbitmq-plugins list`{{execute}}
 
-Aşağıdaki komut ile RabbitMQ hizmetini yeniden başlatın;
+Aşağıdaki komut ile yönetim eklentisini aktif hale getirin;
 
-`systemctl restart rabbitmq-server`{{execute}}
+`rabbitmq-plugins enable rabbitmq_management`{{execute}}
 
-Bu işlemler ardından **Local** segmesi üzerinden yönetim arayüzünü yeniden açın.
+Yeniden eklentileri listeleyerek yönetim eklentisinin kurulumunu teyit edin;
 
-Kullanıcı adı ve şifre alanına **guest** değerini vererek giriş yapmayı deneyin. Daha önceki denemeden farklı olarak bu defa giriş yapabildiğinizi teyit edin..
+`rabbitmq-plugins list`{{execute}}
+
+Aşağıdaki komut ile yönetim eklentisini pasif hale getirin;
+
+`rabbitmq-plugins disable rabbitmq_management`{{execute}}
+
+Yeniden eklentileri listeleyerek yönetim eklentisinin pasif durumunu teyit edin;
+
+`rabbitmq-plugins list`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
