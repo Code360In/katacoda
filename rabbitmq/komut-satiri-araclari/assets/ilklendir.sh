@@ -34,7 +34,7 @@ echo "RabbitMQ hizmeti başlatılıyor..."
 
 service rabbitmq-server start 2>/dev/null &> /dev/null
 
-echo "Örnek ortam hazırlanıyor"
+echo "Örnek ortam hazırlanıyor..."
 
 rabbitmq-plugins enable rabbitmq_management 2>/dev/null &> /dev/null
 

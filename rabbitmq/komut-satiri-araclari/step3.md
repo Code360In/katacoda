@@ -1,21 +1,41 @@
-# Yetkili Kullanıcı Oluşturma
+# Rabbitmq Diagnostics
 
-Aşağıdaki komutu çalıştırarak yeni bir kullanıcı oluşturun;
+Aşağıdaki komutla RabbitMQ'un çalışır durumda olup olmadığını kontrol edin;
 
-`rabbitmqctl add_user enterprisecoding enterprisecoding`{{execute}}
+`rabbitmq-diagnostics check_running`{{execute}}
 
-Oluşturduğunuz **enterprisecoding** kullanıcına aşağıdaki komutla **admin** yetkisi verin;
+Aşağıdaki komutu çalıştırarak RabbitMQ host process'inin ayakta olup olmadığını kontrol edin;
 
-`rabbitmqctl set_user_tags enterprisecoding administrator`{{execute}}
+`rabbitmq-diagnostics ping`{{execute}}
 
-Aşağıdaki komutla kullanıcının **/** sanal hostuna tam erişimini tanımlayın;
+Aşağıdaki komutla RabbitMQ durumunu kontrol edin;
 
-`rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*"`{{execute}}
+`rabbitmq-diagnostics status`{{execute}}
 
-Yönetim arayüzüne giderek **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapabildiğinizi teyit edin.
+Komut çıktısını kontrol ederek;
 
-Aşağıdaki komutla guest kullanıcısını silin;
+* Bir alarm oluşun oluşmadığını görün.
+* RabbitMQ data dizinini tespit edin.
+* Aktif eklentilerin hangi dizinde yer aldığını tespit edin.
+* Log dosyalarının yerini tespit edin.
+* Dinlenen portları tespit edin.
 
-`rabbitmqctl delete_user guest`{{execute}}
+Aşağıdaki komutla RabbitMQ'da bir alarm durumu olup olmadığını kontrol edin;
+
+`rabbitmq-diagnostics alarms`{{execute}}
+
+Aşağıdaki listeners'a ait bilgileri kontrol edin;
+
+`rabbitmq-diagnostics listeners`{{execute}}
+
+Listerner port'larına erişilebildiğini kontrol edin;
+
+`rabbitmq-diagnostics check_port_connectivity`{{execute}}
 
 Yönetim arayüzüne giderek **guest** kullanıcı adı ve şifresi ile artık giriş yapamadığınızı teyit edin.
+
+Aşağıdaki komutla Observer'ı başlatın;
+
+`rabbitmq-diagnostics observer`{{execute}}
+
+**q** tuşuna basarak uygulamayı sonlandırın.
