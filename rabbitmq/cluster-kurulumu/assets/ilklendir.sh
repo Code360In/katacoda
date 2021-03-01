@@ -13,24 +13,44 @@ cat << "EOF"
 ===================================================================================
 
 RabbitMQ instance'ları kuruluyor...
+
+1. Sunucu
+=================
+Erlang kuruluyor...
 EOF
 
-echo "1. Sunucu"
-echo "================="
-echo "Erlang kuruluyor..."; while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;
-echo "RabbitMQ kuruluyor..."; while [ ! -f /opt/.rabbitfinished ] ; do sleep 2; done;
-echo "Yönetim arayüzü kuruluyor..."; while [ ! -f /opt/.rabbitmanagementfinished ] ; do sleep 2; done;
-echo "Yönetim arayüzü erişimi hazırlanıyor..."; while [ ! -f /opt/.nginxfinished ] ; do sleep 2; done;
-echo "Kullanıcılar hazırlanıyor..."; while [ ! -f /opt/.alltasksfinished ] ; do sleep 2; done;
+while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;
+
+echo "RabbitMQ kuruluyor..."
+while [ ! -f /opt/.rabbitfinished ] ; do sleep 2; done;
+
+echo "Yönetim arayüzü kuruluyor..."
+while [ ! -f /opt/.rabbitmanagementfinished ] ; do sleep 2; done;
+
+echo "Yönetim arayüzü erişimi hazırlanıyor..."
+while [ ! -f /opt/.nginxfinished ] ; do sleep 2; done;
+
+echo "Kullanıcılar hazırlanıyor..."
+while [ ! -f /opt/.alltasksfinished ] ; do sleep 2; done;
+
 echo "RabbitMQ kullanıma hazır"
 
 echo "2. Sunucu"
 echo "================="
-echo "Erlang kuruluyor..."; while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;
-echo "RabbitMQ kuruluyor..."; while [ ! -f /opt/.rabbitfinished ] ; do sleep 2; done;
-echo "Yönetim arayüzü kuruluyor..."; while [ ! -f /opt/.rabbitmanagementfinished ] ; do sleep 2; done;
-echo "Yönetim arayüzü erişimi hazırlanıyor..."; while [ ! -f /opt/.nginxfinished ] ; do sleep 2; done;
-echo "Kullanıcılar hazırlanıyor..."; while [ ! -f /opt/.alltasksfinished ] ; do sleep 2; done;
+echo "Erlang kuruluyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.erlangfinished ] ; do sleep 2; done;"
+
+echo "RabbitMQ kuruluyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.rabbitfinished ] ; do sleep 2; done;"
+
+echo "Yönetim arayüzü kuruluyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.rabbitmanagementfinished ] ; do sleep 2; done;"
+
+echo "Yönetim arayüzü erişimi hazırlanıyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.nginxfinished ] ; do sleep 2; done;"
+
+echo "Kullanıcılar hazırlanıyor..."
+ssh -o LogLevel=quiet node01 "while [ ! -f /opt/.alltasksfinished ] ; do sleep 2; done;"
 echo "RabbitMQ kullanıma hazır"
 
 echo ""

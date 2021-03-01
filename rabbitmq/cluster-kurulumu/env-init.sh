@@ -1,6 +1,24 @@
 systemctl stop kubelet
 systemctl disable kubelet
 
+if [ $HOSTNAME == "controlplane" ]
+then
+    hostnamectl set-hostname rabbitmq01
+    RABBITMQ01_IP=$(hostname -I | cut -d' ' -f1) 
+    RABBITMQ02_IP=$(ssh -o LogLevel=quiet node01 hostname -I | cut -d' ' -f1)
+
+    echo "$RABBITMQ01_IP  rabbitmq01" >> /etc/hosts
+    echo "$RABBITMQ02_IP  rabbitmq02" >> /etc/hosts
+    
+    scp node01:/etc/hosts /tmp/node01_hosts
+    echo "$RABBITMQ01_IP  rabbitmq01" >> /tmp/node01_hosts
+    echo "$RABBITMQ02_IP  rabbitmq02" >> /tmp/node01_hosts
+    scp /tmp/node01_hosts node01:/etc/hosts
+else
+    hostnamectl set-hostname rabbitmq02
+fi
+
+
 curl -fsSL https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc | sudo apt-key add -
 sudo apt-get install apt-transport-https
 echo "deb https://dl.bintray.com/rabbitmq-erlang/debian xenial erlang" | sudo tee /etc/apt/sources.list.d/bintray.erlang.list

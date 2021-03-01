@@ -1,6 +1,6 @@
 # Cluster Kurulumu
 
-Enterprisecoding RabbitMQ cluster kullanımı senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ cluster kurulumu senaryosuna hoş geldiniz.
 
 ## Senaryo
 

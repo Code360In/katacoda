@@ -34,7 +34,12 @@
   },
   "environment": {
     "uilayout": "terminal-iframe",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n"
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [
+      {"name": "Host01-RabbitMQ UI", "href": "https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"},
+      {"name": "Host01-RabbitMQ UI", "href": "https://[[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com"}
+    ]
   },
   "backend": {
     "imageid": "kubernetes-cluster:1.18"
