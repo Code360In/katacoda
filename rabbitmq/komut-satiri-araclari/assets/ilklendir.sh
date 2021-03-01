@@ -34,5 +34,35 @@ echo "RabbitMQ hizmeti başlatılıyor..."
 
 service rabbitmq-server start 2>/dev/null &> /dev/null
 
+echo "Örnek ortam hazırlanıyor"
+
+rabbitmq-plugins enable rabbitmq_management 2>/dev/null &> /dev/null
+
+rabbitmqctl add_vhost uygulama1 2>/dev/null &> /dev/null
+
+rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
+rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
+
+rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
+rabbitmqctl set_permissions -p default enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
+
+wget http://localhost:15672/cli/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
+chmod +x /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
+
+rabbitmqadmin declare exchange name=ornekExchange1 durable=false type=direct 2>/dev/null &> /dev/null
+rabbitmqadmin declare exchange name=ornekExchange2 durable=false type=topic 2>/dev/null &> /dev/null
+rabbitmqadmin declare exchange name=ornekExchange3 durable=false type=fanout 2>/dev/null &> /dev/null
+
+rabbitmqadmin declare queue name=ornekQueue1 durable=false 2>/dev/null &> /dev/null
+rabbitmqadmin declare queue name=ornekQueue2 durable=false 2>/dev/null &> /dev/null
+rabbitmqadmin declare queue name=ornekQueue3 durable=false 2>/dev/null &> /dev/null
+
+rabbitmqadmin declare binding source=ornekExchange1 destination=ornekQueue1 routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
+rabbitmqadmin declare binding source=ornekExchange2 destination=ornekQueue2 routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
+rabbitmqadmin declare binding source=ornekExchange3 destination=ornekQueue3 2>/dev/null &> /dev/null
+
+rm -f /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
+rabbitmq-plugins disable rabbitmq_management 2>/dev/null &> /dev/null
+
 echo ""
 echo "RabbitMQ kullanıma hazır..."
