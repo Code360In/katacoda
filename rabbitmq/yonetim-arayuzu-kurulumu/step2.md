@@ -1,15 +1,19 @@
-# Yetkili Kullanıcı Oluşturma
+# Guest Kullanıcısı Uzak Erişimine İzin Verme
 
-Aşağıdaki komutu çalıştırarak yeni bir kullanıcı oluşturun;
+Aşağıdaki komutla guest kullanıcısının uzaktan oturum açabilmesi için gerekli yapılandırmayı yapın;
 
-`rabbitmqctl add_user enterprisecoding enterprisecoding`{{execute}}
+```bash
+cat > /etc/rabbitmq/rabbitmq.conf <<EOF
+loopback_users = none
+EOF
+```{{execute}}
 
-Oluşturduğunuz **enterprisecoding** kullanıcına aşağıdaki komutla **admin** yetkisi verin;
+Aşağıdaki komut ile RabbitMQ hizmetini yeniden başlatın;
 
-`rabbitmqctl set_user_tags enterprisecoding administrator`{{execute}}
+`systemctl restart rabbitmq-server`{{execute}}
 
-Aşağıdaki komutla kullanıcının **/** sanal hostuna tam erişimini tanımlayın;
+Bu işlemler ardından **Local** segmesi üzerinden yönetim arayüzünü yeniden açın.
 
-`rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*"`{{execute}}
+Kullanıcı adı ve şifre alanına **guest** değerini vererek giriş yapmayı deneyin. Daha önceki denemeden farklı olarak bu defa giriş yapabildiğinizi teyit edin..
 
-Yönetim arayüzüne giderek **guest** kullanıcısı oturumunda çıkış yapın. Ardından **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapabildiğinizi teyit edin.
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
