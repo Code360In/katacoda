@@ -1,13 +1,23 @@
-# Komut Satırından Binding Oluşturma
+# Yapılandırma Dosya Konumları
 
-Komut satırına geçiş yarapark aşağıdaki komutla **personel-ayrilma-is-emirleri** için binding'i tanımlayın;
+RabbitMQ uygulamasını durdurun;
 
-`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=topicExchange destination=personel-ayrilma-is-emirleri routing_key="personel.is-emri.ayrilma"`{{execute}}
+`rabbitmqctl stop_app`{{execute}}
 
-Benzer şekilde aşağıdaki komutla **personel-mesajlari** için binding'i tanımlayın;
+Aşağıdaki komutla **advanced.config** dosyasının adını **gelismis.yapilandirma** olarak güncelleyin;
 
-`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=topicExchange destination=personel-mesajlari routing_key="personel.#.#"`{{execute}}
+`mv /etc/rabbitmq/advanced.config /etc/rabbitmq/gelismis.yapilandirma`{{execute}}
 
-Yönetim arayüzüne geçin. Yönetim arayüzünde **Exchanges** segmesine geçiş yapın ve **Bindings** bölümünü açın. Binding'in oluşturulduğunu teyit edin.
+Aşağıdaki komutla **/etc/rabbitmq/rabbitmq-env.conf** dosyası oluşturun;
 
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+`echo "RABBITMQ_ADVANCED_CONFIG_FILE=/etc/rabbitmq/gelismis.yapilandirma" > /etc/rabbitmq/rabbitmq-env.conf`{{execute}}
+
+RabbitMQ uygulamasını başlatın;
+
+`rabbitmqctl start_app`{{execute}}
+
+Aşağıdaki komutla RabbitMQ durumunu yeniden kontrol edin;
+
+`rabbitmq-diagnostics status`{{execute}}
+
+Komutun çıktısında **Config files** başlığı altında **/etc/rabbitmq/gelismis.yapilandirma** dosyasının listelendiğini teyit edin.

@@ -1,17 +1,8 @@
-# Queue'ları Oluşturma
+# Yönetim Arayüzünden Kontrol
 
-Yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
+an tarafta yer alan **RabbitMQ Management UI** segmesi üzerinden yönetim arayüzünü açın.
+Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapın.
 
-Açılan bölümde **Name** alanına **personel-is-emirleri** değerini yazın ve **Add queue** butonuna basın.
-
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
-
-Aynı ekranda **Name** alanına **personel-ayrilma-is-emirleri** değerini yazın ve **Add queue** butonuna basın.
-
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
-
-Yeniden aynı ekranda **Name** alanına **personel-mesajlari** değerini yazın ve **Add queue** butonuna basın.
-
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
+Açılan **Overview** sayfasında **Ports and contexts** bölümünü açın. Açılan bölümde **amqp** protokolü için **5673** portunun tanımlı olduğunu teyit edin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -1,5 +1,5 @@
 
-# Topic Exchange
+#  Yapılandırma Dosyaları
 
 Enterprisecoding RabbitMQ yapılandırma dosyaları kullanımı senaryosuna hoş geldiniz.
 
