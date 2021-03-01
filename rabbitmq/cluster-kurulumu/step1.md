@@ -1,39 +1,39 @@
 # Lab Ortamı
 
-Sizin için 2 node üzerinde bir RKE Cluster'ı kurulu şekildedir. Sağ bölümde yer alan **Terminal** segmesinde bu control plane node'una ait Terminal kullanılabilir durumdadır. Bu terminal üzerinden aşağıda belirtilen adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
+Sizin için 2 ayrı node üzerinde RabbitMQ kurulumları yapılmıştır. Sağ bölümde yer alan **Terminal** segmesinde bu sunuculardan **rabbitmq01**'ya ait Terminal kullanılabilir durumdadır. Bu terminal üzerinden aşağıda belirtilen adımlarda detayı verilen senaryoyu deneyimleyebilirsiniz.
 
-## Ön Gerekesinimlerin Kurulumu
+## RabbitMQ Cluster Kurulumu
 
-### Helm Kurulumu
+Aşağıdaki komutla **rabbitmq02** sunucuna bağlanın;
 
-Aşağıdaki komutu çalıştırarak Helm kurulumu yapın;
+`ssh rabbitmq02`{{execute}}
 
-`curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`{{execute}}
+Aşağıdaki komutla RabbitMQ uygulamasını durdurun;
 
-### Cert-Manager Kurulumu
+`rabbitmqctl stop_app`{{execute}}
 
-Aşağıdaki komutla Cert-Manager için gerekli olan CRD tanımlarını oluşturun;
+Cluster'a dahil olacak tüm node'larda erlang çerezleri aynı değere sahip olmalıdır. Aşağıdaki komutla **rabbitmq01** sunucusundaki **/var/lib/rabbitmq/.erlang.cookie** dosyasını **rabbitmq02** sunucunda aynı yerdeki dosyanın üzerine yazacak şekilde kopyalayın;
 
-`kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.15.0/cert-manager.crds.yaml`{{execute}}
+`scp rabbitmq01:/var/lib/rabbitmq/.erlang.cookie /var/lib/rabbitmq/.erlang.cookie`{{execute}}
 
-Cert-manager namespace’ini oluşturun;
+Aşağıdaki komutu çalıştıraran **rabbitmq01** cluster'ına katılmasını sağlayın;
 
-`kubectl create namespace cert-manager`{{execute}}
+`rabbitmqctl join_cluster rabbit@rabbitmq01`{{execute}}
 
-Jetstack Helm deposunu ekleyin;
+Aşağıdaki komutla RabbitMQ uygulamasını yeniden başlatın;
 
-`helm repo add jetstack https://charts.jetstack.io`{{execute}}
+`rabbitmqctl start_app`{{execute}}
 
-Helm depolarını güncelleyin;
+Cluster durumunu aşağıdaki komutla kontrol edin;
 
-`helm repo update`{{execute}}
+`rabbitmqctl cluster_status`{{execute}}
 
-Cert-manager helm chart’ı kurun;
+SSH oturumunu sonlandırarak **rabbitmq01** sunucuna dönün;
 
-`helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v0.15.0`{{execute}}
+`exit`{{execute}}
 
-Kurulumu aşağıdaki komutlarla pod durumlarına bakılarak kontrol edin;
+Cluster durumunu aşağıdaki komutla kontrol edin;
 
-`kubectl get pods --namespace cert-manager`{{execute}}
+`rabbitmqctl cluster_status`{{execute}}
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.

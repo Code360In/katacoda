@@ -34,7 +34,7 @@ echo "Kullanıcılar hazırlanıyor..."
 while [ ! -f /opt/.alltasksfinished ] ; do sleep 2; done;
 
 echo "RabbitMQ kullanıma hazır"
-
+echo ""
 echo "2. Sunucu"
 echo "================="
 echo "Erlang kuruluyor..."
@@ -55,4 +55,3 @@ echo "RabbitMQ kullanıma hazır"
 
 echo ""
 echo "RabbitMQ sunucuları kullanıma hazır..."
-export PS1='rabbitmq01 $ '
