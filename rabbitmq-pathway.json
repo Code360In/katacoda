@@ -9,6 +9,11 @@
         "description": "Linux işletim sistemi üzerinde RabbitMQ kurulumu"
       },
       {
+        "course_id": "komut-satiri-araclari",
+        "title": "Komut Satırı Araçları",
+        "description": "RabbitMQ komut satırı araçları kullanımı"
+      },
+      {
         "course_id": "yonetim-arayuzu-kurulumu",
         "title": "Yönetim Arayüzü Kurulumu",
         "description": "Linux işletim sistemi üzerinde RabbitMQ yönetim arayüzü kurulumu"
