@@ -6,3 +6,5 @@ Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş 
 Yönetim arayüzünde her iki node'unda izlenebildiğini teyit edin.
 
 Aynı işlemleri **RabbitMQ02** segmesi ile RabbitMQ02 sunucusu için de yapın.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

@@ -1,1 +1,1 @@
-until ilklendir.sh; do echo "ilklendirme baslatiliyor..."; sleep 2; done; bash;
+clear; until ilklendir.sh; do echo "ilklendirme baslatiliyor..."; sleep 2; done; bash;
