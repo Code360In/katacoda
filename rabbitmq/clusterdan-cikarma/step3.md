@@ -5,6 +5,4 @@ Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş 
 
 Yönetim arayüzünde diğer node'u artık olmadığını teyit edin.
 
-Aynı işlemleri **RabbitMQ02** segmesi ile RabbitMQ02 sunucusu için de yapın.
-
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+Aynı işlemleri **RabbitMQ02** segmesi ile RabbitMQ02 sunucusu için de yapın. Cluster sıfırlandığı için kullanıcıların silindiğini teyit edin. İşlem yapmak için guest kullanıcını kullanın.

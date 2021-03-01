@@ -62,12 +62,12 @@ echo "RabbitMQ kullanıma hazır"
 echo ""
 echo "Cluster oluşturuluyor"
 
-ssh -o LogLevel=quiet node01 "systemctl stop rabbitmq-server"
-scp /var/lib/rabbitmq/.erlang.cookie rabbitmq02:/var/lib/rabbitmq/.erlang.cookie
-ssh -o LogLevel=quiet node01 "systemctl start rabbitmq-server"
-ssh -o LogLevel=quiet node01 "rabbitmqctl stop_app"
-ssh -o LogLevel=quiet node01 "rabbitmqctl join_cluster rabbit@rabbitmq01"
-ssh -o LogLevel=quiet node01 "rabbitmqctl start_app"
+ssh -o LogLevel=quiet node01 "systemctl stop rabbitmq-server" 2>/dev/null &> /dev/null
+scp /var/lib/rabbitmq/.erlang.cookie rabbitmq02:/var/lib/rabbitmq/.erlang.cookie  2>/dev/null &> /dev/null
+ssh -o LogLevel=quiet node01 "systemctl start rabbitmq-server" 2>/dev/null &> /dev/null
+ssh -o LogLevel=quiet node01 "rabbitmqctl stop_app" 2>/dev/null &> /dev/null
+ssh -o LogLevel=quiet node01 "rabbitmqctl join_cluster rabbit@rabbitmq01" 2>/dev/null &> /dev/null
+ssh -o LogLevel=quiet node01 "rabbitmqctl start_app" 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ sunucuları kullanıma hazır..."
