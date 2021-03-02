@@ -1,25 +1,31 @@
-# Downstream Yapılandırması
+# RabbitMQ Federation Kurulumu
 
-**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzüne geçiş yaparak sayfayı yenileyin.
+## RabbitMQ01 Sunucusunda
 
-## Federation Tanımlama
+Aşağıdaki komutla **rabbitmq01** sunucusunda federation eklentisini kurun;
 
-**Admin** segmesine geçiş yapın. Açılan sayfanın sağ tarafındaki menüden **Federation Upstreams** bölümünü açın.
+`rabbitmq-plugins enable rabbitmq_federation`{{execute}}
 
-**Federation Upstreams** sayfasında **Add a new upstream** bölümün açın.
+Management UI eklentisi kurulu olduğu için aşağıdaki komutla federation yönetim arayüzü eklentisini kurun;
 
-**Name** alanına **rabbitm01.federation** değerini, **URI** alanına **amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672** değerini yazın ve **Add upstream** butonuna basın.
+`rabbitmq-plugins enable rabbitmq_federation_management`{{execute}}
 
-## Politika Tanımlama
+## RabbitMQ02 Sunucusunda
 
-Sağ tarafındaki menüden **Policies** bölümünü açın.
+Aşağıdaki komutla **rabbitmq02** sunucuna bağlanın;
 
-**Policies** sayfasında **Add / update a policy** bölümün açın.
+`ssh rabbitmq02`{{execute}}
 
-**Name** alanına **rabbitm01.federation.politikasi** değerini, **Pattern** alanına **federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
+Aşağıdaki komutla **rabbitmq02** sunucusunda federation eklentisini kurun;
 
-## Federation Durumu
+`rabbitmq-plugins enable rabbitmq_federation`{{execute}}
 
-Sağ tarafındaki menüden **Federation Status** bölümünü açın. Bu bölümde oluşturduğumuz exchange ve queue'ların listelendiğini ve **running** durumunda olduklarını teyit edin.
+Management UI eklentisi kurulu olduğu için aşağıdaki komutla federation yönetim arayüzü eklentisini kurun;
+
+`rabbitmq-plugins enable rabbitmq_federation_management`{{execute}}
+
+Aşağıdaki komutla **rabbitmq0"** sunucusuna geri dönün.
+
+`exit`{{execute}}
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.

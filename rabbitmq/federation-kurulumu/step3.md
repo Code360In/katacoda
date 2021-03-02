@@ -1,31 +1,19 @@
-# RabbitMQ Federation Kurulumu
+# Binding Oluşturma
 
 ## RabbitMQ01 Sunucusunda
 
-Aşağıdaki komutla **rabbitmq01** sunucusunda federation eklentisini kurun;
+**RabbitMQ01** segmesi üzerinden açılan yönetim arayüzünde **Exchanges** segmesine geçiş yapın. **federation.Exchange** exchange'i açın ve **Bindings** bölümünü açın.
 
-`rabbitmq-plugins enable rabbitmq_federation`{{execute}}
+Açılan bölümde **Add binding from this exchange** alanına **To queue** değerine **federation.Queue** yazın ve **Bind** butonuna basın.
 
-Management UI eklentisi kurulu olduğu için aşağıdaki komutla federation yönetim arayüzü eklentisini kurun;
-
-`rabbitmq-plugins enable rabbitmq_federation_management`{{execute}}
+Binding bölümünde yeni oluşturduğunuz binding'in olduğunu teyit edin.
 
 ## RabbitMQ02 Sunucusunda
 
-Aşağıdaki komutla **rabbitmq02** sunucuna bağlanın;
+**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzünde **Exchanges** segmesine geçiş yapın. **federation.Exchange** exchange'i açın ve **Bindings** bölümünü açın.
 
-`ssh rabbitmq02`{{execute}}
+Açılan bölümde **Add binding from this exchange** alanına **To queue** değerine **federation.Queue** yazın ve **Bind** butonuna basın.
 
-Aşağıdaki komutla **rabbitmq01** sunucusunda federation eklentisini kurun;
+Binding bölümünde yeni oluşturduğunuz binding'in olduğunu teyit edin.
 
-`rabbitmq-plugins enable rabbitmq_federation`{{execute}}
-
-Management UI eklentisi kurulu olduğu için aşağıdaki komutla federation yönetim arayüzü eklentisini kurun;
-
-`rabbitmq-plugins enable rabbitmq_federation_management`{{execute}}
-
-Aşağıdaki komutla **rabbitmq01** sunucusuna geri dönün.
-
-`exit`{{execute}}
-
-**Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

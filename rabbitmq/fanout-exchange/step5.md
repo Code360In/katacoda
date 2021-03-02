@@ -9,7 +9,7 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **fanoutExchange** exchang
 **Message published.** mesajını aldığınızı teyit edin.
 **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 
-**Queues** segmesine geçiş yapın. Burada listenen **fanoutQueue1** ve **fanoutQueue2** queue'ları için **Messages** grubunda **Ready** başlığı altında her iki queue için de birer mesaj olduğunı teyit edin.
+**Queues** segmesine geçiş yapın. Burada listenen **fanoutQueue1** ve **fanoutQueue2** queue'ları için **Messages** grubunda **Ready** başlığı altında her iki queue için de birer mesaj olduğun teyit edin.
 
 Listede **fanoutQueue1** adına tıklayarak kuyruk sayfasına geçiş yapın.
 Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 
