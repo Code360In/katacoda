@@ -69,6 +69,11 @@
         "description": "RabbitMQ üzerinde alternatif exchange kullanımı"
       },
       {
+        "course_id": "federation-kurulumu",
+        "title": "Federation Kurulumu",
+        "description": "RabbitMQ federation kurulumu"
+      },
+      {
         "course_id": "cluster-kurulumu",
         "title": "Cluster Kurulumu",
         "description": "RabbitMQ cluster kurulumu"
