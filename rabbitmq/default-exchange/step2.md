@@ -4,13 +4,13 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **(AMQP default)** exchang
 
 `Enterprisecoding rabbitmq eğitimi örnek default exchange mesajı`
 
-**Routing key** alanına **queue.lab.is-emirleri.personel.ayrilma** değerini yazın. **Publish message** butonuna basarak mesajı yayınlayın. 
+**Routing key** alanına **lab.queue.is-emirleri.personel.ayrilma** değerini yazın. **Publish message** butonuna basarak mesajı yayınlayın. 
 
 **Message published.** mesajını aldığınızı teyit edin.
 **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 
-**Queues** segmesine geçiş yapın. Burada listenen **queue.lab.is-emirleri.personel.baslama** ve **queue.lab.is-emirleri.personel.ayrilma** queue'ları için **Messages** grubunda **Ready** başlığını kontrol edin. Sadece **queue.lab.is-emirleri.personel.ayrilma** kuyruğunda hazır durumda bir mesaj olduğunu teyit edin.
+**Queues** segmesine geçiş yapın. Burada listenen **lab.queue.is-emirleri.personel.baslama** ve **lab.queue.is-emirleri.personel.ayrilma** queue'ları için **Messages** grubunda **Ready** başlığını kontrol edin. Sadece **lab.queue.is-emirleri.personel.ayrilma** kuyruğunda hazır durumda bir mesaj olduğunu teyit edin.
 
-Listede **queue.lab.is-emirleri.personel.ayrilma** adına tıklayarak kuyruk sayfasına geçiş yapın.
+Listede **lab.queue.is-emirleri.personel.ayrilma** adına tıklayarak kuyruk sayfasına geçiş yapın.
 Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 
 Sayfadaki **Get messages** bölümünü açın. Bu bölümde yer alan **Get message(s)** butonuna basarak kuyruktaki mesajı okuyun. Öz önce yayınladığınız mesajın geldiğini teyit edin.

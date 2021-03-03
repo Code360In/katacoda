@@ -2,11 +2,11 @@
 
 Yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
 
-Açılan bölümde **Name** alanına **ex.lab.fanout.bir** değerini yazın ve **Add queue** butonuna basın.
+Açılan bölümde **Name** alanına **lab.queue.fanout.bir** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
-Aynı ekranda **Name** alanına **ex.lab.fanout.iki** değerini yazın ve **Add queue** butonuna basın.
+Aynı ekranda **Name** alanına **lab.queue.fanout.iki** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
