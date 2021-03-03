@@ -74,6 +74,11 @@
         "description": "RabbitMQ federation kurulumu"
       },
       {
+        "course_id": "akis-kontrolu",
+        "title": "Flow Control",
+        "description": "RabbitMQ akış kontrolü"
+      },
+      {
         "course_id": "cluster-kurulumu",
         "title": "Cluster Kurulumu",
         "description": "RabbitMQ cluster kurulumu"
