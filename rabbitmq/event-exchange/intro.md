@@ -1,11 +1,11 @@
 
 # Event Exchange Kurulumu
 
-Enterprisecoding RabbitMQ üzerinde fanout exchange oluşturma senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ exchange senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, RabbitMQ üzerinde fanout exchange oluşturmayı deneyimleyeceksiniz.
+Bu senaryoda, RabbitMQ event exchange eklentisini kurmayı ve kullanmayı deneyimleyeceksiniz.
 
 ## Eğitim
 
