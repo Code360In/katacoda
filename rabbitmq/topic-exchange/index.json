@@ -1,6 +1,6 @@
 {
-  "title": "Direct Exchange",
-  "description": "RabbitMQ üzerinde direct exchange oluşturma",
+  "title": "Topic Exchange",
+  "description": "RabbitMQ üzerinde topic exchange oluşturma",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "details": {
