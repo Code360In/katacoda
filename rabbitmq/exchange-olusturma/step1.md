@@ -5,7 +5,7 @@ Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş 
 
 Yönetim arayüzünde **Exchanges** segmesine geçiş yapın ve **Add a new exchange** bölümünü açın.
 
-Açılan bölümde **Name** alanına **ilkExchange** değerini yazın ve **Add exchange** butonuna basın.
+Açılan bölümde **Name** alanına **ex.lab.ilk** değerini yazın ve **Add exchange** butonuna basın.
 
 Exchange listesinde yeni oluşturduğunuz exchange'in olduğunu teyit edin.
 

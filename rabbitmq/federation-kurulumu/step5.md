@@ -16,7 +16,7 @@ Sağ tarafındaki menüden **Policies** bölümünü açın.
 
 **Policies** sayfasında **Add / update a policy** bölümün açın.
 
-**Name** alanına **rabbitm01.federation.politikasi** değerini, **Pattern** alanına **federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
+**Name** alanına **rabbitm01.federation.politikasi** değerini, **Pattern** alanına **lab.federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
 
 ## Federation Durumu
 

@@ -8,9 +8,9 @@ Aşağıdaki komutu çalıştırarak rabbitmqadmin uygulamasını yerele indirin
 
 `chmod +x /usr/local/bin/rabbitmqadmin`{{execute}}
 
-Aşağıdaki komutla **Direct** türündeki **ikinciExchange**'i tanımlayın;
+Aşağıdaki komutla **Direct** türündeki **ex.lab.iki**'i tanımlayın;
 
-`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=ikinciExchange type=direct`{{execute}}
+`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=ex.lab.iki type=direct`{{execute}}
 
 Yönetim arayüzüne giderek exchange'in oluşturulduğunu teyit edin.
 

@@ -8,8 +8,8 @@ Aşağıdaki komutu çalıştırarak rabbitmqadmin uygulamasını yerele indirin
 
 `chmod +x /usr/local/bin/rabbitmqadmin`{{execute}}
 
-Aşağıdaki komutla **Direct** türündeki **ikinciQueue**'i tanımlayın;
+Aşağıdaki komutla **Direct** türündeki **queue.lab.iki**'i tanımlayın;
 
-`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=ikinciQueue durable=true`{{execute}}
+`rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=queue.lab.iki durable=true`{{execute}}
 
 Yönetim arayüzüne giderek queue'un oluşturulduğunu teyit edin.

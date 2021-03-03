@@ -80,10 +80,10 @@ echo "Exchange oluşturuluyor..."
 rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=flowControlExchange type=direct 2>/dev/null &> /dev/null
 
 echo "Queue oluşturuluyor..."
-rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=ayrilma-is-emirleri durable=true 2>/dev/null &> /dev/null
+rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=queue.lab.is-emirleri.personel.ayrilma durable=true 2>/dev/null &> /dev/null
 
 echo "Binding oluşturuluyor..."
-rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=flowControlExchange destination=ayrilma-is-emirleri routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
+rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=flowControlExchange destination=queue.lab.is-emirleri.personel.ayrilma routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
 
 wget https://github.com/rabbitmq/rabbitmq-perf-test/releases/download/v2.14.0/rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
 
@@ -92,7 +92,7 @@ tar -zxvf rabbitmq-perf-test-2.14.0-bin.tar.gz -C /opt 2>/dev/null &> /dev/null
 rm -f rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
 
 cat > /usr/local/bin/yuk-olustur <<EOF
-/opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://enterprisecoding:enterprisecoding@localhost/default  -x 3 -y 2 -exchange=flowControlExchange -f persistent -u ayrilma-is-emirleri -p  -z 60
+/opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://enterprisecoding:enterprisecoding@localhost/default  -x 3 -y 2 -exchange=flowControlExchange -f persistent -u queue.lab.is-emirleri.personel.ayrilma -p  -z 60
 EOF
 
 chmod +x /usr/local/bin/yuk-olustur

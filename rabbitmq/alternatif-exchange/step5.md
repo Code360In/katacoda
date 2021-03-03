@@ -13,7 +13,7 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **personelExchange** excha
 **Message published.** mesajını aldığınızı teyit edin.
 **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 
-**Queues** segmesine geçiş yapın. Burada listenen **personel-baslama-is-emirleri**, **personel-alternatif** ve **personel-ayrilma-is-emirleri** queue'ları için **Messages** grubunda **Ready** başlığını kontrol edin. Sadece **personel-alternatif** kuyruğunda hazır durumda bir mesaj olduğunu teyit edin.
+**Queues** segmesine geçiş yapın. Burada listenen **queue.lab.is-emirleri.personel.baslama**, **personel-alternatif** ve **queue.lab.is-emirleri.personel.ayrilma** queue'ları için **Messages** grubunda **Ready** başlığını kontrol edin. Sadece **personel-alternatif** kuyruğunda hazır durumda bir mesaj olduğunu teyit edin.
 
 Listede **personel-alternatif** adına tıklayarak kuyruk sayfasına geçiş yapın.
 Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 

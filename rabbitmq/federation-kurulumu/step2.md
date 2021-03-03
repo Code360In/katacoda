@@ -4,7 +4,7 @@
 
 **RabbitMQ01** segmesi üzerinden açılan yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
 
-Açılan bölümde **Name** alanına **federation.Queue** değerini yazın ve **Add queue** butonuna basın.
+Açılan bölümde **Name** alanına **lab.federation.queue** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
@@ -12,7 +12,7 @@ Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
 **RabbitMQ02** segmesi üzerinden açılan yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
 
-Açılan bölümde **Name** alanına **federation.Queue** değerini yazın ve **Add queue** butonuna basın.
+Açılan bölümde **Name** alanına **lab.federation.queue** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
