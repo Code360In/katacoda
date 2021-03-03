@@ -1,13 +1,9 @@
-# Queue'ları Oluşturma
+# Yük Oluşturma
 
-Yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
+Yan tarafta bulunan terminalde aşağıdaki komutu çalıştırarak yük oluşturun;
 
-Açılan bölümde **Name** alanına **baslama-is-emirleri** değerini yazın ve **Add queue** butonuna basın.
+`yuk-olustur`{{execute}}
 
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
+Bu komut 1 dakika süre için RabbitMQ'ya yük oluşturacaktır.
 
-Aynı ekranda **Name** alanına **ayrilma-is-emirleri** değerini yazın ve **Add queue** butonuna basın.
-
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
-
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+Yönetim arayüzüne geçiş yaparak bağlantı ve kanal açıldığını teyit edin. Bir süre sonra **perf-test-producer-0**, **perf-test-producer-1** ve **perf-test-producer-2** bağlantılarının **flow** durumuna geçtiğini; **perf-test-consumer-0**, **perf-test-consumer-1**, **perf-test-consumer-2** bağlantılarının **running** durumda olduğunu teyit edin.  Benzer şekilde **Channels** bölümünde listelenen 3 kanalın **flow** durumunda olduğunu teyit edin.
