@@ -69,11 +69,6 @@
         "description": "RabbitMQ üzerinde alternatif exchange kullanımı"
       },
       {
-        "course_id": "federation-kurulumu",
-        "title": "Federation Kurulumu",
-        "description": "RabbitMQ federation kurulumu"
-      },
-      {
         "course_id": "akis-kontrolu",
         "title": "Flow Control",
         "description": "RabbitMQ akış kontrolü"
@@ -82,6 +77,11 @@
         "course_id": "hafiza-alarmi",
         "title": "Hafıza Alarmı",
         "description": "RabbitMQ hafıza alarmı"
+      },
+      {
+        "course_id": "federation-kurulumu",
+        "title": "Federation Kurulumu",
+        "description": "RabbitMQ federation kurulumu"
       },
       {
         "course_id": "cluster-kurulumu",
