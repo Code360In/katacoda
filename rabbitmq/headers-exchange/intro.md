@@ -1,11 +1,11 @@
 
-# Topic Exchange
+# Headers Exchange
 
-Enterprisecoding RabbitMQ üzerinde topic exchange oluşturma senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ üzerinde headers exchange oluşturma senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, RabbitMQ üzerinde topic exchange oluşturmayı deneyimleyeceksiniz.
+Bu senaryoda, RabbitMQ üzerinde headers exchange oluşturmayı deneyimleyeceksiniz.
 
 ## Eğitim
 

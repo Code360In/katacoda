@@ -1,6 +1,6 @@
 # Yönetim Arayüzünden Mesaj Yayınlama
 
-Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.direct** exchange'i açın. Bu sayfada yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
+Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.headers** exchange'i açın. Bu sayfada yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
 
 `Enterprisecoding rabbitmq eğitimi örnek headers exchange mesajı`
 
