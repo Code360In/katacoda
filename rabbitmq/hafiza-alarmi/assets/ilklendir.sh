@@ -95,9 +95,9 @@ cat > /usr/local/bin/yuk-olustur <<EOF
 /opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://enterprisecoding:enterprisecoding@localhost/default  -x 3 -y 2 -exchange=flowControlExchange -f persistent -u ayrilma-is-emirleri -p  -z 60
 EOF
 
-chmod +x /usr/local/bin/yuk-olustur
+chmod +x /usr/local/bin/yuk-olustur 2>/dev/null &> /dev/null
 
-rabbitmqctl set_vm_memory_high_watermark 0.8
+rabbitmqctl set_vm_memory_high_watermark absolute 100MiB 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."
