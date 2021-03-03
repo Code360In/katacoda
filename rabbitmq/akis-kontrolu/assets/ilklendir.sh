@@ -91,11 +91,11 @@ tar -zxvf rabbitmq-perf-test-2.14.0-bin.tar.gz -C /opt 2>/dev/null &> /dev/null
 
 rm -f rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
 
-cat > /usr/local/bin/yuk-olustur.sh <<EOF
+cat > /usr/local/bin/yuk-olustur <<EOF
 /opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://enterprisecoding:enterprisecoding@localhost/default  -x 3 -y 2 -exchange=flowControlExchange -f persistent -u ayrilma-is-emirleri -p  -z 60
 EOF
 
-chmod +x /usr/local/bin/yuk-olustur.sh
+chmod +x /usr/local/bin/yuk-olustur
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."
