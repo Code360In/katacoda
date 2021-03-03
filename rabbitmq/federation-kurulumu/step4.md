@@ -24,7 +24,7 @@ Management UI eklentisi kurulu olduğu için aşağıdaki komutla federation yö
 
 `rabbitmq-plugins enable rabbitmq_federation_management`{{execute}}
 
-Aşağıdaki komutla **rabbitmq02** sunucusuna geri dönün.
+Aşağıdaki komutla **rabbitmq01** sunucusuna geri dönün.
 
 `exit`{{execute}}
 
