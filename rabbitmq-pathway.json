@@ -79,6 +79,11 @@
         "description": "RabbitMQ akış kontrolü"
       },
       {
+        "course_id": "hafiza-alarmi",
+        "title": "Hafıza Alarmı",
+        "description": "RabbitMQ hafıza alarmı"
+      },
+      {
         "course_id": "cluster-kurulumu",
         "title": "Cluster Kurulumu",
         "description": "RabbitMQ cluster kurulumu"
