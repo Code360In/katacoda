@@ -17,3 +17,5 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.direct.buggy** ex
 Listede **lab.queue.firehose.publish** adına tıklayarak kuyruk sayfasına geçiş yapın.
 Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 
 Sayfadaki **Get messages** bölümünü açın. Bu bölümde yer alan **Get message(s)** butonuna basarak kuyruktaki mesajı okuyun. Öz önce yayınladığınız mesajın geldiğini teyit edin. Yazdığınız mesaja ek olarak **Properties** bölümünde **headers** başlığı altında kuyruk hakkında ek meta veriler olduğunu teyit edin.
+
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

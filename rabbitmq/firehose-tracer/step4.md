@@ -1,4 +1,4 @@
-# Deefault vhost için Firehose
+# Default vhost için Firehose
 
 Komut satırına geçiş yarapark aşağıdaki komutla **default** firehost'u aktif duruma getirin;
 
