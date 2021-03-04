@@ -79,9 +79,9 @@
         "description": "RabbitMQ hafıza alarmı"
       },
       {
-        "course_id": "event-exchange",
-        "title": "Event Exchange Eklentisi",
-        "description": "RabbitMQ event exchange eklentisi kurulum ve kullanımı"
+        "course_id": "firehose-tracer",
+        "title": "Firehose Tracer",
+        "description": "RabbitMQ firehose tracer kullanımı"
       },
       {
         "course_id": "federation-kurulumu",

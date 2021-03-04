@@ -47,6 +47,88 @@ server {
 
   server_name _;
 
+  #location ~* /api/(.*?)/(.*) {
+  #      proxy_pass http://127.0.0.1:15672/api/$1/%2F/$2?$query_string;
+  #      proxy_buffering                    off;
+  #      proxy_set_header Host              $http_host;
+  #      proxy_set_header X-Real-IP         $remote_addr;
+  #      proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+  #      proxy_set_header X-Forwarded-Proto $scheme;
+  #}
+
+  location /api/consumers/ {
+        rewrite ^/rabbitmq/api/(.*) /api/$1 break;
+        proxy_pass http://127.0.0.1:15672/api/consumers/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/exchanges/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/exchanges/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/queues/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/queues/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/bindings/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/bindings/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/permissions/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/permissions/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/policies/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/policies/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/aliveness-test/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/aliveness-test/%2F/$1?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location ~* /api/parameters/(.*)/(.*) {
+        proxy_pass http://127.0.0.1:15672/api/parameters/$1/%2F/$2?$query_string;
+        proxy_buffering                    off;
+        proxy_set_header Host              $http_host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
   location / {
       proxy_pass http://127.0.0.1:15672;
       proxy_buffering                    off;

@@ -1,6 +1,6 @@
 # Arayüz üzerinden Binding Oluşturma
 
-Yönetim arayüzünde **Exchanges** segmesine geçiş yapın. **lamq.rabbitmq.event** exchange'i açın ve **Bindings** bölümünü açın.
+Yönetim arayüzünde **Exchanges** segmesine geçiş yapın. **amq.rabbitmq.event** exchange'i açın ve **Bindings** bölümünü açın.
 
 Açılan bölümde **Add binding from this exchange** alanına **To queue** değerine **lab.queue.events.queue.created** yazın. **Routing key** alanına **queue.created** değerini yazın ve **Bind** butonuna basın.
 

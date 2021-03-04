@@ -13,7 +13,7 @@ Açılan bölümde **Name** alanına **lab.queue.events.queue.created** değerin
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
-Aynı ekranda **Name** alanına **lab.queue.events.queue.deleted* değerini yazın ve **Add queue** butonuna basın.
+Aynı ekranda **Name** alanına **lab.queue.events.queue.deleted** değerini yazın ve **Add queue** butonuna basın.
 
 Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
 
