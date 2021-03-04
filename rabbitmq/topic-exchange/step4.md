@@ -1,6 +1,6 @@
 # Komut Satırından Binding Oluşturma
 
-Komut satırına geçiş yarapark aşağıdaki komutla **lab.queue.is-emirleri.personel.ayrilma** için binding'i tanımlayın;
+Komut satırına geçiş yaparak aşağıdaki komutla **lab.queue.is-emirleri.personel.ayrilma** için binding'i tanımlayın;
 
 `rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=lab.ex.topic destination=lab.queue.is-emirleri.personel.ayrilma routing_key="personel.is-emri.ayrilma"`{{execute}}
 

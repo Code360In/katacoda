@@ -1,6 +1,6 @@
 # Komut Satırından Binding Oluşturma
 
-Komut satırına geçiş yarapark aşağıdaki komutla **lab.queue.is-emirleri.personel.ayrilma** için binding'i tanımlayın;
+Komut satırına geçiş yaparak aşağıdaki komutla **lab.queue.is-emirleri.personel.ayrilma** için binding'i tanımlayın;
 
 ```bash
 rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=lab.ex.headers destination=lab.queue.is-emirleri.personel.ayrilma routing_key="" arguments='{"x-match": "all", "modul": "personel", "tur": "is-emri", "islem": "ayrilma"}'
