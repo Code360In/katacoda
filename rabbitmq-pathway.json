@@ -94,6 +94,11 @@
         "description": "RabbitMQ federation kurulumu"
       },
       {
+        "course_id": "shovel-kurulumu",
+        "title": "Shovel Kurulumu",
+        "description": "RabbitMQ shovel kurulumu"
+      },
+      {
         "course_id": "cluster-kurulumu",
         "title": "Cluster Kurulumu",
         "description": "RabbitMQ cluster kurulumu"
