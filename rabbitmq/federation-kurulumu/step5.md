@@ -8,15 +8,16 @@
 
 **Federation Upstreams** sayfasında **Add a new upstream** bölümün açın.
 
-**Name** alanına **rabbitm01.federation** değerini, **URI** alanına **amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672** değerini yazın ve **Add upstream** butonuna basın.
+**Name** alanına **lab.federation.rabbitm01** değerini, **URI** alanına aşağıdaki değeri yazın ve **Add upstream** butonuna basın.
 
+`amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672`
 ## Politika Tanımlama
 
 Sağ tarafındaki menüden **Policies** bölümünü açın.
 
 **Policies** sayfasında **Add / update a policy** bölümün açın.
 
-**Name** alanına **rabbitm01.federation.politikasi** değerini, **Pattern** alanına **lab.federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
+**Name** alanına **lab.policy.federation.rabbitm01** değerini, **Pattern** alanına **lab.federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
 
 ## Federation Durumu
 
