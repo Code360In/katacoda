@@ -1,10 +1,13 @@
-# Upstream Kontrolü
+# Shovel Test'i
 
-**RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yaparak sayfayı yenileyin.
+**RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Exchanges** segmesine geçiş yapın ve **lab.shovel.ex.kaynak**'i açın. **Publish message** bölümünde **Payload** alanına aşağıdaki değeri yazın.
 
-**Connections** segmesine geçiş yaparak bağlantı listesini inceleyin. ikinci sunucudan gelen bağlantılar olduğunu teyit edin.
-**Channels** segmesine geçiş yaparak kanalların listesini inceleyin. ikinci sunucudan gelen kanallar olduğunu teyit edin.
+`Enterprisecoding rabbitmq eğitimi örnek federation mesajı`
 
-**Exchanges** segmesine geçiş yaparak exchange listesini inceleyin. ikinci sunucuda tanımlı exhange'in yer aldığını teyit edin. **lab.federation.ex**'i açın. **Bindings** bölümünde ikinci sunucuya ait girdi olduğunu teyit edin.
+**Publish message** butonuna basarak mesajı yayınlayın. **Message published.** mesajını aldığınızı teyit edin. **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
+
+**Queues** segmesine geçiş yapın. Burada listenen **lab.shovel.queue** queue'su için **Messages** grubunda **Ready** başlığı altında bir mesaj olduğun teyit edin.
+
+**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Queues** segmesine geçiş yapın. Burada listenen **lab.federation.queue** queue'su için de **Messages** grubunda **Ready** başlığı altında bir mesaj olduğun teyit edin.
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.

@@ -1,26 +1,19 @@
-# Downstream Yapılandırması
+# Upstream Yapılandırması
 
-**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzüne geçiş yaparak sayfayı yenileyin.
+**RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yaparak sayfayı yenileyin.
 
-## Federation Tanımlama
+## Show Tanımlama
 
-**Admin** segmesine geçiş yapın. Açılan sayfanın sağ tarafındaki menüden **Federation Upstreams** bölümünü açın.
+**Admin** segmesine geçiş yapın. Açılan sayfanın sağ tarafındaki menüden **Shovel Management** bölümünü açın.
 
-**Federation Upstreams** sayfasında **Add a new upstream** bölümün açın.
+**Shovel Management** sayfasında **Add a new upstream** bölümün açın.
 
-**Name** alanına **lab.federation.rabbitm01** değerini, **URI** alanına aşağıdaki değeri yazın ve **Add upstream** butonuna basın.
+**Name** alanına **lab.shovel.rabbitm02** değerini, **URI** alanına aşağıdaki değeri yazın ve **Add upstream** butonuna basın.
 
-`amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672`
-## Politika Tanımlama
+`amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672/default`
 
-Sağ tarafındaki menüden **Policies** bölümünü açın.
+## Shovel Durumu
 
-**Policies** sayfasında **Add / update a policy** bölümün açın.
-
-**Name** alanına **lab.policy.federation.rabbitm01** değerini, **Pattern** alanına **lab.federation.* ** değerini, **Definition** alanına **federation-upstream-set** - **all** yazın ve **Add / update policy** butonuna basın.
-
-## Federation Durumu
-
-Sağ tarafındaki menüden **Federation Status** bölümünü açın. Bu bölümde oluşturduğumuz exchange ve queue'ların listelendiğini ve **running** durumunda olduklarını teyit edin.
+Sağ tarafındaki menüden **Sovel Status** bölümünü açın. Bu bölümde **lab.shovel.rabbitm02** girdisinin listelendiğini ve **running** durumunda olduğunu teyit edin.
 
 **Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
