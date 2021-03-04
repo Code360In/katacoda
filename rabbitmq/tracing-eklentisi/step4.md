@@ -12,4 +12,4 @@ Yönetim arayüzünde *Exchanges** segmesine geçin. **lab.ex.direct.buggy** exc
 
 **Message published, but not routed.** mesajını aldığınızı teyit edin.
 
-**Admin** segmesine geçiş yapın. Sayfanın sağ bölümünden **tracing**'i açın. **Trace log files** bölümünde  listenen dosya adına tıklayın. Açılan dialogta kullanıcı adı ve şifresi olarak **enterprisecoding** yazın. Gelen sayfada mesajınıza ait log kayıtlarının olduğunu teyit edin.
+**Admin** segmesine geçiş yapın. Sayfanın sağ bölümünden **tracing**'i açın. **Trace log files** bölümünde  listenen **lab.tracing.hepsi.log** dosya adına tıklayın. Açılan dialogta kullanıcı adı ve şifresi olarak **enterprisecoding** yazın. Gelen sayfada mesajınıza ait log kayıtlarının olduğunu teyit edin.

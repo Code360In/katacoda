@@ -8,8 +8,8 @@ Açılan sayfada **Add a new trace** bölümüne geçin. **Name** alanına aşa�
 
 **Tracer connection username** ve **Tracer connection password** alanlarına **enterprisecoding** değerini yazın ve **Add trace** butonuna basın.
 
-Sayfanın üst bölümündeki **All traces** listesinde yeni bir girdi olduğunu teyit edin. **Trace log files** bölümünde yer alan dosyanın 0 byte boyutunda olduğunu teyit edin.
+Sayfanın üst bölümündeki **All traces** listesinde yeni bir girdi olduğunu teyit edin. **Trace log files** bölümünde **lab.tracing.hepsi.log** adıyla yer alan dosyanın 0 byte boyutunda olduğunu teyit edin.
 
-**Queue** segmesine geçin. Kuyruk listesinde **amq.genn-** ile başlayan yeni bir kuyruk olduğunu teyit edin.
+**Queue** segmesine geçin. Kuyruk listesinde **amq.gen-** ile başlayan yeni bir kuyruk olduğunu teyit edin.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
