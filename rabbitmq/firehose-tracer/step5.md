@@ -12,9 +12,9 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.direct.buggy** ex
 
 **Message published, but not routed.** mesajını aldığınızı teyit edin.
 
-**Queues** segmesine geçiş yapın. Burada listenen kuyruklardan **lab.queue.firehose.publish** kuyruğunda hazır durumda 1 mesaj olduğunu teyit edin.
+**Queues** segmesine geçiş yapın. Burada listenen kuyruklardan **lab.queue.firehose.published** kuyruğunda hazır durumda 1 mesaj olduğunu teyit edin.
 
-Listede **lab.queue.firehose.publish** adına tıklayarak kuyruk sayfasına geçiş yapın.
+Listede **lab.queue.firehose.published** adına tıklayarak kuyruk sayfasına geçiş yapın.
 Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 
 Sayfadaki **Get messages** bölümünü açın. Bu bölümde yer alan **Get message(s)** butonuna basarak kuyruktaki mesajı okuyun. Öz önce yayınladığınız mesajın geldiğini teyit edin. Yazdığınız mesaja ek olarak **Properties** bölümünde **headers** başlığı altında kuyruk hakkında ek meta veriler olduğunu teyit edin.
 
