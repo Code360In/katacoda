@@ -6,11 +6,19 @@
 
 **Admin** segmesine geçiş yapın. Açılan sayfanın sağ tarafındaki menüden **Shovel Management** bölümünü açın.
 
-**Shovel Management** sayfasında **Add a new upstream** bölümün açın.
+**Shovel Management** sayfasında **Add a new shovel** bölümün açın.
 
-**Name** alanına **lab.shovel.rabbitm02** değerini, **URI** alanına aşağıdaki değeri yazın ve **Add upstream** butonuna basın.
+**Name** alanına **lab.shovel.rabbitm02** değerini, **Source** başlığı altında **URI** alanına aşağıdaki değeri yazın.
 
 `amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672/default`
+
+**Queue** bölümüne **lab.shovel.queue.kaynak** değerini girin.
+
+**Destination** başlığı altında **URI** alanına aşağıdaki değeri yazın 
+
+`amqp://enterprisecoding:enterprisecoding@rabbitmq02:5672/default`
+
+**Queue** yerine **Exchange** seçin ve altındaki bölüme **lab.shovel.ex.hedef** değerini girin ve **Add shovel** butonuna basın.
 
 ## Shovel Durumu
 

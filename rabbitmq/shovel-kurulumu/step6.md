@@ -2,12 +2,12 @@
 
 **RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Exchanges** segmesine geçiş yapın ve **lab.shovel.ex.kaynak**'i açın. **Publish message** bölümünde **Payload** alanına aşağıdaki değeri yazın.
 
-`Enterprisecoding rabbitmq eğitimi örnek federation mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek shovel mesajı`
 
 **Publish message** butonuna basarak mesajı yayınlayın. **Message published.** mesajını aldığınızı teyit edin. **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 
-**Queues** segmesine geçiş yapın. Burada listenen **lab.shovel.queue** queue'su için **Messages** grubunda **Ready** başlığı altında bir mesaj olduğun teyit edin.
+**Queues** segmesine geçiş yapın. Burada listenen **lab.shovel.queue.kaynak* queue'su adına tıklayarak detay sayfasına geçiş yapın. **Message rates** sayfasında mesaj hareketine dair grafiği inceleyin.
 
-**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Queues** segmesine geçiş yapın. Burada listenen **lab.federation.queue** queue'su için de **Messages** grubunda **Ready** başlığı altında bir mesaj olduğun teyit edin.
+**RabbitMQ02** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Exchanges** segmesine geçiş yapın ve **lab.shovel.ex.hedef** exchange'i adına tıklayın. Açılan detay sayfasında mesaj hareketine dair grafiği inceleyin.
 
-**Continue** butonuna basarak bir sonraki adımına geçebilirsiniz.
+ **Queues** segmesine geçiş yapın. Burada listenen **lab.shovel.queue.hedef** queue'su için de **Messages** grubunda **Ready** başlığı altında bir mesaj olduğun teyit edin.
