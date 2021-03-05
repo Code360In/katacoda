@@ -97,7 +97,7 @@ EOF
 chmod +x /usr/local/bin/yuk-olustur 2>/dev/null &> /dev/null
 
 
-
+echo ""
 echo "Prometheus kuruluyor..."
 useradd -M-s /bin/false prometheus 2>/dev/null &> /dev/null
 useradd -M -s /bin/false prometheus 2>/dev/null &> /dev/null
@@ -154,6 +154,7 @@ sudo systemctl daemon-reload 2>/dev/null &> /dev/null
 #sudo systemctl start prometheus 2>/dev/null &> /dev/null
 sudo systemctl enable prometheus 2>/dev/null &> /dev/null
 
+echo ""
 echo "Grafana kuruluyor..." 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add - 2>/dev/null &> /dev/null
 
