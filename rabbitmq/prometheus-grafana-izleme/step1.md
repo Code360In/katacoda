@@ -1,16 +1,11 @@
-# Queue Oluşturma
+# Eklenti Kurulumu
 
-Yan tarafta yer alan **RabbitMQ Management UI** segmesi üzerinden yönetim arayüzünü açın.
-Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapın.
+Aşağıdaki komutla prometheus eklentisini kurun;
 
-Yönetim arayüzünde **Queues** segmesine geçiş yapın ve **Add a new queue** bölümünü açın.
+`rabbitmq-plugins enable rabbitmq_prometheus`{{execute}}
 
-Açılan bölümde **Name** alanına **lab.queue.is-emirleri.personel.ayrilma** değerini yazın ve **Add queue** butonuna basın.
+Aşağıdaki komutla prometheus servisini başlatın;
 
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
-
-Aynı ekranda **Name** alanına **lab.queue.is-emirleri.personel.baslama** değerini yazın ve **Add queue** butonuna basın.
-
-Queue listesinde yeni oluşturduğunuz queue'un olduğunu teyit edin.
+`systemctl start prometheus`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

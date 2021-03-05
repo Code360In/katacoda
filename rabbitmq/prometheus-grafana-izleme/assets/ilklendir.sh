@@ -65,9 +65,37 @@ echo "Yetkili kullanıcı oluşturuluyor..."
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
 rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
 
-rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
+rabbitmqctl set_permissions -p default enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
 
-#rabbitmqctl delete_user guest 2>/dev/null &> /dev/null
+rabbitmqctl add_vhost default 2>/dev/null &> /dev/null
+rabbitmqctl delete_vhost / 2>/dev/null &> /dev/null
+rabbitmqctl delete_user guest 2>/dev/null &> /dev/null
+
+echo "rabbitmqadmin hazırlanıyor..."
+wget http://localhost:15672/cli/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
+chmod +x /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
+
+echo "Exchange oluşturuluyor..."
+rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=flowControlExchange type=direct 2>/dev/null &> /dev/null
+
+echo "Queue oluşturuluyor..."
+rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=lab.queue.is-emirleri.personel.ayrilma durable=true 2>/dev/null &> /dev/null
+
+echo "Binding oluşturuluyor..."
+rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=flowControlExchange destination=lab.queue.is-emirleri.personel.ayrilma routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
+
+wget https://github.com/rabbitmq/rabbitmq-perf-test/releases/download/v2.14.0/rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
+
+tar -zxvf rabbitmq-perf-test-2.14.0-bin.tar.gz -C /opt 2>/dev/null &> /dev/null
+
+rm -f rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
+
+cat > /usr/local/bin/yuk-olustur <<EOF
+/opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://enterprisecoding:enterprisecoding@localhost/default  -x 1 -y 1 -exchange=flowControlExchange -f persistent -u lab.queue.is-emirleri.personel.ayrilma -p  -z 60
+EOF
+
+chmod +x /usr/local/bin/yuk-olustur 2>/dev/null &> /dev/null
+
 
 
 echo "Prometheus kuruluyor..."
@@ -98,7 +126,7 @@ scrape_configs:
   - job_name: 'rabbitmq'
     scheme: http
     static_configs:
-    - targets: ['127.0.0.1:15672']
+    - targets: ['127.0.0.1:15692']
 EOF
 
 
@@ -135,13 +163,13 @@ sudo apt-get install grafana -y 2>/dev/null &> /dev/null
 
 #mkdir -p /etc/dashboards/rabbitmq 2>/dev/null &> /dev/null
 
-cat > /etc/grafana/provisioning/dashboards/rabbitmq.yaml <<EOF
+cat > /etc/grafana/provisioning/datasources/prometheus.yaml <<EOF
 apiVersion: 1
 
 datasources:
   - name: Prometheus
     url: http://localhost:9090
-    type: testdata
+    type: prometheus
 EOF
 
 cat > /etc/grafana/provisioning/dashboards/rabbitmq.yaml <<EOF
