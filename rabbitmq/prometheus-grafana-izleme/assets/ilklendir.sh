@@ -92,13 +92,13 @@ rm -rf prometheus-2.25.0.linux-amd64 prometheus-2.25.0.linux-amd64.tar.gz  2>/de
 
 cat > /etc/prometheus/prometheus.yml <<EOF
 global:
-  scrape_interval: 15s
-
+  scrape_interval: 15s 
+  scrape_timeout: 15s
 scrape_configs:
-  - job_name: 'prometheus'
-    scrape_interval: 5s
+  - job_name: 'rabbitmq'
+    scheme: http
     static_configs:
-      - targets: ['localhost:9090']
+    - targets: ['127.0.0.1:15672']
 EOF
 
 
@@ -123,8 +123,45 @@ WantedBy=multi-user.target
 EOF
 
 sudo systemctl daemon-reload 2>/dev/null &> /dev/null
-sudo systemctl start prometheus 2>/dev/null &> /dev/null
+#sudo systemctl start prometheus 2>/dev/null &> /dev/null
 sudo systemctl enable prometheus 2>/dev/null &> /dev/null
+
+echo "Grafana kuruluyor..." 
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add - 2>/dev/null &> /dev/null
+
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list 2>/dev/null &> /dev/null
+sudo apt-get update 2>/dev/null &> /dev/null
+sudo apt-get install grafana -y 2>/dev/null &> /dev/null
+
+#mkdir -p /etc/dashboards/rabbitmq 2>/dev/null &> /dev/null
+
+cat > /etc/grafana/provisioning/dashboards/rabbitmq.yaml <<EOF
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    url: http://localhost:9090
+    type: testdata
+EOF
+
+cat > /etc/grafana/provisioning/dashboards/rabbitmq.yaml <<EOF
+apiVersion: 1
+
+providers:
+- name: dashboards
+  type: file
+  updateIntervalSeconds: 30
+  options:
+    path: /etc/dashboards
+    foldersFromFilesStructure: true
+EOF
+
+sudo systemctl daemon-reload 2>/dev/null &> /dev/null
+sudo systemctl enable grafana-server 2>/dev/null &> /dev/null
+sudo systemctl start grafana-server 2>/dev/null &> /dev/null
+
+sleep 10 2>/dev/null &> /dev/null
+grafana-cli admin reset-admin-password enterprisecoding 2>/dev/null &> /dev/null
 
 echo ""
 echo "RabbitMQ kullanıma hazır..."
