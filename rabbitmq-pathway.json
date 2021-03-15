@@ -94,6 +94,11 @@
         "description": "RabbitMQ tracing eklentisi kullanımı"
       },
       {
+        "course_id": "ldap-yapilandirmasi",
+        "title": "LDAP Yapılandırması",
+        "description": "RabbitMQ LDAP yapılandırması"
+      },
+      {
         "course_id": "prometheus-grafana-izleme",
         "title": "Prometheus ve Grafana ile İzleme",
         "description": "Prometheus ve Grafana ile RabbitMQ izlemesi"

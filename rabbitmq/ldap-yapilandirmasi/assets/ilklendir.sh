@@ -67,41 +67,83 @@ rabbitmqctl add_vhost default 2>/dev/null &> /dev/null
 rabbitmqctl add_user enterprisecoding enterprisecoding 2>/dev/null &> /dev/null
 rabbitmqctl set_user_tags enterprisecoding administrator 2>/dev/null &> /dev/null
 
+rabbitmqctl set_permissions -p / enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
 rabbitmqctl set_permissions -p default enterprisecoding ".*" ".*" ".*" 2>/dev/null &> /dev/null
-
-rabbitmqctl add_user uygulama1 uygulama1 2>/dev/null &> /dev/null
-rabbitmqctl set_permissions -p default uygulama1 ".*" ".*" ".*" 2>/dev/null &> /dev/null
 
 rabbitmqctl delete_user guest 2>/dev/null &> /dev/null
 
-echo "rabbitmqadmin hazırlanıyor..."
-wget http://localhost:15672/cli/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
-chmod +x /usr/local/bin/rabbitmqadmin 2>/dev/null &> /dev/null
-
-echo "Exchange oluşturuluyor..."
-rabbitmqadmin -u enterprisecoding -p enterprisecoding declare exchange --vhost=default name=flowControlExchange type=direct 2>/dev/null &> /dev/null
-
-echo "Queue oluşturuluyor..."
-rabbitmqadmin -u enterprisecoding -p enterprisecoding declare queue --vhost=default name=lab.queue.is-emirleri.personel.ayrilma durable=true 2>/dev/null &> /dev/null
-
-echo "Binding oluşturuluyor..."
-rabbitmqadmin -u enterprisecoding -p enterprisecoding declare binding --vhost=default source=flowControlExchange destination=lab.queue.is-emirleri.personel.ayrilma routing_key="personel.is-emri.ayrilma" 2>/dev/null &> /dev/null
-
-wget https://github.com/rabbitmq/rabbitmq-perf-test/releases/download/v2.14.0/rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
-
-tar -zxvf rabbitmq-perf-test-2.14.0-bin.tar.gz -C /opt 2>/dev/null &> /dev/null
-
-rm -f rabbitmq-perf-test-2.14.0-bin.tar.gz 2>/dev/null &> /dev/null
-
-cat > /usr/local/bin/yuk-olustur <<EOF
-/opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://uygulama1:uygulama1@localhost/default  -x 3 -y 2 -exchange=flowControlExchange -f persistent -u lab.queue.is-emirleri.personel.ayrilma -p  -z 60
-EOF
-
-cat > /usr/local/bin/yuk-olustur2 <<EOF
-/opt/rabbitmq-perf-test-2.14.0/bin/runjava com.rabbitmq.perf.PerfTest -h amqp://uygulama1:uygulama1@localhost/default  -x 1 -y 1 -exchange=flowControlExchange -f persistent -u lab.queue.is-emirleri.personel.ayrilma -p  -z 60
-EOF
-
-chmod +x /usr/local/bin/yuk-olustur
-
 echo ""
 echo "RabbitMQ kullanıma hazır..."
+
+echo "LDAP kuruluyor"
+
+cat > /root/debconf-slapd.conf << 'EOF'
+slapd slapd/password1 password enterprisecoding
+slapd slapd/internal/adminpw password enterprisecoding
+slapd slapd/internal/generated_adminpw password enterprisecoding
+slapd slapd/password2 password enterprisecoding
+slapd slapd/unsafe_selfwrite_acl note
+slapd slapd/purge_database boolean false
+slapd slapd/domain string enterprisecoding.local
+slapd slapd/ppolicy_schema_needs_update select abort installation
+slapd slapd/invalid_config boolean true
+slapd slapd/move_old_database boolean false
+slapd slapd/backend select HDB
+slapd shared/organization string enterprisecoding
+slapd slapd/dump_database_destdir string /var/backups/slapd-VERSION
+slapd slapd/no_configuration boolean false
+slapd slapd/dump_database select when needed
+slapd slapd/password_mismatch note
+EOF
+
+cat /root/debconf-slapd.conf | debconf-set-selections
+apt export DEBIAN_FRONTEND=noninteractive install ldap-utils slapd -y
+
+
+cat > install.ldif << 'EOF'
+dn: ou=users,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: Users
+
+dn: ou=groups,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: Groups
+
+dn: uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: rabbitmq
+uid: rabbitmq
+uidNumber: 16859
+gidNumber: 100
+homeDirectory: /home/rabbitmq
+loginShell: /bin/bash
+gecos: rabbitmq
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
+dn: uid=kursiyer,ou=users,dc=enterprisecoding,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: kursiyer
+uid: kursiyer
+uidNumber: 16849
+gidNumber: 100
+homeDirectory: /home/kursiyer
+loginShell: /bin/bash
+gecos: kursiyer
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+EOF
+
+ldapadd -x -W -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif
+
+rm -f install.ldif
