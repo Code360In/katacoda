@@ -79,6 +79,11 @@
         "description": "RabbitMQ hafıza alarmı"
       },
       {
+        "course_id": "kullanici-limitleri",
+        "title": "Kullanıcı Limitleri",
+        "description": "RabbitMQ kullanıcı limit kontrolü"
+      },
+      {
         "course_id": "firehose-tracer",
         "title": "Firehose Tracer",
         "description": "RabbitMQ firehose tracer kullanımı"
