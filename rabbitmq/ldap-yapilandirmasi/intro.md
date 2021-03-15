@@ -1,11 +1,11 @@
 
-# Exchange-Exchange Binding
+# LDAP Yapılandırması
 
-Enterprisecoding RabbitMQ üzerinde exchange-exchange binding kullanımı senaryosuna hoş geldiniz.
+Enterprisecoding RabbitMQ üzerinde LDAP kullanımı senaryosuna hoş geldiniz.
 
 ## Senaryo
 
-Bu senaryoda, RabbitMQ üzerinde exchange-exchange binding kullanımını deneyimleyeceksiniz.
+Bu senaryoda, RabbitMQ üzerinde LDAP kullanımını deneyimleyeceksiniz.
 
 ## Eğitim
 

@@ -97,7 +97,7 @@ slapd slapd/password_mismatch note
 EOF
 
 cat /root/debconf-slapd.conf | debconf-set-selections
-apt export DEBIAN_FRONTEND=noninteractive install ldap-utils slapd -y
+DEBIAN_FRONTEND=noninteractive apt install ldap-utils slapd -y
 
 
 cat > install.ldif << 'EOF'
