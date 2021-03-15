@@ -97,7 +97,7 @@ slapd slapd/password_mismatch note
 EOF
 
 cat /root/debconf-slapd.conf | debconf-set-selections
-DEBIAN_FRONTEND=noninteractive apt install ldap-utils slapd -y
+DEBIAN_FRONTEND=noninteractive apt install ldap-utils slapd -y  2>/dev/null &> /dev/null
 
 
 cat > install.ldif << 'EOF'
@@ -144,6 +144,6 @@ shadowMax: 0
 shadowWarning: 0
 EOF
 
-ldapadd -x -W -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif
+ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null
 
-rm -f install.ldif
+rm -f install.ldif  2>/dev/null &> /dev/null
