@@ -151,6 +151,11 @@ objectClass: organizationalUnit
 ou: groups
 description: Groups
 
+dn: ou=app,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: app
+description: Uygulamalar
+
 dn: ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
 ou: rabbitmq
