@@ -30,8 +30,8 @@ cat > /etc/rabbitmq/advanced.config <<EOF
   {rabbit, [{auth_backends, [rabbit_auth_backend_ldap, rabbit_auth_backend_internal]}]},
   {rabbitmq_auth_backend_ldap,
    [ {servers,               ["127.0.0.1"]},
-     {dn_lookup_base,        {"u=users,dc=enterprisecoding,dc=local"}},
-     {dn_lookup_attribute,   {"uid"}},
+     {dn_lookup_base,        {"ou=users,dc=enterprisecoding,dc=local"}},
+     {user_dn_pattern,       "uid=${username},ou=users,dc=enterprisecoding,dc=local"},
      {other_bind,            ["uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local","enterprisecoding"]},
 
      {vhost_access_query,    {in_group, "cn=access-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local"}},

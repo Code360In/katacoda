@@ -151,58 +151,53 @@ objectClass: organizationalUnit
 ou: groups
 description: Groups
 
-dn: ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
 ou: rabbitmq
 description: RabbitMQ
 
-dn: ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
 ou: vhosts
 description: RabbitMQ VHosts
 
-dn: ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
 ou: tags
 description: RabbitMQ User Tags
 
-dn: ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
-objectClass: organizationalUnit
-ou: tags
-description: RabbitMQ User Tags
-
-dn: cn=administrator,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=administrator,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Administrators
 uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
 
-dn: cn=management,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=management,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Management Tags
 
-dn: ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
 description: RabbitMQ Default VHost
 
-dn: cn=access-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=access-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost erişim iznine sahip
 uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
 uniqueMember: uid=producer,ou=users,dc=enterprisecoding,dc=local
 uniqueMember: uid=publisher,ou=users,dc=enterprisecoding,dc=local
 
-dn: cn=configure-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=configure-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost yapılandırma iznine ship kullanıılae
 uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
 
-dn: cn=write-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=write-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost yazma iznine sahip kullanıcılar
 uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
 uniqueMember: uid=producer,ou=users,dc=enterprisecoding,dc=local
 
-dn: cn=read-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+dn: cn=read-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost okuma iznine sahip kullanıcılar
 uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
