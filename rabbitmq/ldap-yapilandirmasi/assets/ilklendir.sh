@@ -106,7 +106,7 @@ objectClass: organizationalUnit
 ou: users
 description: Users
 
-dn: uid=rabbitmq-app,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-app,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -116,7 +116,7 @@ uid: rabbitmq-app
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
 mail: rabbitmq@enterprisecoding.local
 
-dn: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -126,7 +126,7 @@ uid: rabbitmq-admin
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
 mail: rabbitmq-admin@enterprisecoding.local
 
-dn: uid=rabbitmq-management,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-management,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -136,7 +136,7 @@ uid: rabbitmq-management
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
 mail: rabbitmq-management@enterprisecoding.local
 
-dn: uid=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -146,7 +146,7 @@ uid: rabbitmq-producer
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
 mail: rabbitmq-producer@enterprisecoding.local
 
-dn: uid=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -184,12 +184,12 @@ description: RabbitMQ User Tags
 dn: cn=administrator,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Administrators
-uniqueMember: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
 
 dn: cn=management,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Management Users
-uniqueMember: uid=rabbitmq-management,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-management,ou=users,dc=enterprisecoding,dc=local
 
 dn: ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
@@ -198,26 +198,26 @@ description: RabbitMQ Default VHost
 dn: cn=access-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost erişim iznine sahip
-uniqueMember: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
-uniqueMember: uid=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
-uniqueMember: uid=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
 
 dn: cn=configure-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost yapılandırma iznine ship kullanıılae
-uniqueMember: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
 
 dn: cn=write-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost yazma iznine sahip kullanıcılar
-uniqueMember: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
-uniqueMember: uid=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
 
 dn: cn=read-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: groupOfUniqueNames
 description: RabbitMQ Default VHost okuma iznine sahip kullanıcılar
-uniqueMember: uid=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
-uniqueMember: uid=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
 EOF
 
 ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null

@@ -17,7 +17,7 @@ auth_backends.2 = internal
 
 auth_ldap.servers.1 = 127.0.0.1
 
-auth_ldap.dn_lookup_bind.user_dn = uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local
+auth_ldap.dn_lookup_bind.user_dn = cn=rabbitmq,ou=users,dc=enterprisecoding,dc=local
 auth_ldap.dn_lookup_bind.password = enterprisecoding
 auth_ldap.dn_lookup_attribute = uid
 auth_ldap.dn_lookup_base = ou=users,dc=enterprisecoding,dc=local
@@ -29,27 +29,31 @@ cat > /etc/rabbitmq/advanced.config <<EOF
 [
   {rabbit, [{auth_backends, [rabbit_auth_backend_ldap, rabbit_auth_backend_internal]}]},
   {rabbitmq_auth_backend_ldap,
-   [ {servers,               ["127.0.0.1"]},
-     {dn_lookup_base,        {"ou=users,dc=enterprisecoding,dc=local"}},
-     {user_dn_pattern,       "uid=${username},ou=users,dc=enterprisecoding,dc=local"},
-     {other_bind,            ["uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local","enterprisecoding"]},
+   [ 
+        {servers,               ["127.0.0.1"]},
+        {dn_lookup_base,        "ou=users,dc=enterprisecoding,dc=local"},
+        {user_dn_pattern,       "cn=\${username},ou=users,dc=enterprisecoding,dc=local"},
+        {other_bind,            {"cn=rabbitmq-app,ou=users,dc=enterprisecoding,dc=local","enterprisecoding"}},
 
-     {vhost_access_query,    {in_group, "cn=access-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-     {resource_access_query, {for, [
-         {permission, configure, {in_group, "cn=configure-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-         {permission, write, {in_group, "cn=write-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-         {permission, read, {in_group, "cn=read-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-       ]
-     }},
-     {tag_queries,           [
-         {administrator, {in_group, "cn=administrator,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-         {management, {in_group, "cn=management,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local"}},
-        ]
-      },
+        {vhost_access_query,    {in_group, "cn=access-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+        {resource_access_query, {for, 
+            [
+                {permission, configure, {in_group, "cn=configure-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {permission, write, {in_group, "cn=write-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {permission, read, {in_group, "cn=read-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+            ]
+        }},
+        {tag_queries, 
+            [
+                {administrator, {in_group, "cn=administrator,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {management, {in_group, "cn=management,ou=tags,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}}
+            ]
+        },
 
-     {use_ssl,               false},
-     {port,                  389},
-     {log,                   false} ] }
+        {use_ssl,               false},
+        {port,                  389},
+        {log,                   false} 
+    ]}
 ].
 EOF
 ```{{execute}}
