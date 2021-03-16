@@ -75,7 +75,7 @@ rabbitmqctl delete_user guest 2>/dev/null &> /dev/null
 echo ""
 echo "RabbitMQ kullanıma hazır..."
 
-echo "LDAP kuruluyor"
+echo "LDAP kuruluyor..."
 
 cat > /root/debconf-slapd.conf << 'EOF'
 slapd slapd/password1 password enterprisecoding
@@ -103,47 +103,114 @@ DEBIAN_FRONTEND=noninteractive apt install ldap-utils slapd -y  2>/dev/null &> /
 cat > install.ldif << 'EOF'
 dn: ou=users,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
-ou: Users
+ou: users
+description: Users
+
+dn: uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: rabbitmq
+sn: rabbitmq
+uid: rabbitmq
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: rabbitmq@enterprisecoding.local
+
+dn: uid=manager,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: manager
+sn: manager
+uid: manager
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: manager@enterprisecoding.local
+
+dn: uid=producer,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: producer
+sn: producer
+uid: producer
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: producer@enterprisecoding.local
+
+dn: uid=publisher,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: publisher
+sn: publisher
+uid: publisher
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: publisher@enterprisecoding.local
 
 dn: ou=groups,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
-ou: Groups
+ou: groups
+description: Groups
 
-dn: uid=rabbitmq,ou=users,dc=enterprisecoding,dc=local
-objectClass: top
-objectClass: account
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: rabbitmq
-uid: rabbitmq
-uidNumber: 16859
-gidNumber: 100
-homeDirectory: /home/rabbitmq
-loginShell: /bin/bash
-gecos: rabbitmq
-userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
-shadowLastChange: 0
-shadowMax: 0
-shadowWarning: 0
+dn: ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: rabbitmq
+description: RabbitMQ
 
-dn: uid=kursiyer,ou=users,dc=enterprisecoding,dc=local
-objectClass: top
-objectClass: account
-objectClass: posixAccount
-objectClass: shadowAccount
-cn: kursiyer
-uid: kursiyer
-uidNumber: 16849
-gidNumber: 100
-homeDirectory: /home/kursiyer
-loginShell: /bin/bash
-gecos: kursiyer
-userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
-shadowLastChange: 0
-shadowMax: 0
-shadowWarning: 0
+dn: ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: vhosts
+description: RabbitMQ VHosts
+
+dn: ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: tags
+description: RabbitMQ User Tags
+
+dn: ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: tags
+description: RabbitMQ User Tags
+
+dn: cn=administrator,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Administrators
+uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
+
+dn: cn=management,ou=tags,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Management Tags
+
+dn: ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+description: RabbitMQ Default VHost
+
+dn: cn=access-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Default VHost erişim iznine sahip
+uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: uid=producer,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: uid=publisher,ou=users,dc=enterprisecoding,dc=local
+
+dn: cn=configure-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Default VHost yapılandırma iznine ship kullanıılae
+uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
+
+dn: cn=write-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Default VHost yazma iznine sahip kullanıcılar
+uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: uid=producer,ou=users,dc=enterprisecoding,dc=local
+
+dn: cn=read-permission-users,ou=default,ou=vhosts,ou=rabbitmq,dc=enterprisecoding,dc=local
+objectClass: groupOfUniqueNames
+description: RabbitMQ Default VHost okuma iznine sahip kullanıcılar
+uniqueMember: uid=manager,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: uid=publisher,ou=users,dc=enterprisecoding,dc=local
 EOF
 
 ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null
 
 rm -f install.ldif  2>/dev/null &> /dev/null
+
+echo "LDAP kullanıma hazır..."
