@@ -2,8 +2,15 @@
 
 Sizin adınıza lab ortamına RabbitMQ ve yönetim eklentisi kurulmuştur. LDAP entegrasyonu amacıyla bir LDAP sunucusu konumlandırılmıştır. LDAP sunucu aşağıdaki şekilde yapılandırılmıştır;
 
+![LDAP hiyerarşisi](./assets/ldap-diagram.png)
 
+Tüm kullanıcılar `enterprisecoding`{{copy}} şifresi ile tanımlanmıştır.
 
+Bu lab'da RabbitMQ ile LDAP entegrasyonu gerçekleştireceksiniz. Senaryo gereği **users** organizasyon birimi altındaki tüm kullanıcılar RabbitMQ'ya giriş yapabilir. Kullanıcının bir vhost'a erişebilmesi için **app** => **rabbitmq** => **vhosts** altındaki ilgili vhost'a ait organizasyon birimi altında yer alan **access-permission-users** grubu içerisinde yer alması beklenmektedir.
+
+Kullanıcıların vhost altında yapabilecekleri olarak ilgili **vhost** organizasyon birimi altındaki **configure-permission-users**, **write-permission-users** ve **read-permission-users** gruplarında yer almasına göre şekillenecektir.
+
+Kullanıcı tag'i **app** => **rabbitmq** => **tags** altındaki ilgili gruptaki üyeliği belirlenecektir.
 # LDAP Eklentisi Kurulumu
 
 LDAP bağlantısı için gerekli erlang modülünü aşağıdaki komutla kurun;
