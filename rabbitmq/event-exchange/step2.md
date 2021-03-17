@@ -1,7 +1,7 @@
 # Arayüz
 
 Yan tarafta yer alan **RabbitMQ Management UI** segmesi üzerinden yönetim arayüzünü açın.
-Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapın.
+Açılan arayüzde `enterprisecoding`{{copy}} kullanıcı adı ve şifresi ile giriş yapın.
 
 Açılan arayüzde **Exchanges** segmesine geçin. Gelen exchange listesinde **amq.rabbitmq.event** exchange'inin olduğunu teyit edin.
 

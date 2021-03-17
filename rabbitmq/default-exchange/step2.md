@@ -4,7 +4,7 @@ Yönetim arayüzünde **Exchanges** segmesine geçin. **(AMQP default)** exchang
 
 `Enterprisecoding rabbitmq eğitimi örnek default exchange mesajı`
 
-**Routing key** alanına **lab.queue.is-emirleri.personel.ayrilma** değerini yazın. **Publish message** butonuna basarak mesajı yayınlayın. 
+**Routing key** alanına `lab.queue.is-emirleri.personel.ayrilma`{{copy}} değerini yazın. **Publish message** butonuna basarak mesajı yayınlayın. 
 
 **Message published.** mesajını aldığınızı teyit edin.
 **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.

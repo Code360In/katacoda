@@ -10,15 +10,15 @@
 
 **Name** alanına **lab.shovel.rabbitm02** değerini, **Source** başlığı altında **URI** alanına aşağıdaki değeri yazın.
 
-`amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672/default`
+`amqp://enterprisecoding:enterprisecoding@rabbitmq01:5672/default`{{copy}}
 
 **Queue** bölümüne **lab.shovel.queue.kaynak** değerini girin.
 
 **Destination** başlığı altında **URI** alanına aşağıdaki değeri yazın 
 
-`amqp://enterprisecoding:enterprisecoding@rabbitmq02:5672/default`
+`amqp://enterprisecoding:enterprisecoding@rabbitmq02:5672/default`{{copy}}
 
-**Queue** yerine **Exchange** seçin ve altındaki bölüme **lab.shovel.ex.hedef** değerini girin ve **Add shovel** butonuna basın.
+**Queue** yerine **Exchange** seçin ve altındaki bölüme `lab.shovel.ex.hedef`{{copy}} değerini girin ve **Add shovel** butonuna basın.
 
 ## Shovel Durumu
 

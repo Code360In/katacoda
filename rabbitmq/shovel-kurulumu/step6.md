@@ -2,7 +2,7 @@
 
 **RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Exchanges** segmesine geçiş yapın ve **lab.shovel.ex.kaynak**'i açın. **Publish message** bölümünde **Payload** alanına aşağıdaki değeri yazın.
 
-`Enterprisecoding rabbitmq eğitimi örnek shovel mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek shovel mesajı`{{copy}}
 
 **Publish message** butonuna basarak mesajı yayınlayın. **Message published.** mesajını aldığınızı teyit edin. **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 

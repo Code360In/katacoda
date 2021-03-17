@@ -1,3 +1,9 @@
+# Ortam
+
+Sizin adınıza lab ortamına RabbitMQ ve yönetim eklentisi kurulmuştur. LDAP entegrasyonu amacıyla bir LDAP sunucusu konumlandırılmıştır. LDAP sunucu aşağıdaki şekilde yapılandırılmıştır;
+
+
+
 # LDAP Eklentisi Kurulumu
 
 LDAP bağlantısı için gerekli erlang modülünü aşağıdaki komutla kurun;
@@ -9,20 +15,6 @@ Aşağıdaki komutla RabbitMQ LDAP eklentisini kurunİ
 `rabbitmq-plugins enable rabbitmq_auth_backend_ldap`{{execute}}
 
 Aşağıdaki komutla RabbitMQ'yu yetkilendirmede öncelikle LDAP, ardından da iç veritabanı kullanıcılarını yetkilendirecek şekilde yapılandırın;
-
-```bash
-cat > /etc/rabbitmq/rabbitmq.conf <<EOF
-auth_backends.1 = ldap
-auth_backends.2 = internal
-
-auth_ldap.servers.1 = 127.0.0.1
-
-auth_ldap.dn_lookup_bind.user_dn = cn=rabbitmq,ou=users,dc=enterprisecoding,dc=local
-auth_ldap.dn_lookup_bind.password = enterprisecoding
-auth_ldap.dn_lookup_attribute = uid
-auth_ldap.dn_lookup_base = ou=users,dc=enterprisecoding,dc=local
-EOF
-```{{execute}}
 
 ```bash
 cat > /etc/rabbitmq/advanced.config <<EOF

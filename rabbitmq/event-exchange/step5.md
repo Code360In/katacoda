@@ -2,7 +2,7 @@
 
 Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.fanout** exchange'i açın. Bu sayfada  yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
 
-`Enterprisecoding rabbitmq eğitimi örnek fanout exchange mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek fanout exchange mesajı`{{copy}}
 
 **Publish message** butonuna basarak mesajı yayınlayın. 
 

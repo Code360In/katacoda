@@ -2,11 +2,11 @@
 
 Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.direct.buggy** exchange'i açın. Bu sayfada yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
 
-`Enterprisecoding rabbitmq eğitimi örnek firehose tracer mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek firehose tracer mesajı`{{copy}}
 
 **Routing key** alanına aşağıdaki değeri yazın;
 
-`personel.isemri.baslama`
+`personel.isemri.baslama`{{copy}}
 
 **Publish message** butonuna basarak mesajı yayınlayın. 
 

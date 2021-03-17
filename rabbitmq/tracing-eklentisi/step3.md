@@ -4,9 +4,9 @@ Yönetim arayüzüne geçiş yaparak sayfayı yenileyin. **Admin** segmesine ge�
 
 Açılan sayfada **Add a new trace** bölümüne geçin. **Name** alanına aşağıdaki değeri yazın;
 
-`lab.tracing.hepsi`
+`lab.tracing.hepsi`{{copy}}
 
-**Tracer connection username** ve **Tracer connection password** alanlarına **enterprisecoding** değerini yazın ve **Add trace** butonuna basın.
+**Tracer connection username** ve **Tracer connection password** alanlarına `enterprisecoding`{{copy}} değerini yazın ve **Add trace** butonuna basın.
 
 Sayfanın üst bölümündeki **All traces** listesinde yeni bir girdi olduğunu teyit edin. **Trace log files** bölümünde **lab.tracing.hepsi.log** adıyla yer alan dosyanın 0 byte boyutunda olduğunu teyit edin.
 

@@ -2,7 +2,7 @@
 
 **RabbitMQ01** segmesi üzerinden açılan yönetim arayüzüne geçiş yapın. **Exchanges** segmesine geçiş yapın ve **lab.federation.ex**'i açın. **Publish message** bölümünde **Payload** alanına aşağıdaki değeri yazın.
 
-`Enterprisecoding rabbitmq eğitimi örnek federation mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek federation mesajı`{{copy}}
 
 **Publish message** butonuna basarak mesajı yayınlayın. **Message published.** mesajını aldığınızı teyit edin. **Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
 

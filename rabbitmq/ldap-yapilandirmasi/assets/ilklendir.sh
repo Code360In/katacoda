@@ -146,15 +146,15 @@ uid: rabbitmq-producer
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
 mail: rabbitmq-producer@enterprisecoding.local
 
-dn: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+dn: cn=rabbitmq-consumer,ou=users,dc=enterprisecoding,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
-cn: rabbitmq-publisher
-sn: rabbitmq-publisher
-uid: rabbitmq-publisher
+cn: rabbitmq-consumer
+sn: rabbitmq-consumer
+uid: rabbitmq-consumer
 userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
-mail: rabbitmq-publisher@enterprisecoding.local
+mail: rabbitmq-consumer@enterprisecoding.local
 
 dn: ou=groups,dc=enterprisecoding,dc=local
 objectClass: organizationalUnit
@@ -203,7 +203,7 @@ objectClass: GroupOfNames
 description: RabbitMQ Default VHost erişim iznine sahip
 member: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
 member: cn=rabbitmq-producer,ou=users,dc=enterprisecoding,dc=local
-member: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+member: cn=rabbitmq-consumer,ou=users,dc=enterprisecoding,dc=local
 
 dn: cn=configure-permission-users,ou=default,ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local
 objectClass: top
@@ -223,7 +223,7 @@ objectClass: top
 objectClass: GroupOfNames
 description: RabbitMQ Default VHost okuma iznine sahip kullanıcılar
 member: cn=rabbitmq-admin,ou=users,dc=enterprisecoding,dc=local
-member: cn=rabbitmq-publisher,ou=users,dc=enterprisecoding,dc=local
+member: cn=rabbitmq-consumer,ou=users,dc=enterprisecoding,dc=local
 EOF
 
 ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null

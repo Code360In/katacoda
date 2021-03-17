@@ -2,11 +2,11 @@
 
 Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.personel** exchange'i açın. Bu sayfada yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
 
-`Enterprisecoding rabbitmq eğitimi örnek alternatif exchange mesajı`
+`Enterprisecoding rabbitmq eğitimi örnek alternatif exchange mesajı`{{copy}}
 
 **Routing key** alanına aşağıdaki değeri yazın;
 
-`personel.is-emri.baslama`
+`personel.is-emri.baslama`{{copy}}
 
 **Publish message** butonuna basarak mesajı yayınlayın. 
 

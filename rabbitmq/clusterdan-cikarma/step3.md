@@ -1,7 +1,7 @@
 # Yönetim Arayüzü
 
 Yan tarafta yer alan **RabbitMQ01** segmesini açarak RabbitMQ01 sunucusu yönetim arayüzüne ulaşın.
-Açılan arayüzde **enterprisecoding** kullanıcı adı ve şifresi ile giriş yapın.
+Açılan arayüzde `enterprisecoding`{{copy}} kullanıcı adı ve şifresi ile giriş yapın.
 
 Yönetim arayüzünde diğer node'u artık olmadığını teyit edin.
 
