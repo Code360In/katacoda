@@ -62,4 +62,8 @@ Değişikliklerin devreye girmesi için RabbitMQ'yu yeniden başlatın;
 `rabbitmqctl stop_app`{{execute}}
 `rabbitmqctl start_app`{{execute}}
 
+Aşağıdak komutla **advanced.config** dosyasını inceleyin;
+
+`cat /etc/rabbitmq/advanced.config`{{execute}}
+
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

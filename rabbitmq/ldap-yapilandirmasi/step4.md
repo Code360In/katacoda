@@ -1,20 +1,7 @@
-# Yönetim Arayüzünden Mesaj Yayınlama
+# LDAP Logları
 
-Yönetim arayüzünde **Exchanges** segmesine geçin. **lab.ex.ana** exchange'i açın. Bu sayfada yer alan **Publish message** bölümünü açın. **Payload** alanına aşağıdaki içeriği yazın;
+Yeniden yönetim arayüzüne geçiş yaparak kullanıcı adı olarak `rabbitmq-admin`{{copy}} şifre olarak `enterprisecoding`{{copy}} vererek giriş yapmayı deneyin.
 
-`Enterprisecoding rabbitmq eğitimi örnek exchange-exchange mesajı`
+Logda yer alan yeni girdileri kontrol edin.
 
-**Routing key** alanına aşağıdaki değeri yazın;
-
-`personel.is-emri.baslama`
-
-**Publish message** butonuna basarak mesajı yayınlayın. 
-
-**Message published.** mesajını aldığınızı teyit edin.
-**Overview** bölümünde mesaja ilişkin **publish (in)** ve **publish (out)** grafiği oluştuğunu teyit edin.
-
-**Queues** segmesine geçiş yapın. Burada listenen **lab.queue.is-emirleri.personel.baslama**, **muhasebe-fatura-gelen-is-emirleri** ve **lab.queue.is-emirleri.personel.ayrilma** queue'ları için **Messages** grubunda **Ready** başlığını kontrol edin. Sadece **lab.queue.is-emirleri.personel.baslama** kuyruğunda hazır durumda bir mesaj olduğunu teyit edin.
-
-Listede **lab.queue.is-emirleri.personel.baslama** adına tıklayarak kuyruk sayfasına geçiş yapın.
-Açılan sayfa yer alan **Overview** bölündeki **Queued messages** grafiğinde 1 mesajı gösterildiğini teyit edin. 
-Sayfadaki **Get messages** bölümünü açın. Bu bölümde yer alan **Get message(s)** butonuna basarak kuyruktaki mesajı okuyun. Öz önce yayınladığınız mesajın geldiğini teyit edin.
+**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
