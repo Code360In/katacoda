@@ -35,12 +35,12 @@ cat > /etc/rabbitmq/advanced.config <<EOF
         {user_dn_pattern,       "cn=\${username},ou=users,dc=enterprisecoding,dc=local"},
         {other_bind,            {"cn=rabbitmq-app,ou=users,dc=enterprisecoding,dc=local","enterprisecoding"}},
 
-        {vhost_access_query,    {in_group, "cn=access-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+        {vhost_access_query,    {in_group, "cn=access-permission-users,ou=\${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
         {resource_access_query, {for, 
             [
-                {permission, configure, {in_group, "cn=configure-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
-                {permission, write, {in_group, "cn=write-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
-                {permission, read, {in_group, "cn=read-permission-users,ou=${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {permission, configure, {in_group, "cn=configure-permission-users,ou=\${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {permission, write, {in_group, "cn=write-permission-users,ou=\${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}},
+                {permission, read, {in_group, "cn=read-permission-users,ou=\${vhost},ou=vhosts,ou=rabbitmq,ou=app,dc=enterprisecoding,dc=local"}}
             ]
         }},
         {tag_queries, 
