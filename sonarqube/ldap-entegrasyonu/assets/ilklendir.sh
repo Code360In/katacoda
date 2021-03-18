@@ -173,6 +173,7 @@ description: SonarQube Uygulaması
 dn: cn=sonarqube-administrators,ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
 objectClass: top
 objectClass: groupOfUniqueNames
+objectClass: posixGroup
 cn: sonarqube-administrators
 description: SonarQube Administrators
 uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
@@ -184,6 +185,13 @@ rm -f install.ldif  2>/dev/null &> /dev/null
 
 echo "LDAP kuruldu..."
 
-curl -X POST -v -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin'
+echo "SonarQube'ün hazır olması bekleniyor kuruldu..."
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:9000/)" != "200" ]]
+do 
+   printf '.'
+   sleep 5
+done
+
+curl -X POST -v -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin' 2>/dev/null &> /dev/null
 
 echo "Etkileşimli ortam kullanıma hazır..."
