@@ -31,34 +31,34 @@ sonarqube   -   nofile   65536
 sonarqube   -   nproc    4096
 EOF
 
-apt-get update
+apt-get update 2>/dev/null &> /dev/null
 
 echo "OpenJDK 11 kuruluyor..."
-apt-get install openjdk-11-jdk -y
+apt-get install openjdk-11-jdk -y 2>/dev/null &> /dev/null
 
 echo "PostgreSQL kuruluyor..."
-wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
-echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list
+(wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -) 2>/dev/null &> /dev/null
+(echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list)  2>/dev/null &> /dev/null
 
-sudo apt install -y postgresql postgresql-contrib
-sudo systemctl enable postgresql
-sudo systemctl start postgresql
+sudo apt install -y postgresql postgresql-contrib 2>/dev/null &> /dev/null
+sudo systemctl enable postgresql 2>/dev/null &> /dev/null
+sudo systemctl start postgresql 2>/dev/null &> /dev/null
 
 echo "SonarQube veritabanı kullanıcısı hazırlanıyor..."
-sudo -u postgres createuser sonar
-sudo -u postgres psql -c "ALTER USER sonar WITH ENCRYPTED PASSWORD 'enterprisecoding';"
-sudo -u postgres psql -c "CREATE DATABASE sonarqube OWNER sonar;"
-sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;"
-systemctl restart postgresql
+sudo -u postgres createuser sonar 2>/dev/null &> /dev/null
+sudo -u postgres psql -c "ALTER USER sonar WITH ENCRYPTED PASSWORD 'enterprisecoding';" 2>/dev/null &> /dev/null
+sudo -u postgres psql -c "CREATE DATABASE sonarqube OWNER sonar;" 2>/dev/null &> /dev/null
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE sonarqube to sonar;" 2>/dev/null &> /dev/null
+systemctl restart postgresql 2>/dev/null &> /dev/null
 
 echo "SonarQube kuruluyor..."
 
-sudo curl -o /tmp/sonarqube.zip https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.7.1.42226.zip
-sudo unzip /tmp/sonarqube.zip -d /opt/
-mv /opt/sonarqube-8.7.1.42226/ /opt/sonarqube
-sudo groupadd sonar
-sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
-sudo chown sonar:sonar /opt/sonarqube/ -R
+sudo curl -o /tmp/sonarqube.zip https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.7.1.42226.zip 2>/dev/null &> /dev/null
+sudo unzip /tmp/sonarqube.zip -d /opt/ 2>/dev/null &> /dev/null
+mv /opt/sonarqube-8.7.1.42226/ /opt/sonarqube 2>/dev/null &> /dev/null
+sudo groupadd sonar 2>/dev/null &> /dev/null
+sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar 2>/dev/null &> /dev/null
+sudo chown sonar:sonar /opt/sonarqube/ -R 2>/dev/null &> /dev/null
 
 cat >> /opt/sonarqube/conf/sonar.properties <<EOF
 sonar.jdbc.username=sonar
@@ -90,8 +90,8 @@ LimitNPROC=4096
 [Install]
 WantedBy=multi-user.target
 EOF
-systemctl daemon-reload
-systemctl start sonarqube
+systemctl daemon-reload 2>/dev/null &> /dev/null
+systemctl start sonarqube 2>/dev/null &> /dev/null
 
 echo "SonarQube kullanıma hazır..."
 
@@ -118,6 +118,67 @@ EOF
 
 cat /root/debconf-slapd.conf | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive apt install ldap-utils slapd -y  2>/dev/null &> /dev/null
+
+cat > install.ldif << 'EOF'
+dn: ou=users,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: users
+description: Users
+
+dn: cn=sonarqube-app,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: sonarqube-app
+sn: sonarqube-app
+uid: sonarqube-app
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: sonarqube@enterprisecoding.local
+
+dn: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: sonarqube-admin
+sn: sonarqube-admin
+uid: sonarqube-admin
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: sonarqube-admin@enterprisecoding.local
+
+dn: cn=sonarqube-developer,ou=users,dc=enterprisecoding,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+cn: sonarqube-developer
+sn: sonarqube-developer
+uid: sonarqube-developer
+userPassword: {SSHA}S0+K1dQOUskDXl8QvTBaBIEwc0dx8wXZ
+mail: sonarqube-developer@enterprisecoding.local
+
+dn: ou=groups,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: groups
+description: Groups
+
+dn: cn=sonar-administrators,ou=groups,dc=enterprisecoding,dc=local
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: sonar-administrators
+description: SonarQube Administrators
+uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
+
+dn: cn=sonar-users,ou=groups,dc=enterprisecoding,dc=local
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: sonar-users
+description: SonarQube Users
+uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
+uniqueMember: cn=sonarqube-developer,ou=users,dc=enterprisecoding,dc=local
+EOF
+
+ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null
+
+rm -f install.ldif  2>/dev/null &> /dev/null
 
 echo "LDAP kuruldu..."
 echo "Etkileşimli ortam kullanıma hazır..."

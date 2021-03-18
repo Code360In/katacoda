@@ -1,58 +1,35 @@
-# Ön Gereksinimler
+# LDAP Eklentisi
 
-Kuruluma başlarken öncelikli olarak gerekli kurulum ve yapılandırmalar gerçekleştirilmeşidir. Bu amaçla aşağıdaki adımları takip edin.
+Sağ tarafta yer alan **SonarQube** segmesine tıklayarak SonarQube arayüzüne geçin. Kullanıcı adı ve şifesi olarak `admin`{{copy}} değerini kullanarak giriş yapın.
 
-## Kernel Parametreleri ve Sistem Limitleri
+Açılan SonarQube ana sayfasında **Administration** bölümünü açın.
 
-Kurulumun yapılacağı makinede işletim sistemi düzeyinde kernel parametreleri ve sistem limitleri yapılandırılmalıdır. Bu amaçla aşağıdaki komutları terminalde çalıştırarak **sysctl.conf** dosyasına gerekli eklemeleri yapın;
+**Administration** sayfasında **Marketplace** segmesine geçin.
 
 ```bash
-cat >> /etc/sysctl.conf <<EOF
+cat >> /opt/sonarqube/conf/sonar.properties << 'EOF'
+# LDAP Yapılandırması
 
-vm.max_map_count=262144
-fs.file-max=65536
-ulimit -n 65536
-ulimit -u 4096
+# Genel Yapılandırma
+sonar.security.realm=LDAP
+sonar.authenticator.createUsers: true
+
+ldap.url=ldap://127.0.0.1
+ldap.bindDn=cn=sonarqube-app,ou=users,dc=enterprisecoding,dc=local
+ldap.bindPassword=enterprisecoding
+
+# Kullanıcı Yapılandırma
+ldap.user.baseDn=ou=users,dc=enterprisecoding,dc=local
+ldap.user.request=(&(objectClass=inetOrgPerson)(uid={login}))
+ldap.user.realNameAttribute=cn
+ldap.user.emailAttribute=mail
+
+# Grup Yapılandırma
+ldap.group.baseDn=ou=groups,dc=enterprisecoding,dc=local
+ldap.group.request=(&(objectClass=posixGroup)(memberUid={uid}))
 EOF
 ```{{execute}}
 
-Aşağıdaki komutla **sysctl.conf** dosyasını görüntüleyerek sonuna yukarıdaki girdilerin eklendiğini teyit edin;
-
-`cat /etc/sysctl.conf`{{execute}}
-
-Benzer şekilde aşağıdaki komutla **limits.conf** dosyasına ilerideki adımlarda oluşturacağınız sonarqube kullanıcısı için gerekli limit bilgilerini eklenyin;
-
-```bash
-cat >> /etc/security/limits.conf <<EOF
-sonarqube   -   nofile   65536
-sonarqube   -   nproc    4096
-EOF
-```{{execute}}
-
-Aşağıdaki komutla **limits.conf** dosyasını görüntüleyerek sonuna yukarıdaki girdilerin eklendiğini teyit edin;
-
-`cat /etc/security/limits.conf`{{execute}}
-
-## Java Kurulumu
-
-SonarQube java ile geliştirilmiş bir uygulama olduğu için sistemde Java 11 kurulumu olmalıdır. Öncelikle repo güncellemesi yapın;
-
-`apt-get update`{{execute}}
-
-Ardından aşağıdaki komutla kurulumu gerçekleştirin;
-
-`apt-get install openjdk-11-jdk -y`{{execute}}
-
-Kurulumu aşağıdaki komutla kontrol edin;
-
-`java -version`{{execute}}
-
-Aşağıdaki çıktının geldiğini teyit edin;
-
-```bash
-openjdk version "11.0.11-ea" 2021-04-20
-OpenJDK Runtime Environment (build 11.0.11-ea+4-Ubuntu-0ubuntu3.16.04.1)
-OpenJDK 64-Bit Server VM (build 11.0.11-ea+4-Ubuntu-0ubuntu3.16.04.1, mixed mode, sharing)
-```
+`systemctl restart sonarqube`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
