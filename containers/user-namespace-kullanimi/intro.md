@@ -8,7 +8,7 @@ Bu senaryoda, container teknolojisinin olmazsa olmazı namespace'lerden birisi o
 
 ## Eğitim
 
-Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için eğitim sitemiz üzerinden [0’dan 100’e Uygulamalı Konteyner Temelleri ve Docker](https://learn.enterprisecoding.com/egitimler/konteyner/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
+Etkileşimli olarak Konteyner Temellerini öğrenerek Docker'a giriş yapmak için eğitim sitemiz üzerinden [0’dan 100’e Uygulamalı Konteyner Temelleri ve Docker](https://akademi.enterprisecoding.com/egitimler/konteyner/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
 
 ## Yardım
 

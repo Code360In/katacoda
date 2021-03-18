@@ -7,7 +7,7 @@
     "intro": {
       "text": "intro.md",
       "code": "foreground.sh",
-      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+      "credits": "[Enterprisecoding Akademi](https://akademi.enterprisecoding.com)"
     },"steps": [
       {
         "title": "Merhaba",

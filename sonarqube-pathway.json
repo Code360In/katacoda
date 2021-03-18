@@ -1,0 +1,12 @@
+{
+    "title": "SonarQube Kursu",
+    "description": "Enterprisecoding SonarQube kursu",
+    "icon": "fa-docker",
+    "courses": [
+      {
+        "course_id": "sonarqube-kurulumu",
+        "title": "SonarQube Kurulumu",
+        "description": "Linux işletim sistemi üzerinde SonarQube kurulumu"
+      }
+    ]
+  }

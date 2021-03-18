@@ -46,7 +46,7 @@
       "text": "intro.md",
       "courseData": "env-init.sh",
       "code": "foreground.sh",
-      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+      "credits": "[Enterprisecoding Akademi](https://akademi.enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"
@@ -54,7 +54,7 @@
   },
   "environment": {
     "uilayout": "terminal-iframe",
-    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için learn.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için akademi.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
     "showdashboard": true,
     "dashboards": [
       {"name": "RabbitMQ01", "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"},

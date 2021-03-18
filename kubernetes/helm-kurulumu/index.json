@@ -27,7 +27,7 @@
       "text": "intro.md",
       "courseData": "env-init.sh",
       "code": "foreground.sh",
-      "credits": "[Learn @ Enterprisecoding](https://learn.enterprisecoding.com)"
+      "credits": "[Enterprisecoding Akademi](https://akademi.enterprisecoding.com)"
     },
     "finish": {
       "text": "finish.md"

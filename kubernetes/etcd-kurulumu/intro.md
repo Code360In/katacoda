@@ -9,7 +9,7 @@ Bu senaryoda 1 Linux üzerinde nasıl Etcd server kurabileceğinizi ve kullanabi
 
 ## Yardım
 
-ETCD Server'ın ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için [Learn @ Enterprisecoding](https://learn.enterprisecoding.com/)  sitemizi ziyaret edebilirsiniz.
+ETCD Server'ın ne olduğu, nasıl bir mimariye sahip olduğu, ne amaçla kullanıldığına dair detayları öğrenmek için [Enterprisecoding Akademi](https://akademi.enterprisecoding.com/)  sitemizi ziyaret edebilirsiniz.
 
 Senaryoya başlamak için lütfen aşağıda yer alan **Start Scenario** butonuna basarak anlatılan adımları takip ediniz.
 

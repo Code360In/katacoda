@@ -8,7 +8,7 @@ Bu senaryoda, RabbitMQ cluster'dan node çıkarmayı deneyimleyeceksiniz.
 
 ## Eğitim
 
-Etkileşimli olarak RabbitMQ'ya giriş yapmak için eğitim sitemiz üzerinden [Etkileşimli RabbitMQ](https://learn.enterprisecoding.com/egitimler/konteyner/uygulamali-konteyner-temelleri-ve-docker/) eğitimimizi alabilirsiniz.
+Etkileşimli olarak RabbitMQ'ya giriş yapmak için eğitim sitemiz üzerinden [Etkileşimli RabbitMQ](https://akademi.enterprisecoding.com/egitimler/kubernetes/rabbitmq-online-ve-sinif-egitimi/) eğitimimizi alabilirsiniz.
 
 ## Yardım
 
