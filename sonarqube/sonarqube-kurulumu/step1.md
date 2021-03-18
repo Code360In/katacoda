@@ -31,7 +31,7 @@ EOF
 
 Aşağıdaki komutla **limits.conf** dosyasını görüntüleyerek sonuna yukarıdaki girdilerin eklendiğini teyit edin;
 
-`cat /etc/security/limits.conf {{execute}}
+`cat /etc/security/limits.conf`{{execute}}
 
 ## Java Kurulumu
 

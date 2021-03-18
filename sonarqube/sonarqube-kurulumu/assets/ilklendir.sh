@@ -17,6 +17,6 @@ EOF
 
 sudo sysctl -w vm.max_map_count=262144 2>/dev/null &> /dev/null
 sudo add-apt-repository ppa:openjdk-r/ppa 2>/dev/null &> /dev/null
-sudo apt install zip 2>/dev/null &> /dev/null
+sudo apt install -y zip 2>/dev/null &> /dev/null
 
 echo "Etkileşimli ortam kullanıma hazır..."
