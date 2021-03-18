@@ -1,4 +1,4 @@
-Bu adımlar ardından artık SonarQube kurulumu hakkında deneyim kazandınız.
+Bu adımlar ardından artık SonarQube ile LDAP entegrasyonu hakkında deneyim kazandınız.
 
 Enterprisecoding üzerinde paylaştığımız [diğer makaleleri](http://www.enterprisecoding.com) takip edebilirsiniz.
 
