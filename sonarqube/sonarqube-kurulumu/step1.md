@@ -18,7 +18,7 @@ EOF
 
 Aşağıdaki komutla **sysctl.conf** dosyasını görüntüleyerek sonuna yukarıdaki girdilerin eklendiğini teyit edin;
 
-`cat /etc/sysctl.conf {{execute}}
+`cat /etc/sysctl.conf`{{execute}}
 
 Benzer şekilde aşağıdaki komutla **limits.conf** dosyasına ilerideki adımlarda oluşturacağınız sonarqube kullanıcısı için gerekli limit bilgilerini eklenyin;
 
@@ -35,12 +35,24 @@ Aşağıdaki komutla **limits.conf** dosyasını görüntüleyerek sonuna yukar�
 
 ## Java Kurulumu
 
-SonarQube java ile geliştirilmiş bir uygulama olduğu için sistemde Java 11 kurulumu olmalıdır. Aşağıdaki komutla kurulumu gerçekleştirin;
+SonarQube java ile geliştirilmiş bir uygulama olduğu için sistemde Java 11 kurulumu olmalıdır. Öncelikle repo güncellemesi yapın;
+
+`apt-get update`{{execute}}
+
+Ardından aşağıdaki komutla kurulumu gerçekleştirin;
 
 `apt-get install openjdk-11-jdk -y`{{execute}}
 
 Kurulumu aşağıdaki komutla kontrol edin;
 
 `java -version`{{execute}}
+
+Aşağıdaki çıktının geldiğini teyit edin;
+
+```bash
+openjdk version "11.0.11-ea" 2021-04-20
+OpenJDK Runtime Environment (build 11.0.11-ea+4-Ubuntu-0ubuntu3.16.04.1)
+OpenJDK 64-Bit Server VM (build 11.0.11-ea+4-Ubuntu-0ubuntu3.16.04.1, mixed mode, sharing)
+```
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

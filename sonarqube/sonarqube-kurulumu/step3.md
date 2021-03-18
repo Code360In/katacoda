@@ -8,6 +8,10 @@ Kurulumunu yapmak üzere aşağıdaki komutla SonarQube'ü geçici dizin altına
 
 `sudo unzip /tmp/sonarqube.zip -d /opt/`{{execute}}
 
+Ayıklanan dizini **/opt/sonarqube** olarak taşıyın;
+
+`mv /opt/sonarqube-8.7.1.42226/ /opt/sonarqube`{{execute}}
+
 ## Servis Kullanıcı ve Grubu
 
 Güvenlik açısından sonarqube hizmetini düşük yetkili bir kullanıcı ile kullanmalısınız. Bu amaçla aşağıdaki komutla sonar grubunu oluşturun;
@@ -75,5 +79,9 @@ Servisi aktive edin;
 Son olarak servisi başlatın;
 
 `systemctl start sonarqube`{{execute}}
+
+Servisi başarılı şekilde başladığını teyit edin;
+
+`systemctl status sonarqube`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

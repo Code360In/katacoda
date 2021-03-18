@@ -14,7 +14,7 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" 
 
 Hazırlıklar ardından aşağıdaki komutla PostgreSQL kurulumunu yapın;
 
-`sudo apt install postgresql postgresql-contrib`{{execute}}
+`sudo apt install -y postgresql postgresql-contrib`{{execute}}
 
 Kurulumun başarılı olduğunu aşağıdaki komutla kontrol edebilirsiniz;
 
@@ -26,7 +26,7 @@ PostgreSQL hizmetini aktif duruma getirin;
 
 PostgreSQL hizmetini başlatın;
 
-`sudo systemctl start  postgresql`{{execute}}
+`sudo systemctl start postgresql`{{execute}}
 
 SonarQube için bir veritabanı kullanıcısı oluşturun;
 
@@ -46,6 +46,6 @@ Bu veritabanı üzerinde sonar kullanıcısına tüm yetkileri tanımlayın;
 
 PostgreSQL hizmetini yeniden başlatın;
 
-`systemctl restart  postgresql`{{execute}}
+`systemctl restart postgresql`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
