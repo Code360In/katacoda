@@ -1,10 +1,6 @@
-# LDAP Eklentisi
+# LDAP Yapılandırması
 
-Sağ tarafta yer alan **SonarQube** segmesine tıklayarak SonarQube arayüzüne geçin. Kullanıcı adı ve şifesi olarak `admin`{{copy}} değerini kullanarak giriş yapın.
-
-Açılan SonarQube ana sayfasında **Administration** bölümünü açın.
-
-**Administration** sayfasında **Marketplace** segmesine geçin.
+Aşağıdaki komutla sonarqube yapılandırmasına LDAP entegrasyonuna ilişkin girdileri ekleyin;
 
 ```bash
 cat >> /opt/sonarqube/conf/sonar.properties << 'EOF'
@@ -25,10 +21,12 @@ ldap.user.realNameAttribute=cn
 ldap.user.emailAttribute=mail
 
 # Grup Yapılandırma
-ldap.group.baseDn=ou=groups,dc=enterprisecoding,dc=local
+ldap.group.baseDn=ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
 ldap.group.request=(&(objectClass=posixGroup)(memberUid={uid}))
 EOF
 ```{{execute}}
+
+Değişikliklerin devreye girmesi için sonaruqbe hizmetini yeniden başaltın;
 
 `systemctl restart sonarqube`{{execute}}
 

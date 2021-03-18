@@ -160,20 +160,22 @@ objectClass: organizationalUnit
 ou: groups
 description: Groups
 
-dn: cn=sonar-administrators,ou=groups,dc=enterprisecoding,dc=local
+dn: ou=app,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: app
+description: Uygulamalar
+
+dn: ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
+objectClass: organizationalUnit
+ou: rabbitmq
+description: SonarQube Uygulaması
+
+dn: cn=sonarqube-administrators,ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
 objectClass: top
 objectClass: groupOfUniqueNames
-cn: sonar-administrators
+cn: sonarqube-administrators
 description: SonarQube Administrators
 uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
-
-dn: cn=sonar-users,ou=groups,dc=enterprisecoding,dc=local
-objectClass: top
-objectClass: groupOfUniqueNames
-cn: sonar-users
-description: SonarQube Users
-uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
-uniqueMember: cn=sonarqube-developer,ou=users,dc=enterprisecoding,dc=local
 EOF
 
 ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f install.ldif  2>/dev/null &> /dev/null
@@ -181,4 +183,7 @@ ldapadd -x -D "cn=admin,dc=enterprisecoding,dc=local" -w enterprisecoding -f ins
 rm -f install.ldif  2>/dev/null &> /dev/null
 
 echo "LDAP kuruldu..."
+
+curl -X POST -v -u admin:admin 'http://localhost:9000/api/users/change_password?login=enterpriecoding&password=enterpriecoding&previousPassword=admin
+
 echo "Etkileşimli ortam kullanıma hazır..."
