@@ -9,7 +9,7 @@
         "description": "Linux işletim sistemi üzerinde SonarQube kurulumu"
       },
       {
-        "course_id": "ldap-ntegrasyonu",
+        "course_id": "ldap-entegrasyonu",
         "title": "LDAP Entegrasyonu",
         "description": "SonarQube ile LDAP Entegrasyonu"
       }
