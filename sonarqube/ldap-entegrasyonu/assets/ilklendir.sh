@@ -184,6 +184,6 @@ rm -f install.ldif  2>/dev/null &> /dev/null
 
 echo "LDAP kuruldu..."
 
-curl -X POST -v -u admin:admin 'http://localhost:9000/api/users/change_password?login=enterpriecoding&password=enterpriecoding&previousPassword=admin
+curl -X POST -v -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin'
 
 echo "Etkileşimli ortam kullanıma hazır..."
