@@ -1,15 +1,14 @@
-# LDAP Grupları
+# LDAP Kullanıcı Yetkileri
 
-## LDAP Grubunu Tanımlama
-Açılan yönetim sayfasında **Security** segmesi altındaki **Groups** linkine tıklayın. Açılan **Groups** sayfasında sağ üst köşede yer alan **Create Group** butonuna basın. Açılan **Create Group** dialoğunda **Name** alanına `sonarqube-administrators`{{copy}} LDAP grubu adını, **Description** alanına `SonarQube Administrators`{{copy}} yazın.
-
-## LDAP Grubu Yetkilendirme
-
-Yönetim sayfasında **Security** segmesi altındaki **Global Permissions** linkine tıklayın. Açılan **Global Permissions** sayfasında **sonarqube-administrators** grubunu bulun. Bu grup için aşağıdaki yetkileri verin;
+Yönetim sayfasında **Security** segmesi altındaki **Global Permissions** linkine tıklayın. Açılan **Global Permissions** sayfasında **sonarqube-admin** kullanıcısı için aşağıdaki yetkileri verin;
 
 * Administer System
 * Administer - Quality Gates
 * Administer - Quality Profiles
 * Create - Projects
+
+Sağ Üst bölümde yer alan **A** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın. 
+
+Açılan giriş sayfasında kullanıcı adı olarak yeniden `sonarqube-admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Sistem tarafından hala standart kullanıcı olarak kabul edildiğinizi (Örneğin; Administration segmesinin bulunmadığını) teyit edin. Sağ Üst bölümde yer alan **S** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

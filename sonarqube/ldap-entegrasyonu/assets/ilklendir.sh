@@ -194,4 +194,5 @@ done
 
 curl -X POST -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin' 2>/dev/null &> /dev/null
 
+echo ""
 echo "Etkileşimli ortam kullanıma hazır..."
