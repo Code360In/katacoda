@@ -22,7 +22,7 @@ ldap.user.emailAttribute=mail
 
 # Grup Yapılandırma
 ldap.group.baseDn=ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
-ldap.group.request=(&(objectClass=posixGroup)(memberUid={uid}))
+ldap.group.request=(&(objectClass=groupOfUniqueNames)(uniqueMember={dn}))
 EOF
 ```{{execute}}
 

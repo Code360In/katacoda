@@ -173,7 +173,6 @@ description: SonarQube Uygulaması
 dn: cn=sonarqube-administrators,ou=sonarqube,ou=app,dc=enterprisecoding,dc=local
 objectClass: top
 objectClass: groupOfUniqueNames
-objectClass: posixGroup
 cn: sonarqube-administrators
 description: SonarQube Administrators
 uniqueMember: cn=sonarqube-admin,ou=users,dc=enterprisecoding,dc=local
