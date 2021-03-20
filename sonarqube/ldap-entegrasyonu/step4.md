@@ -1,5 +1,3 @@
 # SonarQube Arayüzü
 
-Kısa bir süre SonarQube'ün başlamasını bekledikten sonra yan tarafta bulunan **SonarQube** segmesine tıklayarak SonarQube arayüzünü açıldığını teyit edin. Açılan giriş sayfasına kullanıcı adı ve şifre olarak `admin`{{copy}} değerini girerek giriş yapın. 
-
-Açılan **Update your password** sayfasında şifre güncellemesi yapın. SonarQube arayüzünü inceleyin.
+Sağ Üst bölümde yer alan **A** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın. Açılan giriş sayfasında bu defa kullanıcı adı olarak yeniden `sonarqube-admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Sistem tarafından bu defa yönetici kullanıcı olarak kabul edildiğinizi (Örneğin; Administration segmesinin yer aldığını) teyit edin. 

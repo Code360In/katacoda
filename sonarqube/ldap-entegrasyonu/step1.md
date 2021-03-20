@@ -1,3 +1,11 @@
+# Ortam
+
+Sizin adınıza lab ortamına SonarQube kurulmuştur. LDAP entegrasyonu amacıyla bir LDAP sunucusu konumlandırılmıştır. LDAP sunucu aşağıdaki şekilde yapılandırılmıştır;
+
+![LDAP hiyerarşisi](./assets/ldap-diagram.png)
+
+Tüm kullanıcılar `enterprisecoding`{{copy}} şifresi ile tanımlanmıştır.
+
 # LDAP Yapılandırması
 
 Aşağıdaki komutla sonarqube yapılandırmasına LDAP entegrasyonuna ilişkin girdileri ekleyin;
