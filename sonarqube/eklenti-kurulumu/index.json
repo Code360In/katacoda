@@ -1,0 +1,48 @@
+{
+  "title": "Eklenti Kurulumu",
+  "description": "SonarQube eklenti kurulumu",
+  "difficulty": "Beginner",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Adım 1",
+        "text": "step1.md"
+      },
+      {
+        "title": "Adım 2",
+        "text": "step2.md"
+      },
+      {
+        "title": "Adım 3",
+        "text": "step3.md"
+      },
+      {
+        "title": "Adım 4",
+        "text": "step4.md"
+      }
+    ],
+    "assets": {
+        "host01": [
+            {"file": "ilklendir.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+        ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "credits": "[Enterprisecoding Akademi](https://akademi.enterprisecoding.com)"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mEtkileşimli Terminaliniz.Daha fazla eğitim için akademi.enterprisecoding.com'u ziyaret edebilirsiniz\u001b[m\r\n",
+    "showdashboard": true,
+    "dashboards": [{"name": "SonarQube", "href": "https://[[HOST_SUBDOMAIN]]-9000-[[KATACODA_HOST]].environments.katacoda.com"}]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
