@@ -2,32 +2,56 @@
 
 Sizin adınıza lab ortamına SonarQube kurulumu yapılmıştır. Yan tarafta yer alan **SonarQube** segmesi üzerinden arayüze ulaşabilirsiniz. Statik kod analizi yapılacak olan örnek uygulama kodları sizin için home dizin altında **uygulama** dizini altına kopyalanmıştır.
 
-# Arayüz Üzerinden Eklenti Kurulumu
+Aşağıdaki komutla uygulama kodlarını inceleyin;
 
-Yan tarafta yer alan **SonarQube** segmesine tıklayarak SonarQube arayüzünü açın. Açılan giriş sayfasında kullanıcı adı olarak `admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. **Administration** linkine tıklayarak yönetim sayfasına geçin. Açılan yönetim sayfasında **Marketplace** segmesine tıklayın.
+`ls -al uygulama`{{execute}}
 
-**Marketplace** sayfasında listelenen eklentilerden **TFVC Integration** eklentisini bularak satırın sağında yer alan **Install** butonuna basın. Kurulumun başladığını ve ardından yeşil renkle **Install Pending** mesajının geldiğini teyit edin.
+Aşağıdaki komutla uygulama dizinine geçin;
 
-Kurulumun bitmesi ardından sayfanın üst bölümünde aşağıdaki mesajın geldiğini teyit edin;
+`cd uygulama`{{execute}}
 
-`SonarQube needs to be restarted in order to install 1 plugins`
+# Statik Kod Analizi Özellikleri
 
-Mesajın sağında kırmızı olarak yer alan `Restart Server` butonuna basın. Açılan **Restart Server** dialogunda yer alan **Restart** butonuna basarak SonarQube'ü yeniden başlatılmasını onaylayın. Aşağıdaki mesajın sayfanın üstünde göründüğünü onaylayın.
+Aşağıdaki komutla SonarScanner'ı **/tmp/** dizini altına indirin;
 
-`SonarQube restart is in progress. Ongoing Background Tasks are completing.`
+`wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.0.2311-linux.zip /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip`{{execute}}
 
-Yeniden başlatma ardından giriş sayfasının açıldığını teyit edin. Yukarıda verilen kullanıcı bilgileri ile yeniden giriş yapın. **Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin listelendiğini teyit edin.
+İnen dosyayı **/opt/** altına ayıklayın;
 
-# Arayüz Üzerinden Eklenti Kaldırma
+`unzip /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip -d /opt/`{{execute}}
 
-**Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin bulunduğu satırın sağında yer alan **Uninstall** butonuna basın. Uygulama kaldırıldıktan sonra **Uninstall Pending** yazısının geldiğini teyit edin. Sayfanın üst bölümünde aşağıdaki mesajın geldiğini teyit edin;
+**sonar-scanner-cli-4.6.0.2311-linux** dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
 
-`SonarQube needs to be restarted in order to uninstall 1 plugins`
+`mv /opt/sonar-scanner-cli-4.6.0.2311-linux -d /opt/sonar-scanner-cli`{{execute}}
 
-Mesajın sağında kırmızı olarak yer alan `Restart Server` butonuna basın. Açılan **Restart Server** dialogunda yer alan **Restart** butonuna basarak SonarQube'ü yeniden başlatılmasını onaylayın. Aşağıdaki mesajın sayfanın üstünde göründüğünü onaylayın.
+**/opt/sonar-scanner-cli/conf/sonar-scanner.properties* dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
 
-`SonarQube restart is in progress. Ongoing Background Tasks are completing.`
+`#sonar.host.url=http://localhost:9000`
 
-Yeniden başlatma ardından giriş sayfasının açıldığını teyit edin. Yukarıda verilen kullanıcı bilgileri ile yeniden giriş yapın. **Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin artık listelenmediğini teyit edin.
+SonarScanner statik kod analizine dair yapılandırmaları **sonar-project.properties** dosyasından okuyabilir. Aşağıdaki komutla **sonar-project.properties** dosyasını oluşturun;
+
+```bash
+cat > sonar-project.properties << 'EOF'
+onar.projectKey=com.enterprisecoding:sonarqube-scanner
+sonar.projectName=SonarQube Scanner Kullanım Örneği
+sonar.projectVersion=1.0
+
+sonar.sources=src,copybooks
+
+sonar.sourceEncoding=UTF-8
+
+## Cobol Diline ait özellikler
+sonar.cobol.copy.directories=copybooks
+sonar.cobol.file.suffixes=cbl,cpy
+sonar.cobol.copy.suffixes=cpy
+
+## Flex'e ait özellikler
+sonar.flex.cobertura.reportPath=coverage-report/coverage-cobertua-flex.xml
+
+# PL/I'a ait özellikler
+sonar.pli.marginLeft=2
+sonar.pli.marginRight=0
+EOF
+```{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

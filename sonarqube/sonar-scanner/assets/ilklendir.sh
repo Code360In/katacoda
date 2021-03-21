@@ -95,19 +95,22 @@ systemctl start sonarqube 2>/dev/null &> /dev/null
 
 echo "SonarQube başlatıldı..."
 
+echo "Örnek uygulama hazırlanıyor..."
+
+curl -X POST -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin' 2>/dev/null &> /dev/null
+
+git clone https://github.com/SonarSource/sonar-scanning-examples.git /tmp/ornekler/ 2>/dev/null &> /dev/null
+
+mv /tmp/ornekler/sonarqube-scanner ~/uygulama 2>/dev/null &> /dev/null
+rm -f ~/uygulama/README.md 2>/dev/null &> /dev/null
+rm -f ~/uygulama/sonar-project.properties 2>/dev/null &> /dev/null
+
 echo "SonarQube'ün hazır olması bekleniyor..."
 while [[ "$(curl -u admin:admin -X POST -s -o /dev/null -w ''%{http_code}'' http://localhost:9000/api/system/health)" != "200" ]]
 do 
    printf '.'
    sleep 5
 done 
-
-curl -X POST -u admin:admin 'http://localhost:9000/api/users/change_password?login=admin&password=enterprisecoding&previousPassword=admin' 2>/dev/null &> /dev/null
-
-git clone https://github.com/SonarSource/sonar-scanning-examples.git /tmp/ornekler/
-
-mv /tmp/ornekler/sonarqube-scanner ~/uygulama
-rm -f ~/uygulama/README.md
 
 echo ""
 echo "Etkileşimli ortam kullanıma hazır..."
