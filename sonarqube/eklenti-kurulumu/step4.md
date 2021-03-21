@@ -1,3 +1,0 @@
-# SonarQube Arayüzü
-
-Sağ Üst bölümde yer alan **A** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın. Açılan giriş sayfasında bu defa kullanıcı adı olarak yeniden `sonarqube-admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Sistem tarafından bu defa yönetici kullanıcı olarak kabul edildiğinizi (Örneğin; Administration segmesinin yer aldığını) teyit edin. 

@@ -1,18 +1,27 @@
-# LDAP Entegrasyon Testi
+# Komut Satırından Eklenti Kurulumu
 
-## Admin Girişi
+Aşağıdaki komutu kullanarak [https://github.com/lg2de/sonar-scm-tfvc](https://github.com/lg2de/sonar-scm-tfvc) adresinde yer alan SonarQube Tfvc eklentisini **/opt/sonarqube/extensions/plugins/** dizini altına indirin;
 
-Sağ tarafta yer alan **SonarQube** segmesine tıklayarak SonarQube arayüzünü açın. Açılan giriş sayfasında kullanıcı adı olarak `admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. **Administration** linkine tıklayarak yönetim sayfasına geçin. Açılan yönetim sayfasında **Security** segmesi altındaki **Users** linkine tıklayın.
+`wget https://github.com/lg2de/sonar-scm-tfvc/releases/download/2.3.0/sonar-scm-tfvc-plugin-2.3.0-73.jar -O /opt/sonarqube/extensions/plugins/sonar-scm-tfvc-plugin-2.3.0-73.jar`{{execute}}
 
-Açılan **Users** sayfasında sadece Admin kullanıcısının yer aldığını teyit edin. Sağ Üst bölümde yer alan **A** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın.
-## LDAP Kullanıcısı İle Giriş
+Dosya sahibini aşağıdaki komutla sonar kullanıcısı yapın;
 
-Giriş sayfasında bu defa kullanıcı adı olarak `sonarqube-admin`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Giriş yapabildiğinizi teyit edin. Sistem tarafından standart kullanıcı olarak kabul edildiğinizi (Örneğin; Administration segmesinin bulunmadığını) teyit edin. Sağ Üst bölümde yer alan **S** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın.
+`chown sonar:sonar /opt/sonarqube/extensions/plugins/sonar-scm-tfvc-plugin-2.3.0-73.jar`{{execute}}
 
-## Otomatik Oluşan Kullanıcı
+Aşağıdaki komutla SonarQube hizmetini yeniden başlatın;
 
-Sisteme yeniden yukarıda bilgileri bulunan `admin`{{copy}} kullanıcısı ile giriş yapın. **Administration** linkine tıklayarak yönetim sayfasına geçin. Açılan yönetim sayfasında **Security** segmesi altındaki **Users** linkine tıklayın.
+`systemctl restart sonarqube`{{execute}}
 
-Açılan **Users** sayfasında Admin kullanıcısının yanında artık **sonarqube-admin** kullanıcısının da listelendiği teyit edin.
+Yeniden başlatma ardından giriş sayfasının açıldığını teyit edin. Önceki adımda verilen kullanıcı bilgileri ile yeniden giriş yapın. **Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin yeniden listelendiğini teyit edin.
 
-**Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
+# Komut Satırından Eklenti Kaldırma
+
+Aşağıdaki komutu çalıştırarak az önce kurduğunuz Tfvc eklentisini kaldırın;
+
+`rm -f /opt/sonarqube/extensions/plugins/sonar-scm-tfvc-plugin-2.3.0-73.jar`{{execute}}
+
+Değişikliklerin devreye alınması için aşağıdaki komutla SonarQube hizmetini yeniden başlatın;
+
+`systemctl restart sonarqube`{{execute}}
+
+Yeniden başlatma ardından giriş sayfasının açıldığını teyit edin. Yukarıda verilen kullanıcı bilgileri ile yeniden giriş yapın. **Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin artık listelenmediğini teyit edin.
