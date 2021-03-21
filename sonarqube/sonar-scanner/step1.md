@@ -30,7 +30,7 @@ Aşağıdaki komutla SonarScanner'ı **/tmp/** dizini altına indirin;
 
 `mv /opt/sonar-scanner-4.6.0.2311-linux/ /opt/sonar-scanner-cli/`{{execute}}
 
-**/opt/sonar-scanner-cli/conf/sonar-scanner.properties** dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
+`/opt/sonar-scanner-cli/conf/sonar-scanner.properties`{{copy}} dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
 
 `#sonar.host.url=http://localhost:9000`
 
