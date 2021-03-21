@@ -2,29 +2,35 @@
 
 Sizin adınıza lab ortamına SonarQube kurulumu yapılmıştır. Yan tarafta yer alan **SonarQube** segmesi üzerinden arayüze ulaşabilirsiniz. Statik kod analizi yapılacak olan örnek uygulama kodları sizin için home dizin altında **uygulama** dizini altına kopyalanmıştır.
 
-Aşağıdaki komutla uygulama kodlarını inceleyin;
-
-`ls -al uygulama`{{execute}}
-
 Aşağıdaki komutla uygulama dizinine geçin;
 
 `cd uygulama`{{execute}}
+
+Aşağıdaki komutla uygulama dizinlerini inceleyin;
+
+`ls -al`{{execute}}
+
+Aşağıdaki komutla uygulama kodlarını inceleyin;
+
+`ls -al src`{{execute}}
+
+Farklı programlama dillerine ait ayrı ayrı dizinler olduğunu teyit edin.
 
 # Statik Kod Analizi Özellikleri
 
 Aşağıdaki komutla SonarScanner'ı **/tmp/** dizini altına indirin;
 
-`wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.0.2311-linux.zip /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip`{{execute}}
+`wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.0.2311-linux.zip -O /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip`{{execute}}
 
 İnen dosyayı **/opt/** altına ayıklayın;
 
 `unzip /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip -d /opt/`{{execute}}
 
-**sonar-scanner-cli-4.6.0.2311-linux** dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
+`sonar-scanner-cli-4.6.0.2311-linux`{{copy}} dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
 
-`mv /opt/sonar-scanner-cli-4.6.0.2311-linux -d /opt/sonar-scanner-cli`{{execute}}
+`mv /opt/sonar-scanner-4.6.0.2311-linux/ /opt/sonar-scanner-cli/`{{execute}}
 
-**/opt/sonar-scanner-cli/conf/sonar-scanner.properties* dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
+**/opt/sonar-scanner-cli/conf/sonar-scanner.properties** dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
 
 `#sonar.host.url=http://localhost:9000`
 
@@ -53,5 +59,9 @@ sonar.pli.marginLeft=2
 sonar.pli.marginRight=0
 EOF
 ```{{execute}}
+
+Aşağıdaki komutla **sonar-project.properties** dosyasının oluştuğunu teyit edin;
+
+`ls -al`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.
