@@ -18,6 +18,10 @@ Açılan **Users** sayfasında sağ üst köşede yer alan **Create user** buton
 **Security** segmesi altında yer alan **Global Permissions** linkine tıklayın. Açılan **Global Permissions** sayfasında az önce oluşturduğunuz analiz kullanıcısı için **Execute Analysis** sütunundaki check-box'ı işaretleyerek bu yetkiyi verin. Sağ Üst bölümde yer alan **A** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın.
 ## Token Oluşturma
 
-Giriş sayfasında bu defa kullanıcı adı olarak `sonarqube-analiz`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Açılan SonarQube ana sayfasının sağ Üst bölümde yer alan **AK** harfi altındaki **My Account** linkine tıklayın. Açılan sayfada yer alan **Security** segmesine geçin. Bu segmedeki **Tokens** başlığı altındaki **Generate Tokens** bölümünde `SonarScanner`{{copy}} değerini yazarak **Generate** butonuna basın.
+Giriş sayfasında bu defa kullanıcı adı olarak `sonarqube-analiz`{{copy}} ve şifre olarak `enterprisecoding`{{copy}} değerleri ile giriş yapın. Açılan SonarQube ana sayfasının sağ Üst bölümde yer alan **AK** harfi altındaki **My Account** linkine tıklayın. Açılan sayfada yer alan **Security** segmesine geçin. Bu segmedeki **Tokens** başlığı altındaki **Generate Tokens** bölümünde `SonarScanner`{{copy}} değerini yazarak **Generate** butonuna basın. Aşağıdaki mesaj ve aştında üretilen Token olduğunu teyit edin;
+
+`New token "SonarScanner" has been created. Make sure you copy it now, you won't be able to see it again!``
+
+**Copy** butonuna basarak token'ı kopyalayın ve saklayın. Sağ Üst bölümde yer alan **AK** harfi altındaki **logout** linki yardımıyla sistemden çıkış yapın.
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

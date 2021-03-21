@@ -26,7 +26,7 @@ Aşağıdaki komutla SonarScanner'ı **/tmp/** dizini altına indirin;
 
 `unzip /tmp/sonar-scanner-cli-4.6.0.2311-linux.zip -d /opt/`{{execute}}
 
-`sonar-scanner-cli-4.6.0.2311-linux`{{copy}} dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
+**sonar-scanner-cli-4.6.0.2311-linux** dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
 
 `mv /opt/sonar-scanner-4.6.0.2311-linux/ /opt/sonar-scanner-cli/`{{execute}}
 
@@ -38,8 +38,8 @@ SonarScanner statik kod analizine dair yapılandırmaları **sonar-project.prope
 
 ```bash
 cat > sonar-project.properties << 'EOF'
-onar.projectKey=com.enterprisecoding:sonarqube-scanner
-sonar.projectName=SonarQube Scanner Kullanım Örneği
+sonar.projectKey=com.enterprisecoding:sonarqube-scanner
+sonar.projectName=SonarQube Scanner Kullanim Ornegi
 sonar.projectVersion=1.0
 
 sonar.sources=src,copybooks
