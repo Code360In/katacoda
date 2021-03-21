@@ -20,7 +20,7 @@ Yeniden başlatma ardından giriş sayfasının açıldığını teyit edin. Yuk
 
 # Arayüz Üzerinden Eklenti Kaldırma
 
-**Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin bulunduğu satırın sağında yer alan **Uninstall** butonuna basın. Uygulama kaldırıldıktan sonra **Uninstall Pending** yazısının geldiğini teyit edin. KSayfanın üst bölümünde aşağıdaki mesajın geldiğini teyit edin;
+**Marketplace** sayfasında **PlugIns** bölümünde **Installed** segmesine geçiş yapın. TFVC Integration eklentisinin bulunduğu satırın sağında yer alan **Uninstall** butonuna basın. Uygulama kaldırıldıktan sonra **Uninstall Pending** yazısının geldiğini teyit edin. Sayfanın üst bölümünde aşağıdaki mesajın geldiğini teyit edin;
 
 `SonarQube needs to be restarted in order to uninstall 1 plugins`
 
