@@ -19,6 +19,11 @@
         "description": "SonarQube SonarScanner ile kod tarama"
       },
       {
+        "course_id": "sonar-scanner-ant",
+        "title": "Sonar Scanner NT Kullanımı",
+        "description": "SonarQube Sonar Scanner Ant ile kod tarama"
+      },
+      {
         "course_id": "ldap-entegrasyonu",
         "title": "LDAP Entegrasyonu",
         "description": "SonarQube ile LDAP Entegrasyonu"
