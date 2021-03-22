@@ -20,7 +20,7 @@
       },
       {
         "course_id": "sonar-scanner-ant",
-        "title": "Sonar Scanner NT Kullanımı",
+        "title": "Ant Sonar Scanner Kullanımı",
         "description": "SonarQube Sonar Scanner Ant ile kod tarama"
       },
       {

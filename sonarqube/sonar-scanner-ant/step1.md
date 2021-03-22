@@ -18,6 +18,8 @@ Farklı programlama dillerine ait ayrı ayrı dizinler olduğunu teyit edin.
 
 # Ön Gereksinimler
 
+## Ant Kurulumu
+
 Aşağıdaki komutla java uygulaması derlemede ve statik kod analizinde yardımcı olacak Ant kurulumunu yapın;
 
 `sudo apt install -y ant`{{execute}}
@@ -26,42 +28,16 @@ Kurulumu doğrulamak için aşağıdaki komutu çalıştırın;
 
 `ant -version`{{execute}}
 
-**sonar-scanner-cli-4.6.0.2311-linux** dizini adını aşağıdaki komutla **sonar-scanner-cli** olarak güncelleyin;
+## SonarQube Ant Task Kurulumu
 
-`mv /opt/sonar-scanner-4.6.0.2311-linux/ /opt/sonar-scanner-cli/`{{execute}}
+Ant içerisinde SonarScanner'ı kolayca kullabilmek için bir ant task'ı bulunmaktadır. Aşağıdaki adımlarla bu task'ın tanımlı olduğu jar dosyasını hazırlayın.
 
-`/opt/sonar-scanner-cli/conf/sonar-scanner.properties`{{copy}} dosyası içerisinde SonarQube sunucu adresininin belirtilmesi gerekli. Bu dosyayı açarak aşağıdaki satırın başındaki **#** karakterini silin ve dosyayı saklayın;
+Jar dosyasının yer alacağı dizini oluşturun;
 
-`#sonar.host.url=http://localhost:9000`
+`mkdir /opt/sonarqube-ant`{{execute}}
 
-SonarScanner statik kod analizine dair yapılandırmaları **sonar-project.properties** dosyasından okuyabilir. Aşağıdaki komutla **sonar-project.properties** dosyasını oluşturun;
+SonarQube web sitesinden ant için hazırlanmış jar dosyasını oluşturduğunuz dizine indirin;
 
-```bash
-cat > sonar-project.properties << 'EOF'
-sonar.projectKey=com.enterprisecoding:sonarqube-scanner
-sonar.projectName=SonarQube Scanner Kullanim Ornegi
-sonar.projectVersion=1.0
-
-sonar.sources=src,copybooks
-
-sonar.sourceEncoding=UTF-8
-
-## Cobol Diline ait özellikler
-sonar.cobol.copy.directories=copybooks
-sonar.cobol.file.suffixes=cbl,cpy
-sonar.cobol.copy.suffixes=cpy
-
-## Flex'e ait özellikler
-sonar.flex.cobertura.reportPath=coverage-report/coverage-cobertua-flex.xml
-
-# PL/I'a ait özellikler
-sonar.pli.marginLeft=2
-sonar.pli.marginRight=0
-EOF
-```{{execute}}
-
-Aşağıdaki komutla **sonar-project.properties** dosyasının oluştuğunu teyit edin;
-
-`ls -al`{{execute}}
+`wget https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.0.1612.jar -O /opt/sonarqube-ant/sonarqube-ant-task-2.7.0.1612.jar`{{execute}}
 
 **Continue** butonuna basarak sıradaki adıma geçebilirsiniz.

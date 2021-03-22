@@ -101,7 +101,58 @@ git clone --depth 1 https://github.com/SonarSource/sonar-scanning-examples.git /
 
 mv /tmp/ornekler/sonarqube-scanner-ant ~/uygulama 2>/dev/null &> /dev/null
 rm -f ~/uygulama/README.md 2>/dev/null &> /dev/null
+rm -f ~/uygulama/build.xml 2>/dev/null &> /dev/null
 rm -rf /tmp/ornekler/ 2>/dev/null &> /dev/null
+
+cat >> ~/uygulama/build.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ant için SonarQube Tarayıcı ile analiz edilen basit bir proje" default="all" basedir="." xmlns:sonar="antlib:org.sonar
+
+  <!-- ========= Projenin ana özelliklerinin tanımı ========= -->
+  <property name="src.dir" value="src" />
+  <property name="build.dir" value="target" />
+  <property name="classes.dir" value="${build.dir}/classes" />
+
+  <!-- SonarQube genel özellikl tanımları (bu tanımlar komut satırından da verilebilir) -->
+  <property name="sonar.host.url" value="http://localhost:9000" />
+
+  <!-- Sonar özellik tanımları -->
+  <property name="sonar.projectKey" value="com.enterprisecoding:sonarqube-scanner-ant" />
+  <property name="sonar.projectName" value="Ant SonarQube Scanner Kullanim Ornegi" />
+  <property name="sonar.projectVersion" value="1.0" />
+  <property name="sonar.sources" value="src" />
+  <property name="sonar.binaries" value="target" />
+  <property name="sonar.sourceEncoding" value="UTF-8" />
+
+  <!-- ========= clean, compile, ... gibi klasik ant hedefleri tanımları ========= -->
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+
+  <target name="init">
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${classes.dir}" />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" fork="true" debug="true" includeAntRuntime="false" />
+  </target>
+
+  <!-- ========= Ant için SonarQube Scanner hedef tanımı ========= -->
+  <target name="sonar" depends="compile">
+    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+      <classpath path="/opt/sonarqube-ant/sonarqube-ant-task-*.jar" />
+    </taskdef>
+
+    <!-- Ant için SonarQube Scanner analizini başlat -->
+    <sonar:sonar />
+  </target>
+
+  <!-- all için hedef tanımı -->
+  <target name="all" depends="clean,compile,sonar" />
+
+</project>
+EOF
 
 echo "SonarQube'ün hazır olması bekleniyor..."
 while [[ "$(curl -u admin:admin -X POST -s -o /dev/null -w ''%{http_code}'' http://localhost:9000/api/system/health)" != "200" ]]
